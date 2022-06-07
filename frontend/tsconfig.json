@@ -2,11 +2,7 @@
   "compilerOptions": {
     "outDir": "dist",
     "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": true,
@@ -20,11 +16,8 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "noImplicitAny": true, 
+    "noImplicitAny": true
   },
-  "include": [
-    "**/*.ts",
-    "**/*/tsx"
-  ],
+  "include": ["**/*.ts", "**/*/.tsx"],
   "exclude": ["node_modules"]
 }
