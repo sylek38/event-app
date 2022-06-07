@@ -1,0 +1,12 @@
+{
+    "compilerOptions": {
+        "outDir": "dist", // where to put the compiled JS files
+        "target": "ES2016", // which level of JS support to target
+        "module": "es2015", // which system for the program AMD, UMD, System, CommonJS
+        "jsx": "react-jsx",
+        // Recommended: Compiler complains about expressions implicitly typed as 'any'
+        "noImplicitAny": true
+    },
+    "include": ["**/*.ts", "**/*.tsx", "src/App.js"], // which files to compile
+    "exclude": ["node_modules"] // which files to skip
+}
