@@ -5,7 +5,7 @@ interface Props {
 }
 
 export const ExampleComponent = ({ children }: Props) => {
-    console.log("elko");
+    console.log("elko 2");
 
     return <div>{children}</div>;
 };
