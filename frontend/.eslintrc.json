@@ -24,6 +24,6 @@
         "semi": ["error", "always"],
         "no-console": 1,
         "newline-before-return": "warn",
-        "newlines-between": "always"
+        "newlines-between": 1
     }
 }
