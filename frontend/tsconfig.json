@@ -7,6 +7,6 @@
         // Recommended: Compiler complains about expressions implicitly typed as 'any'
         "noImplicitAny": true
     },
-    "include": ["**/*.ts", "**/*.tsx", "src/App.js"], // which files to compile
+    "include": ["**/*.ts", "**/*.tsx", "src/App.js", "src/index.js"], // which files to compile
     "exclude": ["node_modules"] // which files to skip
 }
