@@ -1,11 +1,11 @@
 import "./App.css";
-import { Componenthehe } from "./Componenthehe";
+import { ExampleComponent } from "./ExampleComponent";
 
 function App() {
     return (
         <div className="App">
             <header className="App-header">
-                <Componenthehe />
+                <ExampleComponent>Children</ExampleComponent>
             </header>
         </div>
     );
