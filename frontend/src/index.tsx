@@ -5,6 +5,7 @@ import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import { StrictMode } from "react";
 
+
 const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <StrictMode>
