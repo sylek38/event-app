@@ -4,10 +4,12 @@ import App from "./App";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import { StrictMode } from "react";
+import GlobalStyle from "./styles/global.style";
 
 const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
   <StrictMode>
+    <GlobalStyle />
     <App />
   </StrictMode>
 );
