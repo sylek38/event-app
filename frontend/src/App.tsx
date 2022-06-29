@@ -1,19 +1,11 @@
-import Post from "./components/post/Post";
 import Navbar from "./components/navbar/Navbar";
+import { Posts } from "./components/posts/Posts";
 
 function App() {
     return (
         <div className="App">
-            <header className="App-header">
-                <Navbar />
-                <div className="posts">
-                    <Post />
-                    <Post />
-                    <Post />
-                    <Post />
-                    <Post />
-                </div>
-            </header>
+            <Navbar />
+            <Posts />
         </div>
     );
 }

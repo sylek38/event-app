@@ -7,6 +7,8 @@ export const vars = css`
     --secondary-background: #2f2f2f;
     --tertiary-background: #545454;
 
+    --container-backgroud: #262626;
+
     --primary-text: #fff;
     --secondary-text: #999;
 
