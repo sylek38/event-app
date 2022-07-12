@@ -1,4 +1,5 @@
 import { createGlobalStyle, css } from "styled-components";
+import { buttonStyle } from "./components/button.style";
 import { vars } from "./vars.style";
 
 const global = css`
@@ -45,6 +46,7 @@ const global = css`
 
     :root {
         ${vars}
+        ${buttonStyle}
     }
 `;
 

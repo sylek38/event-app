@@ -1,9 +1,12 @@
 import { pxToRem } from "./../../utils/pxToRem";
 import styled from "styled-components";
+import { Post } from "./post/Post.style";
 
 export const Posts = styled.div`
     display: flex;
-    flex-direction: row;
-    /* vertical gap = gap + half of button */
-    gap: calc(${pxToRem(50)} +${pxToRem(20)}) ${pxToRem(50)};
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 75px 50px;
 `;

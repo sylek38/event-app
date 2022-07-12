@@ -1,12 +1,11 @@
-import Navbar from "./components/navbar/Navbar";
 import { Posts } from "./components/posts/Posts";
+import { Layout } from "./views/layout/Layout";
 
 function App() {
     return (
-        <div className="App">
-            <Navbar />
+        <Layout>
             <Posts />
-        </div>
+        </Layout>
     );
 }
 

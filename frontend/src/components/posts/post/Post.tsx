@@ -9,10 +9,13 @@ import { CategoryEnum } from "../../../types/CategoryEnum";
 
 import * as S from "./Post.style";
 import { CategoryTag } from "../../categoryTag/CategoryTag";
+import { Button } from "../../button/Button";
 
 interface Props {
     title: string;
     description: string;
+
+    // TODO: map from and to enum
     category: CategoryEnum;
     img: string;
     authorName: string;
@@ -39,23 +42,21 @@ export const Post = ({
         <S.Post>
             <S.BackgroundContainer>
                 <img src={img} alt="" />
+
+                {/* TODO: Make component for this */}
                 <S.Date>
                     <span>06</span>
                     <span>Cze</span>
                 </S.Date>
-
+            </S.BackgroundContainer>
+            <S.Content>
                 {/* TODO: Avatar component with various sizes */}
                 <S.UserInfo>
                     <img src={avatar} />
                     <span>{authorName}</span>
                 </S.UserInfo>
-            </S.BackgroundContainer>
-            <S.Content>
                 <CategoryTag name={CategoryEnum.PARTY} />
-                <S.Title>
-                    Veniam voluptatem rerum similique facilis voluptatem vel
-                    fuga consectetur.
-                </S.Title>
+                <S.Title>{title}</S.Title>
                 <S.Details>
                     <S.DetailsItem>
                         <FontAwesomeIcon icon={faLocationDot} />
@@ -70,56 +71,10 @@ export const Post = ({
                         <span>{peopleCount}</span>
                     </S.DetailsItem>
                 </S.Details>
-
-                {/* TODO: Button component */}
                 <S.ButtonContainer>
-                    <button>Więcej</button>
+                    <Button variant="gradient">Więcej</Button>
                 </S.ButtonContainer>
             </S.Content>
         </S.Post>
-
-        // <div className="post">
-        //     <div className="postTop">
-        //         <div className="postTopDate">
-        //             <span className="postDay">16</span>
-        //             <span className="postMonth">Maj</span>
-        //         </div>
-        //         <div className="postUser">
-        //             <div className="postUserIcon"></div>
-        //             <div className="postUserName">Ophelia Doyle</div>
-        //         </div>
-        //     </div>
-        //     <div className="postBot">
-        //         <div className="postCategory">
-        //             <span>
-        //                 Impreza <FontAwesomeIcon icon={faGlassCheers} />
-        //             </span>
-        //         </div>
-        //         <div className="postTitle">
-        //             Veniam voluptatem rerum similique facilis voluptatem vel
-        //             fuga consectetur vel fuga x...
-        //         </div>
-        //         <div className="postDetails">
-        //             <div className="postDetailWrap">
-        //                 <FontAwesomeIcon icon={faLocationDot} />{" "}
-        //                 <span className="PostDetailsContent">
-        //                     Gdańsk, Jakaś Tam Miejscówa
-        //                 </span>
-        //             </div>
-        //             <div className="postDetailWrap">
-        //                 <FontAwesomeIcon icon={faCalendarDays} />{" "}
-        //                 <span className="PostDetailsContent">
-        //                     {" "}
-        //                     16.05.2022r.
-        //                 </span>
-        //             </div>
-        //             <div className="postDetailWrap">
-        //                 <FontAwesomeIcon icon={faUser} />{" "}
-        //                 <span className="PostDetailsContent"> 2/4</span>
-        //             </div>
-        //         </div>
-        //         <button className="postBtn gradient-border-bg">Więcej</button>
-        //     </div>
-        // </div>
     );
 };

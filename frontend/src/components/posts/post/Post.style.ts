@@ -1,5 +1,5 @@
 import { pxToRem } from "./../../../utils/pxToRem";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const BTN_BG_HELPER = "#232323";
 
@@ -8,23 +8,20 @@ export const Post = styled.div`
     border-radius: ${pxToRem(24)};
     box-shadow: 0 0 1.5rem var(--color-black);
     box-shadow: 0 0 1.5em #121212;
-
+    width: ${pxToRem(370)};
     transition: 0.15s;
-
-    /* &::before {
-        content: "";
-
-    } */
 `;
 
 export const BackgroundContainer = styled.div`
     position: relative;
-    border-bottom: 3px solid var(--color-white);
+    border-bottom: ${pxToRem(3)} solid var(--color-white);
+    height: ${pxToRem(200)};
 
     > img {
-        width: ${pxToRem(400)};
-        height: ${pxToRem(200)};
+        width: 100%;
+        height: 100%;
         object-fit: cover;
+        border-radius: ${pxToRem(24)} ${pxToRem(24)} 0 0;
     }
 `;
 
@@ -39,36 +36,56 @@ export const Date = styled.div`
 
 export const UserInfo = styled.div`
     position: absolute;
-    bottom: -56px;
+    top: -33px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* delete */
-    outline: 1px solid purple;
 
-    & > img {
+    > img {
         width: ${pxToRem(60)};
+        height: ${pxToRem(60)};
+        object-fit: cover;
         margin-bottom: 0.25rem;
         border-radius: 50%;
         border: 3px solid var(--color-white);
+    }
+
+    > span {
+        color: var(--color-white);
     }
 `;
 
 export const Content = styled.div`
     position: relative;
-    margin-top: calc(56px + 10px);
-    padding: 0 ${pxToRem(20)};
+    padding: calc(56px + 10px) ${pxToRem(20)} ${pxToRem(30)} ${pxToRem(20)};
 `;
 
 export const Title = styled.span`
+    display: block;
+    height: 3rem;
+    margin-top: ${pxToRem(10)};
+    margin-bottom: ${pxToRem(20)};
     font-size: 1rem;
     font-weight: bold;
     color: var(--color-white);
+
+    line-height: 1.5rem;
+    max-height: 3rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+`;
+
+export const DescriptionSection = styled.div`
+    display: flex;
+    flex-direction: column;
 `;
 
 export const Details = styled.div`
+    align-self: flex-end;
     > * + * {
         margin-top: ${pxToRem(10)};
     }
@@ -88,18 +105,9 @@ export const DetailsItem = styled.div`
 
 export const ButtonContainer = styled.div`
     position: absolute;
-    bottom: -20px;
+    bottom: ${pxToRem(-20)};
     left: 50%;
     transform: translateX(-50%);
-
-    & > button {
-        color: var(--color-white);
-        font-size: ${pxToRem(14)};
-        font-weight: bold;
-        padding: ${pxToRem(12)} ${pxToRem(30)};
-    }
-    &:hover {
-    }
 `;
 
 // .post {

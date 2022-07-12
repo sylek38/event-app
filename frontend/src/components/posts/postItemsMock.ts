@@ -19,8 +19,8 @@ export const postItemsMock: PostItem[] = [
             "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...",
         category: "Party",
         authorName: "Neal Balistreri",
-        img: "",
-        avatar: "https=//st2.depositphotos.com/1006318/5909/v/950/depositphotos_59095529-stock-illustration-profile-icon-male-avatar.jpg",
+        img: "https://cdn.cmc-gallery.pl/static/files/gallery/541/090d434854e917828ad11e48812db01d.jpg",
+        avatar: "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg",
 
         // TODO= Change it to proper data
         place: "Gdańsk, Jakaś Tam Miejscówa",
@@ -29,13 +29,12 @@ export const postItemsMock: PostItem[] = [
     },
     {
         id: "2",
-        title: "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...",
-        description:
-            "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...",
+        title: "Veniam voluptatem rerum similique facilis",
+        description: "Veniam voluptatem rerum similique facilis ",
         category: "Party",
         authorName: "Neal Balistreri",
-        img: "",
-        avatar: "https=//st2.depositphotos.com/1006318/5909/v/950/depositphotos_59095529-stock-illustration-profile-icon-male-avatar.jpg",
+        img: "https://cdn.cmc-gallery.pl/static/files/gallery/541/090d434854e917828ad11e48812db01d.jpg",
+        avatar: "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg",
 
         // TODO= Change it to proper data
         place: "Gdańsk, Jakaś Tam Miejscówa",
@@ -49,8 +48,8 @@ export const postItemsMock: PostItem[] = [
             "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...",
         category: "Party",
         authorName: "Neal Balistreri",
-        img: "",
-        avatar: "https=//st2.depositphotos.com/1006318/5909/v/950/depositphotos_59095529-stock-illustration-profile-icon-male-avatar.jpg",
+        img: "https://cdn.cmc-gallery.pl/static/files/gallery/541/090d434854e917828ad11e48812db01d.jpg",
+        avatar: "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg",
 
         // TODO= Change it to proper data
         place: "Gdańsk, Jakaś Tam Miejscówa",
@@ -64,8 +63,8 @@ export const postItemsMock: PostItem[] = [
             "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...",
         category: "Party",
         authorName: "Neal Balistreri",
-        img: "",
-        avatar: "https=//st2.depositphotos.com/1006318/5909/v/950/depositphotos_59095529-stock-illustration-profile-icon-male-avatar.jpg",
+        img: "https://cdn.cmc-gallery.pl/static/files/gallery/541/090d434854e917828ad11e48812db01d.jpg",
+        avatar: "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg",
 
         // TODO= Change it to proper data
         place: "Gdańsk, Jakaś Tam Miejscówa",
@@ -79,8 +78,8 @@ export const postItemsMock: PostItem[] = [
             "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...",
         category: "Party",
         authorName: "Neal Balistreri",
-        img: "",
-        avatar: "https=//st2.depositphotos.com/1006318/5909/v/950/depositphotos_59095529-stock-illustration-profile-icon-male-avatar.jpg",
+        img: "https://cdn.cmc-gallery.pl/static/files/gallery/541/090d434854e917828ad11e48812db01d.jpg",
+        avatar: "https://www.dmarge.com/wp-content/uploads/2021/01/dwayne-the-rock-.jpg",
 
         // TODO= Change it to proper data
         place: "Gdańsk, Jakaś Tam Miejscówa",
