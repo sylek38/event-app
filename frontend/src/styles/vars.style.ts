@@ -9,6 +9,8 @@ export const vars = css`
 
     --container-backgroud: #262626;
 
+    --box-shadow--black: #121212;
+
     --primary-text: #fff;
     --secondary-text: #999;
 

@@ -1,13 +1,10 @@
 import { pxToRem } from "./../../../utils/pxToRem";
 import styled from "styled-components";
 
-export const BTN_BG_HELPER = "#232323";
-
 export const Post = styled.div`
     background-color: var(--container-background);
     border-radius: ${pxToRem(24)};
-    box-shadow: 0 0 1.5rem var(--color-black);
-    box-shadow: 0 0 1.5em #121212;
+    box-shadow: 0 0 1.5em var(--box-shadow--black);
     width: ${pxToRem(370)};
     transition: 0.15s;
 `;
