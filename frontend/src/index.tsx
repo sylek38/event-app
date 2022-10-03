@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import { App } from "./App";
+import { HomeView } from "./views/home/HomeView";
 import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
 import reportWebVitals from "./reportWebVitals";
 import { StrictMode } from "react";
@@ -9,7 +9,7 @@ const root = createRoot(document.getElementById("root") as HTMLElement);
 root.render(
     <StrictMode>
         <GlobalStyle />
-        <App />
+        <HomeView />
     </StrictMode>
 );
 
