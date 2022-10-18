@@ -5,6 +5,7 @@ export const vars = css`
 
     --primary-background: #232323;
     --secondary-background: #2f2f2f;
+    --secondary-background--hover: #393939;
     --tertiary-background: #545454;
 
     --container-backgroud: #262626;
