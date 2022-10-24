@@ -1,5 +1,15 @@
 import { pxToRem } from "./../../../utils/pxToRem";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+
+const spanStyle = css`
+    > span {
+        display: block;
+        margin-bottom: ${pxToRem(30)};
+        font-size: ${pxToRem(20)};
+        font-weight: 600;
+        color: white;
+    }
+`;
 
 export const Post = styled.div<{ width: number }>`
     width: 90%;
@@ -21,15 +31,6 @@ export const BackgroundContainer = styled.div`
         object-fit: cover;
         border-radius: ${pxToRem(24)} ${pxToRem(24)} 0 0;
     }
-`;
-
-export const Date = styled.div`
-    position: absolute;
-    top: ${pxToRem(20)};
-    right: ${pxToRem(20)};
-    width: ${pxToRem(50)};
-    height: ${pxToRem(50)};
-    background-color: var(--color-white);
 `;
 
 export const UserInfo = styled.div`
@@ -57,7 +58,7 @@ export const UserInfo = styled.div`
 
 export const Content = styled.div`
     position: relative;
-    padding: ${pxToRem(66)} ${pxToRem(20)} ${pxToRem(30)} ${pxToRem(20)};
+    padding: ${pxToRem(66)} ${pxToRem(48)} ${pxToRem(30)} ${pxToRem(48)};
 `;
 
 export const Title = styled.span`
@@ -82,23 +83,74 @@ export const DescriptionSection = styled.div`
     flex-direction: column;
 `;
 
-export const Details = styled.div`
-    align-self: flex-end;
-    > * + * {
-        margin-top: ${pxToRem(10)};
+export const Section = styled.div`
+    margin-top: ${pxToRem(60)};
+
+    ${spanStyle};
+
+    > p {
+        color: var(--color-white);
+
+        & + p {
+            margin-top: 1rem;
+        }
     }
 `;
 
 export const DetailsItem = styled.div`
-    color: var(--secondary-text);
+    display: flex;
+    color: var(--color-white);
+`;
 
-    > svg {
-        margin-right: ${pxToRem(10)};
-    }
+export const DetailsSection = styled.div`
+    margin-top: ${pxToRem(60)};
 
-    > span {
-        font-size: ${pxToRem(12)};
+    ${spanStyle};
+
+    > div {
+        display: flex;
+
+        > div {
+            flex: 1;
+            min-width: 280px;
+        }
+
+        & + div {
+            margin-top: 1.5rem;
+        }
+
+        @media screen and (max-width: 1024px) {
+            flex-direction: column;
+            gap: ${pxToRem(20)};
+
+            > div {
+                min-width: initial;
+            }
+        }
     }
 `;
 
-export const Description = styled.div``;
+export const IconContainer = styled.div`
+    width: ${pxToRem(50)};
+    height: ${pxToRem(50)};
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--secondary-text);
+    border-radius: ${pxToRem(12)};
+`;
+
+export const Info = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: 1.25rem;
+
+    > span {
+        font-size: ${pxToRem(14)};
+
+        &:first-of-type {
+            font-weight: 600;
+        }
+    }
+`;
