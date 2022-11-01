@@ -183,6 +183,7 @@ export const LoginButton = styled.button`
 `;
 
 export const LoginGoogleButton = styled.button`
+    position: absolute;
     all: unset;
     width: 90%;
     padding: 10px 15px 10px 15px;
@@ -193,6 +194,15 @@ export const LoginGoogleButton = styled.button`
     text-align: center;
     font-weight: bold;
     cursor: pointer;
+`;
+
+export const LoginGoogleIcon = styled.span`
+    display: inline-block;
+    position: relative;
+    padding: 0;
+    left: -40px;
+    top: 3px;
+    transform: scale(1.4);
 `;
 
 export const LoginFooter = styled.div`

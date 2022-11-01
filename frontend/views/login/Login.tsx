@@ -37,7 +37,9 @@ export const Login = () => {
                     </S.LoginMiddle>
                     <S.LoginButton type="submit">Zaloguj się</S.LoginButton>
                     <S.LoginGoogleButton type="submit">
-                        <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>{" "}
+                        <S.LoginGoogleIcon>
+                            <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>{" "}
+                        </S.LoginGoogleIcon>
                         Zaloguj z Google
                     </S.LoginGoogleButton>
                     <S.LoginFooter>
