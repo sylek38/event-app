@@ -46,6 +46,7 @@ export const Login = () => {
                         register={register}
                         control={control}
                         isError={!!errors.login_password}
+                        type="password"
                         fullWidth
                         required
                     />
@@ -67,7 +68,7 @@ export const Login = () => {
                     <S.Button type="submit">{t("sign_in")}</S.Button>
                     <S.GoogleButton type="submit">
                         <S.GoogleIcon>
-                            <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>{" "}
+                            <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>
                         </S.GoogleIcon>
                         {t("sign_in_google")}
                     </S.GoogleButton>
