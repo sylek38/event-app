@@ -5,8 +5,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { TextInput } from "../../src/components/inputs/text/TextInput";
 
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
+import { Button } from "../../components/button/Button";
 
 interface FormTypes {
     login_email: string;
@@ -20,17 +21,18 @@ export const Login = () => {
         register,
         control,
         formState: { errors },
+        handleSubmit,
     } = useForm<FormTypes>();
+
+    const onSubmit: SubmitHandler<FormTypes> = (data) => {
+        console.log(data);
+    };
 
     return (
         <S.Container>
             <S.LeftSide />
             <S.RightSide>
-                <S.Form
-                    onSubmit={(e) => {
-                        e.preventDefault();
-                    }}
-                >
+                <S.Form onSubmit={handleSubmit(onSubmit)}>
                     <S.Header>{t("sign_in")}</S.Header>
                     <TextInput
                         id="login_email"
@@ -65,7 +67,11 @@ export const Login = () => {
                             </S.MiddleHref>
                         </S.MiddleContent>
                     </S.Middle>
-                    <S.Button type="submit">{t("sign_in")}</S.Button>
+                    {/* <S.Button type="submit">{t("sign_in")}</S.Button> */}
+
+                    <Button variant="gradient" type="submit" fullWidth>
+                        {t("sign_in")}
+                    </Button>
                     <S.GoogleButton type="submit">
                         <S.GoogleIcon>
                             <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>

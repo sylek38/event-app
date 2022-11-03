@@ -163,19 +163,6 @@ export const MiddleHref = styled.a`
     color: var(--color-white);
 `;
 
-export const Button = styled.button`
-    all: unset;
-    width: 90%;
-    padding: 10px 15px 10px 15px;
-    margin-top: 15px;
-    border-radius: 50px;
-    background-image: var(--primary-gradient);
-    color: var(--color-white);
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-`;
-
 export const GoogleButton = styled.button`
     position: absolute;
     all: unset;
