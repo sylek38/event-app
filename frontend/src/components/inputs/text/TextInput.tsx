@@ -43,7 +43,7 @@ export function TextInput<T>({
     placeholder,
     required,
     validate,
-    type,
+    type = "text",
     disabled,
     hideLabel,
     fullWidth,
