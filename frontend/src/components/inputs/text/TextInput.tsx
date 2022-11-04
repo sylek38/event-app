@@ -69,7 +69,6 @@ export function TextInput<T>({
             <S.TextInput
                 type={type}
                 isError={!!isError}
-                fullWidth={fullWidth}
                 placeholder={
                     placeholder ? t(`text_placeholder_${id}`) : undefined
                 }
@@ -78,10 +77,10 @@ export function TextInput<T>({
                 {...rest}
             />
             {isError && (
-                <span>
+                <S.Error>
                     <FontAwesomeIcon icon={faTriangleExclamation} />
                     {t(`text_error_${id}`)}
-                </span>
+                </S.Error>
             )}
         </S.Container>
     );
