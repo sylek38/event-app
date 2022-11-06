@@ -1,4 +1,4 @@
-import { pxToRem } from "./../../../../utils/pxToRem";
+import { pxToRem } from "../../../utils/pxToRem";
 import styled, { css } from "styled-components";
 
 export const Container = styled.div<{ fullWidth?: boolean }>`
