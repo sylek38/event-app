@@ -5,9 +5,10 @@ interface AllProps {
     children: ReactNode | ReactNode[];
     href?: string;
     type?: "button" | "submit";
-    variant?: "gradient" | "blue";
+    variant?: "gradientHover" | "blue" | "gradient";
     size?: "sm" | "md" | "lg";
     fullWidth?: boolean;
+    onClick?: () => void;
 }
 
 // Dzięki temu nie doda się TYPE jak dodajesz HREF i na odwrót.
@@ -34,6 +35,7 @@ export const Button = ({
     variant = "gradient",
     type = "button",
     fullWidth,
+    onClick,
 }: Props) => {
     if (href)
         return (
@@ -53,6 +55,7 @@ export const Button = ({
             variant={variant}
             type={type}
             fullWidth={!!fullWidth}
+            onClick={() => onClick?.()}
         >
             {children}
         </S.Button>

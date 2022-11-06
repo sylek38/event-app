@@ -1,7 +1,7 @@
 import { pxToRem } from "./../../utils/pxToRem";
 import styled, { css } from "styled-components";
 
-export const LoginContainer = styled.div`
+export const Container = styled.div`
     display: flex;
     width: 100vw;
     height: 100vh;
@@ -22,15 +22,18 @@ export const RightSide = styled.div`
     flex-basis: 50vw;
 `;
 
-export const loginForm = styled.form`
+export const Form = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
-    min-width: 400px;
-    min-height: 500px;
+    max-width: ${pxToRem(550)};
     background-color: var(--secondary-background);
-    padding: 0 30px 0 30px;
+    padding: 0 30px;
     border-radius: 20px;
+
+    > h1 + div {
+        margin-bottom: ${pxToRem(20)};
+    }
 
     -webkit-box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.5);
     -moz-box-shadow: 0px 0px 20px -5px rgba(0, 0, 0, 0.5);
@@ -48,25 +51,14 @@ export const loginForm = styled.form`
     }
 `;
 
-export const loginHeader = styled.h1`
+export const Header = styled.h1`
     padding-top: 20px;
     color: #fff;
     margin-bottom: 20px;
     font-size: 21px;
 `;
 
-export const loginLabel = styled.label`
-    align-self: flex-start;
-    color: #999;
-    font-size: var(--font-size-12);
-    margin-bottom: 10px;
-
-    &:nth-child(4) {
-        margin-top: 20px;
-    }
-`;
-
-export const loginInput = styled.input`
+export const Input = styled.input`
     all: unset;
     width: 90%;
     padding: 10px 20px;
@@ -77,16 +69,17 @@ export const loginInput = styled.input`
     margin-bottom: 15px;
 `;
 
-export const LoginMiddle = styled.div`
+export const Middle = styled.div`
     display: flex;
     justify-content: space-between;
     align-content: center;
     width: 100%;
-    margin: 20px;
+    /* margin: 20px; */
+    padding: ${pxToRem(20)} 0;
     font-size: var(--font-size-12);
 `;
 
-export const LoginMiddleContent = styled.div`
+export const MiddleContent = styled.div`
     display: flex;
     align-items: center;
     justify-items: center;
@@ -94,7 +87,7 @@ export const LoginMiddleContent = styled.div`
     justify-content: center;
 `;
 
-export const LoginMiddleLeft = styled.label`
+export const MiddleLeft = styled.label`
     display: block;
     position: relative;
     padding-left: 45px;
@@ -134,7 +127,7 @@ export const LoginMiddleLeft = styled.label`
     }
 `;
 
-export const LoginMiddleInput = styled.input`
+export const MiddleInput = styled.input`
     position: absolute;
     opacity: 0;
     cursor: pointer;
@@ -142,7 +135,7 @@ export const LoginMiddleInput = styled.input`
     width: 0;
 `;
 
-export const LoginMiddleSpan = styled.span`
+export const MiddleSpan = styled.span`
     position: absolute;
     top: 7px;
     left: 0;
@@ -158,31 +151,19 @@ export const LoginMiddleSpan = styled.span`
     }
 `;
 
-export const LoginMiddleRemember = styled.label`
+export const MiddleRemember = styled.label`
     display: block;
     height: 50%;
     color: var(--secondary-text);
 `;
 
-export const LoginMiddleHref = styled.a`
+export const MiddleHref = styled.a`
     font-size: var(--font-size-12);
+    font-weight: 600;
     color: var(--color-white);
 `;
 
-export const LoginButton = styled.button`
-    all: unset;
-    width: 90%;
-    padding: 10px 15px 10px 15px;
-    margin-top: 15px;
-    border-radius: 50px;
-    background-image: var(--primary-gradient);
-    color: var(--color-white);
-    text-align: center;
-    font-weight: bold;
-    cursor: pointer;
-`;
-
-export const LoginGoogleButton = styled.button`
+export const GoogleButton = styled.button`
     position: absolute;
     all: unset;
     width: 90%;
@@ -196,7 +177,7 @@ export const LoginGoogleButton = styled.button`
     cursor: pointer;
 `;
 
-export const LoginGoogleIcon = styled.span`
+export const GoogleIcon = styled.span`
     display: inline-block;
     position: relative;
     padding: 0;
@@ -205,7 +186,7 @@ export const LoginGoogleIcon = styled.span`
     transform: scale(1.4);
 `;
 
-export const LoginFooter = styled.div`
+export const Footer = styled.div`
     display: flex;
     justify-content: space-evenly;
     align-content: center;
@@ -214,7 +195,7 @@ export const LoginFooter = styled.div`
     font-size: var(--font-size-16);
 `;
 
-export const LoginFooterHref = styled.a`
+export const FooterHref = styled.a`
     color: var(--color-white);
     font-weight: bold;
     padding: 0 10px 5px 10px;
@@ -228,6 +209,6 @@ export const LoginFooterHref = styled.a`
     }
 `;
 
-export const LoginFooterSpan = styled.span`
+export const FooterSpan = styled.span`
     color: var(--secondary-text);
 `;

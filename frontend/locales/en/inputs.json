@@ -1,0 +1,6 @@
+{
+    "text_label_login_email": "Email address",
+    "text_error_login_email": "Incorrect address email",
+    "text_label_login_password": "Password",
+    "text_error_login_password": "The password that you've entered is incorrect"
+}

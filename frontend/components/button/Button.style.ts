@@ -1,23 +1,33 @@
 import styled, { css } from "styled-components";
 import { pxToRem } from "../../utils/pxToRem";
 
+const gradientStyle = css`
+    color: var(--color-white);
+    border: ${pxToRem(3)} solid transparent;
+    border-radius: ${pxToRem(25)};
+`;
+
 const generateStyle = (
     size: string,
     variant: string,
     fullWidth: boolean
 ) => css`
-    ${variant === "gradient" &&
+    ${variant === "gradientHover" &&
     css`
         background: linear-gradient(#232323, #232323) padding-box,
             linear-gradient(45deg, #16ada8, #24eca4) border-box;
-        color: var(--color-white);
-        border: ${pxToRem(3)} solid transparent;
-        border-radius: ${pxToRem(25)};
+        ${gradientStyle}
 
         &:hover {
             background: linear-gradient(45deg, #16ada8, #24eca4) padding-box,
                 linear-gradient(45deg, #16ada8, #24eca4) border-box;
         }
+    `}
+
+    ${variant === "gradient" &&
+    css`
+        background: linear-gradient(45deg, #16ada8, #24eca4) padding-box;
+        ${gradientStyle}
     `}
 
     width: ${fullWidth ? "100%" : "initial"};
@@ -46,4 +56,6 @@ export const Button = styled.button<{
 }>`
     ${({ size, variant, fullWidth }) =>
         generateStyle(size, variant, fullWidth)};
+
+    cursor: pointer;
 `;

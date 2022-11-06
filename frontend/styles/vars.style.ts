@@ -18,6 +18,8 @@ export const vars = css`
     --primary-color: #1cd8d2;
     --primary-gradient: linear-gradient(to left, #16ada8, #24eca4);
 
+    --error-color: #d84040;
+
     --font-size-32: 2rem;
     --font-size-24: 1.5rem;
     --font-size-20: 1.25rem;
