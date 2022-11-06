@@ -1,12 +1,14 @@
 {
     "text_label_login_email": "Adres email",
     "text_error_login_email": "Niepoprawny adres",
-    "text_error_login_no_email": "Wpisz swój email",
+    "text_label_register_email": "Email",
+    "text_error_register_email": "Wpisz swój email",
     "text_label_login_password": "Hasło",
     "text_error_login_password": "Nieprawidłowe hasło",
-    "text_error_login_no_password": "Wpisz hasło",
-    "text_label_login_name": "Imię",
-    "text_error_login_no_name": "Wpisz swoje imię",
-    "text_label_login_lastname": "Nazwisko",
-    "text_error_login_no_lastname": "Wpisz swoje nazwisko"
+    "text_label_register_password": "Hasło",
+    "text_error_register_password": "Wpisz hasło",
+    "text_label_register_name": "Imię",
+    "text_error_register_name": "Wpisz swoje imię",
+    "text_label_register_lastname": "Nazwisko",
+    "text_error_register_lastname": "Wpisz swoje nazwisko"
 }

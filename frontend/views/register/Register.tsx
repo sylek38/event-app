@@ -10,14 +10,10 @@ import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../components/button/Button";
 
 interface FormTypes {
-    login_name: string;
-    login_lastname: string;
-    login_email: string;
-    login_password: string;
-    login_no_name: string;
-    login_no_lastname: string;
-    login_no_email: string;
-    login_no_password: string;
+    register_name: string;
+    register_lastname: string;
+    register_email: string;
+    register_password: string;
 }
 
 export const Register = () => {
@@ -40,37 +36,37 @@ export const Register = () => {
                 <S.Form onSubmit={handleSubmit(onSubmit)}>
                     <S.Header>{t("sign_up_title")}</S.Header>
                     <TextInput
-                        id="login_name"
+                        id="register_name"
                         register={register}
                         control={control}
-                        isError={!!errors.login_no_name}
+                        isError={!!errors.register_name}
                         fullWidth
                         required
                     />
 
                     <TextInput
-                        id="login_lastname"
+                        id="register_lastname"
                         register={register}
                         control={control}
-                        isError={!!errors.login_no_lastname}
+                        isError={!!errors.register_lastname}
                         fullWidth
                         required
                     />
 
                     <TextInput
-                        id="login_email"
+                        id="register_email"
                         register={register}
                         control={control}
-                        isError={!!errors.login_no_email}
+                        isError={!!errors.register_email}
                         fullWidth
                         required
                     />
 
                     <TextInput
-                        id="login_password"
+                        id="register_password"
                         register={register}
                         control={control}
-                        isError={!!errors.login_no_password}
+                        isError={!!errors.register_password}
                         type="password"
                         fullWidth
                         required
