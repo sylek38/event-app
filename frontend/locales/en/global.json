@@ -1,10 +1,15 @@
 {
-    "sign_in": "Sign In",
+    "sign_in_title": "Sign In",
+    "sign_in": "Sign In!",
     "sign_in_google": "Sign in with Google",
+    "sign_up_google": "Sign up with Google",
     "sign_out": "Sign Out",
-    "no_password": "Don't have an account?",
-    "sign_up": "Sign Up.",
+    "no_account": "Don't have an account?",
+    "have_account": "Already have an account?",
+    "sign_up": "Sign Up!",
+    "sign_up_title": "Sign Up",
     "remember": "Remember",
-    "forgot_password": "Forgot password"
-
+    "forgot_password": "Forgot password",
+    "i_have_read": "I have read and I accept",
+    "terms_and_conditions": "the terms and conditions"
 }

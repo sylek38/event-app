@@ -1,10 +1,15 @@
 {
-    "sign_in": "Zaloguj się",
+    "sign_in_title": "Zaloguj się",
+    "sign_in": "Zaloguj się!",
     "sign_in_google": "Zaloguj z Google",
+    "sign_up_google": "Zarejestruj z Google",
     "sign_out": "Wyloguj się",
-    "no_password": "Nie masz konta?",
-    "sign_up": "Zarejestruj się.",
+    "no_account": "Nie masz konta?",
+    "have_account": "Masz już konta?",
+    "sign_up_title": "Zarejestruj się",
+    "sign_up": "Zarejestruj się!",
     "remember": "Zapamiętaj mnie",
-    "forgot_password": "Przypomnij hasło"
-
+    "forgot_password": "Przypomnij hasło",
+    "i_have_read": "Przeczytałem i akceptuję",
+    "terms_and_conditions": "regulamin strony"
 }
