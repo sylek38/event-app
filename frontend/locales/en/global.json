@@ -5,6 +5,11 @@
     "no_password": "Don't have an account?",
     "sign_up": "Sign Up.",
     "remember": "Remember",
-    "forgot_password": "Forgot password"
+    "forgot_password": "Forgot password",
+    "join": "Join",
+    "send_message": "Message",
+    "details": "Details",
+    "description": "Description",
+    "map": "Map"
 
 }

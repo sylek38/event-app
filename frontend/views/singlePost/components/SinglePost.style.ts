@@ -1,16 +1,5 @@
 import { pxToRem } from "./../../../utils/pxToRem";
 import styled, { css } from "styled-components";
-import { MapContainer as MapContainerStyle } from "react-leaflet";
-
-const spanStyle = css`
-    > span {
-        display: block;
-        margin-bottom: ${pxToRem(30)};
-        font-size: ${pxToRem(20)};
-        font-weight: 600;
-        color: white;
-    }
-`;
 
 export const Post = styled.div<{ width: number; $padding?: number }>`
     width: 90%;
@@ -97,8 +86,6 @@ export const DescriptionSection = styled.div`
 export const Section = styled.div`
     margin-top: ${pxToRem(60)};
 
-    ${spanStyle};
-
     > p {
         color: var(--color-white);
 
@@ -115,8 +102,6 @@ export const DetailsItem = styled.div`
 
 export const DetailsSection = styled.div`
     margin-top: ${pxToRem(60)};
-
-    ${spanStyle};
 
     > div {
         display: flex;
@@ -183,4 +168,29 @@ export const MapWrapper = styled.div`
     > p {
         margin-bottom: 1.25rem;
     }
+`;
+
+export const Buttons = styled.div`
+    position: absolute;
+    bottom: ${pxToRem(25)};
+    left: 50%;
+    /* 75px - left navbar padding */
+    transform: translate(calc(-50% + ${pxToRem(75)}), -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    z-index: 100;
+    position: fixed;
+
+    > button {
+    }
+`;
+
+export const Heading = styled.span`
+    display: block;
+    margin-bottom: ${pxToRem(30)};
+    font-size: ${pxToRem(20)};
+    font-weight: 600;
+    color: white;
 `;

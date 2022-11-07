@@ -5,6 +5,11 @@
     "no_password": "Nie masz konta?",
     "sign_up": "Zarejestruj się.",
     "remember": "Zapamiętaj mnie",
-    "forgot_password": "Przypomnij hasło"
+    "forgot_password": "Przypomnij hasło",
+    "join": "Dołącz",
+    "send_message": "Napisz",
+    "details": "Szczegóły",
+    "description": "Opis",
+    "map": "Mapa"
 
 }

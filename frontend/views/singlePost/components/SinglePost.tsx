@@ -10,6 +10,8 @@ import * as S from "./SinglePost.style";
 
 import { CategoryTag } from "../../../components/categoryTag/CategoryTag";
 import dynamic from "next/dynamic";
+import { Button } from "../../../components/button/Button";
+import useTranslation from "next-translate/useTranslation";
 
 const Map = dynamic(() => import("../../../components/map/Map") as any, {
     ssr: false,
@@ -43,9 +45,15 @@ export const SinglePost = ({
     peopleCount,
     description,
 }: Props) => {
+    const { t } = useTranslation("global");
+
     return (
         <>
             <S.Post width={width}>
+                <S.Buttons>
+                    <Button variant="glowing">{t("join")}</Button>
+                    <Button variant="glowingBlue">{t("send_message")}</Button>
+                </S.Buttons>
                 <S.BackgroundContainer>
                     <img src={img} alt="" />
                 </S.BackgroundContainer>
@@ -58,7 +66,7 @@ export const SinglePost = ({
                     <CategoryTag name={category} />
                     <S.Title>{title}</S.Title>
                     <S.DetailsSection>
-                        <span>Details</span>
+                        <S.Heading>{t("details")}</S.Heading>
                         <div>
                             <S.DetailsItem>
                                 <S.IconContainer>
@@ -103,7 +111,7 @@ export const SinglePost = ({
                         </div>
                     </S.DetailsSection>
                     <S.Section>
-                        <span>Description</span>
+                        <S.Heading>{t("description")}</S.Heading>
                         <p>{description}</p>
                         <p>
                             Lectus nulla at volutpat diam ut. Vitae sapien
@@ -139,7 +147,7 @@ export const SinglePost = ({
 
             <S.Post width={width} $padding={48}>
                 <S.MapWrapper>
-                    <h3>Mapa</h3>
+                    <S.Heading>{t("map")}</S.Heading>
                     <p>Gdańsk, ul. Elektryków</p>
 
                     <S.MapContainer>
