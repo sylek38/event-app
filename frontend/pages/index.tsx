@@ -1,13 +1,11 @@
 import type { NextPage } from "next";
-import Link from "next/link";
+import { HomeView } from "../views/home/HomeView";
 import { Layout } from "../views/layout/Layout";
-import { Login } from "../views/login/Login";
 
 const Home: NextPage = () => (
-    <Login />
-    // <Layout>
-
-    // </Layout>
+    <Layout>
+        <HomeView />
+    </Layout>
 );
 
 export default Home;
