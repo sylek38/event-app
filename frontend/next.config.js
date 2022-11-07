@@ -5,7 +5,9 @@ const nextConfig = {
     ...nextTranslate(),
     reactStrictMode: true,
     swcMinify: true,
-    styledComponents: true,
+    compiler: {
+        styledComponents: true,
+    },
 };
 
 module.exports = nextConfig;
