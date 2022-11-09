@@ -74,7 +74,6 @@ export const Register = () => {
                         required
                     />
 
-                    <SelectField></SelectField>
                     <S.Middle>
                         <S.MiddleContent>
                             <S.MiddleLeft>
@@ -87,6 +86,7 @@ export const Register = () => {
                             </S.MiddleLeft>
                         </S.MiddleContent>
                     </S.Middle>
+
                     <Button variant="gradient" type="submit" fullWidth>
                         {t("sign_up_title")}
                     </Button>
@@ -102,7 +102,10 @@ export const Register = () => {
                     </S.Footer>
                 </S.Form>
             </S.RightSide>
-            <S.LeftSide></S.LeftSide>
+            <S.LeftSide>
+                {" "}
+                <SelectField></SelectField>
+            </S.LeftSide>
         </S.Container>
     );
 };

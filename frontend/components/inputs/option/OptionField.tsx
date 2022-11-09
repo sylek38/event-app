@@ -65,8 +65,9 @@ export const SelectField = () => {
             backgroundColor: "var(--secondary-background)",
             // override border radius to match the box
             borderRadius: 0,
+            width: "280px",
             // kill the gap
-            margin: "-40px 0 0 0",
+            margin: "-20px 0 0 0",
             padding: "20px 0 20px 0",
             zIndex: "1",
         }),
@@ -74,12 +75,12 @@ export const SelectField = () => {
             ...base,
             backgroundColor: "var(--secondary-background)",
             // kill the white space on first and last option
-            padding: "20px 0 0 0",
+            padding: "5px 0 0 0",
             margin: "0",
-            height: "300px",
+            height: "150px",
 
             "::-webkit-scrollbar": {
-                width: "0px",
+                width: "2px",
                 height: "0px",
             },
             "::-webkit-scrollbar-track": {
@@ -98,7 +99,9 @@ export const SelectField = () => {
             options={options}
             onChange={handleChange}
             styles={Styles}
-            components={{ IndicatorSeparator: () => null }}
+            components={{
+                IndicatorSeparator: () => null,
+            }}
             placeholder={<div>Wybierz miasto</div>}
             isSearchable={false}
             theme={(theme) => ({
