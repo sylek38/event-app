@@ -5,6 +5,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { TextInput } from "../../components/inputs/text/TextInput";
 
+import { SelectField } from "../../components/inputs/option/OptionField";
+
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../components/button/Button";
@@ -71,6 +73,8 @@ export const Register = () => {
                         fullWidth
                         required
                     />
+
+                    <SelectField></SelectField>
                     <S.Middle>
                         <S.MiddleContent>
                             <S.MiddleLeft>
