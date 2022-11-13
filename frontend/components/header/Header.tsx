@@ -1,5 +1,6 @@
 import * as S from "./Header.style";
 import { Search } from "../../components/inputs/searchbar/Searchbar";
+import { Slider } from "../../components/inputs/slider/Slider";
 
 export const Header = () => {
     return (
@@ -13,6 +14,9 @@ export const Header = () => {
                 // fullWidth
                 // blackVariant
             ></Search>
+
+            <Slider type="range" min={1} max={12} />
+            {/* fullWidth */}
         </S.Header>
     );
 };
