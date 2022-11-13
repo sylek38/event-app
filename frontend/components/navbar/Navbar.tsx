@@ -16,7 +16,7 @@ export default function Navbar() {
             <Link href="/events">
                 <img
                     className={styles.img}
-                    src="https://i.imgur.com/XSVSKdn.png"
+                    src="https://i.imgur.com/uDKK9Kh.png"
                     alt="Logo"
                 />
             </Link>

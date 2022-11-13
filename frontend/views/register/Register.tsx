@@ -5,8 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { TextInput } from "../../components/inputs/text/TextInput";
 
-import { SelectField } from "../../components/inputs/option/OptionField";
-
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../components/button/Button";
@@ -16,6 +14,8 @@ interface FormTypes {
     register_lastname: string;
     register_email: string;
     register_password: string;
+    select_city: string;
+    search_bar: string;
 }
 
 export const Register = () => {
@@ -45,7 +45,6 @@ export const Register = () => {
                         fullWidth
                         required
                     />
-
                     <TextInput
                         id="register_lastname"
                         register={register}
@@ -54,7 +53,6 @@ export const Register = () => {
                         fullWidth
                         required
                     />
-
                     <TextInput
                         id="register_email"
                         register={register}
@@ -63,7 +61,6 @@ export const Register = () => {
                         fullWidth
                         required
                     />
-
                     <TextInput
                         id="register_password"
                         register={register}
@@ -73,7 +70,6 @@ export const Register = () => {
                         fullWidth
                         required
                     />
-
                     <S.Middle>
                         <S.MiddleContent>
                             <S.MiddleLeft>
@@ -102,10 +98,7 @@ export const Register = () => {
                     </S.Footer>
                 </S.Form>
             </S.RightSide>
-            <S.LeftSide>
-                {" "}
-                <SelectField></SelectField>
-            </S.LeftSide>
+            <S.LeftSide></S.LeftSide>
         </S.Container>
     );
 };

@@ -5,7 +5,9 @@ export const Header = styled.header`
     background-color: var(--primary-background);
     padding: ${pxToRem(45)} 0 ${pxToRem(45)} ${pxToRem(120)};
 
-    > div {
+    /* > div {
         height: 50px;
-    }
+    } */
+
+    margin: 0 0 ${pxToRem(50)} ${pxToRem(100)};
 `;

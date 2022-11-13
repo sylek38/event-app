@@ -7,9 +7,7 @@ import { Register } from "../views/register/Register";
 const Home: NextPage = () => (
     // <Login />
     <Register />
-    // <Layout>
-
-    // </Layout>
+    // <Layout></Layout>
 );
 
 export default Home;

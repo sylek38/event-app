@@ -10,5 +10,8 @@
     "text_label_register_name": "Name",
     "text_error_register_name": "Enter your name",
     "text_label_register_lastname": "Last name",
-    "text_error_register_lastname": "Enter your last name"
+    "text_error_register_lastname": "Enter your last name",
+
+    "text_search_select_city": "Select a city",
+    "text_searchbar": "Search..."
 }
