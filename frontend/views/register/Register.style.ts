@@ -1,4 +1,4 @@
-import { pxToRem } from "./../../utils/pxToRem";
+import { pxToRem } from "../../utils/pxToRem";
 import styled, { css } from "styled-components";
 
 export const Container = styled.div`
@@ -10,9 +10,9 @@ export const Container = styled.div`
 
 export const LeftSide = styled.div`
     flex-basis: 50vw;
-    background-image: url("https://images.unsplash.com/photo-1492684223066-81342ee5ff30?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80");
+    background-image: url("https://images.unsplash.com/photo-1496024840928-4c417adf211d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80");
     background-size: cover;
-    background-position: 30%;
+    background-position: 65%;
 `;
 
 export const RightSide = styled.div`
@@ -31,7 +31,9 @@ export const Form = styled.form`
     padding: 0 ${pxToRem(30)};
     border-radius: 1.25rem;
 
-    > h1 + div {
+    > div:nth-child(2),
+    div:nth-child(3),
+    div:nth-child(4) {
         margin-bottom: ${pxToRem(20)};
     }
 
@@ -58,6 +60,13 @@ export const Header = styled.h1`
     font-size: var(--font-size-20);
 `;
 
+export const Label = styled.label`
+    align-self: flex-start;
+    color: #999;
+    font-size: var(--font-size-12);
+    margin-bottom: ${pxToRem(10)};
+`;
+
 export const Input = styled.input`
     all: unset;
     width: 90%;
@@ -74,8 +83,7 @@ export const Middle = styled.div`
     justify-content: space-between;
     align-content: center;
     width: 100%;
-    /* margin: 20px; */
-    padding: ${pxToRem(20)} 0;
+    margin: 1.25rem;
     font-size: var(--font-size-12);
 `;
 
@@ -91,8 +99,8 @@ export const MiddleLeft = styled.label`
     display: block;
     position: relative;
     padding-left: ${pxToRem(45)};
-    margin-bottom: 0.75rem;
-    padding-top: 0.75rem; //zmiana wysokosci
+    margin-bottom: ${pxToRem(12)};
+    padding-top: ${pxToRem(12)}; //zmiana wysokosci
     font-size: var(--font-size-12);
     color: var(--secondary-text);
     cursor: pointer;
@@ -155,8 +163,25 @@ export const MiddleRemember = styled.label`
 
 export const MiddleHref = styled.a`
     font-size: var(--font-size-12);
-    font-weight: 600;
+    color: var(--primary-color);
+    font-weight: bold;
+
+    :hover {
+        color: var(--secondary-text);
+    }
+`;
+
+export const Button = styled.button`
+    all: unset;
+    width: 90%;
+    padding: ${pxToRem(10)} ${pxToRem(15)} ${pxToRem(10)} ${pxToRem(15)};
+    margin-top: ${pxToRem(15)};
+    border-radius: ${pxToRem(50)};
+    background-image: var(--primary-gradient);
     color: var(--color-white);
+    text-align: center;
+    font-weight: bold;
+    cursor: pointer;
 `;
 
 export const GoogleButton = styled.button`

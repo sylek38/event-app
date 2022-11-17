@@ -1,6 +1,14 @@
 {
     "text_label_login_email": "Email address",
     "text_error_login_email": "Incorrect address email",
+    "text_label_register_email": "Email",
+    "text_error_register_email": "Enter your email",
     "text_label_login_password": "Password",
-    "text_error_login_password": "The password that you've entered is incorrect"
+    "text_error_login_password": "The password that you've entered is incorrect",
+    "text_label_register_password": "Password",
+    "text_error_register_password": "Enter your password",
+    "text_label_register_name": "Name",
+    "text_error_register_name": "Enter your name",
+    "text_label_register_lastname": "Last name",
+    "text_error_register_lastname": "Enter your last name"
 }
