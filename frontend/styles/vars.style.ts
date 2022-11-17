@@ -16,6 +16,7 @@ export const vars = css`
     --secondary-text: #999;
 
     --primary-color: #1cd8d2;
+    --primary-green-color: #24eca4;
     --primary-gradient: linear-gradient(to left, #16ada8, #24eca4);
 
     --error-color: #d84040;
