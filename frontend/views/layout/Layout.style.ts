@@ -3,6 +3,5 @@ import styled from "styled-components";
 
 export const Main = styled.main`
     /* 120px navbar + 75px padding*/
-    padding-left: ${pxToRem(195)};
-    padding-right: ${pxToRem(75)};
+    padding: 0 ${pxToRem(75)} ${pxToRem(100)} ${pxToRem(195)};
 `;

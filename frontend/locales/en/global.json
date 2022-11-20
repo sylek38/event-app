@@ -10,6 +10,12 @@
     "sign_up_title": "Sign Up",
     "remember": "Remember",
     "forgot_password": "Forgot password",
+    "join": "Join",
+    "send_message": "Message",
+    "details": "Details",
+    "description": "Description",
+    "map": "Map",
     "i_have_read": "I have read and I accept",
     "terms_and_conditions": "the terms and conditions"
 }
+
