@@ -8,6 +8,7 @@ import { TextInput } from "../../components/inputs/text/TextInput";
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../components/button/Button";
+import { DateInput } from "../../components/inputs/date/DateInput";
 
 interface FormTypes {
     login_email: string;
@@ -33,6 +34,8 @@ export const Login = () => {
             <S.LeftSide />
             <S.RightSide>
                 <S.Form onSubmit={handleSubmit(onSubmit)}>
+                    <DateInput />
+
                     <S.Header>{t("sign_in_title")}</S.Header>
                     <TextInput
                         id="login_email"
