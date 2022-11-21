@@ -72,7 +72,6 @@ export function TextInput<T>({
                 placeholder={
                     placeholder ? t(`text_placeholder_${id}`) : undefined
                 }
-                disabled={disabled}
                 ref={ref}
                 {...rest}
             />
