@@ -4,10 +4,13 @@ import * as S from "./Login.style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { TextInput } from "../../components/inputs/text/TextInput";
+import { Context } from "../../context/Context";
+import axios from "axios";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../components/button/Button";
+import { useContext, useRef } from "react";
 
 interface FormTypes {
     login_email: string;
@@ -16,6 +19,9 @@ interface FormTypes {
 
 export const Login = () => {
     const { t } = useTranslation("global");
+    const userRef = useRef();
+    const passwordRef = useRef();
+    // const { dispatch, isFetching } = useContext(Context);
 
     const {
         register,
@@ -24,8 +30,20 @@ export const Login = () => {
         handleSubmit,
     } = useForm<FormTypes>();
 
-    const onSubmit: SubmitHandler<FormTypes> = (data) => {
+    const onSubmit: SubmitHandler<FormTypes> = async (data) => {
+        // dispatch({ type: "LOGIN_START" });
         console.log(data);
+
+        try {
+            const res = await axios.post("/auth/login", {
+                email: data.login_email,
+                password: data.login_password,
+            });
+            // dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+        } catch (error) {
+            console.log(error);
+            // dispatch({ type: "LOGIN_FAILURE" });
+        }
     };
 
     return (

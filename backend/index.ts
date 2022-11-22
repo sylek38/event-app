@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 const mongoose = require("mongoose");
+const authRoute = require("./controllers/auth");
 
 dotenv.config();
 
@@ -21,3 +22,5 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
 	console.log(`[server]: Server is running at https://localhost:${port}`);
 });
+
+app.use("/backend/auth", authRoute);
