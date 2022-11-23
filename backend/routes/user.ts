@@ -1,10 +1,12 @@
+import { Request, Response } from "express";
+
 const router = require("express").Router();
 const User = require("../models/User");
-// const Post = require('../models/Post');
+const Post = require("../models/Post");
 const bcrypt = require("bcrypt");
 
 //Aktualizowanie danych konta
-router.put("/:id", async (req, res) => {
+router.put("/:id", async (req: Request, res: Response) => {
 	if (req.body.userId === req.params.id) {
 		if (req.body.password) {
 			const salt = await bcrypt.genSalt(10);
@@ -29,7 +31,7 @@ router.put("/:id", async (req, res) => {
 
 //Usuwanie konta
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", async (req: Request, res: Response) => {
 	if (req.body.userId === req.params.id) {
 		try {
 			const user = await User.findById(req.params.id);
@@ -50,7 +52,7 @@ router.delete("/:id", async (req, res) => {
 
 // Get user
 
-router.get("/:id", async (req, res) => {
+router.get("/:id", async (req: Request, res: Response) => {
 	try {
 		const user = await User.findById(req.params.id);
 		const { password, ...others } = user._doc;
