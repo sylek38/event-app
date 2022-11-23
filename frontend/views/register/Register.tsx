@@ -72,7 +72,7 @@ export const Register = () => {
                             <S.MiddleLeft>
                                 <S.MiddleInput type="checkbox" required />
                                 <S.MiddleSpan></S.MiddleSpan>
-                                {t("i_have_read")}{" "}
+                                {t("i_have_read")}
                                 <S.MiddleHref href="#">
                                     {t("terms_and_conditions")}
                                 </S.MiddleHref>
