@@ -1,16 +1,11 @@
 import { pxToRem } from "../../../utils/pxToRem";
 import styled, { css } from "styled-components";
 
-export const Container = styled.div<{ fullWidth?: boolean }>`
+export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: ${pxToRem(10)};
-
-    ${({ fullWidth }) =>
-        fullWidth &&
-        css`
-            width: 100%;
-        `}
+    width: 100%;
 `;
 
 export const Label = styled.label`

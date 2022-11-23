@@ -40,7 +40,6 @@ export const Register = () => {
                         register={register}
                         control={control}
                         isError={!!errors.register_name}
-                        fullWidth
                         required
                     />
 
@@ -49,7 +48,6 @@ export const Register = () => {
                         register={register}
                         control={control}
                         isError={!!errors.register_lastname}
-                        fullWidth
                         required
                     />
 
@@ -58,7 +56,6 @@ export const Register = () => {
                         register={register}
                         control={control}
                         isError={!!errors.register_email}
-                        fullWidth
                         required
                     />
 
@@ -68,7 +65,6 @@ export const Register = () => {
                         control={control}
                         isError={!!errors.register_password}
                         type="password"
-                        fullWidth
                         required
                     />
                     <S.Middle>

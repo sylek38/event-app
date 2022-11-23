@@ -1,16 +1,11 @@
 import styled, { css } from "styled-components";
 import { pxToRem } from "../../../utils/pxToRem";
 
-export const Container = styled.div<{ fullWidth?: boolean }>`
+export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: ${pxToRem(10)};
-
-    ${({ fullWidth }) =>
-        fullWidth &&
-        css`
-            width: 100%;
-        `}
+    width: 100%;
 `;
 
 export const Label = styled.label`
@@ -29,6 +24,7 @@ export const DateInput = styled.input<{
     border-radius: ${pxToRem(50)};
     transition: 0.5s;
     border: none;
+    color-scheme: dark;
 
     &:focus-visible {
         outline: none;

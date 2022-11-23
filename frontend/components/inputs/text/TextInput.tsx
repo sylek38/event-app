@@ -28,7 +28,6 @@ interface Props<T> {
     type?: "text" | "email" | "password";
     disabled?: boolean;
     hideLabel?: boolean;
-    fullWidth?: boolean;
 }
 
 export function TextInput<T>({
@@ -46,7 +45,6 @@ export function TextInput<T>({
     type = "text",
     disabled,
     hideLabel,
-    fullWidth,
 }: Props<T>) {
     const { t } = useTranslation("inputs");
 
@@ -62,7 +60,7 @@ export function TextInput<T>({
     });
 
     return (
-        <S.Container fullWidth={fullWidth}>
+        <S.Container>
             <S.Label>
                 {!hideLabel && <span>{t(`text_label_${id}`)}</span>}
             </S.Label>

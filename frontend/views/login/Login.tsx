@@ -34,15 +34,12 @@ export const Login = () => {
             <S.LeftSide />
             <S.RightSide>
                 <S.Form onSubmit={handleSubmit(onSubmit)}>
-                    <DateInput />
-
                     <S.Header>{t("sign_in_title")}</S.Header>
                     <TextInput
                         id="login_email"
                         register={register}
                         control={control}
                         isError={!!errors.login_email}
-                        fullWidth
                         required
                     />
 
@@ -52,7 +49,6 @@ export const Login = () => {
                         control={control}
                         isError={!!errors.login_password}
                         type="password"
-                        fullWidth
                         required
                     />
                     <S.Middle>

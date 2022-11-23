@@ -5,16 +5,15 @@ import * as S from "./DateInput.style";
 
 interface Props {
     id: string;
-    fullWidth?: boolean;
     hideLabel?: boolean;
     isError: boolean;
 }
 
-export const DateInput = ({ id, fullWidth, hideLabel, isError }: Props) => {
+export const DateInput = ({ id, hideLabel, isError }: Props) => {
     const { t } = useTranslation("inputs");
 
     return (
-        <S.Container fullWidth={fullWidth}>
+        <S.Container>
             <S.Label>
                 {!hideLabel && <span>{t(`date_label_${id}`)}</span>}
             </S.Label>
