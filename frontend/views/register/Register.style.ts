@@ -165,6 +165,7 @@ export const MiddleHref = styled.a`
     font-size: var(--font-size-12);
     color: var(--primary-color);
     font-weight: bold;
+    margin-left: ${pxToRem(3)};
 
     :hover {
         color: var(--secondary-text);

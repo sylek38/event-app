@@ -1,6 +1,6 @@
 import type { NextPage } from "next";
-import { Login } from "../views/login/Login";
+import { LoginView } from "../views/login/Login";
 
-const Home: NextPage = () => <Login />;
+const Home: NextPage = () => <LoginView></LoginView>;
 
 export default Home;

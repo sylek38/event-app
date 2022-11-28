@@ -31,6 +31,7 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.39.1",
     "react-leaflet": "^4.1.0",
+    "react-query": "^3.39.2",
     "style-loader": "^3.3.1",
     "styled-components": "^5.3.6"
   },

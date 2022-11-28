@@ -1,10 +1,13 @@
 import "./Login.style.ts";
 import * as S from "./Login.style";
+import { useRouter } from "next/router";
+import Link from "next/link";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { TextInput } from "../../components/inputs/text/TextInput";
 import { Context } from "../../context/Context";
+import React, { useContext, useRef } from "react";
 import axios from "axios";
 
 import { SubmitHandler, useForm } from "react-hook-form";
@@ -17,9 +20,10 @@ interface FormTypes {
     login_password: string;
 }
 
-export const Login = () => {
+export const LoginView = () => {
+    const router = useRouter();
     const { t } = useTranslation("global");
-    // const { dispatch, isFetching } = useContext(Context);
+    const { dispatch, isFetching } = useContext(Context);
 
     const {
         register,
@@ -34,19 +38,19 @@ export const Login = () => {
     });
 
     const onSubmit: SubmitHandler<FormTypes> = async (data) => {
-        // dispatch({ type: "LOGIN_START" });
+        dispatch({ type: "LOGIN_START" });
         console.log(data);
 
         try {
-            await axios.post(`${BACKEND_URL}/backend/auth/login`, {
+            const res = await axios.post(`${BACKEND_URL}/backend/auth/login`, {
                 email: data.login_email,
                 password: data.login_password,
             });
-
-            // dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+            dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+            res.data && window.location.replace("/events");
         } catch (error) {
             console.log(error);
-            // dispatch({ type: "LOGIN_FAILURE" });
+            dispatch({ type: "LOGIN_FAILURE" });
         }
     };
 
@@ -102,7 +106,9 @@ export const Login = () => {
                     </S.GoogleButton>
                     <S.Footer>
                         <S.FooterSpan>{t("no_account")}</S.FooterSpan>
-                        <S.FooterHref>{t("sign_up")}</S.FooterHref>
+                        <Link href="/register">
+                            <S.FooterHref>{t("sign_up")}</S.FooterHref>
+                        </Link>
                     </S.Footer>
                 </S.Form>
             </S.RightSide>

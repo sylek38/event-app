@@ -4,10 +4,13 @@ import * as S from "./Register.style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { TextInput } from "../../components/inputs/text/TextInput";
+import axios from "axios";
+import Link from "next/link";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../components/button/Button";
+import { BACKEND_URL, DEFAULT_EMAIL, DEFAULT_PASS } from "../../config";
 
 interface FormTypes {
     register_name: string;
@@ -16,7 +19,7 @@ interface FormTypes {
     register_password: string;
 }
 
-export const Register = () => {
+export const RegisterView = () => {
     const { t } = useTranslation("global");
 
     const {
@@ -26,8 +29,21 @@ export const Register = () => {
         handleSubmit,
     } = useForm<FormTypes>();
 
-    const onSubmit: SubmitHandler<FormTypes> = (data) => {
-        console.log(data);
+    const onSubmit: SubmitHandler<FormTypes> = async (data) => {
+        try {
+            const res = await axios.post(
+                `${BACKEND_URL}/backend/auth/register`,
+                {
+                    name: data.register_name,
+                    surname: data.register_lastname,
+                    email: data.register_email,
+                    password: data.register_password,
+                }
+            );
+            res.data && window.location.replace("/login");
+        } catch (error) {
+            console.log(error);
+        }
     };
 
     return (
@@ -94,7 +110,9 @@ export const Register = () => {
                     </S.GoogleButton>
                     <S.Footer>
                         <S.FooterSpan>{t("have_account")}</S.FooterSpan>
-                        <S.FooterHref>{t("sign_in")}</S.FooterHref>
+                        <Link href="/login">
+                            <S.FooterHref>{t("sign_in")}</S.FooterHref>
+                        </Link>
                     </S.Footer>
                 </S.Form>
             </S.RightSide>
