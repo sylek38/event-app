@@ -16,5 +16,11 @@
     "description": "Opis",
     "map": "Mapa",
     "i_have_read": "Przeczytałem i akceptuję",
-    "terms_and_conditions": "regulamin strony"
+    "terms_and_conditions": "regulamin strony",
+    "profile_edit": "Edycja profilu",
+    "profile_change_picture": "Zmień zdjęcie profilowe",
+    "profile_delete": "Usuń konto",
+    "biography": "Biogram",
+    "biography_placeholder": "Napisz coś o sobie...",
+    "button_confirm": "Zatwierdź"
 }

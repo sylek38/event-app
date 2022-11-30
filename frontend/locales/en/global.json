@@ -16,6 +16,11 @@
     "description": "Description",
     "map": "Map",
     "i_have_read": "I have read and I accept",
-    "terms_and_conditions": "the terms and conditions"
+    "terms_and_conditions": "the terms and conditions",
+    "profile_edit": "Edit Profile",
+    "profile_change_picture": "Change your profile picture",
+    "profile_delete": "Delete account",
+    "biography": "Biography",
+    "biography_placeholder": "Write something about yourself...",
+    "button_confirm": "Confirm"
 }
-
