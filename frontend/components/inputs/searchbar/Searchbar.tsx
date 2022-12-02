@@ -1,4 +1,4 @@
-import { ChangeEventHandler, useState } from "react";
+import { ChangeEvent, ChangeEventHandler, useState } from "react";
 import {
     Control,
     Path,
@@ -15,6 +15,7 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 interface Props<T> {
     id: Path<NonNullable<T>>;
+    register: UseFormRegister<NonNullable<T>>;
     isError?: boolean;
     type?: "text";
     placeholder?: boolean;
@@ -23,25 +24,25 @@ interface Props<T> {
     minLength?: number;
     maxLength?: number;
     blackVariant?: boolean;
+    onChange?: (e: ChangeEvent<HTMLInputElement | HTMLButtonElement>) => void;
 }
 
 export function Search<T>({
     id,
+    register,
     isError,
     type,
     placeholder,
     disabled,
     fullWidth,
-    minLength,
-    maxLength,
     blackVariant,
+    onChange,
 }: Props<T>) {
     const { t } = useTranslation("inputs");
-    const [loading, setLoading] = useState(false);
     const [message, setMessage] = useState("");
     const [search, setSearch] = useState(message);
 
-    const handleChange = (e: any) => {
+    const handleSearch = (e: any) => {
         setMessage(e.target.value);
     };
 
@@ -56,11 +57,10 @@ export function Search<T>({
                 <S.Searchbar
                     type={type}
                     placeholder={placeholder ? t(`text_${id}`) : undefined}
-                    onChange={handleChange}
-                    minLength={minLength}
-                    maxLength={maxLength}
+                    onChange={!register ? onChange : undefined}
                 ></S.Searchbar>
-                <S.Button onClick={handleClick}>
+                <S.Button /*</S.Container>onClick={!register ? onChange : undefined} */
+                >
                     {" "}
                     <FontAwesomeIcon icon={faMagnifyingGlass} />{" "}
                 </S.Button>
