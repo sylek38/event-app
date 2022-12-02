@@ -9,6 +9,5 @@ export const Header = styled.header`
     > div {
         margin-right: 50px;
     }
-
     margin: 0 0 ${pxToRem(50)} ${pxToRem(100)};
 `;

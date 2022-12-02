@@ -14,7 +14,6 @@ export const Header = () => {
                 // fullWidth
                 // blackVariant
             ></Search>
-
             <Slider type="range" min={1} max={12} />
             {/* fullWidth */}
         </S.Header>
