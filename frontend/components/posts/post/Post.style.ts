@@ -32,7 +32,16 @@ export const Date = styled.div`
     right: ${pxToRem(20)};
     width: ${pxToRem(50)};
     height: ${pxToRem(50)};
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: var(--color-white);
+    border-radius: 1rem;
+
+    > span:nth-child(2) {
+        font-weight: 600;
+    }
 `;
 
 export const UserInfo = styled.div`

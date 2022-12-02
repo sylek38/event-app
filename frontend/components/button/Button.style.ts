@@ -12,6 +12,8 @@ const generateStyle = (
     variant: string,
     fullWidth: boolean
 ) => css`
+    /* TODO: figure out how to make transition for background */
+
     ${variant === "gradientHover" &&
     css`
         background: linear-gradient(#232323, #232323) padding-box,
@@ -28,6 +30,34 @@ const generateStyle = (
     css`
         background: linear-gradient(45deg, #16ada8, #24eca4) padding-box;
         ${gradientStyle}
+    `}
+    
+    ${variant === "glowing" &&
+    css`
+        background: linear-gradient(#232323, #232323) padding-box,
+            linear-gradient(45deg, #24eca4, #24eca4) border-box;
+        ${gradientStyle}
+
+        box-shadow: 0 0 35px var(--primary-green-color);
+
+        &:hover {
+            background: linear-gradient(#333, #333) padding-box,
+                linear-gradient(45deg, #24eca4, #24eca4) border-box;
+        }
+    `}
+
+    ${variant === "glowingBlue" &&
+    css`
+        background: linear-gradient(#232323, #232323) padding-box,
+            linear-gradient(45deg, #1cd8d2, #1cd8d2) border-box;
+        ${gradientStyle}
+
+        box-shadow: 0 0 35px var(--primary-color);
+
+        &:hover {
+            background: linear-gradient(#333, #333) padding-box,
+                linear-gradient(45deg, #1cd8d2, #1cd8d2) border-box;
+        }
     `}
 
     width: ${fullWidth ? "100%" : "initial"};
