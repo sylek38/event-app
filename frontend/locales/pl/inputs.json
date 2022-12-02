@@ -10,5 +10,8 @@
     "text_label_register_name": "Imię",
     "text_error_register_name": "Wpisz swoje imię",
     "text_label_register_lastname": "Nazwisko",
-    "text_error_register_lastname": "Wpisz swoje nazwisko"
+    "text_error_register_lastname": "Wpisz swoje nazwisko",
+
+    "text_search_select_city": "Wybierz miasto",
+    "text_searchbar": "Wyszukaj..."
 }

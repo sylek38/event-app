@@ -9,7 +9,7 @@ export default function Navbar() {
     return (
         <S.Navbar>
             <Link href="/events">
-                <img src="https://i.imgur.com/XSVSKdn.png" alt="Logo" />
+                <img src="https://i.imgur.com/uDKK9Kh.png" alt="Logo" />
             </Link>
             <ul>
                 {items.map((item) => (
