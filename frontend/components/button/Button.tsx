@@ -5,7 +5,7 @@ interface AllProps {
     children: ReactNode | ReactNode[];
     href?: string;
     type?: "button" | "submit";
-    variant?: "gradientHover" | "blue" | "gradient";
+    variant?: "gradientHover" | "blue" | "gradient" | "glowing" | "glowingBlue";
     size?: "sm" | "md" | "lg";
     fullWidth?: boolean;
     onClick?: () => void;

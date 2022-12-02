@@ -1,23 +1,23 @@
 import { pxToRem } from "./../../../utils/pxToRem";
 import styled, { css } from "styled-components";
 
-const spanStyle = css`
-    > span {
-        display: block;
-        margin-bottom: ${pxToRem(30)};
-        font-size: ${pxToRem(20)};
-        font-weight: 600;
-        color: white;
-    }
-`;
-
-export const Post = styled.div<{ width: number }>`
+export const Post = styled.div<{ width: number; $padding?: number }>`
     width: 90%;
     max-width: ${pxToRem(750)};
     margin: auto;
     background-color: var(--secondary-background);
     border-radius: ${pxToRem(24)};
     box-shadow: 0 0 1.5em var(--box-shadow--black);
+
+    + div {
+        margin-top: 3rem;
+    }
+
+    ${({ $padding }) =>
+        $padding &&
+        css`
+            padding: ${$padding};
+        `}
 `;
 
 export const BackgroundContainer = styled.div`
@@ -86,8 +86,6 @@ export const DescriptionSection = styled.div`
 export const Section = styled.div`
     margin-top: ${pxToRem(60)};
 
-    ${spanStyle};
-
     > p {
         color: var(--color-white);
 
@@ -104,8 +102,6 @@ export const DetailsItem = styled.div`
 
 export const DetailsSection = styled.div`
     margin-top: ${pxToRem(60)};
-
-    ${spanStyle};
 
     > div {
         display: flex;
@@ -153,4 +149,48 @@ export const Info = styled.div`
             font-weight: 600;
         }
     }
+`;
+
+export const MapContainer = styled.div`
+    position: relative;
+    flex: 1;
+    min-height: 50vh;
+`;
+
+export const MapWrapper = styled.div`
+    padding: 3rem;
+    color: var(--color-white);
+
+    > h3 {
+        margin-bottom: ${pxToRem(30)};
+    }
+
+    > p {
+        margin-bottom: 1.25rem;
+    }
+`;
+
+export const Buttons = styled.div`
+    position: absolute;
+    bottom: ${pxToRem(25)};
+    left: 50%;
+    /* 75px - left navbar padding */
+    transform: translate(calc(-50% + ${pxToRem(75)}), -50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    z-index: 100;
+    position: fixed;
+
+    > button {
+    }
+`;
+
+export const Heading = styled.span`
+    display: block;
+    margin-bottom: ${pxToRem(30)};
+    font-size: ${pxToRem(20)};
+    font-weight: 600;
+    color: white;
 `;
