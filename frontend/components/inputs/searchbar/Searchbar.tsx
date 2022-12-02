@@ -1,4 +1,4 @@
-import { ChangeEvent, ChangeEventHandler, useState } from "react";
+mport { ChangeEvent, ChangeEventHandler, useState } from "react";
 import {
     Control,
     Path,
@@ -36,6 +36,13 @@ export function Search<T>({
     disabled,
     fullWidth,
     blackVariant,
+}: Props<T>) {
+    const { t } = useTranslation("inputs");
+    const [message, setMessage] = useState("");
+    const [search, setSearch] = useState(message);
+
+    const handleChange = (e: any) => {
+    blackVariant,
     onChange,
 }: Props<T>) {
     const { t } = useTranslation("inputs");
@@ -57,9 +64,8 @@ export function Search<T>({
                 <S.Searchbar
                     type={type}
                     placeholder={placeholder ? t(`text_${id}`) : undefined}
-                    onChange={!register ? onChange : undefined}
                 ></S.Searchbar>
-                <S.Button /*</S.Container>onClick={!register ? onChange : undefined} */
+                <S.Button /*onClick={!register ? onChange : undefined} */
                 >
                     {" "}
                     <FontAwesomeIcon icon={faMagnifyingGlass} />{" "}

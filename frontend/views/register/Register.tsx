@@ -4,6 +4,7 @@ import * as S from "./Register.style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { TextInput } from "../../components/inputs/text/TextInput";
+import { Slider } from "../../components/inputs/slider/Slider";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
@@ -70,6 +71,7 @@ export const Register = () => {
                         fullWidth
                         required
                     />
+
                     <S.Middle>
                         <S.MiddleContent>
                             <S.MiddleLeft>
