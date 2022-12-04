@@ -25,6 +25,7 @@ export const Header = () => {
                 />
                 <div>avatar</div>
             </div>
+
         </S.Header>
     );
 };

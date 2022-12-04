@@ -2,6 +2,7 @@ import { pxToRem } from "./../../utils/pxToRem";
 import styled from "styled-components";
 
 export const Header = styled.header`
+    display: flex;
     background-color: var(--primary-background);
     padding: ${pxToRem(25)} 4rem ${pxToRem(25)} calc(4rem + 6rem);
     display: flex;
@@ -29,5 +30,7 @@ export const Header = styled.header`
 
     @media screen and (max-width: 619px) {
         padding: ${pxToRem(30)} 1rem;
+
     }
+    margin: 0 0 ${pxToRem(50)} ${pxToRem(100)};
 `;
