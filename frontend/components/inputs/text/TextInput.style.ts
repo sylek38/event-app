@@ -12,7 +12,7 @@ export const Container = styled.div<{ fullWidth?: boolean }>`
     ${({ fullWidth }) =>
         fullWidth &&
         css`
-            /* width: 100%; */
+            width: 100%;
         `};
 `;
 
