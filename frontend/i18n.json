@@ -2,6 +2,9 @@
     "locales": ["en", "pl"],
     "defaultLocale": "en",
     "pages": {
-      "*": ["global", "inputs"]
+      "*": ["global", "inputs"],
+      "/event_manager/invites": ["eventManager"],
+      "/event_manager/events": ["eventManager"],
+      "/event_manager/history": ["eventManager"]
     }
   }

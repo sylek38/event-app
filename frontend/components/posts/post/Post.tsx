@@ -5,11 +5,11 @@ import {
     faCalendarDays,
     faUser,
 } from "@fortawesome/free-solid-svg-icons";
-import { CategoryEnum } from "../../../types/CategoryEnum";
 
 import * as S from "./Post.style";
 import { CategoryTag } from "../../categoryTag/CategoryTag";
 import Link from "next/link";
+import { Routes } from "../../../routes/Routes";
 
 interface Props {
     title: string;
@@ -38,7 +38,13 @@ export const Post = ({
     peopleCount,
 }: Props) => {
     return (
-        <Link href={`/events/${id}`} passHref>
+        <Link
+            href={{
+                pathname: Routes.EVENT,
+                query: { id },
+            }}
+            passHref
+        >
             <S.Post width={width}>
                 <S.BackgroundContainer>
                     <img src={img} alt="" />
@@ -50,10 +56,11 @@ export const Post = ({
                 </S.BackgroundContainer>
                 <S.Content>
                     {/* TODO: Avatar component with various sizes */}
-                    <S.UserInfo>
+                    <S.Avatar>
                         <img src={avatar} />
-                        <span>{authorName}</span>
-                    </S.UserInfo>
+                    </S.Avatar>
+                    <span>{authorName}</span>
+
                     <CategoryTag name={category} />
                     <S.Title>{title}</S.Title>
                     <S.Details>

@@ -1,4 +1,4 @@
-import { pxToRem } from "../../../utils/pxToRem";
+import { pxToRem } from "./../../../utils/pxToRem";
 import styled, { css } from "styled-components";
 
 export const Container = styled.div<{
@@ -6,20 +6,15 @@ export const Container = styled.div<{
     blackVariant?: boolean;
 }>`
     position: relative;
-    display: flex;
-    flex-direction: row;
-    gap: ${pxToRem(10)};
     border-radius: 1.25rem;
     border: 2px solid transparent;
 
-    -webkit-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-    -moz-box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.5);
+    -webkit-box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.25);
+    box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.25);
 
     background-color: var(--secondary-background);
     font-size: var(--font-size-14);
-
-    width: 19rem;
 
     ${({ fullWidth }) =>
         fullWidth &&
@@ -53,9 +48,8 @@ export const Container = styled.div<{
 
 export const Searchbar = styled.input`
     all: unset;
-    padding: ${pxToRem(8)} 1.25rem;
-    color: var(--secondary-text);
-    width: 70%;
+    padding: ${pxToRem(11)} ${pxToRem(30)} ${pxToRem(12)};
+    color: var(--secondary-backround);
 `;
 
 export const Button = styled.button`
@@ -64,7 +58,7 @@ export const Button = styled.button`
     position: absolute;
     top: -2px;
     right: 0;
-    padding: ${pxToRem(10)} 1.25rem;
+    padding: ${pxToRem(11)} 1.25rem ${pxToRem(12)};
     border-radius: 1.25rem;
     display: inline-block;
     color: var(--secondary-text);
@@ -72,5 +66,3 @@ export const Button = styled.button`
         cursor: pointer;
     }
 `;
-
-export const Error = styled.div``;

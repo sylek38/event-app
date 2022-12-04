@@ -1,21 +1,25 @@
+import { useForm } from "react-hook-form";
+import { SearchInput } from "../inputs/searchbar/Searchbar";
+import { TextInput } from "../inputs/text/TextInput";
 import * as S from "./Header.style";
-import { Search } from "../../components/inputs/searchbar/Searchbar";
-import { Slider } from "../../components/inputs/slider/Slider";
+
+interface FormTypes {
+    search: string;
+}
 
 export const Header = () => {
+    const {
+        register,
+        formState: { errors },
+    } = useForm<FormTypes>();
+
     return (
         <S.Header>
-            <Search
-                id="searchbar"
-                type="text"
-                placeholder
-                minLength={3}
-                maxLength={20}
-                // fullWidth
-                // blackVariant
-            ></Search>
-            <Slider type="range" min={1} max={12} />
-            {/* fullWidth */}
+            <div>
+                {/* Temporary */}
+                <SearchInput id="search" register={register} />
+                <div>avatar</div>
+            </div>
         </S.Header>
     );
 };
