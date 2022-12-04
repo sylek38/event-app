@@ -22,12 +22,6 @@ export const EventManagerView = ({ activeTab }: Props) => {
     const { t } = useTranslation("global");
     return (
         <>
-            <h1>Menadżer wydarzeń</h1>
-            <p>
-                Tutaj znajdziesz zaproszenia do wydarzeń, możesz także nimi
-                zarządzać, a nawet i powspominać.
-            </p>
-
             <Tabs
                 activeTab={activeTab}
                 tabElements={[

@@ -27,6 +27,7 @@ export const Container = styled.div<{
     background-color: var(--secondary-background);
     padding: ${pxToRem(30)};
     border-radius: ${pxToRem(25)};
+    color: var(--color-white);
 
     ${({ withoutBackground }) =>
         withoutBackground &&
@@ -36,4 +37,12 @@ export const Container = styled.div<{
                 padding: 0;
             }
         `}
+`;
+
+export const Heading = styled.div`
+    margin-bottom: ${pxToRem(50)};
+
+    > h1 {
+        margin-bottom: ${pxToRem(10)};
+    }
 `;
