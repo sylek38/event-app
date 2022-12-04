@@ -16,6 +16,7 @@ export const Header = () => {
     return (
         <S.Header>
             <div>
+                {/* Temporary */}
                 <TextInput
                     id="search"
                     register={register}
