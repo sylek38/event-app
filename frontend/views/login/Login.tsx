@@ -11,15 +11,17 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../components/button/Button";
 import { BACKEND_URL, DEFAULT_EMAIL, DEFAULT_PASS } from "../../config";
+import { useAPISignIn } from "../../api/auth/useAPISignIn";
 
 interface FormTypes {
     login_email: string;
     login_password: string;
 }
 
-export const Login = () => {
+export const LoginView = () => {
     const { t } = useTranslation("global");
-    // const { dispatch, isFetching } = useContext(Context);
+
+    const { isError, isLoading, mutateAsync } = useAPISignIn();
 
     const {
         register,
@@ -34,20 +36,24 @@ export const Login = () => {
     });
 
     const onSubmit: SubmitHandler<FormTypes> = async (data) => {
-        // dispatch({ type: "LOGIN_START" });
-        console.log(data);
+        await mutateAsync(data);
 
-        try {
-            await axios.post(`${BACKEND_URL}/backend/auth/login`, {
-                email: data.login_email,
-                password: data.login_password,
-            });
+        // The old way for comparison:
 
-            // dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
-        } catch (error) {
-            console.log(error);
-            // dispatch({ type: "LOGIN_FAILURE" });
-        }
+        // // dispatch({ type: "LOGIN_START" });
+        // console.log(data);
+
+        // try {
+        //     await axios.post(`${BACKEND_URL}/backend/auth/login`, {
+        //         email: data.login_email,
+        //         password: data.login_password,
+        //     });
+
+        //     // dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
+        // } catch (error) {
+        //     console.log(error);
+        //     // dispatch({ type: "LOGIN_FAILURE" });
+        // }
     };
 
     return (
@@ -105,6 +111,11 @@ export const Login = () => {
                         <S.FooterHref>{t("sign_up")}</S.FooterHref>
                     </S.Footer>
                 </S.Form>
+
+                {/* just to show, it won't be here and like that: */}
+                {isError && <div>isError</div>}
+
+                {isLoading && <div>isLoading</div>}
             </S.RightSide>
         </S.Container>
     );
