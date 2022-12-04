@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { SearchInput } from "../inputs/searchbar/Searchbar";
 import { TextInput } from "../inputs/text/TextInput";
 import * as S from "./Header.style";
 
@@ -9,7 +10,6 @@ interface FormTypes {
 export const Header = () => {
     const {
         register,
-        control,
         formState: { errors },
     } = useForm<FormTypes>();
 
@@ -17,15 +17,9 @@ export const Header = () => {
         <S.Header>
             <div>
                 {/* Temporary */}
-                <TextInput
-                    id="search"
-                    register={register}
-                    control={control}
-                    hideLabel
-                />
+                <SearchInput id="search" register={register} />
                 <div>avatar</div>
             </div>
-
         </S.Header>
     );
 };

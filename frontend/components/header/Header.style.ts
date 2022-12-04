@@ -30,7 +30,6 @@ export const Header = styled.header`
 
     @media screen and (max-width: 619px) {
         padding: ${pxToRem(30)} 1rem;
-
     }
     margin: 0 0 ${pxToRem(50)} ${pxToRem(100)};
 `;
