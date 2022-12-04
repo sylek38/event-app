@@ -7,6 +7,7 @@ import {
     faUserGroup,
     IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
+import { Routes } from "../../routes/Routes";
 
 interface ItemProps {
     icon: IconDefinition;
@@ -17,32 +18,32 @@ interface ItemProps {
 export const items: ItemProps[] = [
     {
         icon: faHome,
-        href: "/events",
+        href: Routes.EVENTS,
         text: "Home",
     },
     {
         icon: faPlusSquare,
-        href: "/events/add",
+        href: Routes.EVENT_MANAGER_CREATE,
         text: "Add Event",
     },
     {
         icon: faUserGroup,
-        href: "/events/manage",
+        href: Routes.EVENT_MANAGER_INVITES,
         text: "Event Manager",
     },
     {
         icon: faMessage,
-        href: "/message",
+        href: Routes.MESSAGES,
         text: "Messages",
     },
     {
         icon: faGear,
-        href: "/settings",
+        href: Routes.SETTINGS,
         text: "Settings",
     },
     {
         icon: faRightFromBracket,
-        href: "/",
+        href: Routes.LOGIN,
         text: "Logout",
     },
 ];

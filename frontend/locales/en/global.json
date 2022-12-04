@@ -16,6 +16,13 @@
     "description": "Description",
     "map": "Map",
     "i_have_read": "I have read and I accept",
-    "terms_and_conditions": "the terms and conditions"
+    "terms_and_conditions": "the terms and conditions",
+    "filters": "Filters",
+    "tabs": {
+        "event_manager_tabs": "Event manager tabs",
+        "invites": "Invites",
+        "events": "Events",
+        "history": "History"
+    }
 }
 

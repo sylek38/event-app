@@ -29,6 +29,7 @@ interface Props<T> {
     disabled?: boolean;
     hideLabel?: boolean;
     fullWidth?: boolean;
+    dark?: boolean;
 }
 
 export function TextInput<T>({
@@ -47,6 +48,7 @@ export function TextInput<T>({
     disabled,
     hideLabel,
     fullWidth,
+    dark,
 }: Props<T>) {
     const { t } = useTranslation("inputs");
 
@@ -72,6 +74,7 @@ export function TextInput<T>({
                 placeholder={
                     placeholder ? t(`text_placeholder_${id}`) : undefined
                 }
+                dark={dark}
                 ref={ref}
                 {...rest}
             />

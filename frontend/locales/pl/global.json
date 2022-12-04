@@ -16,5 +16,12 @@
     "description": "Opis",
     "map": "Mapa",
     "i_have_read": "Przeczytałem i akceptuję",
-    "terms_and_conditions": "regulamin strony"
+    "terms_and_conditions": "regulamin strony",
+    "filters": "Filtry",
+    "tabs": {
+        "event_manager_tabs": "Zakładki menadżera zdarzeń",
+        "invites": "Zaproszenia",
+        "events": "Wydarzenia",
+        "history": "Historia"
+    }
 }

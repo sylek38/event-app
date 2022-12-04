@@ -5,5 +5,5 @@ export const Posts = styled.div`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 75px 50px;
+    gap: 75px 25px;
 `;

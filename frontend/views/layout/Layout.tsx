@@ -5,14 +5,24 @@ import * as S from "./Layout.style";
 
 interface Props {
     children: ReactNode | ReactNode[];
+    small?: boolean;
+    withoutBackground?: boolean;
 }
 
-export const Layout = ({ children }: Props) => {
+export const Layout = ({ children, small, withoutBackground }: Props) => {
     return (
         <>
             <Header />
             <Navbar />
-            <S.Main>{children}</S.Main>
+
+            <S.Main>
+                <S.Container
+                    small={small}
+                    withoutBackground={withoutBackground}
+                >
+                    {children}
+                </S.Container>
+            </S.Main>
         </>
     );
 };

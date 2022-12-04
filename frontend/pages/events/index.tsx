@@ -3,7 +3,7 @@ import { Posts } from "../../components/posts/Posts";
 import { Layout } from "../../views/layout/Layout";
 
 const Events = () => (
-    <Layout>
+    <Layout withoutBackground>
         <Posts />
     </Layout>
 );
