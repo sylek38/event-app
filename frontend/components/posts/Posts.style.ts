@@ -1,3 +1,4 @@
+import { pxToRem } from "./../../utils/pxToRem";
 import styled from "styled-components";
 
 export const Posts = styled.div`
@@ -5,5 +6,5 @@ export const Posts = styled.div`
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    gap: 75px 25px;
+    gap: ${pxToRem(75)} ${pxToRem(25)};
 `;
