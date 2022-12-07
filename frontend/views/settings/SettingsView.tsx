@@ -7,17 +7,11 @@ import { Password } from "./password/Password";
 import { General } from "./general/General";
 import React from "react";
 
-interface FormTypes {
-    input: string;
-}
-
 interface Props {
     activeTab: string;
 }
 
 export const SettingsView = ({ activeTab }: Props) => {
-    const { register, control } = useForm<FormTypes>();
-
     const { t } = useTranslation("global");
     return (
         <>
