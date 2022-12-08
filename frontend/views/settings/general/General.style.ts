@@ -32,7 +32,7 @@ export const ImageLabel = styled.label`
     height: 6.25rem;
     padding-left: 0 !important;
     margin-top: 0 !important;
-    background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png");
+    /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"); */
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;

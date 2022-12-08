@@ -6,6 +6,7 @@ import { TextareaInput } from "../../../components/inputs/textarea/TextareaInput
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../../components/button/Button";
+import { useState } from "react";
 
 interface FormTypes {
     register_name: string;
@@ -16,6 +17,7 @@ interface FormTypes {
 }
 export const General = () => {
     const { t } = useTranslation("global");
+    const [file, setFile] = useState(null);
 
     const {
         register,
@@ -32,10 +34,24 @@ export const General = () => {
         console.log("delete");
     };
 
+    const imageHandler = (e: any) => {
+        if (e.target != null) {
+            setFile(e.target.files[0]);
+        } else return;
+    };
+
     return (
         <S.Container>
             <S.ImageAvatar>
-                <S.ImageLabel htmlFor="file">
+                <S.ImageLabel
+                    htmlFor="file"
+                    onChange={(e) => imageHandler(e)}
+                    style={{
+                        backgroundImage: file
+                            ? `url(${URL.createObjectURL(file)})`
+                            : `url(https://icon-library.com/images/default-user-icon/default-user-icon-20.jpg)`,
+                    }}
+                >
                     <S.ImageInput type="file" id="file"></S.ImageInput>
                     <S.ImageHover>{t("avatar_change")}</S.ImageHover>
                 </S.ImageLabel>
