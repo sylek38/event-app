@@ -38,7 +38,7 @@ export const items: ItemProps[] = [
     },
     {
         icon: faGear,
-        href: Routes.SETTINGS,
+        href: Routes.SETTINGS_GENERAL,
         text: "Settings",
     },
     {
