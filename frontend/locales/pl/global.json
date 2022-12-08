@@ -10,6 +10,7 @@
     "sign_up": "Zarejestruj się!",
     "remember": "Zapamiętaj mnie",
     "forgot_password": "Przypomnij hasło",
+    "confirm": "Zatwierdź",
     "join": "Dołącz",
     "send_message": "Napisz",
     "details": "Szczegóły",
@@ -18,10 +19,14 @@
     "i_have_read": "Przeczytałem i akceptuję",
     "terms_and_conditions": "regulamin strony",
     "filters": "Filtry",
+    "delete": "Usuń konto",
+    "avatar_change": "Zmień zdjęcie",
     "tabs": {
         "event_manager_tabs": "Zakładki menadżera zdarzeń",
         "invites": "Zaproszenia",
         "events": "Wydarzenia",
-        "history": "Historia"
+        "history": "Historia",
+        "general": "Ogólne",
+        "password": "Zmień hasło"
     }
 }

@@ -24,6 +24,8 @@ export enum Routes {
     EVENTS = "/events",
     EVENT = "/events/[id]",
     SETTINGS = "/settings",
+    SETTINGS_GENERAL = "/settings/general",
+    SETTINGS_PASSWORD = "/settings/password",
     EVENT_MANAGER_INVITES = "/event_manager/invites",
     EVENT_MANAGER_EVENTS = "/event_manager/events",
     EVENT_MANAGER_CREATE = "/event_manager/events/create",

@@ -13,5 +13,15 @@
     "text_error_register_lastname": "Wpisz swoje nazwisko",
 
     "text_search_select_city": "Wybierz miasto",
-    "text_searchbar": "Wyszukaj..."
+    "text_searchbar": "Wyszukaj...",
+
+    "textarea_label_user_bio": "Bio",
+    "textarea_placeholder_user_bio": "Powiedz coś o sobie...",
+
+    "text_label_old_password": "Stare hasło",
+    "text_error_old_password": "Pole nie może być puste!",
+    "text_label_new_password": "Nowe hasło",
+    "text_error_new_password": "Pole nie może być puste!",
+    "text_label_repeat_password": "Powtórz hasło",
+    "text_error_repeat_password": "Pole nie może być puste!"
 }

@@ -67,7 +67,7 @@ export const Content = styled.div`
     position: relative;
     padding: ${pxToRem(34)} ${pxToRem(20)} ${pxToRem(30)} ${pxToRem(20)};
 
-    > span {
+    > span:nth-of-type(1) {
         display: block;
         margin-bottom: 1.25rem;
         text-align: center;
