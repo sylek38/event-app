@@ -1,5 +1,5 @@
 export enum FetchUrl {
-    LOGIN = "/backend/auth",
+    LOGIN = "/backend/auth/login",
 }
 
 export interface FetchErrorsType {
