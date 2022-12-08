@@ -12,7 +12,7 @@ const EventManagerInvites = () => {
                 description: t("heading_desc"),
             }}
         >
-            <EventManagerView activeTab={"invites"} />
+            <EventManagerView activeTab="invites" />
         </Layout>
     );
 };
