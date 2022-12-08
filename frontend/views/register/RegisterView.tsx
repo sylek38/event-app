@@ -1,10 +1,9 @@
-import "./Register.style.ts";
-import * as S from "./Register.style";
+import "./RegisterView.style.ts";
+import * as S from "./RegisterView.style";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { TextInput } from "../../components/inputs/text/TextInput";
-import { Slider } from "../../components/inputs/slider/Slider";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
@@ -19,7 +18,7 @@ interface FormTypes {
     search_bar: string;
 }
 
-export const Register = () => {
+export const RegisterView = () => {
     const { t } = useTranslation("global");
 
     const {
@@ -43,24 +42,24 @@ export const Register = () => {
                         register={register}
                         control={control}
                         isError={!!errors.register_name}
-                        fullWidth
                         required
+                        dark
                     />
                     <TextInput
                         id="register_lastname"
                         register={register}
                         control={control}
                         isError={!!errors.register_lastname}
-                        fullWidth
                         required
+                        dark
                     />
                     <TextInput
                         id="register_email"
                         register={register}
                         control={control}
                         isError={!!errors.register_email}
-                        fullWidth
                         required
+                        dark
                     />
                     <TextInput
                         id="register_password"
@@ -68,8 +67,8 @@ export const Register = () => {
                         control={control}
                         isError={!!errors.register_password}
                         type="password"
-                        fullWidth
                         required
+                        dark
                     />
 
                     <S.Middle>

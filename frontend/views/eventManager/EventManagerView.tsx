@@ -5,12 +5,6 @@ import { EventsView } from "./events/EventsView";
 import { HistoryView } from "./history/HistoryView";
 import { InvitesView } from "./invites/InvitesView";
 
-interface FormTypes {
-    email: string;
-    password: string;
-    name: string;
-}
-
 interface Props {
     activeTab: string;
 }

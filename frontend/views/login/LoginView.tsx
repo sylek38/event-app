@@ -1,5 +1,5 @@
-import "./Login.style.ts";
-import * as S from "./Login.style";
+import "./LoginView.style.ts";
+import * as S from "./LoginView.style";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
