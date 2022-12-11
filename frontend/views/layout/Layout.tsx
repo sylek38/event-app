@@ -5,14 +5,40 @@ import * as S from "./Layout.style";
 
 interface Props {
     children: ReactNode | ReactNode[];
+    small?: boolean;
+    withoutBackground?: boolean;
+    header?: {
+        title: ReactNode;
+        description?: ReactNode;
+    };
 }
 
-export const Layout = ({ children }: Props) => {
+export const Layout = ({
+    children,
+    small,
+    withoutBackground,
+    header,
+}: Props) => {
     return (
         <>
             <Header />
             <Navbar />
-            <S.Main>{children}</S.Main>
+
+            <S.Main>
+                <S.Container
+                    small={small}
+                    withoutBackground={withoutBackground}
+                >
+                    <S.Heading>
+                        {header && header.title && <h1>{header.title}</h1>}
+
+                        {header && header.description && (
+                            <p>{header.description}</p>
+                        )}
+                    </S.Heading>
+                    {children}
+                </S.Container>
+            </S.Main>
         </>
     );
 };

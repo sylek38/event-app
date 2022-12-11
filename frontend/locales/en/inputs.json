@@ -10,5 +10,18 @@
     "text_label_register_name": "Name",
     "text_error_register_name": "Enter your name",
     "text_label_register_lastname": "Last name",
-    "text_error_register_lastname": "Enter your last name"
+    "text_error_register_lastname": "Enter your last name",
+
+    "text_search_select_city": "Select a city",
+    "text_searchbar": "Search...",
+
+    "textarea_label_user_bio": "Bio",
+    "textarea_placeholder_user_bio": "Say something about yourself...",
+
+    "text_label_old_password": "Old password",
+    "text_error_old_password": "Field cannot be empty!",
+    "text_label_new_password": "New password",
+    "text_error_new_password": "Field cannot be empty!",
+    "text_label_repeat_password": "Repeat password",
+    "text_error_repeat_password": "Field cannot be empty!"
 }

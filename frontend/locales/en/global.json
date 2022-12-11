@@ -10,12 +10,23 @@
     "sign_up_title": "Sign Up",
     "remember": "Remember",
     "forgot_password": "Forgot password",
+    "confirm": "Confirm",
     "join": "Join",
     "send_message": "Message",
     "details": "Details",
     "description": "Description",
     "map": "Map",
     "i_have_read": "I have read and I accept",
-    "terms_and_conditions": "the terms and conditions"
+    "terms_and_conditions": "the terms and conditions",
+    "filters": "Filters",
+    "delete": "Delete account",
+    "avatar_change": "Change picture",
+    "tabs": {
+        "event_manager_tabs": "Event manager tabs",
+        "invites": "Invites",
+        "events": "Events",
+        "history": "History",
+        "general": "General",
+        "password": "Change password"
+    }
 }
-

@@ -5,7 +5,8 @@ export const Post = styled.a<{ width: number }>`
     background-color: var(--secondary-background);
     border-radius: ${pxToRem(24)};
     box-shadow: 0 0 1.5em var(--box-shadow--black);
-    max-width: ${({ width }) => `${width}px`};
+    max-width: ${({ width }) => (width ? pxToRem(320) : pxToRem(width))};
+    width: 100%;
     transition: 0.15s;
 
     &:hover {
@@ -44,7 +45,7 @@ export const Date = styled.div`
     }
 `;
 
-export const UserInfo = styled.div`
+export const Avatar = styled.div`
     position: absolute;
     top: ${pxToRem(-33)};
     left: 50%;
@@ -57,19 +58,21 @@ export const UserInfo = styled.div`
         width: ${pxToRem(60)};
         height: ${pxToRem(60)};
         object-fit: cover;
-        margin-bottom: 0.25rem;
         border-radius: 50%;
         border: 3px solid var(--color-white);
-    }
-
-    > span {
-        color: var(--color-white);
     }
 `;
 
 export const Content = styled.div`
     position: relative;
-    padding: ${pxToRem(66)} ${pxToRem(20)} ${pxToRem(30)} ${pxToRem(20)};
+    padding: ${pxToRem(34)} ${pxToRem(20)} ${pxToRem(30)} ${pxToRem(20)};
+
+    > span:nth-of-type(1) {
+        display: block;
+        margin-bottom: 1.25rem;
+        text-align: center;
+        color: var(--color-white);
+    }
 `;
 
 export const Title = styled.span`

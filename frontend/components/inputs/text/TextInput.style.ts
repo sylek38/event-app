@@ -16,14 +16,17 @@ export const Label = styled.label`
 export const TextInput = styled.input<{
     isError: boolean;
     disabled?: boolean;
+    dark?: boolean;
 }>`
     all: unset;
     padding: ${pxToRem(12)} ${pxToRem(20)};
     font-size: ${pxToRem(14)};
     color: var(--color-white);
-    background-color: var(--primary-background);
+    background-color: ${({ dark }) =>
+        dark ? "var(--container-background)" : "var(--secondary-background)"};
     border-radius: ${pxToRem(50)};
     transition: 0.5s;
+    box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.25);
 
     ${({ isError }) =>
         isError &&

@@ -4,6 +4,7 @@ import * as S from "./Register.style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { TextInput } from "../../components/inputs/text/TextInput";
+import { Slider } from "../../components/inputs/slider/Slider";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
@@ -14,6 +15,8 @@ interface FormTypes {
     register_lastname: string;
     register_email: string;
     register_password: string;
+    select_city: string;
+    search_bar: string;
 }
 
 export const Register = () => {
@@ -42,7 +45,6 @@ export const Register = () => {
                         isError={!!errors.register_name}
                         required
                     />
-
                     <TextInput
                         id="register_lastname"
                         register={register}
@@ -50,7 +52,6 @@ export const Register = () => {
                         isError={!!errors.register_lastname}
                         required
                     />
-
                     <TextInput
                         id="register_email"
                         register={register}
@@ -58,7 +59,6 @@ export const Register = () => {
                         isError={!!errors.register_email}
                         required
                     />
-
                     <TextInput
                         id="register_password"
                         register={register}
@@ -67,6 +67,7 @@ export const Register = () => {
                         type="password"
                         required
                     />
+
                     <S.Middle>
                         <S.MiddleContent>
                             <S.MiddleLeft>
@@ -79,6 +80,7 @@ export const Register = () => {
                             </S.MiddleLeft>
                         </S.MiddleContent>
                     </S.Middle>
+
                     <Button variant="gradient" type="submit" fullWidth>
                         {t("sign_up_title")}
                     </Button>

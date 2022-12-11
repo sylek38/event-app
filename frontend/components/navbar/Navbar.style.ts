@@ -1,3 +1,4 @@
+import { pxToRem } from "./../../utils/pxToRem";
 import styled from "styled-components";
 
 export const Navbar = styled.nav`
@@ -14,8 +15,8 @@ export const Navbar = styled.nav`
 
     > img {
         display: block;
-        padding: 1rem 0 4rem;
-        width: 4rem;
+        padding: ${pxToRem(25)} 0 ${pxToRem(125)};
+        width: ${pxToRem(50)};
     }
 
     > ul {
@@ -37,7 +38,7 @@ export const Navbar = styled.nav`
             svg {
                 width: 1.5rem;
                 height: 1.5rem;
-                color: var(--primary-color);
+                color: var(--primary-green-color);
             }
         }
     }

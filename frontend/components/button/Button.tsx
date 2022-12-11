@@ -1,9 +1,10 @@
 import { ReactNode } from "react";
+import { Routes } from "../../routes/Routes";
 import * as S from "./Button.style";
 
 interface AllProps {
     children: ReactNode | ReactNode[];
-    href?: string;
+    href?: Routes;
     type?: "button" | "submit";
     variant?: "gradientHover" | "blue" | "gradient" | "glowing" | "glowingBlue";
     size?: "sm" | "md" | "lg";
@@ -19,7 +20,7 @@ interface AllProps {
 type Props = HrefProps | WithoutHrefProps;
 
 interface HrefProps extends AllProps {
-    href?: string;
+    href?: Routes;
     type?: never;
 }
 

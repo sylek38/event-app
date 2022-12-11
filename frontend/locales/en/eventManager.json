@@ -1,0 +1,12 @@
+{
+    "invites": {
+        "heading": "Event Manager - Invites"
+    },
+    "events": {
+        "heading": "Event Manager - Events"
+    },
+    "history": {
+        "heading": "Event Manager - History"
+    },
+    "heading_desc": "Here you can find invitations to events, you can also manage them and even reminisce."
+}

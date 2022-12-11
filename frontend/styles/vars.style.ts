@@ -8,7 +8,7 @@ export const vars = css`
     --secondary-background--hover: #393939;
     --tertiary-background: #545454;
 
-    --container-backgroud: #262626;
+    --container-background: #262626;
 
     --box-shadow--black: #121212;
 
