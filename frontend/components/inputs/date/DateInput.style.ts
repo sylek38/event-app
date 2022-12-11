@@ -1,5 +1,5 @@
-import { pxToRem } from "../../../utils/pxToRem";
 import styled, { css } from "styled-components";
+import { pxToRem } from "../../../utils/pxToRem";
 
 export const Container = styled.div`
     display: flex;
@@ -13,20 +13,26 @@ export const Label = styled.label`
     color: var(--secondary-text);
 `;
 
-export const TextInput = styled.input<{
+export const DateInput = styled.input<{
     isError: boolean;
     disabled?: boolean;
-    dark?: boolean;
 }>`
-    all: unset;
     padding: ${pxToRem(12)} ${pxToRem(20)};
     font-size: ${pxToRem(14)};
     color: var(--color-white);
-    background-color: ${({ dark }) =>
-        dark ? "var(--container-background)" : "var(--secondary-background)"};
+    background-color: var(--primary-background);
     border-radius: ${pxToRem(50)};
     transition: 0.5s;
-    box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.25);
+    border: none;
+    color-scheme: dark;
+
+    &:focus-visible {
+        outline: none;
+    }
+
+    &::-webkit-calendar-picker-indicator {
+        fill: red;
+    }
 
     ${({ isError }) =>
         isError &&

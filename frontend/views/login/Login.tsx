@@ -10,6 +10,7 @@ import axios from "axios";
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../components/button/Button";
+
 import { BACKEND_URL, DEFAULT_EMAIL, DEFAULT_PASS } from "../../config";
 import { useAPISignIn } from "../../api/auth/useAPISignIn";
 
@@ -67,7 +68,6 @@ export const LoginView = () => {
                         register={register}
                         control={control}
                         isError={!!errors.login_email}
-                        fullWidth
                         required
                     />
 
@@ -77,7 +77,6 @@ export const LoginView = () => {
                         control={control}
                         isError={!!errors.login_password}
                         type="password"
-                        fullWidth
                         required
                     />
                     <S.Middle>

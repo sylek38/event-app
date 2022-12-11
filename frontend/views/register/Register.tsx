@@ -43,7 +43,6 @@ export const Register = () => {
                         register={register}
                         control={control}
                         isError={!!errors.register_name}
-                        fullWidth
                         required
                     />
                     <TextInput
@@ -51,7 +50,6 @@ export const Register = () => {
                         register={register}
                         control={control}
                         isError={!!errors.register_lastname}
-                        fullWidth
                         required
                     />
                     <TextInput
@@ -59,7 +57,6 @@ export const Register = () => {
                         register={register}
                         control={control}
                         isError={!!errors.register_email}
-                        fullWidth
                         required
                     />
                     <TextInput
@@ -68,7 +65,6 @@ export const Register = () => {
                         control={control}
                         isError={!!errors.register_password}
                         type="password"
-                        fullWidth
                         required
                     />
 
