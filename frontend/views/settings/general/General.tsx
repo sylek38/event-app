@@ -62,7 +62,6 @@ export const General = () => {
                     register={register}
                     control={control}
                     isError={!!errors.register_name}
-                    fullWidth
                     dark
                 />
 
@@ -71,7 +70,6 @@ export const General = () => {
                     register={register}
                     control={control}
                     isError={!!errors.register_lastname}
-                    fullWidth
                     dark
                 />
 
@@ -80,7 +78,6 @@ export const General = () => {
                     register={register}
                     control={control}
                     isError={!!errors.register_email}
-                    fullWidth
                     dark
                 />
 

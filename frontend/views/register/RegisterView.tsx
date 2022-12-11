@@ -1,10 +1,9 @@
-import "./Register.style.ts";
-import * as S from "./Register.style";
+import "./RegisterView.style.ts";
+import * as S from "./RegisterView.style";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { TextInput } from "../../components/inputs/text/TextInput";
-import { Slider } from "../../components/inputs/slider/Slider";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
@@ -19,7 +18,7 @@ interface FormTypes {
     search_bar: string;
 }
 
-export const Register = () => {
+export const RegisterView = () => {
     const { t } = useTranslation("global");
 
     const {
@@ -44,6 +43,7 @@ export const Register = () => {
                         control={control}
                         isError={!!errors.register_name}
                         required
+                        dark
                     />
                     <TextInput
                         id="register_lastname"
@@ -51,6 +51,7 @@ export const Register = () => {
                         control={control}
                         isError={!!errors.register_lastname}
                         required
+                        dark
                     />
                     <TextInput
                         id="register_email"
@@ -58,6 +59,7 @@ export const Register = () => {
                         control={control}
                         isError={!!errors.register_email}
                         required
+                        dark
                     />
                     <TextInput
                         id="register_password"
@@ -66,6 +68,7 @@ export const Register = () => {
                         isError={!!errors.register_password}
                         type="password"
                         required
+                        dark
                     />
 
                     <S.Middle>

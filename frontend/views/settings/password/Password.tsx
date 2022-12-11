@@ -34,7 +34,6 @@ export const Password = () => {
                     register={register}
                     control={control}
                     isError={!!errors.old_password}
-                    fullWidth
                     required
                     dark
                 />
@@ -44,7 +43,6 @@ export const Password = () => {
                     register={register}
                     control={control}
                     isError={!!errors.new_password}
-                    fullWidth
                     required
                     dark
                 />
@@ -54,7 +52,6 @@ export const Password = () => {
                     register={register}
                     control={control}
                     isError={!!errors.repeat_password}
-                    fullWidth
                     required
                     dark
                 />
