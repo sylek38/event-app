@@ -8,9 +8,10 @@ import { TextInput } from "../../components/inputs/text/TextInput";
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../components/button/Button";
-import { DEFAULT_EMAIL, DEFAULT_PASS } from "../../config";
+
 import { useAPISignIn } from "../../api/auth/useAPISignIn";
 import { emailRegex } from "../../utils/regex";
+import { DEFAULT_EMAIL, DEFAULT_PASS } from "../../config";
 
 interface FormTypes {
     login_email: string;
