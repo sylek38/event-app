@@ -26,8 +26,8 @@ app.get("/", (req, res) => {
 
 app.use("/backend/auth", authRoute);
 app.use("/backend/users", userRoute);
-app.use("/api/posts", postRoute);
-app.use("/api/category", categoryRoute);
+app.use("/backend/posts", postRoute);
+app.use("/backend/category", categoryRoute);
 
 app.listen(port, () => {
 	console.log(`[server]: Server is running at https://localhost:${port}`);

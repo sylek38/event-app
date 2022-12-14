@@ -1,8 +1,8 @@
 export enum FetchUrl {
     LOGIN = "/backend/auth",
     USERS = "/backend/users",
-    POST = "/api/posts",
-    CATEGORY = "/api/category",
+    POST = "/backend/posts",
+    CATEGORY = "/backend/category",
 }
 
 export interface FetchErrorsType {
