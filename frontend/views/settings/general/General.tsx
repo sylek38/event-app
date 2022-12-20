@@ -8,6 +8,9 @@ import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../../components/button/Button";
 import { useState } from "react";
 
+import { useAPISettingsGeneral } from "../../../api/users/useAPISettingsGeneral";
+import { emailRegex } from "../../../utils/regex";
+
 interface FormTypes {
     register_name: string;
     register_lastname: string;
@@ -19,6 +22,8 @@ export const General = () => {
     const { t } = useTranslation("global");
     const [file, setFile] = useState(null);
 
+    const { isError, isLoading, mutateAsync } = useAPISettingsGeneral();
+
     const {
         register,
         control,
@@ -26,8 +31,8 @@ export const General = () => {
         handleSubmit,
     } = useForm<FormTypes>();
 
-    const onSubmit: SubmitHandler<FormTypes> = (data) => {
-        console.log(data);
+    const onSubmit: SubmitHandler<FormTypes> = async (data) => {
+        await mutateAsync(data);
     };
 
     const deleteHandler = () => {
@@ -78,6 +83,7 @@ export const General = () => {
                     register={register}
                     control={control}
                     isError={!!errors.register_email}
+                    pattern={emailRegex}
                     dark
                 />
 

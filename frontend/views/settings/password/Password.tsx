@@ -5,6 +5,7 @@ import { TextInput } from "../../../components/inputs/text/TextInput";
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../../components/button/Button";
+import { passwordRegex } from "../../../utils/regex";
 
 interface FormTypes {
     old_password: string;
@@ -34,6 +35,7 @@ export const Password = () => {
                     register={register}
                     control={control}
                     isError={!!errors.old_password}
+                    pattern={passwordRegex}
                     required
                     dark
                 />
@@ -43,6 +45,7 @@ export const Password = () => {
                     register={register}
                     control={control}
                     isError={!!errors.new_password}
+                    pattern={passwordRegex}
                     required
                     dark
                 />
@@ -52,6 +55,7 @@ export const Password = () => {
                     register={register}
                     control={control}
                     isError={!!errors.repeat_password}
+                    pattern={passwordRegex}
                     required
                     dark
                 />
