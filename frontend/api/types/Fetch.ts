@@ -1,7 +1,8 @@
 export enum FetchUrl {
     LOGIN = "/backend/auth",
     USERS = "/backend/users",
-    POST = "/backend/posts",
+    POSTS = "/backend/posts",
+    POST = "/backend/post/[id]",
     CATEGORY = "/backend/category",
 }
 
