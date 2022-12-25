@@ -8,7 +8,6 @@ export const Container = styled.div`
     width: 100%;
     height: ${pxToRem(72)};
     gap: ${pxToRem(10)};
-    width: 100%;
 `;
 
 export const Label = styled.label`
