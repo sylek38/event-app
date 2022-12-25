@@ -15,9 +15,9 @@
     "text_search_select_city": "Select a city",
     "text_searchbar": "Search...",
 
-    "text_search_cat": "Choose category",
-    "select_label_cat": "Category",
-    "select_error_cat": "You have to choose a category!",
+    "text_search_category": "Choose category",
+    "select_label_category": "Category",
+    "select_error_category": "You have to choose a category!",
 
     "textarea_label_user_bio": "Bio",
     "textarea_placeholder_user_bio": "Say something about yourself...",
@@ -41,7 +41,7 @@
     "text_error_map": "Your event must have a defined location!",
     "text_placeholder_map": "Just don't give a location on Mars:)",
 
-    "slider_label_slider_create": "Specify the maximum number of people",
+    "slider_label_peopleLimit": "Specify the maximum number of people",
 
-    "file_label_addFile": "Add image"
+    "file_label_photo": "Add image"
 }

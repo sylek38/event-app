@@ -2,6 +2,14 @@ const mongoose = require("mongoose");
 
 const PostSchema = new mongoose.Schema(
 	{
+		name: {
+			type: String,
+			required: true,
+		},
+		surname: {
+			type: String,
+			required: true,
+		},
 		title: {
 			type: String,
 			required: true,
@@ -11,28 +19,23 @@ const PostSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		},
-		photo: {
-			type: String,
-			required: false,
-		},
-		name: {
-			type: String,
-			required: true,
-		},
-		surname: {
-			type: String,
-			required: true,
-		},
 		category: {
 			type: String,
 			required: true,
 		},
-		poepleLimit: {
+		peopleLimit: {
 			type: Number,
 			required: true,
 		},
+		photo: {
+			type: String,
+			required: false,
+		},
 
-		//Trzeba dodać jeszcze obiekt z informacją współrzednych dla mapy
+		map: {
+			type: String,
+			required: true,
+		}, //Na razie `map` wygląda w ten sposób, prawdopodobnie inaczej będzie to wyglądać
 	},
 	{ timestamps: true }
 );

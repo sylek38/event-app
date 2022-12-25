@@ -15,14 +15,17 @@ import { Button } from "../../components/button/Button";
 import { useState } from "react";
 
 import React from "react";
+import { useAPIEventCreator } from "../../api/events/useAPIEventCreator";
 
 interface FormTypes {
-    addFile: string;
+    name: string;
+    surname: string;
     title: string;
     desc: string;
+    category: string;
+    peopleLimit: number;
+    photo: string;
     map: string;
-    cat: string;
-    slider_create: string;
     search_bar: string;
 }
 
@@ -30,7 +33,7 @@ export const EventCreatorView = () => {
     const { t: t1 } = useTranslation("global");
     const { t: t2 } = useTranslation("eventManager");
 
-    // const { isError, isLoading, mutateAsync } = useAPIEventCreator();
+    const { isError, isLoading, mutateAsync } = useAPIEventCreator();
 
     const listOfCat = [
         "Sportowo",
@@ -49,10 +52,21 @@ export const EventCreatorView = () => {
         control,
         formState: { errors },
         handleSubmit,
-    } = useForm<FormTypes>();
+    } = useForm<FormTypes>({
+        defaultValues: {
+            name: "test",
+            surname: "test",
+            title: "",
+            desc: "",
+            category: "",
+            peopleLimit: 2,
+            photo: "",
+            map: "",
+        },
+    });
 
-    const onSubmit: SubmitHandler<FormTypes> = (data) => {
-        console.log(data);
+    const onSubmit: SubmitHandler<FormTypes> = async (data) => {
+        await mutateAsync(data);
     };
     return (
         <Layout
@@ -62,7 +76,7 @@ export const EventCreatorView = () => {
             }}
         >
             <S.Form onSubmit={handleSubmit(onSubmit)}>
-                <FileInput id="addFile" register={register} control={control} />
+                <FileInput id="photo" register={register} control={control} />
                 <S.newLine>{t1("info")}</S.newLine>
                 <S.Content>
                     <TextInput
@@ -75,11 +89,11 @@ export const EventCreatorView = () => {
                         dark
                     />
                     <Select
-                        id="cat"
+                        id="category"
                         register={register}
                         control={control}
                         values={listOfCat}
-                        isError={!!errors.cat}
+                        isError={!!errors.category}
                         required
                         fullWidth
                         dark
@@ -96,7 +110,7 @@ export const EventCreatorView = () => {
                         dark
                     />
                     <Slider
-                        id="slider_create"
+                        id="peopleLimit"
                         register={register}
                         control={control}
                         fullWidth
@@ -120,6 +134,9 @@ export const EventCreatorView = () => {
                     </Button>
                 </S.Content>
             </S.Form>
+            {isError && <div>isError</div>}
+
+            {isLoading && <div>isLoading</div>}
         </Layout>
     );
 };
