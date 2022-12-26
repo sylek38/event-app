@@ -1,8 +1,8 @@
 import { Filters } from "../../../components/filters/Filters";
 
-export const History = () => (
+export const EventsView = () => (
     <div>
         <Filters>Filtry go here</Filters>
-        History panel content
+        Events panel content
     </div>
 );

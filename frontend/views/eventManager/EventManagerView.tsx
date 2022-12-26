@@ -1,25 +1,17 @@
 import useTranslation from "next-translate/useTranslation";
-import { useForm } from "react-hook-form";
-import { Filters } from "../../components/filters/Filters";
-import { TextInput } from "../../components/inputs/text/TextInput";
 import { Tabs } from "../../components/tabs/Tabs";
 import { Routes } from "../../routes/Routes";
-import { Events } from "./events/Events";
-import { History } from "./history/History";
-import { Invites } from "./invites/Invites";
-
-interface FormTypes {
-    input: string;
-}
+import { EventsView } from "./events/EventsView";
+import { HistoryView } from "./history/HistoryView";
+import { InvitesView } from "./invites/InvitesView";
 
 interface Props {
     activeTab: string;
 }
 
 export const EventManagerView = ({ activeTab }: Props) => {
-    const { register, control } = useForm<FormTypes>();
-
     const { t } = useTranslation("global");
+
     return (
         <>
             <Tabs
@@ -45,9 +37,9 @@ export const EventManagerView = ({ activeTab }: Props) => {
                     },
                 ]}
                 panels={[
-                    { id: "1", Content: <Invites /> },
-                    { id: "2", Content: <Events /> },
-                    { id: "3", Content: <History /> },
+                    { id: "1", Content: <InvitesView /> },
+                    { id: "2", Content: <EventsView /> },
+                    { id: "3", Content: <HistoryView /> },
                 ]}
             />
         </>
