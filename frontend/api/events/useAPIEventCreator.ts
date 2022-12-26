@@ -18,6 +18,7 @@ export interface APIEventCreatorMutationVariables {
     peopleLimit: number;
     photo: string;
     map: string;
+    email: string;
 }
 
 export const useAPIEventCreator = () => {
@@ -36,6 +37,7 @@ export const useAPIEventCreator = () => {
             peopleLimit,
             photo,
             map,
+            email,
         }) => {
             const newEvent = {
                 name,
@@ -46,6 +48,7 @@ export const useAPIEventCreator = () => {
                 peopleLimit,
                 photo,
                 map,
+                email,
             };
             if (newEvent.photo == null) {
                 newEvent.photo = "default.png";

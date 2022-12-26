@@ -36,6 +36,11 @@ const PostSchema = new mongoose.Schema(
 			type: String,
 			required: true,
 		}, //Na razie `map` wygląda w ten sposób, prawdopodobnie inaczej będzie to wyglądać
+
+		email: {
+			type: String,
+			required: true,
+		},
 	},
 	{ timestamps: true }
 );

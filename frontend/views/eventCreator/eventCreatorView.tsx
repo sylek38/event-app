@@ -27,6 +27,7 @@ interface FormTypes {
     photo: string;
     map: string;
     search_bar: string;
+    email: string;
 }
 
 export const EventCreatorView = () => {
@@ -62,6 +63,7 @@ export const EventCreatorView = () => {
             peopleLimit: 2,
             photo: "",
             map: "",
+            email: "test@test.pl",
         },
     });
 
