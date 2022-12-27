@@ -1,3 +1,4 @@
+import useTranslation from "next-translate/useTranslation";
 import "./Post.style.ts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -39,6 +40,7 @@ export const Post = ({
     date,
     width = 370,
 }: Props) => {
+    const { t } = useTranslation("global");
     return (
         <Link
             href={{
@@ -53,7 +55,11 @@ export const Post = ({
                     {/* TODO: Make component for this */}
                     <S.Date>
                         <span> {new Date(date).getDate()}</span>
-                        <span>{new Date(date).getMonth() + 1}</span>
+                        <span>
+                            {new Date(date).toLocaleString(t("lang"), {
+                                month: "short",
+                            })}
+                        </span>
                     </S.Date>
                 </S.BackgroundContainer>
                 <S.Content>
