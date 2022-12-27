@@ -10,29 +10,40 @@ interface ResponseType {
 }
 
 export interface APISignInMutationVariables {
+    name: string;
+    surname: string;
     email: string;
+    bio: string;
     password: string;
+    profilePic: string;
 }
 
-export const useAPISignIn = () => {
+export const useAPISignUp = () => {
     const { push } = useRouter();
 
     return useMutation<
         ResponseType,
         FetchErrorsType,
         APISignInMutationVariables
-    >(async ({ email, password }) => {
+    >(async ({ name, surname, email, bio, password, profilePic }) => {
         try {
-            const data = await fetch(`${BACKEND_URL}${FetchUrl.LOGIN}`, {
+            const data = await fetch(`${BACKEND_URL}${FetchUrl.REGISTER}`, {
                 method: "POST",
-                body: JSON.stringify({ email, password }),
+                body: JSON.stringify({
+                    name,
+                    surname,
+                    email,
+                    bio,
+                    password,
+                    profilePic,
+                }),
                 headers: {
                     "Content-Type": "application/json",
                 },
             });
 
             if (data) {
-                push(Routes.EVENTS);
+                push(Routes.LOGIN);
             }
 
             return data.json();

@@ -17,7 +17,7 @@ export function FileInput<T>({ id, register, onChange }: Props<T>) {
     const { t } = useTranslation("inputs");
 
     const { ref, ...rest } = register(id, {
-        setValueAs: (e) => e.target.files[0],
+        setValueAs: (e) => file,
     });
 
     const imageHandler = (e: any) => {
