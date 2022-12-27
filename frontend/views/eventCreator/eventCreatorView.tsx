@@ -115,6 +115,12 @@ export const EventCreatorView = () => {
                         cols={50}
                         dark
                     />
+                    <DateInput
+                        id="date"
+                        isError={!!errors.date}
+                        register={register}
+                        control={control}
+                    ></DateInput>
                     <Slider
                         id="peopleLimit"
                         register={register}
@@ -123,12 +129,6 @@ export const EventCreatorView = () => {
                         min={2}
                         max={99}
                     ></Slider>
-                    <DateInput
-                        id="date"
-                        isError={!!errors.date}
-                        register={register}
-                        control={control}
-                    ></DateInput>
                 </S.Content>
                 <S.NewLine>{t1("map")}</S.NewLine>
                 <S.Content>
