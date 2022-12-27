@@ -3,22 +3,41 @@ import { postItemsMock } from "./postItemsMock";
 import { CategoryEnum } from "../../types/CategoryEnum";
 import { Post } from "./post/Post";
 
-export const Posts = () => (
-    <S.Posts>
-        {postItemsMock.map((item) => (
-            <Post
-                id={item.id}
-                key={item.id}
-                title={item.title}
-                // TODO: Change this after converting enum
-                category={item.category as CategoryEnum}
-                img={item.img}
-                authorName={item.authorName}
-                avatar={item.avatar}
-                date={item.date}
-                place={item.place}
-                peopleCount={item.peopleCount}
-            />
-        ))}
-    </S.Posts>
-);
+export const Posts = (props: { posts: any }) => {
+    const { posts } = props;
+
+    return (
+        <S.Posts>
+            {posts.map(
+                (props: {
+                    _id: string;
+                    name: string;
+                    surname: string;
+                    title: string;
+                    desc: string;
+                    category: string;
+                    peopleLimit: number;
+                    photo: string;
+                    map: string;
+                    date: Date;
+                }) => (
+                    <Post
+                        id={props._id}
+                        key={props._id}
+                        name={props.name}
+                        surname={props.surname}
+                        title={props.title}
+                        desc={props.desc}
+                        // TODO: Change this after converting enum
+                        category={props.category as CategoryEnum}
+                        peopleLimit={props.peopleLimit}
+                        photo={props.photo}
+                        map={props.map}
+                        // avatar={item.avatar}
+                        date={props.date}
+                    />
+                )
+            )}
+        </S.Posts>
+    );
+};

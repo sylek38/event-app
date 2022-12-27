@@ -59,7 +59,7 @@ export const Tooltip = ({
         placement,
         middleware: [
             flip(),
-            offset(shiftValue === "sidebar" ? 0 : 16),
+            offset(shiftValue === "sidebar" ? 10 : 16),
             arrow({ element: arrowRef }),
         ],
         whileElementsMounted: autoUpdate,

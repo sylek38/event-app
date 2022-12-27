@@ -39,5 +39,8 @@
 
     "slider_label_peopleLimit": "Określ maksymalną liczbę osób",
 
-    "file_label_photo": "Dodaj obrazek"
+    "file_label_photo": "Dodaj obrazek",
+
+    "date_label_date": "Wybierz date dla swojego wydarzenia:",
+    "text_error_date": "Data jest nieprawidłowa!"
 }

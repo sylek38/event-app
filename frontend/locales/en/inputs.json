@@ -39,5 +39,8 @@
 
     "slider_label_peopleLimit": "Specify the maximum number of people",
 
-    "file_label_photo": "Add image"
+    "file_label_photo": "Add image",
+
+    "date_label_date": "Choose a date for your event:",
+    "text_error_date": "The data is invalid"
 }

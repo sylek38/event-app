@@ -19,6 +19,7 @@ export interface APIEventCreatorMutationVariables {
     photo: string;
     map: string;
     email: string;
+    date: Date;
 }
 
 export const useAPIEventCreator = () => {
@@ -38,6 +39,7 @@ export const useAPIEventCreator = () => {
             photo,
             map,
             email,
+            date,
         }) => {
             const newEvent = {
                 name,
@@ -49,9 +51,10 @@ export const useAPIEventCreator = () => {
                 photo,
                 map,
                 email,
+                date,
             };
             if (newEvent.photo == null) {
-                newEvent.photo = "default.png";
+                newEvent.photo = "https://i.imgur.com/8Jb12pF.png";
             }
             try {
                 console.log(newEvent);
@@ -66,7 +69,6 @@ export const useAPIEventCreator = () => {
                 });
 
                 if (data.status == 200) {
-                    // console.log(newEvent);
                     console.log(data);
                     push(Routes.EVENTS); //tu będzie od razu przekierowanie do posta, który użytkownik stworzył (do widoku single-post)
                 }
