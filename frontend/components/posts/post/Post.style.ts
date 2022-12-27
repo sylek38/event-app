@@ -71,7 +71,9 @@ export const Content = styled.div`
         display: block;
         margin-bottom: 1.25rem;
         text-align: center;
-        color: var(--color-white);
+        font-size: var(--font-size-12);
+        font-weight: lighter;
+        color: var(--color-gray);
     }
 `;
 
