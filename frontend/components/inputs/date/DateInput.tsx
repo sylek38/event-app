@@ -31,9 +31,11 @@ export function DateInput<T>({
     });
 
     const today = new Date();
+    const minDate = today.toISOString().slice(0, -8);
     const maxDate = new Date();
     maxDate.setFullYear(today.getFullYear());
     maxDate.setMonth(today.getMonth() + 12);
+    maxDate.setHours(today.getHours() + 1);
 
     return (
         <S.Container>
@@ -44,8 +46,8 @@ export function DateInput<T>({
                 type="datetime-local"
                 isError={isError}
                 className="datepicker"
-                min={today.toISOString().slice(0, 10)}
-                max={maxDate.toISOString().slice(0, 10)}
+                min={minDate}
+                max={maxDate.toISOString().slice(0, -8)}
                 required
                 ref={ref}
                 {...rest}
