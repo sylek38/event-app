@@ -2,6 +2,7 @@ import { css } from "styled-components";
 
 export const vars = css`
     --color-white: #fff;
+    --color-black: #000;
 
     --primary-background: #232323;
     --secondary-background: #2f2f2f;

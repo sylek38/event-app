@@ -6,6 +6,7 @@
         "/event_manager/invites": ["eventManager"],
         "/event_manager/events": ["eventManager"],
         "/event_manager/history": ["eventManager"],
+        "/event_manager/events/create": ["eventManager"],
         "/settings/general": ["settings"],
         "/settings/password": ["settings"]
     }
