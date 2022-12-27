@@ -15,8 +15,8 @@
     "select_label_category": "Kategoria",
     "select_error_category": "Musisz wybrać kategorie!",
 
-    "textarea_label_user_bio": "Bio",
-    "textarea_placeholder_user_bio": "Powiedz coś o sobie...",
+    "textarea_label_bio": "Bio",
+    "textarea_placeholder_bio": "Powiedz coś o sobie...",
 
     "text_label_old_password": "Stare hasło",
     "text_error_old_password": "Pole nie może być puste!",

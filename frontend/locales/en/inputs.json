@@ -15,8 +15,8 @@
     "select_label_category": "Category",
     "select_error_category": "You have to choose a category!",
 
-    "textarea_label_user_bio": "Bio",
-    "textarea_placeholder_user_bio": "Say something about yourself...",
+    "textarea_label_bio": "Bio",
+    "textarea_placeholder_bio": "Say something about yourself...",
 
     "text_label_old_password": "Old password",
     "text_error_old_password": "Field cannot be empty!",
