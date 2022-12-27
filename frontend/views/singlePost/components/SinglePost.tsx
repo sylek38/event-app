@@ -30,6 +30,7 @@ interface Props {
     // avatar: string;
     width?: number;
     date: Date;
+    createdAt: Date;
 }
 
 export const SinglePost = ({
@@ -44,6 +45,7 @@ export const SinglePost = ({
     map,
     // avatar,
     date,
+    createdAt,
     width = 370,
 }: Props) => {
     const { t } = useTranslation("global");
@@ -87,6 +89,11 @@ export const SinglePost = ({
                                             }
                                         )}
                                     </span>
+                                    <span>
+                                        {new Date(date).toLocaleTimeString(
+                                            t("lang")
+                                        )}
+                                    </span>
                                 </S.Info>
                             </S.DetailsItem>
 
@@ -114,8 +121,19 @@ export const SinglePost = ({
                                     <FontAwesomeIcon icon={faCalendar} />
                                 </S.IconContainer>
                                 <S.Info>
-                                    <span>jeszcze nie wiem co tutaj</span>
-                                    <span>ddd</span>
+                                    {new Date(createdAt).toLocaleDateString(
+                                        t("lang"),
+                                        {
+                                            day: "numeric",
+                                            month: "long",
+                                            year: "numeric",
+                                        }
+                                    )}
+                                    <span>
+                                        {new Date(createdAt).toLocaleTimeString(
+                                            t("lang")
+                                        )}
+                                    </span>
                                 </S.Info>
                             </S.DetailsItem>
                         </div>

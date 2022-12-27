@@ -27,7 +27,7 @@ export function DateInput<T>({
     const { t } = useTranslation("inputs");
 
     const { ref, ...rest } = register(id, {
-        valueAsDate: true,
+        // valueAsDate: true,
     });
 
     const today = new Date();
@@ -41,7 +41,7 @@ export function DateInput<T>({
                 {!hideLabel && <span>{t(`date_label_${id}`)}</span>}
             </S.Label>
             <S.DateInput
-                type="date"
+                type="datetime-local"
                 isError={isError}
                 className="datepicker"
                 min={today.toISOString().slice(0, 10)}

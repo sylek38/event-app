@@ -80,7 +80,14 @@ export const Post = ({
                         </S.DetailsItem>
                         <S.DetailsItem>
                             <FontAwesomeIcon icon={faCalendarDays} />
-                            <span>{new Date(date).toLocaleDateString()}</span>
+                            <span>
+                                {" "}
+                                {new Date(date).toLocaleTimeString(t("lang"), {
+                                    day: "numeric",
+                                    month: "long",
+                                    year: "numeric",
+                                })}
+                            </span>
                         </S.DetailsItem>
                         <S.DetailsItem>
                             <FontAwesomeIcon icon={faUser} />
