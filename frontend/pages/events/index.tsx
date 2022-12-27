@@ -8,6 +8,7 @@ import { FetchErrorsType, FetchUrl } from "../../api/types/Fetch";
 
 const Events = () => {
     const [posts, setPosts] = useState([]);
+
     useEffect(() => {
         async function fetchPosts() {
             try {
@@ -19,7 +20,6 @@ const Events = () => {
                 });
 
                 if (data.status == 200) {
-                    console.log(data);
                 }
 
                 const posts = await data.json();

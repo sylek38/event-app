@@ -29,7 +29,6 @@ export const getPosts = async () => {
         });
 
         if (data.status == 200) {
-            console.log(data);
         }
 
         return data.json();
