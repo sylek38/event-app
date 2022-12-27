@@ -32,6 +32,7 @@ export const Post = ({
     name,
     surname,
     title,
+    desc,
     category,
     peopleLimit,
     photo,
@@ -71,6 +72,7 @@ export const Post = ({
                     </span>
                     <CategoryTag name={category} />
                     <S.Title>{title}</S.Title>
+                    <S.Desc>{desc}</S.Desc>
                     <S.Details>
                         <S.DetailsItem>
                             <FontAwesomeIcon icon={faLocationDot} />

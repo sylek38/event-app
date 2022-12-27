@@ -81,11 +81,28 @@ export const Title = styled.span`
     display: block;
     height: 3rem;
     margin-top: ${pxToRem(10)};
-    margin-bottom: ${pxToRem(20)};
+
     font-size: 1rem;
     font-weight: bold;
     color: var(--color-white);
 
+    line-height: 1.5rem;
+    max-height: 3rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+`;
+
+export const Desc = styled.span`
+    display: block;
+    height: 3rem;
+
+    font-size: var(--font-size-12);
+    font-weight: bold;
+    color: var(--color-light-gray);
+    margin-bottom: ${pxToRem(20)};
     line-height: 1.5rem;
     max-height: 3rem;
     display: -webkit-box;
