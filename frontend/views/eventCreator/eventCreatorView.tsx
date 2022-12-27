@@ -79,7 +79,7 @@ export const EventCreatorView = () => {
         >
             <S.Form onSubmit={handleSubmit(onSubmit)}>
                 <FileInput id="photo" register={register} control={control} />
-                <S.newLine>{t1("info")}</S.newLine>
+                <S.NewLine>{t1("info")}</S.NewLine>
                 <S.Content>
                     <TextInput
                         id="title"
@@ -120,7 +120,7 @@ export const EventCreatorView = () => {
                         max={99}
                     ></Slider>
                 </S.Content>
-                <S.newLine>{t1("map")}</S.newLine>
+                <S.NewLine>{t1("map")}</S.NewLine>
                 <S.Content>
                     <TextInput
                         id="map"

@@ -12,7 +12,6 @@ export const CategoryTag = styled.div`
     background-color: var(--color-white);
     color: var(--color-black);
     border-radius: ${pxToRem(12)};
-    margin-top: 30px;
 
     > svg {
         width: 1rem;
