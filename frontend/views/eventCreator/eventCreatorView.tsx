@@ -67,7 +67,7 @@ export const EventCreatorView = () => {
             photo: "",
             map: "",
             email: "test@test.pl",
-            date: new Date(),
+            date: undefined,
         },
     });
 
@@ -125,7 +125,7 @@ export const EventCreatorView = () => {
                     ></Slider>
                     <DateInput
                         id="date"
-                        isError={!!errors.map}
+                        isError={!!errors.date}
                         register={register}
                         control={control}
                     ></DateInput>
