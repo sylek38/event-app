@@ -18,6 +18,7 @@ interface PostData {
     // avatar: string;
     width?: number;
     date: Date;
+    createdAt: Date;
 }
 
 export const PostView = () => {
