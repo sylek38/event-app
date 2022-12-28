@@ -28,5 +28,6 @@
         "history": "History",
         "general": "General",
         "password": "Change password"
-    }
+    },
+    "user_profile": "User Profile"
 }

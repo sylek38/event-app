@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { Avatar } from "../avatar/Avatar";
 import { SearchInput } from "../inputs/searchbar/Searchbar";
 import { TextInput } from "../inputs/text/TextInput";
 import * as S from "./Header.style";
@@ -16,9 +17,12 @@ export const Header = () => {
     return (
         <S.Header>
             <div>
-                {/* Temporary */}
                 <SearchInput id="search" register={register} />
-                <div>avatar</div>
+                <Avatar
+                    src="/images/defaultPic.png"
+                    withBorder
+                    alt="user picture"
+                />
             </div>
         </S.Header>
     );
