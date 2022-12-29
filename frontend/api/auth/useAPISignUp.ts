@@ -10,49 +10,46 @@ interface ResponseType {
 }
 
 export interface APISignInMutationVariables {
-    register_name: string;
-    register_surname: string;
-    register_email: string;
-    register_password: string;
+    name: string;
+    surname: string;
+    email: string;
+    bio: string;
+    password: string;
+    profilePic: string;
 }
 
-export const useAPISignIn = () => {
+export const useAPISignUp = () => {
     const { push } = useRouter();
 
     return useMutation<
         ResponseType,
         FetchErrorsType,
         APISignInMutationVariables
-    >(
-        async ({
-            register_name,
-            register_surname,
-            register_email,
-            register_password,
-        }) => {
-            try {
-                const data = await fetch(`${BACKEND_URL}${FetchUrl.LOGIN}`, {
-                    method: "POST",
-                    body: JSON.stringify({
-                        name: register_name,
-                        surname: register_surname,
-                        email: register_email,
-                        password: register_password,
-                    }),
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                });
+    >(async ({ name, surname, email, bio, password, profilePic }) => {
+        try {
+            const data = await fetch(`${BACKEND_URL}${FetchUrl.REGISTER}`, {
+                method: "POST",
+                body: JSON.stringify({
+                    name,
+                    surname,
+                    email,
+                    bio,
+                    password,
+                    profilePic,
+                }),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
 
-                if (data) {
-                    push(Routes.LOGIN);
-                }
-
-                return data.json();
-            } catch (err) {
-                console.log(err);
-                throw err;
+            if (data) {
+                push(Routes.LOGIN);
             }
+
+            return data.json();
+        } catch (err) {
+            console.log(err);
+            throw err;
         }
-    );
+    });
 };

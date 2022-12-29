@@ -9,8 +9,8 @@ interface ResponseType {
 }
 
 export interface APISignInMutationVariables {
-    login_email: string;
-    login_password: string;
+    email: string;
+    password: string;
 }
 
 export const useAPISignIn = () => {
@@ -20,15 +20,12 @@ export const useAPISignIn = () => {
         ResponseType,
         FetchErrorsType,
         APISignInMutationVariables
-    >(async ({ login_email, login_password }) => {
+    >(async ({ email, password }) => {
         try {
             const data = await fetch(`${BACKEND_URL}${FetchUrl.LOGIN}`, {
                 method: "POST",
                 credentials: "include",
-                body: JSON.stringify({
-                    email: login_email,
-                    password: login_password,
-                }),
+                body: JSON.stringify({ email, password }),
                 headers: {
                     "Content-Type": "application/json",
                 },

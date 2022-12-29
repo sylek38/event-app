@@ -6,8 +6,6 @@ export const Container = styled.div<{ fullWidth?: boolean }>`
     flex-direction: column;
     gap: ${pxToRem(10)};
     flex-shrink: 1;
-    max-width: ${pxToRem(300)};
-    width: 100%;
 
     ${({ fullWidth }) =>
         fullWidth &&
@@ -28,7 +26,7 @@ export const TextareaInput = styled.textarea<{
 }>`
     all: unset;
     padding: ${pxToRem(12)} ${pxToRem(20)};
-    font-size: ${pxToRem(12)};
+    font-size: ${pxToRem(14)};
     color: var(--color-white);
     background-color: ${({ dark }) =>
         dark ? "var(--primary-background)" : "var(--secondary-background)"};

@@ -1,19 +1,19 @@
 {
-    "text_label_login_email": "Email address",
-    "text_error_login_email": "Incorrect address email",
-    "text_label_register_email": "Email",
-    "text_error_register_email": "Enter your email",
-    "text_label_login_password": "Password",
-    "text_error_login_password": "The password that you've entered is incorrect",
-    "text_label_register_password": "Password",
-    "text_error_register_password": "Enter your password",
-    "text_label_register_name": "Name",
-    "text_error_register_name": "Enter your name",
-    "text_label_register_lastname": "Last name",
-    "text_error_register_lastname": "Enter your last name",
+    "text_label_email": "Email",
+    "text_error_email": "Enter your email",
+    "text_label_password": "Password",
+    "text_error_password": "Enter your password",
+    "text_label_name": "Name",
+    "text_error_name": "Enter your name",
+    "text_label_surname": "Last name",
+    "text_error_surname": "Enter your last name",
 
     "text_search_select_city": "Select a city",
     "text_searchbar": "Search...",
+
+    "text_search_category": "Choose category",
+    "select_label_category": "Category",
+    "select_error_category": "You have to choose a category!",
 
     "textarea_label_user_bio": "Bio",
     "textarea_placeholder_user_bio": "Say something about yourself...",
@@ -23,5 +23,21 @@
     "text_label_new_password": "New password",
     "text_error_new_password": "Field cannot be empty!",
     "text_label_repeat_password": "Repeat password",
-    "text_error_repeat_password": "Field cannot be empty!"
+    "text_error_repeat_password": "Field cannot be empty!",
+
+    "text_label_title": "Title",
+    "text_error_title": "Enter a title for your event!",
+    "text_placeholder_title": "My birthday party on a yacht.. Baby!",
+
+    "textarea_label_desc": "Description",
+    "textarea_error_desc": "Enter a desciption for your event!",
+    "textarea_placeholder_desc": "Tell something more about your event...",
+
+    "text_label_map": "Enter the location where your event will take place",
+    "text_error_map": "Your event must have a defined location!",
+    "text_placeholder_map": "Just don't give a location on Mars:)",
+
+    "slider_label_peopleLimit": "Specify the maximum number of people",
+
+    "file_label_photo": "Add image"
 }

@@ -27,8 +27,6 @@ export const Layout = ({
         csrf,
     });
 
-    console.log(!!data, isError);
-
     return (
         <UserContext.Provider value={{ session: data, csrf }}>
             <Header />

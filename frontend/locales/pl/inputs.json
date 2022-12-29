@@ -1,19 +1,19 @@
 {
-    "text_label_login_email": "Adres email",
-    "text_error_login_email": "Niepoprawny adres",
-    "text_label_register_email": "Email",
-    "text_error_register_email": "Wpisz swój email",
-    "text_label_login_password": "Hasło",
-    "text_error_login_password": "Nieprawidłowe hasło",
-    "text_label_register_password": "Hasło",
-    "text_error_register_password": "Wpisz hasło",
-    "text_label_register_name": "Imię",
-    "text_error_register_name": "Wpisz swoje imię",
-    "text_label_register_lastname": "Nazwisko",
-    "text_error_register_lastname": "Wpisz swoje nazwisko",
+    "text_label_email": "Email",
+    "text_error_email": "Wpisz swój email",
+    "text_label_password": "Hasło",
+    "text_error_password": "Wpisz hasło",
+    "text_label_name": "Imię",
+    "text_error_name": "Wpisz swoje imię",
+    "text_label_surname": "Nazwisko",
+    "text_error_surname": "Wpisz swoje nazwisko",
 
     "text_search_select_city": "Wybierz miasto",
     "text_searchbar": "Wyszukaj...",
+
+    "text_search_category": "Wybierz kategorie",
+    "select_label_category": "Kategoria",
+    "select_error_category": "Musisz wybrać kategorie!",
 
     "textarea_label_user_bio": "Bio",
     "textarea_placeholder_user_bio": "Powiedz coś o sobie...",
@@ -23,5 +23,21 @@
     "text_label_new_password": "Nowe hasło",
     "text_error_new_password": "Pole nie może być puste!",
     "text_label_repeat_password": "Powtórz hasło",
-    "text_error_repeat_password": "Pole nie może być puste!"
+    "text_error_repeat_password": "Pole nie może być puste!",
+
+    "text_label_title": "Tytuł",
+    "text_error_title": "Wpisz tytuł dla swojego wydarzenia!",
+    "text_placeholder_title": "Moje przyjęcie urodzinowe na jachcie",
+
+    "textarea_label_desc": "Opis",
+    "textarea_error_desc": "Wpisz opis dla swojego Wydarzenia!",
+    "textarea_placeholder_desc": "Powiedz coś więcej o swoim wydarzeniu...",
+
+    "text_label_map": "Wpisz lokalizację, w której odbędzie się twoje wydarzenie",
+    "text_error_map": "Twoje wydarzenie musi mieć zdefiniowaną lokalizacje!",
+    "text_placeholder_map": "Tylko nie podawaj lokalizacji na marsie:)",
+
+    "slider_label_peopleLimit": "Określ maksymalną liczbę osób",
+
+    "file_label_photo": "Dodaj obrazek"
 }
