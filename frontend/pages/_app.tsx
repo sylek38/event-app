@@ -5,7 +5,7 @@ import {
     QueryClient,
     Hydrate,
 } from "@tanstack/react-query";
-import { ReactElement, useState } from "react";
+import { ReactElement, useEffect, useState } from "react";
 
 function MyApp({
     Component,

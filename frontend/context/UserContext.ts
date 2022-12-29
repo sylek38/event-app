@@ -12,8 +12,11 @@ export interface SessionType {
 
 interface Props {
     session?: SessionType;
+    csrf: string;
 }
 
-export const UserContext = createContext<Props>({});
+export const UserContext = createContext<Props>({
+    csrf: "",
+});
 
 export const useAuth = () => useContext(UserContext);

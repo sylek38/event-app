@@ -1,6 +1,8 @@
 import { ReactNode } from "react";
+import { useAPIAuth } from "../../api/auth/useAPIAuth";
 import { Header } from "../../components/header/Header";
 import Navbar from "../../components/navbar/Navbar";
+import { UserContext } from "../../context/UserContext";
 import * as S from "./Layout.style";
 
 interface Props {
@@ -11,6 +13,7 @@ interface Props {
         title: ReactNode;
         description?: ReactNode;
     };
+    csrf: string;
 }
 
 export const Layout = ({
@@ -18,9 +21,16 @@ export const Layout = ({
     small,
     withoutBackground,
     header,
+    csrf,
 }: Props) => {
+    const { data, isError, isFetching, isLoading } = useAPIAuth({
+        csrf,
+    });
+
+    console.log(!!data, isError);
+
     return (
-        <>
+        <UserContext.Provider value={{ session: data, csrf }}>
             <Header />
             <Navbar />
 
@@ -39,6 +49,6 @@ export const Layout = ({
                     {children}
                 </S.Container>
             </S.Main>
-        </>
+        </UserContext.Provider>
     );
 };

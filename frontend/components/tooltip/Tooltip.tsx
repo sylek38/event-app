@@ -37,7 +37,7 @@ interface ChildrenProps {
 
 export const Tooltip = ({
     children,
-    placement,
+    placement = "top",
     text,
     shiftValue = "sidebar",
 }: Props) => {

@@ -6,7 +6,6 @@ import { FetchErrorsType, FetchUrl } from "../types/Fetch";
 
 interface ResponseType {
     errors?: string[];
-    data?: unknown;
 }
 
 export interface APISignInMutationVariables {
@@ -25,7 +24,11 @@ export const useAPISignIn = () => {
         try {
             const data = await fetch(`${BACKEND_URL}${FetchUrl.LOGIN}`, {
                 method: "POST",
-                body: JSON.stringify({ login_email, login_password }),
+                credentials: "include",
+                body: JSON.stringify({
+                    email: login_email,
+                    password: login_password,
+                }),
                 headers: {
                     "Content-Type": "application/json",
                 },

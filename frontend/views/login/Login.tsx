@@ -4,8 +4,6 @@ import * as S from "./Login.style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
 import { TextInput } from "../../components/inputs/text/TextInput";
-import { Context } from "../../context/Context";
-import axios from "axios";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";

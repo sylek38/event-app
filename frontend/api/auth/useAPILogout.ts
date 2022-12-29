@@ -1,19 +1,25 @@
 import { BACKEND_URL } from "./../../config";
 import { useMutation } from "@tanstack/react-query";
 import { FetchUrl } from "../types/Fetch";
+import Cookies from "js-cookie";
 
-export const useAPISignOut = () => {
+interface Args {
+    csrf: string;
+}
+
+export const useAPISignOut = ({ csrf }: Args) => {
     return useMutation<unknown>(async () => {
         try {
             const data = await fetch(`${BACKEND_URL}${FetchUrl.LOGOUT}`, {
                 method: "DELETE",
-                // credentials: "include",
+                credentials: "include",
                 headers: {
                     "Content-Type": "application/json",
+                    Authorization: `Bearer ${csrf}`,
                 },
             });
 
-            // Cookies.remove(AUTH_COOKIE);
+            Cookies.remove("csrf");
             window.location.href = "/";
 
             return data.json();
