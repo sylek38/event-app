@@ -32,4 +32,6 @@ export enum Routes {
     EVENT_MANAGER_UPDATE = "/event_manager/events/update/[id]",
     EVENT_MANAGER_HISTORY = "/event_manager/history",
     MESSAGES = "/messages",
+    INFO = "/info",
+    TERMS = "/info/terms",
 }
