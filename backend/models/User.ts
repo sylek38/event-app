@@ -40,10 +40,6 @@ const UserSchema = new mongoose.Schema(
 			required: false,
 			default: "defaultPic.png",
 		},
-		bio: {
-			type: String,
-			required: false,
-		},
 	},
 	{ timestamps: true }
 );

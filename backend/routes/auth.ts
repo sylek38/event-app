@@ -25,7 +25,7 @@ interface LoginRequest extends Request {
 }
 
 router.post("/register", async (req: RegisterRequest, res: Response) => {
-	const { name, surname, email, password } = req.body;
+	const { name, surname, email, password, bio, profilePic } = req.body;
 
 	// TODO: Uncomment for final version
 	// if (!password.test(passwordRegex)) {
@@ -50,6 +50,8 @@ router.post("/register", async (req: RegisterRequest, res: Response) => {
 			surname,
 			email,
 			password: hashedPass,
+			bio,
+			profilePic,
 		});
 
 		const user = await newUser.save();
