@@ -12,7 +12,7 @@ export const InfoView = () => {
         <S.Container>
             <S.Sidebar>
                 <S.Logo
-                    src="https://i.imgur.com/uDKK9Kh.png"
+                    src="https://i.imgur.com/lTGXVWS.png"
                     alt="Logo"
                     width={80}
                 ></S.Logo>
