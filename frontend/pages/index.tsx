@@ -1,10 +1,6 @@
 import type { GetServerSideProps, NextPage } from "next";
-import useTranslation from "next-translate/useTranslation";
 import { fetchAPIAuth } from "../api/auth/useAPIAuth";
-import { useAPISignIn } from "../api/auth/useAPISignIn";
-import { HomeView } from "../views/home/HomeView";
-import { Layout } from "../views/layout/Layout";
-import { LoginView } from "../views/login/Login";
+import { LoginView } from "../views/login/LoginView";
 
 const Home: NextPage = () => <LoginView />;
 

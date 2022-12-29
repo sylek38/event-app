@@ -1,5 +1,5 @@
 import useTranslation from "next-translate/useTranslation";
-import { EventManagerView } from "../../../views/eventManager/EventManager";
+import { EventManagerView } from "../../../views/eventManager/EventManagerView";
 import { Layout } from "../../../views/layout/Layout";
 
 const EventManagerInvites = () => {
@@ -12,7 +12,7 @@ const EventManagerInvites = () => {
                 description: t("heading_desc"),
             }}
         >
-            <EventManagerView activeTab={"invites"} />
+            <EventManagerView activeTab="invites" />
         </Layout>
     );
 };

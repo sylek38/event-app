@@ -1,5 +1,5 @@
 import { pxToRem } from "../../utils/pxToRem";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;

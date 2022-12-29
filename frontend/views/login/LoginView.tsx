@@ -1,5 +1,5 @@
-import "./Login.style.ts";
-import * as S from "./Login.style";
+import "./LoginView.style.ts";
+import * as S from "./LoginView.style";
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle } from "@fortawesome/free-brands-svg-icons";
@@ -9,8 +9,9 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../components/button/Button";
 
-import { BACKEND_URL, DEFAULT_EMAIL, DEFAULT_PASS } from "../../config";
 import { useAPISignIn } from "../../api/auth/useAPISignIn";
+import { emailRegex } from "../../utils/regex";
+import { DEFAULT_EMAIL, DEFAULT_PASS } from "../../config";
 
 interface FormTypes {
     login_email: string;
@@ -66,7 +67,9 @@ export const LoginView = () => {
                         register={register}
                         control={control}
                         isError={!!errors.login_email}
+                        pattern={emailRegex}
                         required
+                        dark
                     />
 
                     <TextInput
@@ -76,6 +79,7 @@ export const LoginView = () => {
                         isError={!!errors.login_password}
                         type="password"
                         required
+                        dark
                     />
                     <S.Middle>
                         <S.MiddleContent>

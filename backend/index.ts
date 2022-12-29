@@ -1,6 +1,9 @@
 import dotenv from "dotenv";
 import express from "express";
 const authRoute = require("./routes/auth");
+const userRoute = require("./routes/user");
+const postRoute = require("./routes/posts");
+const categoryRoute = require("./routes/category");
 const cors = require("cors");
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
@@ -51,8 +54,11 @@ app.get("/", (req, res) => {
 	res.send("Express + TypeScript Server");
 });
 
+app.use("/backend/auth", authRoute);
+app.use("/backend/users", userRoute);
+app.use("/backend/posts", postRoute);
+app.use("/backend/category", categoryRoute);
+
 app.listen(port, () => {
 	console.log(`[server]: Server is running at ${domain}:${port}`);
 });
-
-app.use("/backend/auth", authRoute);

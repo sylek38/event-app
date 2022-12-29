@@ -1,8 +1,8 @@
 import { Filters } from "../../../components/filters/Filters";
 
-export const Invites = () => (
+export const EventsView = () => (
     <div>
         <Filters>Filtry go here</Filters>
-        Invites panel content
+        Events panel content
     </div>
 );
