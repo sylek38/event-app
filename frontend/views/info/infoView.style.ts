@@ -17,11 +17,15 @@ export const Sidebar = styled.div`
     flex-grow: 1;
     padding: 0 0 2rem 5rem;
     height: ${pxToRem(20)};
+
+    div:nth-child(2) {
+        background-color: var(--secondary-background--hover);
+    }
 `;
 
 export const Option = styled.div`
-    width: ${pxToRem(180)};
-    padding: 0.5rem 2rem 0.5rem 0;
+    width: ${pxToRem(185)};
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
     color: var(--color-light-gray);
     font-size: var(--font-size-14);
     cursor: pointer;
@@ -33,7 +37,7 @@ export const Option = styled.div`
 
 export const Content = styled.div`
     flex-grow: 10;
-    padding: ${pxToRem(15)};
+    padding: ${pxToRem(15)} ${pxToRem(80)};
     background-color: var(--secondary-background);
     border-radius: ${pxToRem(20)};
 
@@ -49,7 +53,7 @@ export const Content = styled.div`
         background-image: var(--primary-gradient);
         width: 90%;
         height: ${pxToRem(10)};
-        top: -${pxToRem(27)};
+        top: -${pxToRem(25)};
         left: ${pxToRem(40)};
     }
 `;

@@ -1,3 +1,4 @@
+import useTranslation from "next-translate/useTranslation";
 import "./Post.style.ts";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -12,31 +13,35 @@ import Link from "next/link";
 import { Routes } from "../../../routes/Routes";
 
 interface Props {
-    title: string;
-    // TODO: map from and to enum
-    category: string;
-    img: string;
-    authorName: string;
-    avatar: string;
     id: string;
+    name: string;
+    surname: string;
+    title: string;
+    desc: string;
+    category: string;
+    peopleLimit: number;
+    photo: string;
+    map: string;
+    // avatar: string;
     width?: number;
-    place: string;
-    date: string;
-    peopleCount: string;
+    date: Date;
 }
 
 export const Post = ({
-    title,
-    category,
-    img,
-    authorName,
-    avatar,
     id,
-    width = 370,
-    place,
+    name,
+    surname,
+    title,
+    desc,
+    category,
+    peopleLimit,
+    photo,
+    map,
+    // avatar,
     date,
-    peopleCount,
+    width = 370,
 }: Props) => {
+    const { t } = useTranslation("global");
     return (
         <Link
             href={{
@@ -47,34 +52,46 @@ export const Post = ({
         >
             <S.Post width={width}>
                 <S.BackgroundContainer>
-                    <img src={img} alt="" />
+                    <img src={photo} alt="" />
                     {/* TODO: Make component for this */}
                     <S.Date>
-                        <span>06</span>
-                        <span>Cze</span>
+                        <span> {new Date(date).getDate()}</span>
+                        <span>
+                            {new Date(date).toLocaleString(t("lang"), {
+                                month: "short",
+                            })}
+                        </span>
                     </S.Date>
                 </S.BackgroundContainer>
                 <S.Content>
                     {/* TODO: Avatar component with various sizes */}
-                    <S.Avatar>
-                        <img src={avatar} />
-                    </S.Avatar>
-                    <span>{authorName}</span>
-
+                    {/* W celach eksperymentalnych avatar ma na razie zdjęcie z wybranego tła */}
+                    <S.Avatar>{<img src={photo} />}</S.Avatar>
+                    <span>
+                        {name} {surname}
+                    </span>
                     <CategoryTag name={category} />
                     <S.Title>{title}</S.Title>
+                    <S.Desc>{desc}</S.Desc>
                     <S.Details>
                         <S.DetailsItem>
                             <FontAwesomeIcon icon={faLocationDot} />
-                            <span>{place}</span>
+                            <span>{map}</span>
                         </S.DetailsItem>
                         <S.DetailsItem>
                             <FontAwesomeIcon icon={faCalendarDays} />
-                            <span>{date}</span>
+                            <span>
+                                {" "}
+                                {new Date(date).toLocaleTimeString(t("lang"), {
+                                    day: "numeric",
+                                    month: "long",
+                                    year: "numeric",
+                                })}
+                            </span>
                         </S.DetailsItem>
                         <S.DetailsItem>
                             <FontAwesomeIcon icon={faUser} />
-                            <span>{peopleCount}</span>
+                            <span>{peopleLimit}</span>
                         </S.DetailsItem>
                     </S.Details>
                 </S.Content>

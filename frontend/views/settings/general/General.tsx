@@ -12,11 +12,11 @@ import { useAPISettingsGeneral } from "../../../api/users/useAPISettingsGeneral"
 import { emailRegex } from "../../../utils/regex";
 
 interface FormTypes {
-    register_name: string;
-    register_lastname: string;
-    register_email: string;
-    register_password: string;
-    user_bio: string;
+    name: string;
+    surname: string;
+    email: string;
+    password: string;
+    bio: string;
 }
 export const General = () => {
     const { t } = useTranslation("global");
@@ -63,36 +63,36 @@ export const General = () => {
             </S.ImageAvatar>
             <S.Form onSubmit={handleSubmit(onSubmit)}>
                 <TextInput
-                    id="register_name"
+                    id="name"
                     register={register}
                     control={control}
-                    isError={!!errors.register_name}
+                    isError={!!errors.name}
                     dark
                 />
 
                 <TextInput
-                    id="register_lastname"
+                    id="surname"
                     register={register}
                     control={control}
-                    isError={!!errors.register_lastname}
+                    isError={!!errors.surname}
                     dark
                 />
 
                 <TextInput
-                    id="register_email"
+                    id="email"
                     register={register}
                     control={control}
-                    isError={!!errors.register_email}
+                    isError={!!errors.email}
                     pattern={emailRegex}
                     dark
                 />
 
                 <TextareaInput
-                    id="user_bio"
+                    id="bio"
                     placeholder
                     register={register}
                     control={control}
-                    isError={!!errors.user_bio}
+                    isError={!!errors.bio}
                     fullWidth
                     rows={4}
                     cols={50}

@@ -7,6 +7,8 @@ import { Select } from "../../components/option/SelectField";
 import { TextareaInput } from "../../components/inputs/textarea/TextareaInput";
 import { Slider } from "../../components/inputs/slider/Slider";
 import { FileInput } from "../../components/inputs/file/FileInput";
+// import { DatePicker } from "../../components/inputs/datePicker/DatePicker";
+import { DateInput } from "../../components/inputs/date/DateInput";
 
 import { Layout } from "../../views/layout/Layout";
 
@@ -28,6 +30,7 @@ interface FormTypes {
     map: string;
     search_bar: string;
     email: string;
+    date: Date;
 }
 
 export const EventCreatorView = () => {
@@ -64,6 +67,7 @@ export const EventCreatorView = () => {
             photo: "",
             map: "",
             email: "test@test.pl",
+            date: undefined,
         },
     });
 
@@ -111,6 +115,12 @@ export const EventCreatorView = () => {
                         cols={50}
                         dark
                     />
+                    <DateInput
+                        id="date"
+                        isError={!!errors.date}
+                        register={register}
+                        control={control}
+                    ></DateInput>
                     <Slider
                         id="peopleLimit"
                         register={register}
