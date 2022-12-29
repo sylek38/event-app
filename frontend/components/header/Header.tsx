@@ -14,34 +14,12 @@ export const Header = () => {
         formState: { errors },
     } = useForm<FormTypes>();
 
-    const fetchList = async () => {
-        try {
-            const data = await fetch(`${BACKEND_URL}/backend/auth/list`, {
-                method: "POST",
-                credentials: "include",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
-
-            if (data) {
-                console.log(data);
-            }
-
-            return data;
-        } catch (err) {
-            console.log(err);
-            throw err;
-        }
-    };
-
     return (
         <S.Header>
             <div>
                 {/* Temporary */}
                 <SearchInput id="search" register={register} />
                 <div>avatar</div>
-                <button onClick={fetchList}>Click</button>
             </div>
         </S.Header>
     );
