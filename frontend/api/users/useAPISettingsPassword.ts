@@ -10,60 +10,48 @@ interface ResponseType {
 
 export interface APISettingsMutationVariables {
     userId: string;
-    name: string;
-    surname: string;
-    email: string;
-    bio: string;
+    old_password: string;
+    new_password: string;
+    repeat_password: string;
 }
 
-export const useAPISettingsGeneral = () => {
+export const useAPISettingsPassword = () => {
     const { push } = useRouter();
 
     const oldValues = {
         userId: "63b325e386f12b8784f47c93", //Na razie na sucho Id i pozostałe dane
-        name: "balu",
-        surname: "balu",
-        email: "balu@gmail.com",
-        bio: "",
+        password: "Ab1CdE",
     };
 
     return useMutation<
         ResponseType,
         FetchErrorsType,
         APISettingsMutationVariables
-    >(async ({ name, surname, email, bio }) => {
-        const updatedValues = { name, surname, email, bio };
-        const updatedUser = { ...oldValues };
-
-        if (updatedValues.name) {
-            updatedUser.name = updatedValues.name;
+    >(async ({ old_password, new_password, repeat_password }) => {
+        if (new_password !== repeat_password) {
+            console.log("hasła się różnią!");
+            return;
         }
 
-        if (updatedValues.surname) {
-            updatedUser.surname = updatedValues.surname;
+        if (old_password !== oldValues.password) {
+            console.log("stare hasło nie jest prawidłowe!");
+            return;
         }
 
-        if (updatedValues.email) {
-            updatedUser.email = updatedValues.email;
-        }
-
-        if (updatedValues.bio) {
-            updatedUser.bio = updatedValues.bio;
-        }
+        const updatedUser = { ...oldValues, new_password };
 
         try {
             const data = await fetch(
                 `${BACKEND_URL}${FetchUrl.USERS}/${oldValues.userId}`,
                 {
                     method: "PUT",
-                    body: JSON.stringify({
-                        ...updatedUser,
-                    }),
+                    body: JSON.stringify({ ...updatedUser }),
                     headers: {
                         "Content-Type": "application/json",
                     },
                 }
             );
+            if (data) new_password;
             return data.json();
         } catch (err) {
             console.log(err);

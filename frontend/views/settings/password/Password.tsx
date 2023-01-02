@@ -2,29 +2,41 @@ import * as S from "./Password.style";
 
 import { TextInput } from "../../../components/inputs/text/TextInput";
 
+import { useAPISettingsPassword } from "../../../api/users/useAPISettingsPassword";
+
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../../components/button/Button";
 import { passwordRegex } from "../../../utils/regex";
+import { useState } from "react";
 
 interface FormTypes {
+    userId: string;
     old_password: string;
     new_password: string;
     repeat_password: string;
 }
 
 export const Password = () => {
-    const { t } = useTranslation("global");
+    const { t: t1 } = useTranslation("global");
+    const { t: t2 } = useTranslation("settings");
+
+    const { isError, isLoading, mutateAsync } = useAPISettingsPassword();
+    const [successMessage, setSuccessMessage] = useState(false);
 
     const {
         register,
         control,
         formState: { errors },
         handleSubmit,
+        reset,
     } = useForm<FormTypes>();
 
-    const onSubmit: SubmitHandler<FormTypes> = (data) => {
+    const onSubmit: SubmitHandler<FormTypes> = async (data) => {
         console.log(data);
+        await mutateAsync(data);
+        setSuccessMessage(true);
+        reset();
     };
 
     return (
@@ -61,8 +73,12 @@ export const Password = () => {
                 />
 
                 <Button variant="gradient" type="submit" fullWidth>
-                    {t("confirm")}
+                    {t1("confirm")}
                 </Button>
+
+                {successMessage && (
+                    <S.Success>{t2("password_changed")}</S.Success>
+                )}
             </S.Form>
         </S.Container>
     );

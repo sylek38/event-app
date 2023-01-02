@@ -1,5 +1,7 @@
 {
     "heading": "Ustawienia",
     "general": "Ogólne",
-    "password": "Zmień hasło"
+    "password": "Zmień hasło",
+    "general_changed": "Zapisano zmiany!",
+    "password_changed": "Hasło zostało zmienione!"
 }

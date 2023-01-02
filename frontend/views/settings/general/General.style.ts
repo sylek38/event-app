@@ -69,3 +69,9 @@ export const deleteBtn = styled.span`
     text-align: center;
     cursor: pointer;
 `;
+
+export const Success = styled.div`
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--primary-color);
+`;

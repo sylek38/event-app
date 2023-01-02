@@ -16,3 +16,9 @@ export const Form = styled.form`
         margin-top: ${pxToRem(30)};
     }
 `;
+
+export const Success = styled.div`
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--primary-color);
+`;
