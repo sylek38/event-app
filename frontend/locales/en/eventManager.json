@@ -8,5 +8,8 @@
     "history": {
         "heading": "Event Manager - History"
     },
+    "creator": {
+        "heading": "Event Creator"
+    },
     "heading_desc": "Here you can find invitations to events, you can also manage them and even reminisce."
 }

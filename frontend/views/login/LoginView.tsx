@@ -13,9 +13,12 @@ import { useAPISignIn } from "../../api/auth/useAPISignIn";
 import { emailRegex } from "../../utils/regex";
 import { DEFAULT_EMAIL, DEFAULT_PASS } from "../../config";
 
+import Link from "next/link";
+import { Routes } from "../../routes/Routes";
+
 interface FormTypes {
-    login_email: string;
-    login_password: string;
+    email: string;
+    password: string;
 }
 
 export const LoginView = () => {
@@ -30,30 +33,13 @@ export const LoginView = () => {
         handleSubmit,
     } = useForm<FormTypes>({
         defaultValues: {
-            login_email: DEFAULT_EMAIL,
-            login_password: DEFAULT_PASS,
+            email: DEFAULT_EMAIL,
+            password: DEFAULT_PASS,
         },
     });
 
     const onSubmit: SubmitHandler<FormTypes> = async (data) => {
         await mutateAsync(data);
-
-        // The old way for comparison:
-
-        // // dispatch({ type: "LOGIN_START" });
-        // console.log(data);
-
-        // try {
-        //     await axios.post(`${BACKEND_URL}/backend/auth/login`, {
-        //         email: data.login_email,
-        //         password: data.login_password,
-        //     });
-
-        //     // dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
-        // } catch (error) {
-        //     console.log(error);
-        //     // dispatch({ type: "LOGIN_FAILURE" });
-        // }
     };
 
     return (
@@ -63,20 +49,20 @@ export const LoginView = () => {
                 <S.Form onSubmit={handleSubmit(onSubmit)}>
                     <S.Header>{t("sign_in_title")}</S.Header>
                     <TextInput
-                        id="login_email"
+                        id="email"
                         register={register}
                         control={control}
-                        isError={!!errors.login_email}
+                        isError={!!errors.email}
                         pattern={emailRegex}
                         required
                         dark
                     />
 
                     <TextInput
-                        id="login_password"
+                        id="password"
                         register={register}
                         control={control}
-                        isError={!!errors.login_password}
+                        isError={!!errors.password}
                         type="password"
                         required
                         dark
@@ -109,7 +95,9 @@ export const LoginView = () => {
                     </S.GoogleButton>
                     <S.Footer>
                         <S.FooterSpan>{t("no_account")}</S.FooterSpan>
-                        <S.FooterHref>{t("sign_up")}</S.FooterHref>
+                        <Link href={Routes.REGISTER}>
+                            <S.FooterHref>{t("sign_up")}</S.FooterHref>
+                        </Link>
                     </S.Footer>
                 </S.Form>
 

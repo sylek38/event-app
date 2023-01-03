@@ -11,6 +11,7 @@ interface Props {
         title: ReactNode;
         description?: ReactNode;
     };
+    hideTopPanel?: boolean;
 }
 
 export const Layout = ({
@@ -18,12 +19,12 @@ export const Layout = ({
     small,
     withoutBackground,
     header,
+    hideTopPanel,
 }: Props) => {
     return (
         <>
-            <Header />
+            {hideTopPanel ? null : <Header />}
             <Navbar />
-
             <S.Main>
                 <S.Container
                     small={small}

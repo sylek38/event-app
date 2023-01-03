@@ -21,6 +21,7 @@
     "filters": "Filtry",
     "delete": "Usuń konto",
     "avatar_change": "Zmień zdjęcie",
+    "info": "Info",
     "tabs": {
         "event_manager_tabs": "Zakładki menadżera zdarzeń",
         "invites": "Zaproszenia",
@@ -29,6 +30,6 @@
         "general": "Ogólne",
         "password": "Zmień hasło"
     },
-    "user_profile": "Profil użytkownika"
-
+    "user_profile": "Profil użytkownika",
+    "lang": "pl-PL"
 }

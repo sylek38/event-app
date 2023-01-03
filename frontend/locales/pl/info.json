@@ -1,0 +1,78 @@
+{
+    "general": {
+        "contact": "Kontakt",
+        "terms": "Regulamin serwisu",
+        "back": "Powrót"
+    },
+    "info": {
+        "heading": "Skontaktuj się z nami",
+        "desc": "Dziękujemy za odwiedzenie naszej strony internetowej. Jeśli masz jakieś pytania, komentarze lub uwagi, chętnie je usłyszymy.",
+        "contact": {
+            "heading": "Możesz się z nami skontaktować poprzez:",
+            "desc": {
+                "li_1": "Email: event.app.wsb@gmail.com",
+                "li_2": "Telefon: +48 123 456 789"
+            }
+        },
+        "footer": "Dziękujemy, że rozważasz Eventik.pl do planowania swoich wydarzeń. Czekamy na współpracę z Tobą."
+    },
+
+    "terms": {
+        "heading": "Regulamin serwisu Eventik.pl",
+        "header": {
+            "definitions": "1. Definicje:",
+            "provisions": "2. Postanowienia ogólne:",
+            "account": "3. Konto:",
+            "publishing": "4. Zasady publikacji wydarzeń:",
+            "final": "5. Postanowienia końcowe:"
+        },
+        "desc": {
+            "definitions": {
+                "li_1": "'Regulamin' - niniejszy dokument określający zasady korzystania z Serwisu oraz prawa i obowiązki Użytkowników i Administratora.",
+                "li_2": "'Serwis' - strona internetowa, na której udostępniona jest aplikacja do organizowania wydarzeń oraz inne usługi świadczone przez Administratora.",
+                "li_3": "'Użytkownik' - osoba fizyczna lub prawna korzystająca z Serwisu.",
+                "li_4": "'Administrator' - osoba prowadząca Serwis oraz świadcząca usługi za pośrednictwem Serwisu.",
+                "li_5": "'Konto' - indywidualne konto Użytkownika na Serwisie, umożliwiające korzystanie z jego funkcji.",
+                "li_6": "'Wydarzenie' - impreza lub inne wydarzenie organizowane przez Użytkownika za pośrednictwem Serwisu.",
+                "li_7": "'Treści' - wszelkie informacje, dane, teksty, zdjęcia, pliki audio, filmy, a także inne materiały publikowane przez Użytkowników na Serwisie."
+            },
+            "provisions": {
+                "li_1": "Niniejsze Postanowienia Ogólne określają zasady korzystania z aplikacji (dalej 'Serwis') udostępnianej przez Eventik (dalej 'Administrator').",
+                "li_2": "Korzystanie z Serwisu oznacza akceptację przez Użytkownika bez zastrzeżeń wszystkich postanowień niniejszego Regulaminu.",
+                "li_3": "Serwis jest skierowany do osób pełnoletnich. Osoby niepełnoletnie mogą korzystać z Serwisu tylko za zgodą rodziców lub opiekunów prawnych.",
+                "li_4": "Użytkownik zobowiązuje się do korzystania z Serwisu w sposób zgodny z prawem, dobrymi obyczajami oraz postanowieniami Regulaminu.",
+                "li_5": "Użytkownik jest odpowiedzialny za treści, które publikuje na Serwisie oraz za konsekwencje ich udostępnienia.",
+                "li_6": "Administrator zastrzega sobie prawo do usuwania treści niezgodnych z prawem, dobrymi obyczajami lub postanowieniami Regulaminu bez uprzedniego powiadomienia.",
+                "li_7": "Serwis może zawierać linki do innych stron internetowych. Administrator nie ponosi odpowiedzialności za treści znajdujące się na tych stronach ani za ewentualne szkody wynikające z ich korzystania.",
+                "li_8": "Administrator zastrzega sobie prawo do zmiany Postanowień Ogólnych w dowolnym momencie bez uprzedzenia. Zalecamy regularne sprawdzanie tej strony, aby być na bieżąco z ewentualnymi zmianami.",
+                "li_9": "Wszelkie spory wynikające z korzystania z Serwisu będą rozstrzygane przez sąd właściwy dla siedziby Administratora.",
+                "li_10": "Postanowienia Ogólne stanowią integralną część Regulaminu i są jego nieodłączną częścią."
+            },
+            "account": {
+                "li_1": "Rejestracja i logowanie do Serwisu wymagane są do korzystania z niektórych jego funkcji.",
+                "li_2": "Użytkownik może założyć jedno konto na Serwisie.",
+                "li_3": "Podczas rejestracji Użytkownik zobowiązuje się do podania prawdziwych i aktualnych danych osobowych.",
+                "li_4": "Użytkownik jest odpowiedzialny za bezpieczeństwo swojego konta i poufność hasła.",
+                "li_5": "Użytkownik zobowiązuje się do natychmiastowego powiadomienia Administratora o jakichkolwiek nieautoryzowanych działaniach na jego koncie.",
+                "li_6": "Administrator zastrzega sobie prawo do zablokowania lub usunięcia konta Użytkownika bez uprzedzenia w przypadku naruszenia postanowień Regulaminu lub prawa.",
+                "li_7": "Użytkownik może usunąć swoje konto w dowolnym momencie poprzez skontaktowanie się z Administratorem."
+            },
+            "publishing": {
+                "li_1": "Użytkownik może publikować wydarzenia na Serwisie po uprzedniej rejestracji i logowaniu.",
+                "li_2": "Wydarzenia publikowane na Serwisie muszą być zgodne z prawem, dobrymi obyczajami oraz postanowieniami Regulaminu.",
+                "li_3": "Wydarzenia nie mogą naruszać praw autorskich ani praw osób trzecich.",
+                "li_4": "Wydarzenia muszą zawierać prawdziwe i aktualne informacje oraz być zgodne z opisem zamieszczonym przez Użytkownika.",
+                "li_5": "W przypadku wydarzeń płatnych, Użytkownik zobowiązuje się do podania prawdziwych i aktualnych informacji o cenie oraz warunkach uczestnictwa.",
+                "li_6": "Administrator zastrzega sobie prawo do usunięcia lub edycji wydarzenia bez uprzedzenia w przypadku naruszenia postanowień Regulaminu lub prawa.",
+                "li_7": "Użytkownik jest odpowiedzialny za wszelkie działania podejmowane przez osoby dołączające do wydarzenia oraz za ewentualne szkody wynikające z ich uczestnictwa."
+            },
+            "final": {
+                "li_1": "Regulamin obowiązuje od dnia jego opublikowania na stronie internetowej Serwisu.",
+                "li_2": "W przypadku jakichkolwiek spornych kwestii związanych z korzystaniem z Serwisu, strony zobowiązują się do starań o ich polubowne załatwienie.",
+                "li_3": "W przypadku braku możliwości ich polubownego załatwienia, spory będą rozstrzygane przez sąd właściwy dla siedziby Administratora.",
+                "li_4": "Regulamin jest dostępny w wersji elektronicznej na stronie internetowej Serwisu.",
+                "li_5": "Wszelkie pytania, uwagi lub skargi dotyczące korzystania z Serwisu prosimy kierować na adres email Administratora podany na stronie internetowej Serwisu."
+            }
+        }
+    }
+}

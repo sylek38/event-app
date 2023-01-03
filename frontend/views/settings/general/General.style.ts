@@ -6,15 +6,12 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
 
-    input {
-        margin: 0.75rem 0;
-    }
     textarea {
         margin-bottom: ${pxToRem(36)};
     }
-    label {
-        padding-left: 1.25rem;
-        margin-top: 0.75rem;
+
+    form div {
+        margin-bottom: ${pxToRem(20)};
     }
 `;
 

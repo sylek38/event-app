@@ -9,10 +9,10 @@ interface ResponseType {
 }
 
 export interface APISettingsMutationVariables {
-    register_name: string;
-    register_lastname: string;
-    register_email: string;
-    user_bio: string;
+    name: string;
+    surname: string;
+    email: string;
+    bio: string;
 }
 
 export const useAPISettingsGeneral = () => {
@@ -22,33 +22,26 @@ export const useAPISettingsGeneral = () => {
         ResponseType,
         FetchErrorsType,
         APISettingsMutationVariables
-    >(
-        async ({
-            register_name,
-            register_lastname,
-            register_email,
-            user_bio,
-        }) => {
-            try {
-                const data = await fetch(`${BACKEND_URL}${FetchUrl.USERS}`, {
-                    //Trzeba dodać Id usera jeszcze
-                    method: "PUT",
-                    body: JSON.stringify({
-                        register_name,
-                        register_lastname,
-                        register_email,
-                        user_bio,
-                    }),
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                });
+    >(async ({ name, surname, email, bio }) => {
+        try {
+            const data = await fetch(`${BACKEND_URL}${FetchUrl.USERS}`, {
+                //Trzeba dodać Id usera jeszcze
+                method: "PUT",
+                body: JSON.stringify({
+                    name,
+                    surname,
+                    email,
+                    bio,
+                }),
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            });
 
-                return data.json();
-            } catch (err) {
-                console.log(err);
-                throw err;
-            }
+            return data.json();
+        } catch (err) {
+            console.log(err);
+            throw err;
         }
-    );
+    });
 };
