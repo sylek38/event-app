@@ -16,17 +16,18 @@ export interface APISettingsMutationVariables {
 export const useAPIDeleteAccount = () => {
     const { push } = useRouter();
 
-    return useMutation<
+    const { mutate: mutateAsyncDel } = useMutation<
         ResponseType,
         FetchErrorsType,
         APISettingsMutationVariables
     >(async ({ userId }) => {
+        const user = { userId: userId };
         try {
             const data = await fetch(
-                `${BACKEND_URL}${FetchUrl.USERS}/${userId}}`,
+                `${BACKEND_URL}${FetchUrl.USERS}/${user.userId}/`,
                 {
                     method: "DELETE",
-                    body: JSON.stringify({ userId }),
+                    body: JSON.stringify({ ...user }),
                     headers: {
                         "Content-Type": "application/json",
                     },
@@ -38,8 +39,8 @@ export const useAPIDeleteAccount = () => {
             return data.json();
         } catch (err) {
             console.log(err);
-            console.log("put");
             throw err;
         }
     });
+    return { mutateAsyncDel };
 };
