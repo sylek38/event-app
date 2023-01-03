@@ -3,12 +3,15 @@ import { css } from "styled-components";
 export const vars = css`
     --color-white: #fff;
     --color-black: #000;
+    --color-gray: #ddd;
+    --color-light-gray: #aaa;
 
     --primary-background: #232323;
     --secondary-background: #2f2f2f;
     --secondary-background--hover: #393939;
     --tertiary-background: #545454;
 
+    --primary-border: #2c3e50;
     --container-background: #262626;
 
     --box-shadow--black: #121212;
@@ -17,7 +20,7 @@ export const vars = css`
     --secondary-text: #999;
 
     --primary-color: #1cd8d2;
-    --primary-green-color: #24eca4;
+    --primary-green-color: #19bba7;
     --primary-gradient: linear-gradient(to left, #16ada8, #24eca4);
 
     --error-color: #d84040;

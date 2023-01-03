@@ -5,9 +5,6 @@ export const Main = styled.main`
     /* TODO: We should hide navbar under 619px */
     /* TODO: figure out breakpoints, these are an idea for now */
 
-    /*  4 padding / 0 / 4 padding + 6 navbar */
-
-    /* I hid it because I don't know what it was */
     padding: 0 4rem 0 calc(4rem + 6rem);
     display: flex;
     justify-content: center;

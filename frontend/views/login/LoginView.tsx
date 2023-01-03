@@ -40,23 +40,6 @@ export const LoginView = () => {
 
     const onSubmit: SubmitHandler<FormTypes> = async (data) => {
         await mutateAsync(data);
-
-        // The old way for comparison:
-
-        // // dispatch({ type: "LOGIN_START" });
-        // console.log(data);
-
-        // try {
-        //     await axios.post(`${BACKEND_URL}/backend/auth/login`, {
-        //         email: data.login_email,
-        //         password: data.login_password,
-        //     });
-
-        //     // dispatch({ type: "LOGIN_SUCCESS", payload: res.data });
-        // } catch (error) {
-        //     console.log(error);
-        //     // dispatch({ type: "LOGIN_FAILURE" });
-        // }
     };
 
     return (

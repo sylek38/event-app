@@ -20,7 +20,7 @@ export const Content = styled.div`
     }
 `;
 
-export const newLine = styled.p`
+export const NewLine = styled.p`
     width: 100%;
     margin: 1rem 0;
     align-self: left;

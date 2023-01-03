@@ -1,0 +1,78 @@
+{
+    "general": {
+        "contact": "Contact",
+        "terms": "Terms and conditions",
+        "back": "Back"
+    },
+    "info": {
+        "heading": "Contact Us",
+        "desc": "Thank you for visiting our website. If you have any questions, comments, or feedback, we would love to hear from you.",
+        "contact": {
+            "heading": "You can reach us by:",
+            "desc": {
+                "li_1": "Email: event.app.wsb@gmail.com",
+                "li_2": "Phone: +48 123 456 789"
+            }
+        },
+        "footer": "Thank you for considering Eventik.pl for your event planning needs. We look forward to serving you."
+    },
+
+    "terms": {
+        "heading": "Terms of Service for Eventik.pl",
+        "header": {
+            "definitions": "1. Definitions:",
+            "provisions": "2. General Provisions:",
+            "account": "3. Account:",
+            "publishing": "4. Event Publication Rules:",
+            "final": "5. Final Provisions:"
+        },
+        "desc": {
+            "definitions": {
+                "li_1": "'Terms of Service` - this document outlining the rules for using the Service and the rights and obligations of Users and the Administrator.",
+                "li_2": "'Service' - the website providing the event organizing application and other services offered by the Administrator.",
+                "li_3": "'User' -  an individual or legal entity using the Service.",
+                "li_4": "'Administrator' - the person operating the Service and providing services through the Service.",
+                "li_5": "'Account' - an individual User's account on the Service, allowing them to use its features",
+                "li_6": "'Event' - an event or other occurrence organized by a User through the Service.",
+                "li_7": "'Treści' - any information, data, texts, photos, audio files, videos, and other materials posted by Users on the Service."
+            },
+            "provisions": {
+                "li_1": "These General Provisions determine the rules for using the application (hereinafter `Service`) provided by Eventik (hereinafter `Administrator`).",
+                "li_2": "Using the Service means acceptance by the User of all provisions of this Regulations without reservation.",
+                "li_3": "The Service is intended for adults. Minors may use the Service only with the consent of their parents or legal guardians.",
+                "li_4": "The User is obliged to use the Service in a manner consistent with the law, good morals, and the provisions of the Regulations.",
+                "li_5": "The User is responsible for the content they publish on the Service and for the consequences of its disclosure.",
+                "li_6": "The Administrator reserves the right to remove content that is contrary to the law, good morals, or the provisions of the Regulations without prior notice.",
+                "li_7": "The Service may contain links to other websites. The Administrator is not responsible for the content on these pages or for any damage resulting from their use.",
+                "li_8": "The Administrator reserves the right to change the General Provisions at any time without notice. We recommend checking this page regularly to stay up to date with any changes.",
+                "li_9": "Any disputes arising from the use of the Service will be resolved by the court competent for the seat of the Administrator.",
+                "li_10": "The General Provisions are an integral part of the Regulations and are an integral part of it."
+            },
+            "account": {
+                "li_1": "Registration and login to the Service are required to use some of its features.",
+                "li_2": "A User can create one account on the Service.",
+                "li_3": "During registration, the User is obliged to provide true and current personal data.",
+                "li_4": "The User is responsible for the security of their account and the confidentiality of their password.",
+                "li_5": "The User agrees to immediately notify the Administrator of any unauthorized actions on their account.",
+                "li_6": "The Administrator reserves the right to block or delete a User's account without notice in the event of a violation of the Regulations or the law.",
+                "li_7": "The User may delete their account at any time by contacting the Administrator."
+            },
+            "publishing": {
+                "li_1": "Users can publish events on the Service after registering and logging in.",
+                "li_2": "Events published on the Service must comply with the law, good morals, and the provisions of the Regulations.",
+                "li_3": "Events must not infringe copyright or the rights of third parties.",
+                "li_4": "Events must contain true and current information and be consistent with the description provided by the User.",
+                "li_5": "In the case of paid events, the User is obliged to provide true and current information on the price and terms of participation.",
+                "li_6": "The Administrator reserves the right to delete or edit an event without notice in the event of a violation of the Regulations or the law.",
+                "li_7": "The User is responsible for all actions taken by people joining the event and for any damages resulting from their participation."
+            },
+            "final": {
+                "li_1": "The Regulations shall apply from the date of their publication on the Service's website.",
+                "li_2": "In the event of any disputes concerning the use of the Service, the parties undertake to seek their amicable settlement.",
+                "li_3": "In the event of the inability to amicably settle the disputes, they shall be settled by the court competent for the seat of the Administrator.",
+                "li_4": "The Regulations are available in electronic form on the Service's website.",
+                "li_5": "Any questions, comments, or complaints regarding the use of the Service should be directed to the Administrator's email address provided on the Service's website."
+            }
+        }
+    }
+}

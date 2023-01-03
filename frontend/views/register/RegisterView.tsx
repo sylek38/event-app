@@ -92,9 +92,11 @@ export const RegisterView = () => {
                                 <S.MiddleInput type="checkbox" required />
                                 <S.MiddleSpan></S.MiddleSpan>
                                 {t("i_have_read")}
-                                <S.MiddleHref href="#">
-                                    {t("terms_and_conditions")}
-                                </S.MiddleHref>
+                                <Link href={Routes.TERMS}>
+                                    <S.MiddleHref>
+                                        {t("terms_and_conditions")}
+                                    </S.MiddleHref>
+                                </Link>
                             </S.MiddleLeft>
                         </S.MiddleContent>
                     </S.Middle>

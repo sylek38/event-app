@@ -18,32 +18,35 @@ const Map = dynamic(() => import("../../../components/map/Map") as any, {
 });
 
 interface Props {
+    _id: string;
+    name: string;
+    surname: string;
     title: string;
-    // TODO: map from and to enum
+    desc: string;
     category: string;
-    img: string;
-    authorName: string;
-    avatar: string;
-    id: string;
+    peopleLimit: number;
+    photo: string;
+    map: string;
+    // avatar: string;
     width?: number;
-    place: string;
-    date: string;
-    peopleCount: string;
-    description: string;
+    date: Date;
+    createdAt: Date;
 }
 
 export const SinglePost = ({
+    _id,
+    name,
+    surname,
     title,
+    desc,
     category,
-    img,
-    authorName,
-    avatar,
-    id,
-    width = 370,
-    place,
+    peopleLimit,
+    photo,
+    map,
+    // avatar,
     date,
-    peopleCount,
-    description,
+    createdAt,
+    width = 370,
 }: Props) => {
     const { t } = useTranslation("global");
 
@@ -55,13 +58,15 @@ export const SinglePost = ({
                     <Button variant="glowingBlue">{t("send_message")}</Button>
                 </S.Buttons>
                 <S.BackgroundContainer>
-                    <img src={img} alt="" />
+                    <img src={photo} alt="" />
                 </S.BackgroundContainer>
                 <S.Content>
                     {/* TODO: Avatar component with various sizes */}
                     <S.UserInfo>
-                        <img src={avatar} />
-                        <span>{authorName}</span>
+                        <img src={photo} />
+                        <span>
+                            {name} {surname}
+                        </span>
                     </S.UserInfo>
                     <CategoryTag name={category} />
                     <S.Title>{title}</S.Title>
@@ -74,8 +79,21 @@ export const SinglePost = ({
                                 </S.IconContainer>
                                 <S.Info>
                                     {/* TODO for backend: make unix timestamp for date */}
-                                    <span>Pt, 6 czerwca 2022r</span>
-                                    <span>12:00</span>
+                                    <span>
+                                        {new Date(date).toLocaleDateString(
+                                            t("lang"),
+                                            {
+                                                day: "numeric",
+                                                month: "long",
+                                                year: "numeric",
+                                            }
+                                        )}
+                                    </span>
+                                    <span>
+                                        {new Date(date).toLocaleTimeString(
+                                            t("lang")
+                                        )}
+                                    </span>
                                 </S.Info>
                             </S.DetailsItem>
 
@@ -84,8 +102,7 @@ export const SinglePost = ({
                                     <FontAwesomeIcon icon={faLocationPin} />
                                 </S.IconContainer>
                                 <S.Info>
-                                    <span>{place}</span>
-                                    <span>Metropolia</span>
+                                    <span>{map}</span>
                                 </S.Info>
                             </S.DetailsItem>
                         </div>
@@ -95,7 +112,7 @@ export const SinglePost = ({
                                     <FontAwesomeIcon icon={faPeopleGroup} />
                                 </S.IconContainer>
                                 <S.Info>
-                                    <span>{peopleCount}</span>
+                                    <span>{peopleLimit}</span>
                                 </S.Info>
                             </S.DetailsItem>
 
@@ -104,43 +121,26 @@ export const SinglePost = ({
                                     <FontAwesomeIcon icon={faCalendar} />
                                 </S.IconContainer>
                                 <S.Info>
-                                    <span>jeszcze nie wiem co tutaj</span>
-                                    <span>ddd</span>
+                                    {new Date(createdAt).toLocaleDateString(
+                                        t("lang"),
+                                        {
+                                            day: "numeric",
+                                            month: "long",
+                                            year: "numeric",
+                                        }
+                                    )}
+                                    <span>
+                                        {new Date(createdAt).toLocaleTimeString(
+                                            t("lang")
+                                        )}
+                                    </span>
                                 </S.Info>
                             </S.DetailsItem>
                         </div>
                     </S.DetailsSection>
                     <S.Section>
                         <S.Heading>{t("description")}</S.Heading>
-                        <p>{description}</p>
-                        <p>
-                            Lectus nulla at volutpat diam ut. Vitae sapien
-                            pellentesque habitant morbi tristique. Amet mattis
-                            vulputate enim nulla aliquet porttitor lacus luctus.
-                            Malesuada fames ac turpis egestas maecenas pharetra
-                            convallis. Risus viverra adipiscing at in tellus
-                            integer feugiat. Eu sem integer vitae justo eget
-                            magna fermentum. Massa tincidunt nunc pulvinar
-                            sapien et
-                        </p>
-                        <p>
-                            ligula ullamcorper malesuada. Vulputate ut pharetra
-                            sit amet aliquam id diam. Vestibulum mattis
-                            ullamcorper velit sed ullamcorper. Ac ut consequat
-                            semper viverra nam libero justo. Semper eget duis at
-                            tellus. Convallis a cras semper auctor neque. Lectus
-                            sit amet est placerat in egestas erat imperdiet sed.
-                        </p>
-                        <p>
-                            ligula ullamcorper malesuada. Vulputate ut pharetra
-                            sit amet aliquam id diam. Vestibulum mattis
-                            ullamcorper velit sed ullamcorper. Ac ut consequat
-                            semper viverra nam libero justo. Semper eget duis at
-                            tellus. Convallis a cras semper auctor neque. Lectus
-                            sit amet est placerat in egestas erat imperdiet sed.
-                            Lectus sit amet est placerat in egestas erat
-                            imperdiet sed.
-                        </p>
+                        <p>{desc}</p>
                     </S.Section>
                 </S.Content>
             </S.Post>
@@ -148,7 +148,7 @@ export const SinglePost = ({
             <S.Post width={width} $padding={48}>
                 <S.MapWrapper>
                     <S.Heading>{t("map")}</S.Heading>
-                    <p>Gdańsk, ul. Elektryków</p>
+                    <p>{map}</p>
 
                     <S.MapContainer>
                         <Map />

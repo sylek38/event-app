@@ -29,5 +29,6 @@
         "history": "History",
         "general": "General",
         "password": "Change password"
-    }
+    },
+    "lang": "en-US"
 }

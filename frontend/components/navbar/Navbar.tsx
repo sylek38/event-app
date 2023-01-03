@@ -14,7 +14,7 @@ export default function Navbar() {
     return (
         <S.Navbar>
             <Link href={Routes.EVENTS}>
-                <img src="https://i.imgur.com/uDKK9Kh.png" alt="Logo" />
+                <img src="https://i.imgur.com/lTGXVWS.png" alt="Logo" />
             </Link>
             <ul>
                 {items.map((item) => (
