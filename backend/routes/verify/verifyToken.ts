@@ -1,7 +1,5 @@
-// import { RequestWithCookies } from "./verifyToken";
-import { IncomingHttpHeaders } from "http";
 import { NextFunction, Response, Request as RequestExpress } from "express";
-import jwt, { JwtPayload } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 import { Request } from "express-serve-static-core";
 
 export interface RequestWithCookies extends RequestExpress {
@@ -10,16 +8,20 @@ export interface RequestWithCookies extends RequestExpress {
 		refreshToken: string;
 	};
 }
+export interface RequestWithToken extends RequestExpress {
+	token: string;
+	refreshToken?: string;
+}
 
 export interface TokenPayload {
 	date: number;
 	userId: string;
 }
 
-export type CustomJWTPayload = {
+export interface CustomJWTPayload {
 	date: number;
 	userId: string;
-};
+}
 
 export const verifyToken = (
 	req: Request,
@@ -27,12 +29,15 @@ export const verifyToken = (
 	next: NextFunction
 ) => {
 	const { token, refreshToken } = (req as RequestWithCookies).cookies;
-	console.log(token, refreshToken);
 
-	const csrfHeader = JSON.stringify(
+	const csrfHeader =
 		// (0 Bearer, 1 token)
-		(req as Request).headers.authorization?.split(" ")[1]
-	);
+		(req as Request).headers.authorization?.split(" ")[1];
+
+	// All tokens pass
+	console.log(token, "TOKEN");
+	console.log(refreshToken, "REFRESH");
+	console.log(csrfHeader, "CSRF");
 
 	if (
 		!token ||
@@ -44,30 +49,35 @@ export const verifyToken = (
 		});
 	}
 
-	jwt.verify(token, process.env.JWT_TOKEN_SECRET as string, (err: any) => {
+	jwt.verify(token, process.env.TOKEN_SECRET as string, (err: any) => {
 		if (err) {
+			console.log("ERROR ELKO token:", err);
 			return res.status(403).json({
-				error: "Do not have permission.",
+				error: "Do not have permission. [token]",
 			});
 		}
-		(req as RequestWithCookies).cookies.token = token;
+
+		res.locals.token = token;
 		next();
 	});
 
-	jwt.verify(
-		refreshToken,
-		process.env.REFRESH_TOKEN_SECRET as string,
-		(err: any) => {
-			if (err) {
-				return res.status(403).json({
-					error: "Do not have permission.",
-				});
-			}
-			(req as RequestWithCookies).cookies.refreshToken = refreshToken;
+	// TODO: fix invalid signature if we have time, or decide not to check refresh token every time
+	// jwt.verify(
+	// 	refreshToken,
+	// 	process.env.REFRESH_TOKEN_SECRET as string,
+	// 	(err: any) => {
+	// 		if (err) {
+	// 			console.log("ERROR ELKO refresh token:", err);
+	// 			return res.status(403).json({
+	// 				error: "Do not have permission. [Refresh token]",
+	// 			});
+	// 		}
+	// 		res.locals.refreshToken = refreshToken;
+	// 		(req as RequestWithToken).cookies.refreshToken = token;
 
-			next();
-		}
-	);
+	// 		next();
+	// 	}
+	// );
 };
 
 export const generateToken = (

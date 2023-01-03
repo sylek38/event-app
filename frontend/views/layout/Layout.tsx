@@ -23,9 +23,12 @@ export const Layout = ({
     header,
     csrf,
 }: Props) => {
+    // TODO: loading / error states
     const { data, isError, isFetching, isLoading } = useAPIAuth({
         csrf,
     });
+
+    console.log(data, "Context data");
 
     return (
         <UserContext.Provider value={{ session: data, csrf }}>

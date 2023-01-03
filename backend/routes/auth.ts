@@ -1,12 +1,12 @@
 import {
-	CustomJWTPayload,
 	generateToken,
 	RequestWithCookies,
 	verifyToken,
 } from "./verify/verifyToken";
+import jwt, { JwtPayload } from "jsonwebtoken";
+
 import { Request, Response } from "express";
-import User from "../models/User";
-import jwtDecode, { JwtPayload as Other } from "jwt-decode";
+import User, { UserType } from "../models/User";
 
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
@@ -67,14 +67,14 @@ router.post("/login", async (req: LoginRequest, res: Response) => {
 	const user = await User.findOne({ email });
 
 	if (!user) {
-		// it will be "Wrong credentials" but for testing I specified it
+		// it will be "Wrong credentials" but for testing these are specified
 		return res.status(400).json("Wrong email");
 	}
 
 	const validated = await bcrypt.compare(password, user.password);
 
 	if (!validated) {
-		return res.status(400).json("wrong password");
+		return res.status(400).json("Wrong password");
 	}
 
 	try {
@@ -96,54 +96,66 @@ router.post("/login", async (req: LoginRequest, res: Response) => {
 			// maxAge: expirationTime,
 			// expires: (new Date(Date.now() + expirationTime)).to,
 			httpOnly: true,
+			sameSite: "none",
+			secure: true,
 		});
 
 		res.cookie("refreshToken", refreshToken, {
 			// maxAge: +expirationTime,
 			// expires: new Date(Date.now() + expirationTime),
 			httpOnly: true,
+			sameSite: "none",
+			secure: true,
 		});
 
 		res.cookie("csrf", process.env.CSRF_TOKEN_SECRET, {
 			httpOnly: true,
+			sameSite: "none",
+			secure: true,
 		});
 
-		const userObject = user.toObject({
-			versionKey: false,
-			transform: (ret: Record<string, any>) => {
-				delete ret.password;
-				return ret;
-			},
-		});
+		await user.save();
 
-		res.status(200).json(userObject);
+		res.status(200).json({
+			message: "Logged in",
+		});
 	} catch (err) {
 		res.status(500).json(err);
 	}
 });
 
-router.delete("/logout", async (res: Response) => {
-	res.cookie("token", "", { maxAge: 0 });
-	res.cookie("refreshToken", "", { maxAge: 0 });
-	// res.clearCookie("token");
-	// res.clearCookie("refreshToken");
-	res.status(200).json({ message: "Logged out" });
+router.get("/logout", async (res: Response, req: Request) => {
+	try {
+		// TODO: find out how to clear cookies
+		// res.clearCookie("token");
+		// res.clearCookie("refreshToken");
+		// res.cookie("token", "", { maxAge: 0 });
+		// res.cookie("refreshToken", "", { maxAge: 0 });
+		res.cookie("token", "", { maxAge: 0 });
+		res.cookie("refreshToken", "", { maxAge: 0 });
+		res.status(200).json({ message: "Logged out" });
+	} catch (err) {
+		res.status(500).json({
+			message: "Something went wrong while logging out",
+		});
+	}
 });
 
-router.post("/refresh", verifyToken, async (res: Response, req: Request) => {
+router.post("/refresh", verifyToken, async (req: Request, res: Response) => {
 	const { token } = (req as RequestWithCookies).cookies;
 
-	const decodedUserId = jwtDecode<CustomJWTPayload>(token).userId;
+	const { payload } = jwt.decode(token) as JwtPayload;
+	const userId = payload.userId;
 
-	const foundUser = await User.findById(decodedUserId);
+	const user = await User.findOne({ _id: userId });
 
-	if (!foundUser) {
+	if (!user) {
 		res.status(403).json({ error: "userId is invalid" });
 	}
 
 	try {
-		const newToken = generateToken(decodedUserId);
-		const newRefreshToken = generateToken(decodedUserId, "refresh");
+		const newToken = generateToken(userId);
+		const newRefreshToken = generateToken(userId, "refresh");
 
 		res.cookie("token", newToken, {
 			maxAge: +!process.env.TOKEN_TTL,
@@ -163,26 +175,27 @@ router.post("/refresh", verifyToken, async (res: Response, req: Request) => {
 	}
 });
 
-router.get("/who_am_i", verifyToken, async (res: Response, req: Request) => {
-	const { token } = (req as RequestWithCookies).cookies;
+router.get("/who_am_i", verifyToken, async (req: Request, res: Response) => {
+	const token = res.locals.token;
 
-	const decodedUserId = jwtDecode<CustomJWTPayload>(token).userId;
+	const { payload } = jwt.decode(token) as JwtPayload;
+	const userId = payload.userId;
 
-	const foundUser = await User.findById(decodedUserId);
+	const user = await User.findOne({ _id: userId });
 
-	if (!foundUser) {
-		res.status(403).json({ error: "userId is invalid" });
+	if (!user) {
+		res.status(403).json({ error: `userId is invalid.` });
 	}
 	try {
-		const userObject = foundUser?.toObject({
-			versionKey: false,
-			transform: (ret: Record<string, any>) => {
-				delete ret.password;
-				return ret;
-			},
+		const { _id, name, surname, email, profilePic, bio } = user as UserType;
+		res.status(200).json({
+			id: _id,
+			name,
+			surname,
+			email,
+			profilePic,
+			bio,
 		});
-
-		res.status(200).json(userObject);
 	} catch (err) {
 		res.status(500).json({
 			error: "Something went wrong while sending user data",

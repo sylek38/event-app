@@ -1,3 +1,4 @@
+import { verifyToken } from "./routes/verify/verifyToken";
 import dotenv from "dotenv";
 import express from "express";
 const authRoute = require("./routes/auth");
@@ -17,13 +18,13 @@ app.use(cookieParser());
 const corsOptions = {
 	// origin: "http://localhost:3000",
 	origin: true,
-	credentials: true, //access-control-allow-credentials:true
+	credentials: true,
 	optionSuccessStatus: 200,
-	// allowedHeaders: ["authorization", "Authorization"],
-	// exposedHeaders: ["authorization", "Authorization"],
+	allowedHeaders: ["authorization", "Authorization", "Content-Type"],
+	exposedHeaders: ["authorization", "Authorization", "Content-Type"],
 };
 
-app.use(cors(corsOptions)); // Use this after the variable declaration
+app.use(cors(corsOptions));
 
 app.use(cors());
 
@@ -40,13 +41,15 @@ app.use((req, res, next) => {
 		"http://localhost:8000",
 		"http://localhost:3000",
 	]);
+	res.header("Access-Control-Allow-Credentials", "true");
 	res.header("Access-Control-Allow-Origin", "http://localhost:8000");
 	res.header("Access-Control-Allow-Origin", "http://localhost:3000");
-	// res.header("Access-Control-Allow-Headers: Content-Type, Authorization")
-
-	// res.header("Access-Control-Allow-Headers", "*");
-	// res.header("Access-Control-Allow-Methods", "*");
-	// res.header("Access-Control-Allow-Credentials", "true");
+	res.header("Access-Control-Allow-Headers", "Content-Type");
+	// IDK, tried everything to make it work xd
+	res.header(
+		"Access-Control-Allow-Headers",
+		"Access-Control-Allow-Headers, Authorization, Origin,Accept, X-Requested-With, Content-Type, Access-Control-Request-Method, Access-Control-Request-Headers"
+	);
 	next();
 });
 
@@ -58,6 +61,7 @@ app.use("/backend/auth", authRoute);
 app.use("/backend/users", userRoute);
 app.use("/backend/posts", postRoute);
 app.use("/backend/category", categoryRoute);
+app.use(verifyToken);
 
 app.listen(port, () => {
 	console.log(`[server]: Server is running at ${domain}:${port}`);

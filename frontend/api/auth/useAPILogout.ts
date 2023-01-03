@@ -11,7 +11,6 @@ export const useAPISignOut = ({ csrf }: Args) => {
     return useMutation<unknown>(async () => {
         try {
             const data = await fetch(`${BACKEND_URL}${FetchUrl.LOGOUT}`, {
-                method: "DELETE",
                 credentials: "include",
                 headers: {
                     "Content-Type": "application/json",

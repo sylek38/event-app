@@ -8,14 +8,15 @@ interface Args {
 
 export const fetchAPIAuth = async ({ csrf }: Args) => {
     try {
-        return (await fetch(`${BACKEND_URL}${FetchUrl.AUTH}`, {
-            method: "GET",
+        const data = await fetch(`${BACKEND_URL}${FetchUrl.AUTH}`, {
             credentials: "include",
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${csrf}`,
             },
-        })) as any;
+        });
+
+        return data.json();
     } catch (err) {
         throw err;
     }
