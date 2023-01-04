@@ -1,49 +1,87 @@
+import { motion } from "framer-motion";
 import styled, { css } from "styled-components";
 import { pxToRem } from "../../utils/pxToRem";
 
-export const modalOverlay = styled.div`
+interface Args {
+    $parentId?: boolean;
+}
+
+export const BackgroundOverlay = styled(motion.div)<Args>`
     position: fixed;
+    left: 60px;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    ${({ $parentId }) => css`
+        z-index: ${$parentId ? 110 : 100};
+    `};
+`;
+
+export const Main = styled.div<Args>`
+    position: absolute;
     top: 0;
-    left: ${pxToRem(50)}; //przesunięcie ze zwględu na nawigacje z lewej strony
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    ${({ $parentId }) => css`
+        z-index: ${$parentId ? 111 : 101};
+    `};
 `;
 
-export const modalContent = styled.div`
-    background-color: var(--tertiary-background);
-    border-radius: ${pxToRem(30)};
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
-    max-width: ${pxToRem(550)};
+export const Wrapper = styled(motion.div)<{ size: string }>`
+    position: relative;
     width: 90%;
+    left: ${pxToRem(82)};
+    top: ${pxToRem(100)};
+    max-width: ${({ size }) => (size === "sm" ? "600px" : "1200px")};
+    background-color: var(--container-background);
+    border-radius: ${pxToRem(25)};
     padding: ${pxToRem(30)};
-    text-align: center;
-`;
-
-export const modalHeader = styled.h2`
-    font-size: var(--font-size-20);
-    margin-bottom: 1rem;
+    margin: 0 auto;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
     color: var(--color-white);
 `;
-export const modalInfo = styled.p`
-    color: var(--color-red);
-    font-weight: bold;
-    font-style: italic;
-`;
 
-export const modalButtons = styled.div`
+export const Header = styled.div`
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    align-items: flex-start;
+    border-bottom: 1px solid rgba(var(--text-color-light--code), 0.1);
+    position: relative;
 
-    button {
-        /* cursor: pointer; */
+    > h3 {
+        font-size: 1.25rem;
+        font-weight: bold;
     }
 
-    button:hover {
-        background-color: #0069d9;
+    > button {
+        position: absolute;
+        right: 0;
+        top: -0.5rem;
+        height: 2.5rem;
+        width: 2.5rem;
+        border: 0;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+
+        > svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: var(--secondary-text);
+        }
     }
+`;
+
+export const Container = styled.div<{ alert?: boolean }>`
+    margin-top: 2rem;
+`;
+
+export const ActionsContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2rem;
 `;

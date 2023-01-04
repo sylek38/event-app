@@ -6,12 +6,12 @@ import { TextareaInput } from "../../../components/inputs/textarea/TextareaInput
 import { SubmitHandler, useForm } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../../components/button/Button";
-import { Modal } from "../../../components/modal/Modal";
 import { useState } from "react";
 
 import { useAPISettingsGeneral } from "../../../api/users/useAPISettingsGeneral";
 import { useAPIDeleteAccount } from "../../../api/users/useAPIDeleteAccount";
 import { emailRegex } from "../../../utils/regex";
+import { DeleteAccountModal } from "./modal/DeleteAccountModal";
 
 interface FormTypes {
     userId: string;
@@ -22,19 +22,17 @@ interface FormTypes {
     bio: string;
 }
 export const General = () => {
-    const { t: t1 } = useTranslation("global");
-    const { t: t2 } = useTranslation("settings");
+    const { t } = useTranslation("global");
+    const { t: tSettings } = useTranslation("settings");
 
     const [file, setFile] = useState(null);
 
     const { isError, isLoading, mutateAsync } = useAPISettingsGeneral();
     const [successMessage, setSuccessMessage] = useState(false);
 
-    //Usuwanie konta
     const { mutateAsyncDel } = useAPIDeleteAccount();
 
-    //Stany dla modalu przy usuwaniu konta
-    const [showModal, setShowModal] = useState(false);
+    const [open, setOpen] = useState(false);
 
     const {
         register,
@@ -59,10 +57,6 @@ export const General = () => {
         reset();
     };
     //Otwieranie modalu
-    const handleOpenModal = () => setShowModal(true);
-
-    //Zamykanie modalu
-    const handleCloseModal = () => setShowModal(false);
 
     const deleteHandler = async () => {
         const data = { userId: "63b452cb72a9060f44ece448" };
@@ -89,7 +83,7 @@ export const General = () => {
                     }}
                 >
                     <S.ImageInput type="file" id="file"></S.ImageInput>
-                    <S.ImageHover>{t1("avatar_change")}</S.ImageHover>
+                    <S.ImageHover>{t("avatar_change")}</S.ImageHover>
                 </S.ImageLabel>
             </S.ImageAvatar>
             <S.Form onSubmit={handleSubmit(onSubmit)}>
@@ -131,35 +125,18 @@ export const General = () => {
                 />
 
                 <Button variant="gradient" type="submit" fullWidth>
-                    {t1("confirm")}
+                    {t("confirm")}
                 </Button>
                 {successMessage && (
-                    <S.Success>{t2("general_changed")}</S.Success>
+                    <S.Success>{tSettings("general_changed")}</S.Success>
                 )}
             </S.Form>
-            <S.deleteBtn onClick={handleOpenModal}>{t1("delete")}</S.deleteBtn>
 
-            {showModal && (
-                <S.modalOverlay>
-                    <S.modalContent>
-                        <S.modalHeader>
-                            {t2("delete_account_question")}
-                        </S.modalHeader>
-                        <S.modalInfo>{t2("delete_account_info")}</S.modalInfo>
-                        <S.modalButtons>
-                            <Button onClick={deleteHandler}>
-                                {t2("delete_account_yes")}
-                            </Button>
-                            <Button
-                                variant="gradient"
-                                onClick={handleCloseModal}
-                            >
-                                {t2("delete_account_no")}
-                            </Button>
-                        </S.modalButtons>
-                    </S.modalContent>
-                </S.modalOverlay>
-            )}
+            <S.DeleteBtn onClick={() => setOpen(true)}>
+                {t("delete")}
+            </S.DeleteBtn>
+
+            {open && <DeleteAccountModal open={open} setOpen={setOpen} />}
         </S.Container>
     );
 };
