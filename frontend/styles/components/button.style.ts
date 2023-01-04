@@ -12,4 +12,6 @@ export const buttonStyle = css`
     --button-bg-gradient--hover: linear-gradient(45deg, #16ada8, #24eca4)
             padding-box,
         linear-gradient(45deg, #16ada8, #24eca4) border-box;
+    --button-bg-danger: var(--error-color);
+    --button-bg-gray: var(--tertiary-background);
 `;
