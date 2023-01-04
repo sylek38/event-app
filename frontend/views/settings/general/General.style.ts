@@ -61,7 +61,7 @@ export const Form = styled.form`
     padding-bottom: 0px;
 `;
 
-export const deleteBtn = styled.span`
+export const DeleteBtn = styled.span`
     display: block;
     width: 100%;
     margin-top: 2.5rem;

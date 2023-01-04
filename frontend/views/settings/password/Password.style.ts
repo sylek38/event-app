@@ -6,7 +6,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
 
-    form div {
+    form > div {
         margin-bottom: ${pxToRem(20)};
     }
 `;
