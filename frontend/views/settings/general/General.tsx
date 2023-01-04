@@ -59,9 +59,11 @@ export const General = () => {
     //Otwieranie modalu
 
     const deleteHandler = async () => {
-        const data = { userId: "63b452cb72a9060f44ece448" };
-        console.log(data);
-        await mutateAsyncDel(data);
+        console.log("deleted :D");
+
+        // TODO: Add real data and uncomment for final version
+        // const data = { userId: "63b452cb72a9060f44ece448" };
+        // await mutateAsyncDel(data);
     };
 
     const imageHandler = (e: any) => {
@@ -136,7 +138,13 @@ export const General = () => {
                 {t("delete")}
             </S.DeleteBtn>
 
-            {open && <DeleteAccountModal open={open} setOpen={setOpen} />}
+            {open && (
+                <DeleteAccountModal
+                    open={open}
+                    setOpen={setOpen}
+                    action={deleteHandler}
+                />
+            )}
         </S.Container>
     );
 };

@@ -111,14 +111,20 @@ export const Modal = ({
                                 {actions?.danger ? (
                                     <Button
                                         variant="danger"
-                                        onClick={() => setOpen(false)}
+                                        onClick={() => {
+                                            actions.primaryButtonAction?.();
+                                            setOpen(false);
+                                        }}
                                     >
                                         {actions?.primaryButtonText}
                                     </Button>
                                 ) : (
                                     <Button
                                         variant="gradient"
-                                        onClick={() => setOpen(false)}
+                                        onClick={() => {
+                                            actions.primaryButtonAction?.();
+                                            setOpen(false);
+                                        }}
                                     >
                                         {actions?.primaryButtonText}
                                     </Button>

@@ -5,9 +5,10 @@ import * as S from "./DeleteAccountModal.style";
 interface Props {
     open: boolean;
     setOpen: (el: boolean) => void;
+    action: () => void;
 }
 
-export const DeleteAccountModal = ({ open, setOpen }: Props) => {
+export const DeleteAccountModal = ({ open, setOpen, action }: Props) => {
     const { t } = useTranslation("settings");
 
     return (
@@ -19,6 +20,7 @@ export const DeleteAccountModal = ({ open, setOpen }: Props) => {
             actions={{
                 primaryButtonText: t("delete_account_yes"),
                 secondaryButtonText: t("delete_account_no"),
+                primaryButtonAction: () => action(),
                 danger: true,
             }}
         >
