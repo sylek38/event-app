@@ -8,6 +8,7 @@ export const Container = styled.div<{
     position: relative;
     border-radius: 1.25rem;
     border: 2px solid transparent;
+    height: ${pxToRem(40)};
 
     -webkit-box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.25);
     -moz-box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.25);
@@ -37,7 +38,7 @@ export const Container = styled.div<{
     }
 
     :focus-within {
-        border: 2px solid white;
+        border: 2px solid var(--color-white);
         color: var(--primary-text);
     }
 
@@ -53,7 +54,6 @@ export const Searchbar = styled.input`
 `;
 
 export const Button = styled.button`
-    //reset
     all: unset;
     position: absolute;
     top: -2px;
@@ -62,7 +62,7 @@ export const Button = styled.button`
     border-radius: 1.25rem;
     display: inline-block;
     color: var(--secondary-text);
-    :hover {
+    &:hover {
         cursor: pointer;
     }
 `;

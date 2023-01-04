@@ -47,7 +47,6 @@ export function SearchInput<T>({
                     placeholder={placeholder ? t(`text_${id}`) : undefined}
                 ></S.Searchbar>
                 <S.Button /*onClick={!register ? onChange : undefined} */>
-                    {" "}
                     <FontAwesomeIcon icon={faMagnifyingGlass} />{" "}
                 </S.Button>
             </S.Container>
