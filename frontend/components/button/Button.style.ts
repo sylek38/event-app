@@ -60,6 +60,20 @@ const generateStyle = (
         }
     `}
 
+    ${variant === "danger" &&
+    css`
+        background-color: var(--error-color);
+        border: none;
+        border-radius: ${pxToRem(25)};
+    `}
+
+    ${variant === "gray" &&
+    css`
+        background-color: var(--tertiary-background);
+        border: none;
+        border-radius: ${pxToRem(25)};
+    `}
+
     width: ${fullWidth ? "100%" : "initial"};
     padding: var(--button-padding-${size});
     background-color: var(--button-bg-${variant});

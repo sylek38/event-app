@@ -9,9 +9,12 @@ import { Button } from "../../../components/button/Button";
 import { useState } from "react";
 
 import { useAPISettingsGeneral } from "../../../api/users/useAPISettingsGeneral";
+import { useAPIDeleteAccount } from "../../../api/users/useAPIDeleteAccount";
 import { emailRegex } from "../../../utils/regex";
+import { DeleteAccountModal } from "./modal/DeleteAccountModal";
 
 interface FormTypes {
+    userId: string;
     name: string;
     surname: string;
     email: string;
@@ -20,23 +23,47 @@ interface FormTypes {
 }
 export const General = () => {
     const { t } = useTranslation("global");
+    const { t: tSettings } = useTranslation("settings");
+
     const [file, setFile] = useState(null);
 
     const { isError, isLoading, mutateAsync } = useAPISettingsGeneral();
+    const [successMessage, setSuccessMessage] = useState(false);
+
+    const { mutateAsyncDel } = useAPIDeleteAccount();
+
+    const [open, setOpen] = useState(false);
 
     const {
         register,
         control,
         formState: { errors },
         handleSubmit,
+        reset,
     } = useForm<FormTypes>();
 
     const onSubmit: SubmitHandler<FormTypes> = async (data) => {
-        await mutateAsync(data);
-    };
+        // Sprawdź, czy wszystkie pola są puste
+        const allFieldsEmpty = Object.values(data).every(
+            (value) => value === ""
+        );
 
-    const deleteHandler = () => {
-        console.log("delete");
+        // Jeśli wszystkie pola są puste, nie wysyłaj zapytania do serwera
+        if (allFieldsEmpty) {
+            return;
+        }
+        await mutateAsync(data);
+        setSuccessMessage(true);
+        reset();
+    };
+    //Otwieranie modalu
+
+    const deleteHandler = async () => {
+        console.log("deleted :D");
+
+        // TODO: Add real data and uncomment for final version
+        // const data = { userId: "63b452cb72a9060f44ece448" };
+        // await mutateAsyncDel(data);
     };
 
     const imageHandler = (e: any) => {
@@ -102,9 +129,22 @@ export const General = () => {
                 <Button variant="gradient" type="submit" fullWidth>
                     {t("confirm")}
                 </Button>
-
-                <S.deleteBtn onClick={deleteHandler}>{t("delete")}</S.deleteBtn>
+                {successMessage && (
+                    <S.Success>{tSettings("general_changed")}</S.Success>
+                )}
             </S.Form>
+
+            <S.DeleteBtn onClick={() => setOpen(true)}>
+                {t("delete")}
+            </S.DeleteBtn>
+
+            {open && (
+                <DeleteAccountModal
+                    open={open}
+                    setOpen={setOpen}
+                    action={deleteHandler}
+                />
+            )}
         </S.Container>
     );
 };

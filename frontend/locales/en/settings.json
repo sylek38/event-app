@@ -1,5 +1,11 @@
 {
     "heading": "Settings",
     "general": "General",
-    "password": "Change password"
+    "password": "Change password",
+    "general_changed": "Changes saved!",
+    "password_changed": "Password has been changed!",
+    "delete_account_question": "Are you sure you want to delete your account?",
+    "delete_account_info": "All your data will be irreversibly deleted",
+    "delete_account_yes": "Yes, delete my account",
+    "delete_account_no": "No, get me out of here"
 }

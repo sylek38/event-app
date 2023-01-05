@@ -13,6 +13,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { ChangeEvent } from "react";
 
+const KEY_PREFIX = "text_searchbar";
+
 interface Props<T> {
     id: Path<NonNullable<T>>;
     register: UseFormRegister<NonNullable<T>>;
@@ -44,10 +46,13 @@ export function SearchInput<T>({
             <S.Container fullWidth={fullWidth} blackVariant={blackVariant}>
                 <S.Searchbar
                     type={type}
-                    placeholder={placeholder ? t(`text_${id}`) : undefined}
+                    placeholder={
+                        placeholder
+                            ? t(`${KEY_PREFIX}.${id}_placeholder`)
+                            : undefined
+                    }
                 ></S.Searchbar>
                 <S.Button /*onClick={!register ? onChange : undefined} */>
-                    {" "}
                     <FontAwesomeIcon icon={faMagnifyingGlass} />{" "}
                 </S.Button>
             </S.Container>

@@ -1,5 +1,5 @@
 import { pxToRem } from "./../../../utils/pxToRem";
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 
 export const Container = styled.div`
     display: flex;
@@ -10,7 +10,7 @@ export const Container = styled.div`
         margin-bottom: ${pxToRem(36)};
     }
 
-    form div {
+    form > div {
         margin-bottom: ${pxToRem(20)};
     }
 `;
@@ -27,8 +27,6 @@ export const ImageLabel = styled.label`
     display: block;
     width: 6.25rem;
     height: 6.25rem;
-    padding-left: 0 !important;
-    margin-top: 0 !important;
     /* background-image: url("https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"); */
     background-position: center;
     background-repeat: no-repeat;
@@ -61,11 +59,17 @@ export const Form = styled.form`
     padding-bottom: 0px;
 `;
 
-export const deleteBtn = styled.span`
+export const DeleteBtn = styled.span`
     display: block;
     width: 100%;
     margin-top: 2.5rem;
-    color: crimson;
+    color: var(--error-color);
     text-align: center;
     cursor: pointer;
+`;
+
+export const Success = styled.div`
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--primary-color);
 `;

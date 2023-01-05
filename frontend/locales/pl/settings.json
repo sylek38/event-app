@@ -1,5 +1,11 @@
 {
     "heading": "Ustawienia",
     "general": "Ogólne",
-    "password": "Zmień hasło"
+    "password": "Zmień hasło",
+    "general_changed": "Zapisano zmiany!",
+    "password_changed": "Hasło zostało zmienione!",
+    "delete_account_question": "Jesteś pewny, że chcesz usunąć swoje konto?",
+    "delete_account_info": "Wszystkie twoje dane zostaną nieodwracalnie usunięte",
+    "delete_account_yes": "Tak, usuń moje konto",
+    "delete_account_no": "Nie, zabierz mnie stąd"
 }

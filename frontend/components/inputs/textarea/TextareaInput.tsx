@@ -3,6 +3,7 @@ import {
     Control,
     Path,
     UseFormRegister,
+    useWatch,
     Validate,
     ValidationRule,
 } from "react-hook-form";
@@ -10,8 +11,9 @@ import {
 import useTranslation from "next-translate/useTranslation";
 
 import * as S from "./TextareaInput.style";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { GenerateDescription } from "../../generateDescription/GenerateDescription";
+
+const KEY_PREFIX = "textarea";
 
 interface Props<T> {
     id: Path<NonNullable<T>>;
@@ -31,6 +33,8 @@ interface Props<T> {
     dark?: boolean;
     rows?: number;
     cols?: number;
+    customErrorPrefix?: string;
+    textError?: boolean;
 }
 
 export function TextareaInput<T>({
@@ -51,6 +55,8 @@ export function TextareaInput<T>({
     dark,
     rows,
     cols,
+    customErrorPrefix,
+    textError,
 }: Props<T>) {
     const { t } = useTranslation("inputs");
 
@@ -65,21 +71,37 @@ export function TextareaInput<T>({
         pattern,
     });
 
+    const valueFromWatch = useWatch({ control, name: id });
+
+    const length = valueFromWatch ? `${valueFromWatch}`.length : 0;
+
     return (
         <S.Container fullWidth={fullWidth}>
             <S.Label>
-                {!hideLabel && <span>{t(`textarea_label_${id}`)}</span>}
+                {!hideLabel && <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>}
             </S.Label>
             <S.TextareaInput
                 rows={rows}
                 cols={cols}
                 isError={!!isError}
                 placeholder={
-                    placeholder ? t(`textarea_placeholder_${id}`) : undefined
+                    placeholder
+                        ? t(`${KEY_PREFIX}.${id}_placeholder`)
+                        : undefined
                 }
                 dark={dark}
                 ref={ref}
                 {...rest}
+            />
+
+            <GenerateDescription
+                id={id}
+                keyPrefix={KEY_PREFIX}
+                customErrorPrefix={customErrorPrefix}
+                textError={textError}
+                length={length}
+                maxLength={maxLength}
+                error={isError}
             />
         </S.Container>
     );

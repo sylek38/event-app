@@ -1,46 +1,52 @@
 {
-    "text_label_email": "Email",
-    "text_error_email": "Enter your email",
-    "text_label_password": "Password",
-    "text_error_password": "Enter your password",
-    "text_label_name": "Name",
-    "text_error_name": "Enter your name",
-    "text_label_surname": "Last name",
-    "text_error_surname": "Enter your last name",
+    "error_length": "The allowed number of characters has been exceeded",
 
-    "text_search_select_city": "Select a city",
-    "text_searchbar": "Search...",
+    "text": {
+        "email_label": "Email",
+        "password_label": "Password",
+        "requirements_password_error": "Password doesn't meet the requirements",
+        "name_label": "Name",
+        "surname_label": "Last name",
 
-    "text_search_category": "Choose category",
-    "select_label_category": "Category",
-    "select_error_category": "You have to choose a category!",
+        "old_password_label": "Old Password",
+        "new_password_label": "New password",
+        "requirements_new_password_error": "Password doesn't meet the requirements",
+        "repeat_password_label": "Repeat password",
+        "no_match_repeat_password_error": "The passwords do not match",
 
-    "textarea_label_bio": "Bio",
-    "textarea_placeholder_bio": "Say something about yourself...",
+        "title_label": "Title",
+        "title_placeholder": "My birthday party on a yacht.. Baby!",
+        "map_label": "Enter the location where your event will take place",
+        "map_placeholder": "Just don't give a location on Mars:)"
+    },
 
-    "text_label_old_password": "Old password",
-    "text_error_old_password": "Field cannot be empty!",
-    "text_label_new_password": "New password",
-    "text_error_new_password": "Field cannot be empty!",
-    "text_label_repeat_password": "Repeat password",
-    "text_error_repeat_password": "Field cannot be empty!",
+    "text_searchbar": {
+        "select_city_placeholder": "Search..."
+    },
 
-    "text_label_title": "Title",
-    "text_error_title": "Enter a title for your event!",
-    "text_placeholder_title": "My birthday party on a yacht.. Baby!",
 
-    "textarea_label_desc": "Description",
-    "textarea_error_desc": "Enter a desciption for your event!",
-    "textarea_placeholder_desc": "Tell something more about your event...",
+    "select": {
+        "city_label": "Choose city",
+        "category_label": "Category",
+        "category_placeholder": "Choose category"
+    },
 
-    "text_label_map": "Enter the location where your event will take place",
-    "text_error_map": "Your event must have a defined location!",
-    "text_placeholder_map": "Just don't give a location on Mars:)",
+    "textarea": {
+        "bio_label": "Bio",
+        "bio_placeholder": "Say something about yourself...",
+        "desc_label": "Description",
+        "desc_placeholder":"Tell something more about your event..."
+    },
+
+    "date": {
+        "date_label": "Choose a date for your event",
+        "date_error": "The data is invalid"
+    },
 
     "slider_label_peopleLimit": "Specify the maximum number of people",
-
     "file_label_photo": "Add image",
 
-    "date_label_date": "Choose a date for your event",
-    "text_error_date": "The data is invalid"
+    "select_city_text": "Select a city",
+    "search_category": "Choose category"
+
 }

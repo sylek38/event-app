@@ -6,7 +6,7 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
 
-    form div {
+    form > div {
         margin-bottom: ${pxToRem(20)};
     }
 `;
@@ -15,4 +15,10 @@ export const Form = styled.form`
     button {
         margin-top: ${pxToRem(30)};
     }
+`;
+
+export const Success = styled.div`
+    margin-top: 1rem;
+    text-align: center;
+    color: var(--primary-color);
 `;

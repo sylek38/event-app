@@ -6,7 +6,15 @@ interface AllProps {
     children: ReactNode | ReactNode[];
     href?: Routes;
     type?: "button" | "submit";
-    variant?: "gradientHover" | "blue" | "gradient" | "glowing" | "glowingBlue";
+    variant?:
+        | "gradientHover"
+        | "blue"
+        | "gradient"
+        | "glowing"
+        | "glowingBlue"
+        | "danger"
+        | "gray";
+
     size?: "sm" | "md" | "lg";
     fullWidth?: boolean;
     onClick?: () => void;
