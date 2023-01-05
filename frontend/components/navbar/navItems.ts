@@ -7,12 +7,14 @@ import {
     faUserGroup,
     IconDefinition,
 } from "@fortawesome/free-solid-svg-icons";
+import { useAPISignOut } from "../../api/auth/useAPILogout";
 import { Routes } from "../../routes/Routes";
 
 interface ItemProps {
     icon: IconDefinition;
-    href: string;
     text: string;
+    href?: string;
+    onClick?: () => void;
 }
 
 export const items: ItemProps[] = [
@@ -45,5 +47,6 @@ export const items: ItemProps[] = [
         icon: faRightFromBracket,
         href: Routes.LOGIN,
         text: "Logout",
+        // onClick: () => useAPISignOut(),
     },
 ];

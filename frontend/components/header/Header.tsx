@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { BACKEND_URL } from "../../config";
 import { SearchInput } from "../inputs/searchbar/Searchbar";
 import { TextInput } from "../inputs/text/TextInput";
 import * as S from "./Header.style";
