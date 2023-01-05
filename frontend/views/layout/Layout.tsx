@@ -14,6 +14,7 @@ interface Props {
         description?: ReactNode;
     };
     csrf: string;
+    withoutTopPadding?: boolean;
 }
 
 export const Layout = ({
@@ -22,6 +23,7 @@ export const Layout = ({
     withoutBackground,
     header,
     csrf,
+    withoutTopPadding,
 }: Props) => {
     // TODO: loading / error states
     const { data, isError, isFetching, isLoading } = useAPIAuth({
@@ -39,8 +41,9 @@ export const Layout = ({
                 <S.Container
                     small={small}
                     withoutBackground={withoutBackground}
+                    withoutTopPadding={withoutTopPadding}
                 >
-                    <S.Heading>
+                    <S.Heading header={!!header}>
                         {header && header.title && <h1>{header.title}</h1>}
 
                         {header && header.description && (

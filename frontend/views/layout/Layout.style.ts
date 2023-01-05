@@ -17,6 +17,7 @@ export const Main = styled.main`
 
 export const Container = styled.div<{
     withoutBackground?: boolean;
+    withoutTopPadding?: boolean;
     small?: boolean;
 }>`
     max-width: ${({ small }) =>
@@ -24,7 +25,10 @@ export const Container = styled.div<{
 
     width: 100%;
     background-color: var(--secondary-background);
-    padding: ${pxToRem(30)};
+    padding: ${({ withoutTopPadding }) =>
+        withoutTopPadding
+            ? `0 ${pxToRem(30)} ${pxToRem(30)}  ${pxToRem(30)}`
+            : `${pxToRem(30)}`};
     border-radius: ${pxToRem(25)};
     color: var(--color-white);
 
@@ -38,8 +42,12 @@ export const Container = styled.div<{
         `}
 `;
 
-export const Heading = styled.div`
-    margin-bottom: ${pxToRem(50)};
+export const Heading = styled.div<{ header?: boolean }>`
+    ${({ header }) =>
+        header &&
+        css`
+            margin-bottom: ${pxToRem(50)};
+        `}
 
     > h1 {
         margin-bottom: ${pxToRem(10)};

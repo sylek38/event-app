@@ -3,6 +3,7 @@ import { GetServerSideProps } from "next";
 import { useEffect, useState } from "react";
 import { fetchAPIAuth } from "../../api/auth/useAPIAuth";
 import { FetchUrl } from "../../api/types/Fetch";
+import { Filters } from "../../components/filters/Filters";
 import { Posts } from "../../components/posts/Posts";
 import { BACKEND_URL } from "../../config";
 import { Layout } from "../../views/layout/Layout";
@@ -39,7 +40,8 @@ const Events = ({ csrf }: Props) => {
     }, []);
 
     return (
-        <Layout csrf={csrf ?? ""} withoutBackground>
+        <Layout csrf={csrf ?? ""} withoutBackground withoutTopPadding>
+            <Filters>Filtry go here</Filters>
             <Posts posts={posts} />
         </Layout>
     );
