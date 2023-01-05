@@ -6,6 +6,9 @@ import * as S from "./DateInput.style";
 import { ChangeEventHandler, useEffect, useRef, useState } from "react";
 
 import { Control, Path, UseFormRegister, Controller } from "react-hook-form";
+import { GenerateDescription } from "../../generateDescription/GenerateDescription";
+
+const KEY_PREFIX = "date";
 
 interface Props<T> {
     id: Path<NonNullable<T>>;
@@ -14,6 +17,9 @@ interface Props<T> {
     onChange?: ChangeEventHandler<HTMLInputElement>;
     hideLabel?: boolean;
     isError: boolean;
+    customErrorPrefix?: string;
+    textError?: boolean;
+    required?: boolean;
 }
 
 export function DateInput<T>({
@@ -23,11 +29,15 @@ export function DateInput<T>({
     hideLabel,
     onChange,
     isError,
+    customErrorPrefix,
+    textError,
+    required,
 }: Props<T>) {
     const { t } = useTranslation("inputs");
 
     const { ref, ...rest } = register(id, {
         // valueAsDate: true,
+        required,
     });
 
     const today = new Date();
@@ -40,7 +50,7 @@ export function DateInput<T>({
     return (
         <S.Container>
             <S.Label>
-                {!hideLabel && <span>{t(`date_label_${id}`)}</span>}
+                {!hideLabel && <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>}
             </S.Label>
             <S.DateInput
                 type="datetime-local"
@@ -48,16 +58,16 @@ export function DateInput<T>({
                 className="datepicker"
                 min={minDate}
                 max={maxDate.toISOString().slice(0, -8)}
-                required
                 ref={ref}
                 {...rest}
             />
-            {isError && (
-                <S.Error>
-                    <FontAwesomeIcon icon={faTriangleExclamation} />
-                    {t(`text_error_${id}`)}
-                </S.Error>
-            )}
+            <GenerateDescription
+                id={id}
+                keyPrefix={KEY_PREFIX}
+                customErrorPrefix={customErrorPrefix}
+                textError={textError}
+                error={isError}
+            />
         </S.Container>
     );
 }

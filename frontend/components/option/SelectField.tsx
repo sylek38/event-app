@@ -10,6 +10,9 @@ import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 
 import * as S from "./SelectField.style";
 import React from "react";
+import { GenerateDescription } from "../generateDescription/GenerateDescription";
+
+const KEY_PREFIX = "select";
 
 interface Props<T> {
     id: Path<NonNullable<T>>;
@@ -38,10 +41,10 @@ export function Select<T>({
     disabled,
 }: Props<T>) {
     const { t } = useTranslation("inputs");
-    const Placeholder = t(`text_search_${id}`);
+    const Placeholder = t(`${KEY_PREFIX}.${id}_placeholder`);
 
     const [value, setValue] = useState(Placeholder);
-    const [selected, setselected] = useState(false);
+    const [selected, setSelected] = useState(false);
     const [open, setOpen] = useState(false);
 
     const { ref, ...rest } = register(id, {
@@ -51,7 +54,7 @@ export function Select<T>({
 
     const handleClick = (value: any) => {
         setValue(value);
-        setselected(true);
+        setSelected(true);
     };
 
     const clickSelect = () => {
@@ -61,7 +64,7 @@ export function Select<T>({
     return (
         <S.Container fullWidth={fullWidth} selected={selected}>
             <S.Label>
-                {!hideLabel && <span>{t(`select_label_${id}`)}</span>}
+                {!hideLabel && <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>}
             </S.Label>
 
             <S.Select
@@ -86,12 +89,11 @@ export function Select<T>({
                     </S.Option>
                 ))}
             </S.Select>
-            {isError && (
-                <S.Error>
-                    <FontAwesomeIcon icon={faTriangleExclamation} />
-                    {t(`select_error_${id}`)}
-                </S.Error>
-            )}
+            <GenerateDescription
+                id={id}
+                keyPrefix={KEY_PREFIX}
+                error={isError}
+            />
         </S.Container>
     );
 }

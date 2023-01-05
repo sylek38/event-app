@@ -120,6 +120,7 @@ export const EventCreatorView = () => {
                         isError={!!errors.date}
                         register={register}
                         control={control}
+                        required
                     ></DateInput>
                     <Slider
                         id="peopleLimit"

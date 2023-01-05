@@ -4,7 +4,7 @@ import { TextInput } from "../../../components/inputs/text/TextInput";
 
 import { useAPISettingsPassword } from "../../../api/users/useAPISettingsPassword";
 
-import { SubmitHandler, useForm } from "react-hook-form";
+import { SubmitHandler, useForm, useWatch } from "react-hook-form";
 import useTranslation from "next-translate/useTranslation";
 import { Button } from "../../../components/button/Button";
 import { passwordRegex } from "../../../utils/regex";
@@ -21,7 +21,8 @@ export const Password = () => {
     const { t: t1 } = useTranslation("global");
     const { t: t2 } = useTranslation("settings");
 
-    const { isError, isLoading, mutateAsync } = useAPISettingsPassword();
+    const { isError, isLoading, mutateAsync, isSuccess } =
+        useAPISettingsPassword();
     const [successMessage, setSuccessMessage] = useState(false);
 
     const {
@@ -30,13 +31,20 @@ export const Password = () => {
         formState: { errors },
         handleSubmit,
         reset,
-    } = useForm<FormTypes>();
+    } = useForm<FormTypes>({ mode: "onChange" });
+
+    const passwordFromWatch = useWatch({
+        name: "new_password",
+        control,
+    });
 
     const onSubmit: SubmitHandler<FormTypes> = async (data) => {
         console.log(data);
         await mutateAsync(data);
-        setSuccessMessage(true);
-        reset();
+        if (isSuccess) {
+            setSuccessMessage(true);
+            reset();
+        }
     };
 
     return (
@@ -47,7 +55,6 @@ export const Password = () => {
                     register={register}
                     control={control}
                     isError={!!errors.old_password}
-                    pattern={passwordRegex}
                     required
                     dark
                 />
@@ -57,7 +64,9 @@ export const Password = () => {
                     register={register}
                     control={control}
                     isError={!!errors.new_password}
+                    customErrorPrefix="requirements"
                     pattern={passwordRegex}
+                    textError
                     required
                     dark
                 />
@@ -67,7 +76,9 @@ export const Password = () => {
                     register={register}
                     control={control}
                     isError={!!errors.repeat_password}
-                    pattern={passwordRegex}
+                    validate={(value: string) => value === passwordFromWatch}
+                    customErrorPrefix="no_match"
+                    textError
                     required
                     dark
                 />

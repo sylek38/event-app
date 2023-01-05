@@ -11,16 +11,11 @@ import { Button } from "../../components/button/Button";
 
 import Link from "next/link";
 import { Routes } from "../../routes/Routes";
-import { useAPISignUp } from "../../api/auth/useAPISignUp";
-
-interface FormTypes {
-    name: string;
-    surname: string;
-    email: string;
-    bio: string;
-    password: string;
-    profilePic: string;
-}
+import {
+    APISignInMutationVariables,
+    useAPISignUp,
+} from "../../api/auth/useAPISignUp";
+import { passwordRegex } from "../../utils/regex";
 
 export const RegisterView = () => {
     const { t } = useTranslation("global");
@@ -32,19 +27,13 @@ export const RegisterView = () => {
         control,
         formState: { errors },
         handleSubmit,
-    } = useForm<FormTypes>({
-        defaultValues: {
-            name: "",
-            surname: "",
-            email: "",
-            bio: "",
-            password: "",
-            profilePic: "",
-        },
-    });
+    } = useForm<APISignInMutationVariables>();
 
-    const onSubmit: SubmitHandler<FormTypes> = async (data) => {
+    const onSubmit: SubmitHandler<APISignInMutationVariables> = async (
+        data
+    ) => {
         await mutateAsync(data);
+        console.log(data);
     };
 
     return (
@@ -73,6 +62,7 @@ export const RegisterView = () => {
                         register={register}
                         control={control}
                         isError={!!errors.email}
+                        type="email"
                         required
                         dark
                     />
@@ -82,6 +72,9 @@ export const RegisterView = () => {
                         control={control}
                         isError={!!errors.password}
                         type="password"
+                        pattern={passwordRegex}
+                        customErrorPrefix="requirements"
+                        textError
                         required
                         dark
                     />
@@ -89,14 +82,16 @@ export const RegisterView = () => {
                     <S.Middle>
                         <S.MiddleContent>
                             <S.MiddleLeft>
-                                <S.MiddleInput type="checkbox" required />
+                                {/* TODO: checkbox */}
+                                {/* commented for now, it destroys validation */}
+                                {/* <S.MiddleInput type="checkbox" required />
                                 <S.MiddleSpan></S.MiddleSpan>
                                 {t("i_have_read")}
                                 <Link href={Routes.TERMS}>
                                     <S.MiddleHref>
                                         {t("terms_and_conditions")}
                                     </S.MiddleHref>
-                                </Link>
+                                </Link> */}
                             </S.MiddleLeft>
                         </S.MiddleContent>
                     </S.Middle>

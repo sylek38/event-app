@@ -1,46 +1,50 @@
 {
-    "text_label_email": "Email",
-    "text_error_email": "Wpisz swój email",
-    "text_label_password": "Hasło",
-    "text_error_password": "Wpisz hasło",
-    "text_label_name": "Imię",
-    "text_error_name": "Wpisz swoje imię",
-    "text_label_surname": "Nazwisko",
-    "text_error_surname": "Wpisz swoje nazwisko",
+    "error_length": "Przekroczono ilość znaków",
 
-    "text_search_select_city": "Wybierz miasto",
-    "text_searchbar": "Wyszukaj...",
+    "text": {
+        "email_label": "Adres email",
+        "password_label": "Hasło",
+        "requirements_password_error": "Hasło nie spełnia wymagań",
+        "name_label": "Imię",
+        "surname_label": "nazwisko",
 
-    "text_search_category": "Wybierz kategorie",
-    "select_label_category": "Kategoria",
-    "select_error_category": "Musisz wybrać kategorie!",
+        "old_password_label": "Stare hasło",
+        "new_password_label": "Nowe hasło",
+        "requirements_new_password_error": "Hasło nie spełnia wymagań",
+        "repeat_password_label": "Powtórz hasło",
+        "no_match_repeat_password_error": "Hasła nie są zgodne",
 
-    "textarea_label_bio": "Bio",
-    "textarea_placeholder_bio": "Powiedz coś o sobie...",
+        "post_title_label": "Tytuł",
+        "post_title_placeholder": "Powiedz coś więcej o swoim wydarzeniu...",
+        "post_map_label": "Wpisz lokalizację, w której odbędzie się twoje wydarzenie",
+        "post_map_placeholder": "Tylko nie podawaj lokalizacji na Marsie :)"
 
-    "text_label_old_password": "Stare hasło",
-    "text_error_old_password": "Pole nie może być puste!",
-    "text_label_new_password": "Nowe hasło",
-    "text_error_new_password": "Pole nie może być puste!",
-    "text_label_repeat_password": "Powtórz hasło",
-    "text_error_repeat_password": "Pole nie może być puste!",
 
-    "text_label_title": "Tytuł",
-    "text_error_title": "Wpisz tytuł dla swojego wydarzenia!",
-    "text_placeholder_title": "Moje przyjęcie urodzinowe na jachcie",
+    },
+    "text_searchbar": {
+        "select_city_placeholder": "Search..."
+    },
 
-    "textarea_label_desc": "Opis",
-    "textarea_error_desc": "Wpisz opis dla swojego Wydarzenia!",
-    "textarea_placeholder_desc": "Powiedz coś więcej o swoim wydarzeniu...",
+    "select": {
+        "city_label": "Wybierz miasto",
+        "category_label": "Kategoria",
+        "category_placeholder": "Wybierz kategorię"
 
-    "text_label_map": "Wpisz lokalizację, w której odbędzie się twoje wydarzenie",
-    "text_error_map": "Twoje wydarzenie musi mieć zdefiniowaną lokalizacje!",
-    "text_placeholder_map": "Tylko nie podawaj lokalizacji na marsie:)",
+    },
+
+    "textarea": {
+        "bio_label": "Bio",
+        "bio_placeholder": "Powiedz coś o sobie...",
+        "desc_label": "Opis",
+        "desc_placeholder": "Powiedz coś więcej o swoim wydarzeniu..."
+    },
+
+    "date": {
+        "post_date": "Wybierz date dla swojego wydarzenia",
+        "date_error": "Data jest nieprawidłowa!"
+    },
 
     "slider_label_peopleLimit": "Określ maksymalną liczbę osób",
+    "file_label_photo": "Dodaj obrazek"
 
-    "file_label_photo": "Dodaj obrazek",
-
-    "date_label_date": "Wybierz date dla swojego wydarzenia",
-    "text_error_date": "Data jest nieprawidłowa!"
 }

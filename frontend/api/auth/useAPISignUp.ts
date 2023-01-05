@@ -13,9 +13,7 @@ export interface APISignInMutationVariables {
     name: string;
     surname: string;
     email: string;
-    bio: string;
     password: string;
-    profilePic: string;
 }
 
 export const useAPISignUp = () => {
@@ -25,7 +23,7 @@ export const useAPISignUp = () => {
         ResponseType,
         FetchErrorsType,
         APISignInMutationVariables
-    >(async ({ name, surname, email, bio, password, profilePic }) => {
+    >(async ({ name, surname, email, password }) => {
         try {
             const data = await fetch(`${BACKEND_URL}${FetchUrl.REGISTER}`, {
                 method: "POST",
@@ -33,9 +31,7 @@ export const useAPISignUp = () => {
                     name,
                     surname,
                     email,
-                    bio,
                     password,
-                    profilePic,
                 }),
                 headers: {
                     "Content-Type": "application/json",

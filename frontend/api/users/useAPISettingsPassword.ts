@@ -28,16 +28,6 @@ export const useAPISettingsPassword = () => {
         FetchErrorsType,
         APISettingsMutationVariables
     >(async ({ old_password, new_password, repeat_password }) => {
-        if (new_password !== repeat_password) {
-            console.log("hasła się różnią!");
-            return;
-        }
-
-        if (old_password !== oldValues.password) {
-            console.log("stare hasło nie jest prawidłowe!");
-            return;
-        }
-
         const updatedUser = { ...oldValues, new_password };
 
         try {

@@ -3,6 +3,7 @@ import {
     Control,
     Path,
     UseFormRegister,
+    useWatch,
     Validate,
     ValidationRule,
 } from "react-hook-form";
@@ -12,6 +13,9 @@ import useTranslation from "next-translate/useTranslation";
 import * as S from "./TextInput.style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
+import { GenerateDescription } from "../../generateDescription/GenerateDescription";
+
+const KEY_PREFIX = "text";
 
 interface Props<T> {
     id: Path<NonNullable<T>>;
@@ -29,6 +33,8 @@ interface Props<T> {
     disabled?: boolean;
     hideLabel?: boolean;
     dark?: boolean;
+    customErrorPrefix?: string;
+    textError?: boolean;
 }
 
 export function TextInput<T>({
@@ -47,6 +53,8 @@ export function TextInput<T>({
     disabled,
     hideLabel,
     dark,
+    customErrorPrefix,
+    textError,
 }: Props<T>) {
     const { t } = useTranslation("inputs");
 
@@ -61,27 +69,37 @@ export function TextInput<T>({
         pattern,
     });
 
+    const valueFromWatch = useWatch({ control, name: id });
+
+    const length = valueFromWatch ? `${valueFromWatch}`.length : 0;
+
     return (
         <S.Container>
             <S.Label>
-                {!hideLabel && <span>{t(`text_label_${id}`)}</span>}
+                {!hideLabel && <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>}
             </S.Label>
             <S.TextInput
                 type={type}
                 isError={!!isError}
                 placeholder={
-                    placeholder ? t(`text_placeholder_${id}`) : undefined
+                    placeholder
+                        ? t(`${KEY_PREFIX}.${id}_placeholder`)
+                        : undefined
                 }
                 dark={dark}
                 ref={ref}
                 {...rest}
             />
-            {isError && (
-                <S.Error>
-                    <FontAwesomeIcon icon={faTriangleExclamation} />
-                    {t(`text_error_${id}`)}
-                </S.Error>
-            )}
+
+            <GenerateDescription
+                id={id}
+                keyPrefix={KEY_PREFIX}
+                customErrorPrefix={customErrorPrefix}
+                textError={textError}
+                length={length}
+                maxLength={maxLength}
+                error={isError}
+            />
         </S.Container>
     );
 }
