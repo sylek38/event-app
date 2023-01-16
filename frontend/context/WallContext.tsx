@@ -1,12 +1,12 @@
 import { createContext, useContext } from "react";
 import { DEFAULT_CATEGORY, MIN_PEOPLE_LIMIT } from "../config";
 import { PostsType, WallFiltersType } from "../types/posts.type";
-import { PostsResponse } from "../types/responses/postsResponse.type";
 
 // Jeszcze trzeba obczaić jak przechowywać te filtry
 
 interface Props {
     posts: PostsType[];
+    categories?: string[];
     wallFiltersSSR?: WallFiltersType;
     isError: boolean;
     isLoading: boolean;
@@ -17,6 +17,7 @@ interface Props {
 
 export const WallContext = createContext<Props>({
     posts: [],
+    categories: [],
     wallFiltersSSR: {
         city: "",
         category: DEFAULT_CATEGORY,

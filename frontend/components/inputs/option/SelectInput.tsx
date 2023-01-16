@@ -18,6 +18,7 @@ import {
     flip,
     FloatingFocusManager,
     FloatingNode,
+    offset,
     shift,
     size,
     useDismiss,
@@ -73,7 +74,10 @@ export function SelectInput<T>({
     const [open, setOpen] = useState(false);
 
     const nodeId = useFloatingNodeId();
-    const returnRegister = register(id);
+    const returnRegister = register(id, {
+        required,
+        disabled,
+    });
 
     const { context, floating, reference, strategy, x, y } =
         useFloating<HTMLButtonElement>({
@@ -82,6 +86,7 @@ export function SelectInput<T>({
             middleware: [
                 flip(),
                 shift(),
+                offset(5),
                 size({
                     apply({ availableHeight, elements, rects }) {
                         Object.assign(elements.floating.style, {
@@ -101,8 +106,6 @@ export function SelectInput<T>({
         useDismiss(context),
     ]);
 
-    const Placeholder = t(`${KEY_PREFIX}.${id}_placeholder`);
-
     return (
         <FloatingNode id={nodeId}>
             <S.Container fullWidth={fullWidth}>
@@ -119,9 +122,13 @@ export function SelectInput<T>({
                     getReferenceProps={getReferenceProps}
                     reference={reference}
                     setOpen={setOpen}
-                    titleItems={titleItem}
+                    titleItem={titleItem}
                     disabled={disabled}
                     loading={loading}
+                    dark={dark}
+                    open={open}
+                    keyPrefix={KEY_PREFIX}
+                    isError={isError}
                 />
                 {/* 
             <S.Select
@@ -154,6 +161,7 @@ export function SelectInput<T>({
                 {open && (
                     <FloatingFocusManager context={context}>
                         <S.Content
+                            dark={dark}
                             {...getFloatingProps({
                                 ref: floating,
                                 style: {

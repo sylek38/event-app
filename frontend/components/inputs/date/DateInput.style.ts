@@ -19,7 +19,7 @@ export const DateInput = styled.input<{
 }>`
     padding: ${pxToRem(12)} ${pxToRem(20)};
     font-size: ${pxToRem(14)};
-    color: var(--color-white);
+    color: var(--secondary-text);
     background-color: var(--primary-background);
     border-radius: ${pxToRem(50)};
     transition: 0.5s;

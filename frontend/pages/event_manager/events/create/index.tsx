@@ -15,9 +15,7 @@ interface Props {
 
 const EventManagerCreate = ({ csrf }: Props) => {
     const { t } = useTranslation("eventManager");
-    const { data, isLoading, isError, isFetching } = useAPICategories({ csrf });
-    console.log(isFetching, "IS FETCHING. if so, query is being prefetched");
-    console.log(data, "DATA CAT");
+
     return (
         <Layout
             small
@@ -26,11 +24,7 @@ const EventManagerCreate = ({ csrf }: Props) => {
                 title: t("creator.heading"),
             }}
         >
-            <EventCreatorView
-                categories={data?.results}
-                isCategoriesError={isError}
-                isCategoriesLoading={isLoading}
-            />
+            <EventCreatorView />
         </Layout>
     );
 };

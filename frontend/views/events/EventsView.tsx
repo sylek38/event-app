@@ -1,9 +1,11 @@
 import { Posts } from "../../components/posts/Posts";
 import { PostFilters } from "./components/PostFilters";
 
-export const EventsView = () => (
-    <>
-        <PostFilters />
-        <Posts />
-    </>
-);
+export const EventsView = () => {
+    return (
+        <>
+            <PostFilters />
+            <Posts />
+        </>
+    );
+};

@@ -6,6 +6,10 @@ import {
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
 import { fetchAPIAuth } from "../../api/auth/useAPIAuth";
+import {
+    fetchAPICategories,
+    useAPICategories,
+} from "../../api/categories/useAPICategories";
 import { fetchAPIPosts, useAPIPosts } from "../../api/posts/useAPIPosts";
 import { WallContext } from "../../context/WallContext";
 import { PostsType, WallFiltersType } from "../../types/posts.type";
@@ -31,6 +35,11 @@ const Events = ({ csrf, wallFiltersSSR }: Props) => {
     //     PostsResponse,
     //     unknown
     // >;
+    const {
+        data: categoriesData,
+        isLoading: isCategoriesLoading,
+        isError: isCategoriesError,
+    } = useAPICategories({ csrf });
 
     const {
         data,
@@ -48,8 +57,11 @@ const Events = ({ csrf, wallFiltersSSR }: Props) => {
             value={{
                 wallFiltersSSR,
                 posts: data as unknown as PostsType[],
-                isError,
-                isLoading,
+                categories: categoriesData?.results?.map(
+                    (category) => category
+                ),
+                isError: isError || isCategoriesError,
+                isLoading: isLoading || isCategoriesLoading,
                 isFetchingNextPage,
                 hasNextPage,
                 fetchNextPage,
@@ -72,6 +84,11 @@ export const getServerSideProps: GetServerSideProps = async ({
     await queryClient.prefetchQuery(
         ["authorization"],
         async () => await fetchAPIAuth({ csrf })
+    );
+
+    await queryClient.prefetchQuery(
+        ["categories"],
+        async () => await fetchAPICategories({ csrf })
     );
 
     await queryClient.prefetchQuery(["posts.infinite"], async () =>

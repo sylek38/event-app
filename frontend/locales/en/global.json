@@ -30,5 +30,23 @@
         "general": "General",
         "password": "Change password"
     },
-    "lang": "en-US"
+    "lang": "en-US",
+    "categories": {
+        "party": "Party",
+        "board_games": "Board Games",
+        "bike": "Bike",
+        "concert": "Concert",
+        "winter_swimming": "Winter Swimming",
+        "culture": "Culture",
+        "networking": "Networking",
+        "travel": "Travel",
+        "jogging": "Jogging",
+        "outdoor": "Outdoor",
+        "games": "Games",
+        "festival": "Festival",
+        "other": "Other",
+        "education": "Education",
+        "art": "Art",
+        "scary": "Scary"
+    }
 }

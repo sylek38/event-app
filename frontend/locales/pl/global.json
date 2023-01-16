@@ -30,5 +30,23 @@
         "general": "Ogólne",
         "password": "Zmień hasło"
     },
-    "lang": "pl-PL"
+    "lang": "pl-PL",
+    "categories": {
+        "party": "Impreza",
+        "board_games": "Planszówki",
+        "bike": "Rower",
+        "concert": "Koncert",
+        "winter_swimming": "Morsowanie",
+        "culture": "Kultura",
+        "networking": "Networking",
+        "travel": "Podróże",
+        "jogging": "Jogging",
+        "outdoor": "Po prostu wyjście",
+        "games": "Gry",
+        "festival": "Festiwal",
+        "other": "Inne",
+        "education": "Edukacja",
+        "art": "Sztuka",
+        "scary": "Straszne"
+    }
 }

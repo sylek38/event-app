@@ -2,8 +2,9 @@ import { useRouter } from "next/router";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Filters } from "../../../components/filters/Filters";
 import { DateInput } from "../../../components/inputs/date/DateInput";
+import { SelectInput } from "../../../components/inputs/option/SelectInput";
 import { Slider } from "../../../components/inputs/slider/Slider";
-import { Select } from "../../../components/inputs/option/Select";
+import { TextInput } from "../../../components/inputs/text/TextInput";
 import { useWallContext } from "../../../context/WallContext";
 import * as S from "./PostFilters.style";
 
@@ -16,12 +17,14 @@ interface FormTypes {
 
 export const PostFilters = () => {
     const { query, pathname, replace } = useRouter();
-    const { wallFiltersSSR } = useWallContext();
+    const { wallFiltersSSR, categories } = useWallContext();
     const {
         register,
         control,
         formState: { errors },
         handleSubmit,
+        watch,
+        setValue,
     } = useForm<FormTypes>({
         defaultValues: {
             city: wallFiltersSSR?.city,
@@ -74,18 +77,33 @@ export const PostFilters = () => {
     return (
         <Filters>
             <S.Form onSubmit={handleSubmit(onSubmit)}>
-                <Select
+                <TextInput
                     id="city"
                     register={register}
                     control={control}
-                    values={[""]}
                     isError={!!errors.city}
                 />
 
-                <Select
+                <SelectInput
                     id="category"
                     register={register}
                     control={control}
+                    // items={
+                    //     categories
+                    //         ? categories?.map((category) => ({
+                    //               text: category,
+                    //               id: category,
+                    //           }))
+                    //         : []
+                    // }
+                    items={[
+                        { id: "elko", text: "elko" },
+                        { id: "elko2", text: "elko2" },
+                        { id: "elko3", text: "elk3" },
+                        { id: "elko4", text: "elko4" },
+                    ]}
+                    setValue={setValue}
+                    titleItem={watch("category") ?? ""}
                     isError={!!errors.category}
                 />
 

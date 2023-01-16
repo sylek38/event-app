@@ -14,7 +14,7 @@ export const Container = styled.div<{
     position: relative;
     color: var(--secondary-text);
     border-radius: 1.25rem;
-    background-color: var(--secondary-background);
+    /* background-color: var(--secondary-background); */
     z-index: 1;
 
     ${({ fullWidth }) =>
@@ -66,8 +66,9 @@ export const Container = styled.div<{
 //         `}
 // `;
 
-export const Content = styled.fieldset`
-    background-color: red;
+export const Content = styled.fieldset<{ dark?: boolean }>`
+    background-color: ${({ dark }) =>
+        dark ? "var(--primary-background)" : "var(--secondary-background)"};
     border: none;
     border-radius: 1.25rem;
     overflow: auto;

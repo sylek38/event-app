@@ -18,6 +18,7 @@ import {
     faArrowAltCircleDown,
     faArrowDown,
     faCaretDown,
+    faCaretUp,
 } from "@fortawesome/free-solid-svg-icons";
 
 interface Props<T> {
@@ -28,10 +29,14 @@ interface Props<T> {
     reference: (node: HTMLButtonElement | null) => void;
     setOpen: Dispatch<SetStateAction<boolean>>;
     setValue: UseFormSetValue<NonNullable<T>>;
-    titleItems: string | string[];
+    titleItem: string | string[];
     disabled?: boolean;
     loading?: boolean;
     multi?: boolean;
+    dark?: boolean;
+    open: boolean;
+    keyPrefix?: string;
+    isError?: boolean;
 }
 
 export function ButtonSelectInner<T>(
@@ -44,7 +49,11 @@ export function ButtonSelectInner<T>(
         reference,
         setOpen,
         setValue,
-        titleItems,
+        titleItem,
+        dark,
+        open,
+        keyPrefix,
+        isError,
     }: Props<T>,
     ref: ForwardedRef<HTMLButtonElement>
 ) {
@@ -55,7 +64,9 @@ export function ButtonSelectInner<T>(
     return (
         <S.Wrapper
             type="button"
+            dark={dark}
             disabled={disabled || loading}
+            isError={isError}
             {...getReferenceProps({
                 ref: currentRef,
                 onClick(event) {
@@ -70,11 +81,14 @@ export function ButtonSelectInner<T>(
                     <S.Loading>{t("loading")}</S.Loading>
                 </>
             ) : (
-                <S.Desc>{t(`select.${id}_placeholder`)}</S.Desc>
+                <S.Desc>
+                    {titleItem
+                        ? titleItem
+                        : t(`${keyPrefix}.${id}_placeholder`)}
+                </S.Desc>
             )}
 
-            <span>titleItems</span>
-            <FontAwesomeIcon icon={faCaretDown} />
+            <FontAwesomeIcon icon={open ? faCaretUp : faCaretDown} />
         </S.Wrapper>
     );
 }

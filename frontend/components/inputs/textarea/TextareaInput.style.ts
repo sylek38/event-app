@@ -25,7 +25,7 @@ export const TextareaInput = styled.textarea<{
     dark?: boolean;
 }>`
     all: unset;
-    padding: ${pxToRem(12)} ${pxToRem(20)};
+    padding: ${pxToRem(10)} ${pxToRem(20)};
     font-size: ${pxToRem(14)};
     color: var(--color-white);
     background-color: ${({ dark }) =>

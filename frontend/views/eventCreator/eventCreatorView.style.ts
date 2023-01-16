@@ -6,10 +6,6 @@ export const Form = styled.form`
     flex-direction: column;
     align-items: center;
     width: 100%;
-
-    button {
-        margin-top: ${pxToRem(30)};
-    }
 `;
 
 export const Content = styled.div`
@@ -17,6 +13,10 @@ export const Content = styled.div`
 
     & > div {
         margin-top: 30px;
+    }
+
+    > button {
+        margin-top: ${pxToRem(30)};
     }
 `;
 

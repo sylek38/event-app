@@ -3,20 +3,19 @@ import { Routes } from "../../routes/Routes";
 import * as S from "./EventCreatorView.style";
 
 import { TextInput } from "../../components/inputs/text/TextInput";
-import { Select } from "../../components/inputs/option/Select";
 import { TextareaInput } from "../../components/inputs/textarea/TextareaInput";
 import { Slider } from "../../components/inputs/slider/Slider";
 import { FileInput } from "../../components/inputs/file/FileInput";
-// import { DatePicker } from "../../components/inputs/datePicker/DatePicker";
 import { DateInput } from "../../components/inputs/date/DateInput";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "../../components/button/Button";
 
 import React from "react";
-import { CategoriesResponse } from "../../types/responses/categoriesResponse.type";
 import { SelectInput } from "../../components/inputs/option/SelectInput";
-import { CategoriesType } from "../../types/categories.type";
+import { useCategories } from "../../context/CategoriesContext";
+import { useAPICategories } from "../../api/categories/useAPICategories";
+import { useAuth } from "../../context/UserContext";
 
 interface FormTypes {
     name: string;
@@ -38,15 +37,10 @@ interface Props {
     isCategoriesLoading: boolean;
 }
 
-export const EventCreatorView = ({
-    categories,
-    isCategoriesError,
-    isCategoriesLoading,
-}: Props) => {
+export const EventCreatorView = () => {
     const { t } = useTranslation("global");
-    console.log(categories, "CATEGORIES");
-    // const processedCategories = categories?.results.
-    // const { t: t2 } = useTranslation("eventManager");
+    const { csrf } = useAuth();
+    const { data: categories, isLoading, isError } = useAPICategories({ csrf });
 
     const {
         register,
@@ -70,18 +64,14 @@ export const EventCreatorView = ({
         },
     });
 
+    console.log(categories, "CATEGORIES EVENT CREATOR");
+
     const onSubmit: SubmitHandler<FormTypes> = async (data) => {
         // await mutateAsync(data);
+        console.log(data, "SUBMIT event");
     };
 
     return (
-        // <Layout
-        //     small
-        //     csrf={csrf}
-        //     header={{
-        //         title: t2("creator.heading"),
-        //     }}
-        // >
         <S.Form onSubmit={handleSubmit(onSubmit)}>
             <FileInput id="photo" register={register} control={control} />
             <S.NewLine>{t("info")}</S.NewLine>
@@ -102,10 +92,20 @@ export const EventCreatorView = ({
                     setValue={setValue}
                     items={
                         categories?.map((category) => ({
-                            text: category,
-                            id: t(category),
+                            text: t(category),
+                            id: category,
                         })) ?? []
                     }
+                    loading={isLoading}
+                    // items={[
+                    //     { id: "elko", text: "elko" },
+                    //     { id: "elko2", text: "elko2" },
+                    //     { id: "elko3", text: "elk3" },
+                    //     { id: "elko4", text: "elko4" },
+                    //     { id: "elko23", text: "elko2" },
+                    //     { id: "elko32", text: "elk3" },
+                    //     { id: "elko41", text: "elko4" },
+                    // ]}
                     titleItem={watch("category") ?? []}
                     isError={!!errors.category}
                     required
