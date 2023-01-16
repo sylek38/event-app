@@ -1,11 +1,11 @@
 import { pxToRem } from "./../../../utils/pxToRem";
 import styled from "styled-components";
 
-export const Post = styled.a<{ width: number }>`
+export const Post = styled.a`
     background-color: var(--secondary-background);
     border-radius: ${pxToRem(24)};
     box-shadow: 0 0 1.5em var(--box-shadow--black);
-    max-width: ${({ width }) => (width ? pxToRem(320) : pxToRem(width))};
+    max-width: pxToRem(320);
     width: 100%;
     transition: 0.15s;
 

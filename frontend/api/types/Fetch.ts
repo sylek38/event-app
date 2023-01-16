@@ -6,7 +6,7 @@ export enum FetchUrl {
     USERS = "/backend/users",
     POSTS = "/backend/posts",
     POST = "/backend/post/[id]",
-    CATEGORY = "/backend/category",
+    CATEGORIES = "/backend/categories",
 }
 
 export interface FetchErrorsType {

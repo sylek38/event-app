@@ -60,7 +60,7 @@ app.get("/", (req, res) => {
 app.use("/backend/auth", authRoute);
 app.use("/backend/users", userRoute);
 app.use("/backend/posts", postRoute);
-app.use("/backend/category", categoryRoute);
+app.use("/backend/categories", categoryRoute);
 app.use(verifyToken);
 
 app.listen(port, () => {

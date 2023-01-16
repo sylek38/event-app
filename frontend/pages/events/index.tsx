@@ -1,53 +1,71 @@
-import { dehydrate, QueryClient } from "@tanstack/react-query";
+import {
+    dehydrate,
+    QueryClient,
+    UseInfiniteQueryResult,
+} from "@tanstack/react-query";
 import { GetServerSideProps } from "next";
-import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { fetchAPIAuth } from "../../api/auth/useAPIAuth";
-import { FetchUrl } from "../../api/types/Fetch";
-import { Filters } from "../../components/filters/Filters";
-import { Posts } from "../../components/posts/Posts";
-import { BACKEND_URL } from "../../config";
+import { fetchAPIPosts, useAPIPosts } from "../../api/posts/useAPIPosts";
+import { WallContext } from "../../context/WallContext";
+import { PostsType, WallFiltersType } from "../../types/posts.type";
+import { PostsResponse } from "../../types/responses/postsResponse.type";
+import { EventsView } from "../../views/events/EventsView";
 import { Layout } from "../../views/layout/Layout";
 
 interface Props {
     csrf: string;
+    wallFiltersSSR: WallFiltersType;
 }
 
-const Events = ({ csrf }: Props) => {
-    const [posts, setPosts] = useState([]);
+const Events = ({ csrf, wallFiltersSSR }: Props) => {
+    // JAK COŚ SIĘ ROZJEBIE TO WRÓĆ TU BO TO PEWKO TUTAJ :D
+    // const {
+    //     data,
+    //     isError,
+    //     isLoading,
+    //     isFetchingNextPage,
+    //     hasNextPage,
+    //     fetchNextPage,
+    // } = useAPIPosts({ csrf }) as unknown as UseInfiniteQueryResult<
+    //     PostsResponse,
+    //     unknown
+    // >;
 
-    useEffect(() => {
-        async function fetchPosts() {
-            try {
-                const data = await fetch(`${BACKEND_URL}${FetchUrl.POSTS}`, {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                });
+    const {
+        data,
+        isError,
+        isLoading,
+        isFetchingNextPage,
+        hasNextPage,
+        fetchNextPage,
+    } = useAPIPosts({ csrf });
 
-                if (data.status == 200) {
-                }
-
-                const posts = await data.json();
-                setPosts(posts);
-            } catch (err) {
-                console.log(err);
-                throw err;
-            }
-        }
-
-        fetchPosts();
-    }, []);
+    console.log(data, "WALL CONTEXT DATA");
 
     return (
-        <Layout csrf={csrf ?? ""} withoutBackground withoutTopPadding>
-            <Filters>Filtry go here</Filters>
-            <Posts posts={posts} />
-        </Layout>
+        <WallContext.Provider
+            value={{
+                wallFiltersSSR,
+                posts: data as unknown as PostsType[],
+                isError,
+                isLoading,
+                isFetchingNextPage,
+                hasNextPage,
+                fetchNextPage,
+            }}
+        >
+            <Layout csrf={csrf ?? ""} withoutBackground withoutTopPadding>
+                <EventsView />
+            </Layout>
+        </WallContext.Provider>
     );
 };
 
-export const getServerSideProps: GetServerSideProps = async ({ req }) => {
+export const getServerSideProps: GetServerSideProps = async ({
+    query,
+    req,
+}) => {
     const queryClient = new QueryClient();
     const csrf = req.cookies["csrf"] ?? "";
 
@@ -56,10 +74,27 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
         async () => await fetchAPIAuth({ csrf })
     );
 
+    await queryClient.prefetchQuery(["posts.infinite"], async () =>
+        fetchAPIPosts({
+            page: (query.page as string) ?? 1,
+            city: (query.city as string) ?? "",
+            category: (query.category as string) ?? "",
+            date: (query.date as string) ?? "",
+            peopleLimit: (query.peopleLimit as string) ?? "",
+            csrf,
+        })
+    );
+
     return {
         props: {
-            dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
+            dehydratedState: dehydrate(queryClient),
             csrf,
+            wallFiltersSSR: {
+                city: query.city ?? "",
+                category: query.category ?? "",
+                date: query.date ?? "",
+                peopleLimit: query.peopleLimit ?? "",
+            },
         },
     };
 };

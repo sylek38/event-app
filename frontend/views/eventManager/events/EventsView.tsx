@@ -1,8 +1,9 @@
 import { Filters } from "../../../components/filters/Filters";
+import { Posts } from "../../../components/posts/Posts";
 
 export const EventsView = () => (
-    <div>
+    <>
         <Filters>Filtry go here</Filters>
-        Events panel content
-    </div>
+        <Posts />
+    </>
 );

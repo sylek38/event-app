@@ -11,8 +11,6 @@ import {
 import useTranslation from "next-translate/useTranslation";
 
 import * as S from "./TextInput.style";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTriangleExclamation } from "@fortawesome/free-solid-svg-icons";
 import { GenerateDescription } from "../../generateDescription/GenerateDescription";
 
 const KEY_PREFIX = "text";
