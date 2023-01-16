@@ -10,7 +10,6 @@ export const Container = styled.div<{
     min-width: 12.5rem;
     width: 100%;
     height: ${pxToRem(72)};
-    gap: ${pxToRem(10)};
     position: relative;
     color: var(--secondary-text);
     border-radius: 1.25rem;
@@ -79,7 +78,7 @@ export const Content = styled.fieldset<{ dark?: boolean }>`
 export const Label = styled.label`
     font-size: ${pxToRem(12)};
     color: var(--secondary-text);
-    margin-bottom: ${pxToRem(6)};
+    margin-bottom: ${pxToRem(10)};
     line-height: 1;
 `;
 

@@ -73,9 +73,11 @@ export function TextInput<T>({
 
     return (
         <S.Container>
-            <S.Label>
-                {!hideLabel && <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>}
-            </S.Label>
+            {!hideLabel && (
+                <S.Label>
+                    <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>
+                </S.Label>
+            )}
             <S.TextInput
                 type={type}
                 isError={!!isError}

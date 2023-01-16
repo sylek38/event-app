@@ -16,11 +16,14 @@ export const Label = styled.label`
 export const DateInput = styled.input<{
     isError: boolean;
     disabled?: boolean;
+    dark?: boolean;
 }>`
-    padding: ${pxToRem(12)} ${pxToRem(20)};
+    padding: ${pxToRem(10)} ${pxToRem(20)};
+    height: 2.5rem;
     font-size: ${pxToRem(14)};
     color: var(--secondary-text);
-    background-color: var(--primary-background);
+    background-color: ${({ dark }) =>
+        dark ? "var(--primary-background)" : "var(--secondary-background)"};
     border-radius: ${pxToRem(50)};
     transition: 0.5s;
     border: none;

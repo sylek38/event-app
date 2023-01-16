@@ -21,6 +21,8 @@ import * as S from "./Slider.style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPerson } from "@fortawesome/free-solid-svg-icons";
 
+const KEY_PREFIX = "slider";
+
 interface Props<T> {
     id: Path<NonNullable<T>>;
     register: UseFormRegister<NonNullable<T>>;
@@ -79,9 +81,11 @@ export function Slider<T>({
 
     return (
         <S.Container fullWidth={fullWidth}>
-            <S.Label>
-                {!hideLabel && <span>{t(`slider_label_${id}`)}</span>}
-            </S.Label>
+            {!hideLabel && (
+                <S.Label>
+                    <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>
+                </S.Label>
+            )}
             <S.Element>
                 <S.Counter>{min}</S.Counter>
                 <S.Content>

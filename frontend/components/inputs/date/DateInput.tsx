@@ -20,6 +20,7 @@ interface Props<T> {
     customErrorPrefix?: string;
     textError?: boolean;
     required?: boolean;
+    dark?: boolean;
 }
 
 export function DateInput<T>({
@@ -32,6 +33,7 @@ export function DateInput<T>({
     customErrorPrefix,
     textError,
     required,
+    dark,
 }: Props<T>) {
     const { t } = useTranslation("inputs");
 
@@ -49,12 +51,16 @@ export function DateInput<T>({
 
     return (
         <S.Container>
-            <S.Label>
-                {!hideLabel && <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>}
-            </S.Label>
+            {!hideLabel && (
+                <S.Label>
+                    <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>
+                </S.Label>
+            )}
+
             <S.DateInput
                 type="datetime-local"
                 isError={isError}
+                dark={dark}
                 className="datepicker"
                 min={minDate}
                 max={maxDate.toISOString().slice(0, -8)}

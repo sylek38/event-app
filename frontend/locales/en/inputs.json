@@ -17,13 +17,14 @@
         "title_label": "Title",
         "title_placeholder": "My birthday party on a yacht.. Baby!",
         "map_label": "Enter the location where your event will take place",
-        "map_placeholder": "Just don't give a location on Mars:)"
+        "map_placeholder": "Just don't give a location on Mars:)",
+
+        "city_placeholder": "Choose city"
     },
 
     "text_searchbar": {
         "select_city_placeholder": "Search..."
     },
-
 
     "select": {
         "city_label": "Choose city",
@@ -35,7 +36,7 @@
         "bio_label": "Bio",
         "bio_placeholder": "Say something about yourself...",
         "desc_label": "Description",
-        "desc_placeholder":"Tell something more about your event..."
+        "desc_placeholder": "Tell something more about your event..."
     },
 
     "date": {
@@ -43,10 +44,12 @@
         "date_error": "The data is invalid"
     },
 
-    "slider_label_peopleLimit": "Specify the maximum number of people",
+    "slider": {
+        "peopleLimit_label": "Specify the maximum number of people"
+    },
+
     "file_label_photo": "Add image",
 
     "select_city_text": "Select a city",
     "search_category": "Choose category"
-
 }

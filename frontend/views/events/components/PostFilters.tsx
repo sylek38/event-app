@@ -1,10 +1,13 @@
+import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useAPICategories } from "../../../api/categories/useAPICategories";
 import { Filters } from "../../../components/filters/Filters";
 import { DateInput } from "../../../components/inputs/date/DateInput";
 import { SelectInput } from "../../../components/inputs/option/SelectInput";
 import { Slider } from "../../../components/inputs/slider/Slider";
 import { TextInput } from "../../../components/inputs/text/TextInput";
+import { useAuth } from "../../../context/UserContext";
 import { useWallContext } from "../../../context/WallContext";
 import * as S from "./PostFilters.style";
 
@@ -16,8 +19,11 @@ interface FormTypes {
 }
 
 export const PostFilters = () => {
+    const { t } = useTranslation("global");
     const { query, pathname, replace } = useRouter();
-    const { wallFiltersSSR, categories } = useWallContext();
+    const { csrf } = useAuth();
+    const { data: categories, isLoading, isError } = useAPICategories({ csrf });
+    const { wallFiltersSSR } = useWallContext();
     const {
         register,
         control,
@@ -82,41 +88,39 @@ export const PostFilters = () => {
                     register={register}
                     control={control}
                     isError={!!errors.city}
+                    hideLabel
+                    placeholder
                 />
 
                 <SelectInput
                     id="category"
                     register={register}
                     control={control}
-                    // items={
-                    //     categories
-                    //         ? categories?.map((category) => ({
-                    //               text: category,
-                    //               id: category,
-                    //           }))
-                    //         : []
-                    // }
-                    items={[
-                        { id: "elko", text: "elko" },
-                        { id: "elko2", text: "elko2" },
-                        { id: "elko3", text: "elk3" },
-                        { id: "elko4", text: "elko4" },
-                    ]}
+                    items={
+                        categories?.map((category: string) => ({
+                            text: t(category),
+                            id: category,
+                        })) ?? []
+                    }
                     setValue={setValue}
                     titleItem={watch("category") ?? ""}
                     isError={!!errors.category}
+                    hideLabel
                 />
 
                 <DateInput
                     id="date"
+                    isError={!!errors.date}
                     register={register}
                     control={control}
-                    isError={!!errors.date}
+                    required
+                    hideLabel
                 />
                 <Slider
                     id="peopleLimit"
                     register={register}
                     control={control}
+                    hideLabel
                 />
             </S.Form>
         </Filters>

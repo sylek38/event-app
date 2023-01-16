@@ -91,7 +91,7 @@ export const EventCreatorView = () => {
                     control={control}
                     setValue={setValue}
                     items={
-                        categories?.map((category) => ({
+                        categories?.map((category: string) => ({
                             text: t(category),
                             id: category,
                         })) ?? []
@@ -129,6 +129,7 @@ export const EventCreatorView = () => {
                     register={register}
                     control={control}
                     required
+                    dark
                 />
                 <Slider
                     id="peopleLimit"

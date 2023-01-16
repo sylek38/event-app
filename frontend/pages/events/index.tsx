@@ -57,9 +57,7 @@ const Events = ({ csrf, wallFiltersSSR }: Props) => {
             value={{
                 wallFiltersSSR,
                 posts: data as unknown as PostsType[],
-                categories: categoriesData?.results?.map(
-                    (category) => category
-                ),
+
                 isError: isError || isCategoriesError,
                 isLoading: isLoading || isCategoriesLoading,
                 isFetchingNextPage,

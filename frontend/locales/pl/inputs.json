@@ -17,9 +17,9 @@
         "post_title_label": "Tytuł",
         "post_title_placeholder": "Powiedz coś więcej o swoim wydarzeniu...",
         "post_map_label": "Wpisz lokalizację, w której odbędzie się twoje wydarzenie",
-        "post_map_placeholder": "Tylko nie podawaj lokalizacji na Marsie :)"
+        "post_map_placeholder": "Tylko nie podawaj lokalizacji na Marsie :)",
 
-
+        "city_placeholder": "Miasto"
     },
     "text_searchbar": {
         "select_city_placeholder": "Search..."
@@ -29,7 +29,6 @@
         "city_label": "Wybierz miasto",
         "category_label": "Kategoria",
         "category_placeholder": "Wybierz kategorię"
-
     },
 
     "textarea": {
@@ -43,8 +42,8 @@
         "post_date": "Wybierz date dla swojego wydarzenia",
         "date_error": "Data jest nieprawidłowa!"
     },
-
-    "slider_label_peopleLimit": "Określ maksymalną liczbę osób",
+    "slider": {
+        "peopleLimit_label": "Określ maksymalną liczbę osób"
+    },
     "file_label_photo": "Dodaj obrazek"
-
 }

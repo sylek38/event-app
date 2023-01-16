@@ -109,11 +109,11 @@ export function SelectInput<T>({
     return (
         <FloatingNode id={nodeId}>
             <S.Container fullWidth={fullWidth}>
-                <S.Label>
-                    {!hideLabel && (
+                {!hideLabel && (
+                    <S.Label>
                         <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>
-                    )}
-                </S.Label>
+                    </S.Label>
+                )}
 
                 <ButtonSelect
                     id={id}

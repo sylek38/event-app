@@ -6,7 +6,6 @@ import { PostsType, WallFiltersType } from "../types/posts.type";
 
 interface Props {
     posts: PostsType[];
-    categories?: string[];
     wallFiltersSSR?: WallFiltersType;
     isError: boolean;
     isLoading: boolean;
@@ -17,7 +16,6 @@ interface Props {
 
 export const WallContext = createContext<Props>({
     posts: [],
-    categories: [],
     wallFiltersSSR: {
         city: "",
         category: DEFAULT_CATEGORY,
