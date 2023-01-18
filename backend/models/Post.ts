@@ -10,7 +10,11 @@ export type LocationType = {
 };
 
 export interface PostType extends Document {
-	userId: string;
+	user: {
+		userId: string;
+		name: string;
+		surname: string;
+	};
 	title: string;
 	desc: string;
 	category: string;
@@ -22,12 +26,21 @@ export interface PostType extends Document {
 
 const PostSchema = new mongoose.Schema(
 	{
-		userId: {
-			type: String,
-			required: true,
-			unique: true,
+		user: {
+			id: {
+				type: String,
+				required: true,
+				unique: true,
+			},
+			name: {
+				type: String,
+				required: true,
+			},
+			surname: {
+				type: String,
+				required: true,
+			},
 		},
-
 		title: {
 			type: String,
 			required: true,
@@ -57,6 +70,7 @@ const PostSchema = new mongoose.Schema(
 				type: String,
 				required: true,
 			},
+			// TODO: Uncomment when map api is ready
 			// map: {
 			// 	lat: String,
 			// 	long: String,
