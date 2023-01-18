@@ -1,4 +1,4 @@
-import { Response, Request } from "express";
+import e, { Response, Request } from "express";
 import Category from "../models/Category";
 
 const router = require("express").Router();
@@ -7,35 +7,66 @@ import Post, { LocationType, PostType } from "../models/Post";
 import { verifyToken } from "./verify/verifyToken";
 
 const LIMIT = 4;
-const CATEGORIES = [
-	{ name: "party" },
-	{ name: "jogging" },
-	{ name: "all" },
-	{ name: "wine" },
-	{ name: "plants" },
-];
 
 interface NewPostType extends Request {
-	user: {
-		id: string;
-		name: string;
-		surname: string;
-	};
+	userId: string;
 	title: string;
 	desc: string;
 	category: string;
 	peopleLimit: number;
 	photo: string;
-	location: LocationType;
+	location: {
+		city: string;
+		street: string;
+		// map: {
+		// 	lat: String,
+		// 	long: String,
+		// },
+	};
 	date: number;
 }
 
-//Tworzenie nowego postu
-router.post("/add", async (req: NewPostType, res: Response) => {
-	const newPost = new Post(req.body);
+// --------------- TWORZENIE POSTA
+router.post("/add", verifyToken, async (req: NewPostType, res: Response) => {
+	const {
+		userId,
+		title,
+		desc,
+		category,
+		peopleLimit,
+		photo,
+		location,
+		date,
+	} = req.body;
+
+	const userExists = User.findOne({ _id: userId });
+
+	if (!userExists) {
+		return res.status(400).json({
+			error: "User id not found",
+		});
+	}
+
+	if (!title || !category || !peopleLimit || !location || !date) {
+		return res.status(400).json({
+			error: "You must provide all neccessary data",
+		});
+	}
+
+	const newPost = new Post({
+		userId,
+		title,
+		desc,
+		category,
+		peopleLimit,
+		photo,
+		location,
+		date,
+	});
+
 	try {
 		const savedPost = await newPost.save();
-		res.status(200).json(savedPost);
+		res.status(200).json({ message: savedPost });
 	} catch (error) {
 		res.status(500).json({
 			error: `Something went wrong while adding new post. ${error}`,
@@ -43,65 +74,130 @@ router.post("/add", async (req: NewPostType, res: Response) => {
 	}
 });
 
-//Aktualizacja postu
+// ------------- AKTUALIZACJA POSTA
+interface UpdatePostParamsType extends Request {
+	params: {
+		id: string;
+	};
+}
 
-// router.put("/:id", async (req: Request, res: Response) => {
-// 	try {
-// 		const post = await Post.findById(req.params.id);
-// 		if (post.username === req.body.username) {
-// 			try {
-// 				const updatedPost = await Post.findByIdAndUpdate(
-// 					req.params.id,
-// 					{
-// 						$set: req.body,
-// 					},
-// 					{ new: true }
-// 				);
-// 				res.status(200).json(updatedPost);
-// 			} catch (error) {
-// 				res.status(500).json(error);
-// 			}
-// 		} else {
-// 			res.status(401).json("Możesz edytować tylko swoje posty!");
-// 		}
-// 	} catch (error) {
-// 		res.status(500).json(error);
-// 	}
-// });
+interface UpdatePostType extends UpdatePostParamsType {
+	userId: string;
+	title?: string;
+	desc?: string;
+	category?: string;
+	peopleLimit?: number;
+	photo?: string;
+	location?: {
+		city: string;
+		street: string;
+		// map: {
+		// 	lat: String,
+		// 	long: String,
+		// },
+	};
+	date?: number;
+}
 
-// Usuwanie postu
+router.put("/:id", verifyToken, async (req: UpdatePostType, res: Response) => {
+	const { userId } = req.body;
+	const { id: postId } = req.params;
+	const foundPost = await Post.findOne({ _id: postId });
 
-// router.delete("/:id", async (req: Request, res: Response) => {
-// 	try {
-// 		const post = await Post.findById(req.params.id);
-// 		if (post.username === req.body.username) {
-// 			try {
-// 				await post.delete();
-// 				res.status(200).json("Post został usunięty!");
-// 			} catch (error) {
-// 				res.status(500).json(error);
-// 			}
-// 		} else {
-// 			res.status(401).json("Możesz usuwać tylko swoje posty!");
-// 		}
-// 	} catch (error) {
-// 		res.status(500).json(error);
-// 	}
-// });
+	if (!foundPost) {
+		res.status(404).json({ error: "Post does not exist" });
+	}
+
+	if (foundPost?.user.userId === userId) {
+		try {
+			const updatedPost = await Post.findByIdAndUpdate(
+				postId,
+				{
+					$set: req.body,
+				},
+				{ new: true }
+			);
+			res.status(200).json(updatedPost);
+		} catch (error) {
+			res.status(500).json({
+				error: "Something went wrong, could not update the post",
+			});
+		}
+	} else {
+		res.status(401).json({ error: "You can only edit your posts" });
+	}
+});
+
+// ------------------- USUWANIE POSTA
+interface DeletePostParamsType extends Request {
+	params: {
+		id: string;
+	};
+}
+
+interface DeletePostType extends DeletePostParamsType {
+	userId: string;
+}
+
+router.delete(
+	"/:id",
+	verifyToken,
+	async (req: DeletePostType, res: Response) => {
+		const { userId } = req.body;
+		const { id: postId } = req.params;
+
+		const foundPost = await Post.findOne({ _id: postId });
+
+		if (!foundPost) {
+			res.status(404).json({ error: "Post does not exist" });
+		}
+
+		if (foundPost?.user.userId === userId) {
+			try {
+				await foundPost?.delete();
+				res.status(200).json({ message: "The post have been deleted" });
+			} catch (err) {
+				res.status(500).json({
+					error: "Something went wrong, could not delete post.",
+				});
+			}
+		} else {
+			res.status(401).json({ error: "You can only edit your posts" });
+		}
+	}
+);
 
 // Get Post
 
-// router.get("/:id", async (req: Request, res: Response) => {
-// 	try {
-// 		const post = await Post.findById(req.params.id);
-// 		res.status(200).json(post);
-// 	} catch (error) {
-// 		res.status(500).json(error);
-// 	}
-// });
+interface GetPostParamsType extends Request {
+	id: string;
+}
+
+router.get(
+	"/:id",
+	verifyToken,
+	async (req: GetPostParamsType, res: Response) => {
+		const { id } = req.body;
+
+		const foundPost = await Post.findOne({ _id: id });
+
+		if (!foundPost) {
+			res.status(404).json({
+				error: "Could not find the post with provided id",
+			});
+		}
+
+		try {
+			res.status(200).json(foundPost);
+		} catch (err) {
+			res.status(500).json({
+				error: `Something went wrong while getting the post. ${err}`,
+			});
+		}
+	}
+);
 
 // Get all posts
-
 interface PostsQuery extends Request {
 	query: {
 		page: string;
@@ -114,7 +210,7 @@ interface PostsQuery extends Request {
 
 // ZACZYNAMY OD PAGE 1, NIE 0
 
-router.get("/", async (req: PostsQuery, res: Response) => {
+router.get("/", verifyToken, async (req: PostsQuery, res: Response) => {
 	const { city, category, date, peopleLimit } = req.query;
 	const { page } = req.query || 1;
 
@@ -181,37 +277,32 @@ router.get("/", async (req: PostsQuery, res: Response) => {
 		const hasNextPage = nextPage <= totalPages;
 		const hasPrevPage = prevPage >= 1;
 
-		const {
-			_id,
-			user,
-			title,
-			desc,
-			category,
-			peopleLimit: eventPeople,
-			photo,
-			location,
-			date: eventDate,
-		} = filteredPosts[0];
+		const dataResponse = filteredPosts.map(post => ({
+			id: post._id,
+			user: {
+				id: post.user.userId,
+				name: post.user.name,
+				surname: post.user.surname,
+			},
+			title: post.title,
+			desc: post.desc,
+			category: post.category,
+			peopleLimit: post.peopleLimit,
+			photo: post.photo,
+			location: {
+				city: post.location.city,
+				street: post.location.street,
+				// TODO: Uncomment when map api is ready
+				// map: {
+				// 	lat: post.location.lat,
+				// 	long: post.location.long,
+				// }
+			},
+			date: post.date,
+		}));
 
 		const response = {
-			results: {
-				id: _id,
-				user: {
-					id: user.id,
-					name: user.name,
-					surname: user.surname,
-				},
-				title,
-				desc,
-				category,
-				peopleLimit: eventPeople,
-				photo,
-				location: {
-					city: location.city,
-					street: location.street,
-				},
-				date: eventDate,
-			},
+			results: dataResponse,
 			next: hasNextPage,
 			previous: hasPrevPage,
 		};
