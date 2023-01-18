@@ -1,4 +1,4 @@
-import mongoose, { Document } from "mongoose";
+import mongoose, { Document, Schema } from "mongoose";
 
 export type LocationType = {
 	city: string;
@@ -10,11 +10,7 @@ export type LocationType = {
 };
 
 export interface PostType extends Document {
-	user: {
-		id: string;
-		name: string;
-		surname: string;
-	};
+	userId: string;
 	title: string;
 	desc: string;
 	category: string;
@@ -26,20 +22,10 @@ export interface PostType extends Document {
 
 const PostSchema = new mongoose.Schema(
 	{
-		user: {
-			id: {
-				type: String,
-				required: true,
-				unique: true,
-			},
-			name: {
-				type: String,
-				required: true,
-			},
-			surname: {
-				type: String,
-				required: true,
-			},
+		userId: {
+			type: String,
+			required: true,
+			unique: true,
 		},
 
 		title: {
@@ -80,6 +66,16 @@ const PostSchema = new mongoose.Schema(
 		date: {
 			type: Date,
 			required: true,
+		},
+		pendingRequests: [
+			{ type: Schema.Types.ObjectId, ref: "User", default: [] },
+		],
+		participants: [
+			{ type: Schema.Types.ObjectId, ref: "User", default: [] },
+		],
+		archived: {
+			type: Boolean,
+			default: false,
 		},
 	},
 	{ timestamps: true }
