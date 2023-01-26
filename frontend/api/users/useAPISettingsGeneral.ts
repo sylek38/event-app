@@ -1,6 +1,5 @@
 import { BACKEND_URL } from "../../config";
 import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "next/router";
 import { FetchErrorsType, FetchUrl } from "../types/Fetch";
 
 interface ResponseType {
@@ -8,67 +7,49 @@ interface ResponseType {
     data?: unknown;
 }
 
-export interface APISettingsMutationVariables {
+interface Args {
+    csrf: string;
+}
+
+export interface APISettingsMutationVariables extends Args {
     userId: string;
-    name: string;
-    surname: string;
-    email: string;
-    bio: string;
+    name?: string;
+    surname?: string;
+    email?: string;
+    bio?: string;
 }
 
 export const useAPISettingsGeneral = () => {
-    const { push } = useRouter();
-
-    const oldValues = {
-        userId: "63b325e386f12b8784f47c93", //Na razie na sucho Id i pozostałe dane
-        name: "balu",
-        surname: "balu",
-        email: "balu@gmail.com",
-        bio: "",
-    };
-
-    return useMutation<
+    const { mutateAsync } = useMutation<
         ResponseType,
         FetchErrorsType,
         APISettingsMutationVariables
-    >(async ({ name, surname, email, bio }) => {
-        const updatedValues = { name, surname, email, bio };
-        const updatedUser = { ...oldValues };
-
-        if (updatedValues.name) {
-            updatedUser.name = updatedValues.name;
-        }
-
-        if (updatedValues.surname) {
-            updatedUser.surname = updatedValues.surname;
-        }
-
-        if (updatedValues.email) {
-            updatedUser.email = updatedValues.email;
-        }
-
-        if (updatedValues.bio) {
-            updatedUser.bio = updatedValues.bio;
-        }
-
+    >(async ({ name, surname, email, bio, userId, csrf }) => {
         try {
             const data = await fetch(
-                `${BACKEND_URL}${FetchUrl.USERS}/${oldValues.userId}`,
+                `${BACKEND_URL}${FetchUrl.USERS}/general/${userId}`,
                 {
                     method: "PUT",
                     body: JSON.stringify({
-                        ...updatedUser,
+                        name: name ?? "",
+                        surname: surname ?? "",
+                        email: email ?? "",
+                        bio: bio ?? "",
                     }),
+                    credentials: "include",
                     headers: {
                         "Content-Type": "application/json",
+                        Authorization: `Bearer ${csrf}`,
                     },
                 }
             );
-            return data.json();
+            if (data) {
+                return data.json();
+            }
         } catch (err) {
-            console.log(err);
-            console.log("put");
             throw err;
         }
     });
+
+    return { mutateAsync };
 };

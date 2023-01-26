@@ -1,5 +1,7 @@
+import { format } from "date-fns";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
+import { useEffect } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useAPICategories } from "../../../api/categories/useAPICategories";
 import { Filters } from "../../../components/filters/Filters";
@@ -14,13 +16,13 @@ import * as S from "./PostFilters.style";
 interface FormTypes {
     city?: string;
     category?: string;
-    date?: number;
+    date?: string;
     peopleLimit?: number;
 }
 
 export const PostFilters = () => {
     const { t } = useTranslation("global");
-    const { query, pathname, replace } = useRouter();
+    const { query, pathname, replace, push } = useRouter();
     const { csrf } = useAuth();
     const { data: categories, isLoading, isError } = useAPICategories({ csrf });
     const { wallFiltersSSR } = useWallContext();
@@ -31,54 +33,75 @@ export const PostFilters = () => {
         handleSubmit,
         watch,
         setValue,
+        trigger,
     } = useForm<FormTypes>({
         defaultValues: {
-            city: wallFiltersSSR?.city,
-            category: wallFiltersSSR?.category,
-            date: wallFiltersSSR?.date ? +wallFiltersSSR.date : undefined,
+            city: wallFiltersSSR?.city ?? "",
+            category: wallFiltersSSR?.category ?? "",
+            date: wallFiltersSSR?.date
+                ? `${wallFiltersSSR.date}T${wallFiltersSSR.time}`
+                : undefined,
             peopleLimit: wallFiltersSSR?.peopleLimit
                 ? +wallFiltersSSR.peopleLimit
                 : undefined,
         },
+        mode: "onTouched",
     });
 
-    const onSubmit: SubmitHandler<FormTypes> = async (
-        { city, category, date, peopleLimit },
-        data
-    ) => {
-        console.log(city, category, date, peopleLimit, "DATA");
-        if (!data) {
-            delete query.city;
-            delete query.category;
-            delete query.date;
-            delete query.peopleLimit;
+    const onSubmit: SubmitHandler<FormTypes> = async ({
+        city,
+        category,
+        date,
+        peopleLimit,
+    }) => {
+        console.log("POST FILTERS SUBMIT");
+        let currentQuery = { ...query };
+        if (city) {
+            currentQuery = {
+                city,
+            };
         } else {
-            query.city = city;
-            query.category = category;
-            query.date = date?.toString();
-            query.peopleLimit = peopleLimit?.toString();
+            delete currentQuery.city;
+        }
+        if (category) {
+            currentQuery = {
+                ...currentQuery,
+                category: category,
+            };
+        } else {
+            delete currentQuery.category;
+        }
+        if (date) {
+            const time = new Date(date);
+
+            currentQuery = {
+                ...currentQuery,
+                date: format(time, "yyyy-MM-dd"),
+                time: format(time, "HH:mm"),
+            };
+        } else {
+            delete currentQuery.date;
+            delete currentQuery.time;
         }
 
-        replace(
+        if (peopleLimit) {
+            currentQuery = {
+                ...currentQuery,
+                peopleLimit: peopleLimit.toString(),
+            };
+        } else {
+            delete currentQuery.peopleLimit;
+        }
+
+        push(
             {
                 pathname,
-                query,
+                query: { ...currentQuery, page: 1 },
             },
             undefined,
             { shallow: true }
         );
     };
-
-    //     <Select
-    //     id="category"
-    //     register={register}
-    //     control={control}
-    //     values={listOfCat}
-    //     isError={!!errors.category}
-    //     required
-    //     fullWidth
-    //     dark
-    // />
 
     return (
         <Filters>
@@ -98,7 +121,7 @@ export const PostFilters = () => {
                     control={control}
                     items={
                         categories?.map((category: string) => ({
-                            text: t(category),
+                            text: t(`categories.${category}`),
                             id: category,
                         })) ?? []
                     }
@@ -120,6 +143,8 @@ export const PostFilters = () => {
                     id="peopleLimit"
                     register={register}
                     control={control}
+                    min={1}
+                    max={99}
                     hideLabel
                 />
             </S.Form>

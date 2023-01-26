@@ -5,6 +5,7 @@ import {
 } from "@tanstack/react-query";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
+import { useMemo } from "react";
 import { fetchAPIAuth } from "../../api/auth/useAPIAuth";
 import {
     fetchAPICategories,
@@ -52,12 +53,17 @@ const Events = ({ csrf, wallFiltersSSR }: Props) => {
 
     console.log(data, "WALL CONTEXT DATA");
 
+    const postData = useMemo(() => {
+        const current = data?.pages.map((item) => item.results).flat() ?? [];
+
+        return [...new Map(current.map((item) => [item?.id, item])).values()];
+    }, [data]);
+
     return (
         <WallContext.Provider
             value={{
                 wallFiltersSSR,
-                posts: data as unknown as PostsType[],
-
+                posts: postData,
                 isError: isError || isCategoriesError,
                 isLoading: isLoading || isCategoriesLoading,
                 isFetchingNextPage,
@@ -95,6 +101,7 @@ export const getServerSideProps: GetServerSideProps = async ({
             city: (query.city as string) ?? "",
             category: (query.category as string) ?? "",
             date: (query.date as string) ?? "",
+            time: (query.time as string) ?? "",
             peopleLimit: (query.peopleLimit as string) ?? "",
             csrf,
         })
@@ -108,6 +115,7 @@ export const getServerSideProps: GetServerSideProps = async ({
                 city: query.city ?? "",
                 category: query.category ?? "",
                 date: query.date ?? "",
+                time: query.time ?? "",
                 peopleLimit: query.peopleLimit ?? "",
             },
         },

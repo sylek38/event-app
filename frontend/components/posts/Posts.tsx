@@ -1,12 +1,14 @@
 import * as S from "./Posts.style";
-import { Post } from "./post/Post";
+// import { Post } from "./post/Post";
 import ViewportList from "react-viewport-list";
-import { useAPIPosts } from "../../api/posts/useAPIPosts";
-import { useRef } from "react";
+import { useMemo, useRef } from "react";
 import { useLastItemRef } from "../../hooks/useLastItemRef";
 import { Loader } from "../loader/Loader";
-import { useRouter } from "next/router";
 import { useWallContext } from "../../context/WallContext";
+import { useAPIPosts } from "../../api/posts/useAPIPosts";
+import { useAuth } from "../../context/UserContext";
+import { postItemsMock } from "./postItemsMock";
+import { Post } from "./post/Post";
 
 export const Posts = () => {
     const {
@@ -43,7 +45,7 @@ export const Posts = () => {
                 {(post, index) => {
                     if (index + 1 === posts.length) {
                         return (
-                            <Post ref={lastItemRef} key={post.id} {...post} />
+                            <Post ref={lastItemRef} key={post?.id} {...post} />
                         );
                     }
 
@@ -53,5 +55,10 @@ export const Posts = () => {
 
             {isFetchingNextPage && <Loader />}
         </S.Posts>
+        // <S.Posts>
+        //     {postItemsMock.map((post) => (
+        //         <Post {...post} />
+        //     ))}
+        // </S.Posts>
     );
 };

@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 const router = require("express").Router();
 import Category from "../models/Category";
 
-router.post("/add", async (req: Request, res: Response) => {
+router.post("/category/add", async (req: Request, res: Response) => {
 	const category = new Category(req.body);
 	const categoryExists = Category.findOne({ name: category });
 
@@ -20,6 +20,8 @@ router.post("/add", async (req: Request, res: Response) => {
 		res.status(409).json({ error: "Category already exists" });
 	}
 });
+
+// GET ALL CATEGORIES
 
 router.get("/", async (req: Request, res: Response) => {
 	try {

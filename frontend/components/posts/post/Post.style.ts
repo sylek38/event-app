@@ -5,7 +5,7 @@ export const Post = styled.a`
     background-color: var(--secondary-background);
     border-radius: ${pxToRem(24)};
     box-shadow: 0 0 1.5em var(--box-shadow--black);
-    max-width: pxToRem(320);
+    max-width: ${pxToRem(320)};
     width: 100%;
     transition: 0.15s;
 
@@ -16,7 +16,7 @@ export const Post = styled.a`
 
 export const BackgroundContainer = styled.div`
     position: relative;
-    border-bottom: ${pxToRem(3)} solid var(--color-white);
+    border-bottom: 3px solid var(--color-white);
     height: ${pxToRem(200)};
 
     > img {
@@ -65,7 +65,7 @@ export const Avatar = styled.div`
 
 export const Content = styled.div`
     position: relative;
-    padding: ${pxToRem(34)} ${pxToRem(20)} ${pxToRem(30)} ${pxToRem(20)};
+    padding: ${pxToRem(34)} ${pxToRem(20)} ${pxToRem(20)} ${pxToRem(20)};
 
     > span:nth-of-type(1) {
         display: block;
@@ -79,8 +79,7 @@ export const Content = styled.div`
 
 export const Title = styled.span`
     display: block;
-    height: 3rem;
-    margin-top: ${pxToRem(10)};
+    margin: ${pxToRem(10)} 0 ${pxToRem(20)};
 
     font-size: 1rem;
     font-weight: bold;

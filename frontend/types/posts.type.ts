@@ -23,14 +23,15 @@ export interface PostsType {
     desc: string;
     category: string;
     peopleLimit: number;
-    photo: string;
+    imageUrl: string;
     location: LocationType;
-    date: number;
+    date: string;
 }
 
 export interface WallFiltersType {
     city: string;
     category: string;
     date: string;
+    time: string;
     peopleLimit: string;
 }

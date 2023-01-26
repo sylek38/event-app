@@ -13,9 +13,13 @@ import { Button } from "../../components/button/Button";
 
 import React from "react";
 import { SelectInput } from "../../components/inputs/option/SelectInput";
-import { useCategories } from "../../context/CategoriesContext";
 import { useAPICategories } from "../../api/categories/useAPICategories";
 import { useAuth } from "../../context/UserContext";
+import dynamic from "next/dynamic";
+
+const Map = dynamic(() => import("../../components/map/Map") as any, {
+    ssr: false,
+});
 
 interface FormTypes {
     name: string;
@@ -92,7 +96,7 @@ export const EventCreatorView = () => {
                     setValue={setValue}
                     items={
                         categories?.map((category: string) => ({
-                            text: t(category),
+                            text: t(`categories.${category}`),
                             id: category,
                         })) ?? []
                     }
@@ -128,7 +132,7 @@ export const EventCreatorView = () => {
                     isError={!!errors.date}
                     register={register}
                     control={control}
-                    required
+                    // required
                     dark
                 />
                 <Slider
@@ -151,10 +155,14 @@ export const EventCreatorView = () => {
                     placeholder
                     dark
                 />
+
                 <Button variant="gradient" type="submit" fullWidth>
                     {t("confirm")}
                 </Button>
             </S.Content>
+            <S.MapContainer>
+                <Map />
+            </S.MapContainer>
         </S.Form>
         // {isError && <div>isError</div>}
 

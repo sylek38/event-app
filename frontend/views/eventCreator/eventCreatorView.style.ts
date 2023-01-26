@@ -26,3 +26,16 @@ export const NewLine = styled.p`
     align-self: left;
     font-weight: bold;
 `;
+
+export const MapContainer = styled.div`
+    position: relative;
+
+    max-width: 300px;
+    height: 390px;
+
+    .leaflet-container {
+        width: 300px;
+    }
+
+    /* height: 20vh; */
+`;

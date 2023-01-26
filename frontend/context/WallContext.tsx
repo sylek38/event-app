@@ -1,6 +1,7 @@
 import { createContext, useContext } from "react";
 import { DEFAULT_CATEGORY, MIN_PEOPLE_LIMIT } from "../config";
 import { PostsType, WallFiltersType } from "../types/posts.type";
+import { PostsResponse } from "../types/responses/postsResponse.type";
 
 // Jeszcze trzeba obczaić jak przechowywać te filtry
 
@@ -20,6 +21,7 @@ export const WallContext = createContext<Props>({
         city: "",
         category: DEFAULT_CATEGORY,
         date: "",
+        time: "",
         peopleLimit: MIN_PEOPLE_LIMIT,
     },
     isError: false,

@@ -3,22 +3,20 @@ import { useState, useEffect } from "react";
 import { FetchUrl } from "../../api/types/Fetch";
 import { postItemsMock } from "../../components/posts/postItemsMock";
 import { BACKEND_URL } from "../../config";
+import { UserPostType } from "../../types/posts.type";
 import { SinglePost } from "./components/SinglePost";
 
 interface PostData {
-    _id: string;
-    name: string;
-    surname: string;
+    id: string;
+    user: UserPostType;
     title: string;
     desc: string;
     category: string;
     peopleLimit: number;
-    photo: string;
+    imageUrl: string;
     map: string;
-    // avatar: string;
     width?: number;
     date: Date;
-    createdAt: Date;
 }
 
 export const PostView = () => {
@@ -26,32 +24,32 @@ export const PostView = () => {
 
     const [posts, setPosts] = useState<PostData[]>([]);
 
-    useEffect(() => {
-        async function fetchPosts() {
-            try {
-                const data = await fetch(`${BACKEND_URL}${FetchUrl.POSTS}`, {
-                    method: "GET",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                });
+    // useEffect(() => {
+    //     async function fetchPosts() {
+    //         try {
+    //             const data = await fetch(`${BACKEND_URL}${FetchUrl.POSTS}`, {
+    //                 method: "GET",
+    //                 headers: {
+    //                     "Content-Type": "application/json",
+    //                 },
+    //             });
 
-                if (data.status == 200) {
-                }
+    //             if (data.status == 200) {
+    //             }
 
-                const posts = await data.json();
-                setPosts(posts);
-            } catch (err) {
-                console.log(err);
-                throw err;
-            }
-        }
+    //             const posts = await data.json();
+    //             setPosts(posts);
+    //         } catch (err) {
+    //             console.log(err);
+    //             throw err;
+    //         }
+    //     }
 
-        fetchPosts();
-    }, []);
+    //     fetchPosts();
+    // }, []);
 
     const eventId = router.query.eventId;
-    const postData = posts.filter((postData) => postData._id === eventId);
+    // const postData = posts.filter((postData) => postData._id === eventId);
 
-    return <SinglePost {...postData[0]} />;
+    return <div>elko</div>;
 };

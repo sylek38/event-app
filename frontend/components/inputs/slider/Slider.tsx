@@ -51,7 +51,7 @@ export function Slider<T>({
     const { t } = useTranslation("inputs");
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const [value, setValue] = useState(2);
+    const [value, setValue] = useState(min ?? 1);
     const [step, setStep] = useState(0);
 
     const handleChange = (e: any) => {
@@ -122,7 +122,7 @@ export function Slider<T>({
 
                     <S.Bubble style={stepTransform}>{value}</S.Bubble>
                 </S.Content>
-                <S.Counter>{max}+</S.Counter>
+                <S.Counter>{max}</S.Counter>
             </S.Element>
         </S.Container>
     );

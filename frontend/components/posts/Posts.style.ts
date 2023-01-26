@@ -7,4 +7,5 @@ export const Posts = styled.div`
     align-items: center;
     flex-wrap: wrap;
     gap: ${pxToRem(75)} ${pxToRem(25)};
+    padding-top: 3rem;
 `;

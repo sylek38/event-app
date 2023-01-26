@@ -13,6 +13,7 @@ import Link from "next/link";
 import { Routes } from "../../../routes/Routes";
 import { LocationType } from "../../../types/posts.type";
 import { forwardRef } from "react";
+import { format } from "date-fns";
 
 interface Props {
     id: string;
@@ -50,9 +51,11 @@ export const Post = forwardRef<HTMLAnchorElement, Props>(
         ref
     ) => {
         const { t } = useTranslation("global");
-
+        const dateFormat = new Date(date);
+        // const processedDate = format(dateFormat, "dd-MM-yyyy");
         return (
             <Link
+                ref={ref}
                 href={{
                     pathname: Routes.EVENT,
                     query: { id },
@@ -62,7 +65,6 @@ export const Post = forwardRef<HTMLAnchorElement, Props>(
                 <S.Post>
                     <S.BackgroundContainer>
                         <img src={photo} alt="" />
-                        {/* TODO: Make component for this */}
                         <S.Date>
                             <span> {new Date(date).getDate()}</span>
                             <span>
@@ -77,29 +79,20 @@ export const Post = forwardRef<HTMLAnchorElement, Props>(
                         {/* W celach eksperymentalnych avatar ma na razie zdjęcie z wybranego tła */}
                         <S.Avatar>{<img src={photo} />}</S.Avatar>
                         <span>
-                            {user.name} {user.surname}
+                            {user?.name} {user?.surname}
                         </span>
                         <CategoryTag name={category} />
                         <S.Title>{title}</S.Title>
-                        <S.Desc>{desc}</S.Desc>
                         <S.Details>
                             <S.DetailsItem>
                                 <FontAwesomeIcon icon={faLocationDot} />
-                                <span>map</span>
+                                <span>
+                                    {location?.city}, {location?.street}
+                                </span>
                             </S.DetailsItem>
                             <S.DetailsItem>
                                 <FontAwesomeIcon icon={faCalendarDays} />
-                                <span>
-                                    {" "}
-                                    {new Date(date).toLocaleTimeString(
-                                        t("lang"),
-                                        {
-                                            day: "numeric",
-                                            month: "long",
-                                            year: "numeric",
-                                        }
-                                    )}
-                                </span>
+                                {/* <span>{processedDate}</span> */}
                             </S.DetailsItem>
                             <S.DetailsItem>
                                 <FontAwesomeIcon icon={faUser} />

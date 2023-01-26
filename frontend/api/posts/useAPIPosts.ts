@@ -1,12 +1,7 @@
 import { BACKEND_URL } from "../../config";
 import { FetchUrl } from "../types/Fetch";
-import {
-    useInfiniteQuery,
-    UseInfiniteQueryResult,
-} from "@tanstack/react-query";
-import { useAuth } from "../../context/UserContext";
+import { useInfiniteQuery } from "@tanstack/react-query";
 import { useRouter } from "next/router";
-import { fetchAPI } from "./fetchAPI";
 import { PostsResponse } from "../../types/responses/postsResponse.type";
 
 interface Args {
@@ -17,6 +12,7 @@ interface WallSearchParams extends Args {
     category: string;
     city: string;
     date: string;
+    time: string;
     peopleLimit: string;
     page: string;
     signal?: AbortSignal;
@@ -26,11 +22,13 @@ export const fetchAPIPosts = async ({
     category,
     city,
     date,
+    time,
     peopleLimit,
     page,
     csrf,
     signal,
 }: WallSearchParams) => {
+    // TODO: convert date and time from yyyy-MM-dd and HH:mm to epoch
     try {
         // return await fetchAPI(FetchUrl.POSTS, {
         //     csrf,
@@ -42,7 +40,7 @@ export const fetchAPIPosts = async ({
             {
                 credentials: "include",
                 headers: {
-                    "Content-Type:": "application/json",
+                    "Content-Type": "application/json",
                     Authorization: `Bearer ${csrf}`,
                 },
                 signal,
@@ -66,16 +64,17 @@ export const fetchAPIPosts = async ({
 
 export const useAPIPosts = ({ csrf }: Args) => {
     const { query } = useRouter();
-    const { category, city, date, peopleLimit } = query;
+    const { category, city, date, time, peopleLimit } = query;
 
     return useInfiniteQuery<PostsResponse>(
         // ...useInfiniteQuery<Promise<any>>(
-        ["posts.infinite", [category, city, date, peopleLimit]],
+        ["posts.infinite", [category, city, date, time, peopleLimit]],
         async ({ pageParam, signal }) =>
             fetchAPIPosts({
                 category: (category as string) ?? "",
                 city: (city as string) ?? "",
                 date: (date as string) ?? "",
+                time: (time as string) ?? "",
                 peopleLimit: (peopleLimit as string) ?? "",
                 page: pageParam,
                 csrf,

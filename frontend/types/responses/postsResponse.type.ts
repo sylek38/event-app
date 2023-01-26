@@ -20,6 +20,7 @@ export interface PostsResponse extends PaginationType {
 //     photo,
 //     location: {
 //         city: location.city,
+//         street: location.city
 //     },
 //     date: eventDate,
 //     next: hasNextPage,
