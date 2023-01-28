@@ -32,13 +32,13 @@ interface NewPostType extends RequestWithFile {
 			// 	long: String,
 			// },
 		};
-		date: number;
+		date: string;
 	};
 }
 
 // --------------- CREATE POST
 router.post(
-	"/post/add",
+	"/add",
 	verifyToken,
 	uploadImage,
 	async (req: NewPostType, res: Response) => {
@@ -53,14 +53,7 @@ router.post(
 			});
 		}
 
-		if (
-			!title ||
-			!category ||
-			!peopleLimit ||
-			!location.city ||
-			!location.street ||
-			!date
-		) {
+		if (!title || !category || !peopleLimit || !location.city || !date) {
 			return res.status(400).json({
 				error: "You must provide all neccessary data",
 			});

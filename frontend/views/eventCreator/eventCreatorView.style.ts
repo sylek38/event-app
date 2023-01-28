@@ -10,6 +10,7 @@ export const Form = styled.form`
 
 export const Content = styled.div`
     width: 60%;
+    position: relative;
 
     & > div {
         margin-top: 30px;
@@ -29,13 +30,12 @@ export const NewLine = styled.p`
 
 export const MapContainer = styled.div`
     position: relative;
-
-    max-width: 300px;
-    height: 390px;
+    padding: 0;
+    flex: 1;
+    height: 400px;
+    width: 100%;
 
     .leaflet-container {
-        width: 300px;
+        width: 100%;
     }
-
-    /* height: 20vh; */
 `;

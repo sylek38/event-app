@@ -22,6 +22,7 @@
     "delete": "Delete account",
     "avatar_change": "Change picture",
     "info": "Info",
+    "map_info": "Add location to the map",
     "tabs": {
         "event_manager_tabs": "Event manager tabs",
         "invites": "Invites",

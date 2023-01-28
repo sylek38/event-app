@@ -22,22 +22,20 @@ const CONFIG_MAP = {
 
 interface Props {
     center?: LatLngTuple;
-    marker?: MarkerProps[];
+    marker?: MarkerProps | null;
     zoom?: number;
-    readOnly?: boolean;
 }
 
 const Map = ({
     center = [CONFIG_MAP.lat, CONFIG_MAP.lng],
     marker,
     zoom = CONFIG_MAP.default_zoom,
-    readOnly,
 }: Props) => {
     const [map, setMap] = useState<MapWithZoomType | null>();
     const [type] = useState<MapTypes>(MapTypes.OPENSTREET);
-
+    console.log(marker, "MAP COORDINATES");
     return (
-        <S.Wrapper data-type={type} className="leaflet_map_type">
+        <S.Wrapper className="leaflet_map_type">
             <MapContainer
                 center={center}
                 zoom={zoom}
@@ -48,9 +46,9 @@ const Map = ({
                     <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                 </LayersControl>
 
-                {readOnly ? (
+                {marker ? (
                     <Marker
-                        position={[CONFIG_MAP.lat, CONFIG_MAP.lng]}
+                        position={[marker.latitude, marker.longitude]}
                         icon={
                             new Icon({
                                 iconUrl: "/marker-icon.png",
@@ -69,5 +67,4 @@ const Map = ({
     );
 };
 
-// TIP: used it as default export because map didn't work without that...
 export default Map;

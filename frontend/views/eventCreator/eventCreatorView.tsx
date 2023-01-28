@@ -11,41 +11,41 @@ import { DateInput } from "../../components/inputs/date/DateInput";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "../../components/button/Button";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { SelectInput } from "../../components/inputs/option/SelectInput";
 import { useAPICategories } from "../../api/categories/useAPICategories";
 import { useAuth } from "../../context/UserContext";
 import dynamic from "next/dynamic";
+import {
+    fetchAPIForwardGeocoding,
+    useAPIForwardGeocoding,
+} from "../../api/geolocation/useAPIForwardGeocoding";
+import { is } from "date-fns/locale";
+import { MarkerProps } from "../../components/map/mapTypes";
+import { map } from "leaflet";
 
-const Map = dynamic(() => import("../../components/map/Map") as any, {
+const Map = dynamic(() => import("../../components/map/Map"), {
     ssr: false,
 });
 
 interface FormTypes {
-    name: string;
-    surname: string;
     title: string;
     desc: string;
     category: string;
-    peopleLimit: number;
-    photo: string;
-    map: string;
-    search_bar: string;
-    email: string;
     date: Date;
-}
+    peopleLimit: number;
+    image: string;
 
-interface Props {
-    categories?: string[];
-    isCategoriesError: boolean;
-    isCategoriesLoading: boolean;
+    city: string;
+    street: string;
+    map: string;
 }
 
 export const EventCreatorView = () => {
     const { t } = useTranslation("global");
     const { csrf } = useAuth();
     const { data: categories, isLoading, isError } = useAPICategories({ csrf });
-
+    const [mapMarker, setMapMarker] = useState<MarkerProps | null>(null);
     const {
         register,
         control,
@@ -55,29 +55,49 @@ export const EventCreatorView = () => {
         watch,
     } = useForm<FormTypes>({
         defaultValues: {
-            name: "test",
-            surname: "test",
             title: "",
             desc: "",
             category: "",
-            peopleLimit: 2,
-            photo: "",
+            peopleLimit: 1,
+            image: "",
             map: "",
-            email: "test@test.pl",
             date: undefined,
         },
     });
-
-    console.log(categories, "CATEGORIES EVENT CREATOR");
+    const locationFromWatch = watch("map");
+    const {
+        data: mapData,
+        isError: mapError,
+        isLoading: mapLoading,
+        refetch,
+    } = useAPIForwardGeocoding({
+        location: locationFromWatch,
+    });
+    const handleGeolocation = () => {
+        if (locationFromWatch) {
+            refetch();
+        }
+    };
 
     const onSubmit: SubmitHandler<FormTypes> = async (data) => {
         // await mutateAsync(data);
         console.log(data, "SUBMIT event");
     };
 
+    useEffect(() => {
+        if (mapData?.data) {
+            const newCoordinates = {
+                latitude: mapData?.data[0].latitude,
+                longitude: mapData?.data[0].longitude,
+            };
+
+            setMapMarker(newCoordinates);
+        }
+    }, [mapData]);
+
     return (
         <S.Form onSubmit={handleSubmit(onSubmit)}>
-            <FileInput id="photo" register={register} control={control} />
+            <FileInput id="image" register={register} control={control} />
             <S.NewLine>{t("info")}</S.NewLine>
             <S.Content>
                 <TextInput
@@ -101,15 +121,6 @@ export const EventCreatorView = () => {
                         })) ?? []
                     }
                     loading={isLoading}
-                    // items={[
-                    //     { id: "elko", text: "elko" },
-                    //     { id: "elko2", text: "elko2" },
-                    //     { id: "elko3", text: "elk3" },
-                    //     { id: "elko4", text: "elko4" },
-                    //     { id: "elko23", text: "elko2" },
-                    //     { id: "elko32", text: "elk3" },
-                    //     { id: "elko41", text: "elko4" },
-                    // ]}
                     titleItem={watch("category") ?? []}
                     isError={!!errors.category}
                     required
@@ -122,7 +133,6 @@ export const EventCreatorView = () => {
                     register={register}
                     control={control}
                     isError={!!errors.desc}
-                    // fullWidth
                     rows={4}
                     cols={50}
                     dark
@@ -132,7 +142,7 @@ export const EventCreatorView = () => {
                     isError={!!errors.date}
                     register={register}
                     control={control}
-                    // required
+                    required
                     dark
                 />
                 <Slider
@@ -142,6 +152,25 @@ export const EventCreatorView = () => {
                     fullWidth
                     min={2}
                     max={99}
+                />
+
+                <TextInput
+                    id="city"
+                    register={register}
+                    control={control}
+                    isError={!!errors.city}
+                    required
+                    placeholder
+                    dark
+                />
+
+                <TextInput
+                    id="street"
+                    register={register}
+                    control={control}
+                    isError={!!errors.street}
+                    placeholder
+                    dark
                 />
             </S.Content>
             <S.NewLine>{t("map")}</S.NewLine>
@@ -156,13 +185,18 @@ export const EventCreatorView = () => {
                     dark
                 />
 
+                <Button fullWidth variant="gray" onClick={handleGeolocation}>
+                    {t("map_info")}
+                </Button>
+
+                <S.MapContainer>
+                    <Map marker={mapMarker ?? null} />
+                </S.MapContainer>
+
                 <Button variant="gradient" type="submit" fullWidth>
                     {t("confirm")}
                 </Button>
             </S.Content>
-            <S.MapContainer>
-                <Map />
-            </S.MapContainer>
         </S.Form>
         // {isError && <div>isError</div>}
 
