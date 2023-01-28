@@ -16,13 +16,9 @@ import { SelectInput } from "../../components/inputs/option/SelectInput";
 import { useAPICategories } from "../../api/categories/useAPICategories";
 import { useAuth } from "../../context/UserContext";
 import dynamic from "next/dynamic";
-import {
-    fetchAPIForwardGeocoding,
-    useAPIForwardGeocoding,
-} from "../../api/geolocation/useAPIForwardGeocoding";
-import { is } from "date-fns/locale";
+import { useAPIForwardGeocoding } from "../../api/geolocation/useAPIForwardGeocoding";
 import { MarkerProps } from "../../components/map/mapTypes";
-import { map } from "leaflet";
+import { useAPIEventCreator } from "../../api/events/useAPIEventCreator";
 
 const Map = dynamic(() => import("../../components/map/Map"), {
     ssr: false,
@@ -46,6 +42,7 @@ export const EventCreatorView = () => {
     const { csrf } = useAuth();
     const { data: categories, isLoading, isError } = useAPICategories({ csrf });
     const [mapMarker, setMapMarker] = useState<MarkerProps | null>(null);
+
     const {
         register,
         control,
@@ -64,7 +61,9 @@ export const EventCreatorView = () => {
             date: undefined,
         },
     });
+
     const locationFromWatch = watch("map");
+
     const {
         data: mapData,
         isError: mapError,
@@ -73,6 +72,13 @@ export const EventCreatorView = () => {
     } = useAPIForwardGeocoding({
         location: locationFromWatch,
     });
+
+    const {
+        mutateAsync,
+        isLoading: isLoadingAddPost,
+        isError: isErrorAddPost,
+    } = useAPIEventCreator();
+
     const handleGeolocation = () => {
         if (locationFromWatch) {
             refetch();
@@ -80,7 +86,7 @@ export const EventCreatorView = () => {
     };
 
     const onSubmit: SubmitHandler<FormTypes> = async (data) => {
-        // await mutateAsync(data);
+        await mutateAsync({ csrf, ...data, map: mapMarker });
         console.log(data, "SUBMIT event");
     };
 
@@ -160,7 +166,6 @@ export const EventCreatorView = () => {
                     control={control}
                     isError={!!errors.city}
                     required
-                    placeholder
                     dark
                 />
 
@@ -169,7 +174,6 @@ export const EventCreatorView = () => {
                     register={register}
                     control={control}
                     isError={!!errors.street}
-                    placeholder
                     dark
                 />
             </S.Content>
@@ -180,7 +184,6 @@ export const EventCreatorView = () => {
                     register={register}
                     control={control}
                     isError={!!errors.map}
-                    required
                     placeholder
                     dark
                 />

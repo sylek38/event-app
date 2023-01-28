@@ -15,7 +15,7 @@ interface Args {
     csrf: string;
 }
 
-export interface APIEventCreatorMutationVariables extends Args {
+export interface Params extends Args {
     title: string;
     desc: string;
     category: string;
@@ -25,15 +25,17 @@ export interface APIEventCreatorMutationVariables extends Args {
 
     city: string;
     street: string;
-    map: MarkerProps;
+    map: MarkerProps | null;
 }
 
 export const useAPIEventCreator = () => {
     const { push } = useRouter();
-    return useMutation<
+    const { session } = useAuth();
+    const userId = session?.id;
+    const { isError, isLoading, mutateAsync } = useMutation<
         ResponseType,
         FetchErrorsType,
-        APIEventCreatorMutationVariables
+        Params
     >(
         async ({
             title,
@@ -61,11 +63,7 @@ export const useAPIEventCreator = () => {
                 },
             };
 
-            const { session } = useAuth();
-            const userId = session;
-
             try {
-                console.log(newEvent);
                 const data = await fetch(
                     `${BACKEND_URL}${FetchUrl.POSTS}/add/${userId}`,
                     {
@@ -94,4 +92,10 @@ export const useAPIEventCreator = () => {
             }
         }
     );
+
+    return {
+        mutateAsync,
+        isLoading,
+        isError,
+    };
 };

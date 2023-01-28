@@ -19,7 +19,8 @@
         "post_map_label": "Wpisz lokalizację, w której odbędzie się twoje wydarzenie",
         "post_map_placeholder": "Tylko nie podawaj lokalizacji na Marsie :)",
 
-        "city_placeholder": "Miasto"
+        "city_label": "Miasto",
+        "street_label": "Ulica"
     },
     "text_searchbar": {
         "select_city_placeholder": "Search..."
@@ -45,5 +46,5 @@
     "slider": {
         "peopleLimit_label": "Określ maksymalną liczbę osób"
     },
-    "file_label_photo": "Dodaj obrazek"
+    "file_label_image": "Dodaj obrazek"
 }

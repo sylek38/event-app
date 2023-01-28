@@ -19,7 +19,6 @@ interface RequestWithFile extends Request {
 
 interface NewPostType extends RequestWithFile {
 	body: {
-		userId: string;
 		title: string;
 		desc: string;
 		category: string;
@@ -27,23 +26,27 @@ interface NewPostType extends RequestWithFile {
 		location: {
 			city: string;
 			street: string;
-			// map: {
-			// 	lat: String,
-			// 	long: String,
-			// },
+			map: {
+				latitude: string;
+				longitude: string;
+			};
 		};
 		date: string;
+	};
+	params: {
+		id: string;
 	};
 }
 
 // --------------- CREATE POST
 router.post(
-	"/add",
+	"/add/:id",
 	verifyToken,
 	uploadImage,
 	async (req: NewPostType, res: Response) => {
-		const { userId, title, desc, category, peopleLimit, location, date } =
-			req.body;
+		const { title, desc, category, peopleLimit, location, date } = req.body;
+
+		const { id: userId } = req.params;
 
 		const foundUser = await User.findOne({ _id: userId });
 
@@ -85,12 +88,16 @@ router.post(
 		const newPost = new Post(allData);
 		await newPost.save();
 
-		const responseData = {
-			...data,
-			image: `http://${req.get("host")}/public/images/${
-				req.file.filename
-			}`,
-		};
+		const responseData = req.file
+			? {
+					...data,
+					image: `http://${req.get("host")}/public/images/${
+						req.file.filename
+					}`,
+			  }
+			: {
+					...data,
+			  };
 
 		try {
 			res.status(200).json(responseData);

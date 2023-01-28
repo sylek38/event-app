@@ -70,7 +70,7 @@ interface LoginRequest extends Request {
 	};
 }
 
-router.post("/login", verifyToken, async (req: LoginRequest, res: Response) => {
+router.post("/login", async (req: LoginRequest, res: Response) => {
 	const { email, password, rememberMe } = req.body;
 	const user = await User.findOne({ email });
 

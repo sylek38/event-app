@@ -9,10 +9,10 @@ export type LocationType = {
 	street: string;
 	// TODO: Uncomment when map api is ready
 	//
-	// map: {
-	// 	lat: string;
-	// 	lon: string;
-	// }
+	map: {
+		latitude: string;
+		longidute: string;
+	};
 };
 
 export interface PostType extends Document {
@@ -53,7 +53,7 @@ const PostSchema = new mongoose.Schema({
 	},
 	desc: {
 		type: String,
-		required: true,
+		required: false,
 	},
 	category: {
 		type: String,
@@ -74,14 +74,19 @@ const PostSchema = new mongoose.Schema({
 		},
 		street: {
 			type: String,
-			required: true,
+			required: false,
 		},
 		// TODO: Uncomment when map api is ready
-		// map: {
-		// 	lat: String,
-		// 	long: String,
-		// 	required: true,
-		// },
+		map: {
+			latitude: {
+				type: Number,
+			},
+			longitude: {
+				type: Number,
+			},
+
+			required: false,
+		},
 	},
 	date: {
 		type: Date,
