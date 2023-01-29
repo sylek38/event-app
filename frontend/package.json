@@ -20,6 +20,7 @@
     "@typescript-eslint/eslint-plugin": "^5.40.1",
     "@typescript-eslint/parser": "^5.40.1",
     "css-loader": "^6.7.1",
+    "date-fns": "^2.29.3",
     "eslint-plugin-react": "^7.31.10",
     "framer-motion": "^7.6.9",
     "js-cookie": "^3.0.1",
@@ -32,11 +33,12 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.39.1",
     "react-leaflet": "^4.1.0",
+    "react-viewport-list": "^6.3.0",
     "style-loader": "^3.3.1",
     "styled-components": "^5.3.6"
   },
   "devDependencies": {
-    "@tanstack/react-query": "^4.19.1",
+    "@tanstack/react-query": "^4.20.4",
     "@types/js-cookie": "^3.0.2",
     "@types/node": "18.11.0",
     "@types/react": "18.0.21",

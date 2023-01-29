@@ -1,4 +1,5 @@
 import { useForm } from "react-hook-form";
+import { DefaultAvatar } from "../../assets/DefaultAvatar";
 import { BACKEND_URL } from "../../config";
 import { SearchInput } from "../inputs/searchbar/Searchbar";
 import { TextInput } from "../inputs/text/TextInput";
@@ -19,7 +20,8 @@ export const Header = () => {
             <div>
                 {/* Temporary */}
                 <SearchInput id="search" register={register} />
-                <div>avatar</div>
+
+                <DefaultAvatar />
             </div>
         </S.Header>
     );

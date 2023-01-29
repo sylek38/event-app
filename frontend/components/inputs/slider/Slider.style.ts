@@ -1,6 +1,8 @@
 import { pxToRem } from "../../../utils/pxToRem";
 import styled, { css } from "styled-components";
 
+// https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/
+
 export const Container = styled.div<{ fullWidth?: boolean }>`
     display: flex;
     flex-direction: column;
@@ -51,6 +53,11 @@ export const Container = styled.div<{ fullWidth?: boolean }>`
     input[type="range"]::-ms-fill-upper {
         background-color: var(--secondary-background);
     }
+
+    input[type="range"]::-webkit-slider-runnable-track {
+        background-color: var(--secondary-background);
+        height: 10px;
+    }
 `;
 
 export const Content = styled.div`
@@ -61,14 +68,15 @@ export const Content = styled.div`
 
 export const Slider = styled.input`
     height: 2px;
-    border-radius: 10px;
+    border-radius: ${pxToRem(10)};
     width: 100%;
+    /* background-color: red; */
 `;
 
 export const Counter = styled.div`
-    width: 25px;
-    height: 25px;
-    margin: 0 !important;
+    width: ${pxToRem(25)};
+    height: ${pxToRem(25)};
+    /* margin: 0 !important; */
     border-radius: 5px;
     background-color: var(--secondary-background);
     color: var(--secondary-text);
@@ -98,26 +106,27 @@ export const Icon = styled.span`
     display: inline-block;
     position: absolute;
     top: -35px;
+    /* left: -4px; */
     text-align: center;
     font-size: var(--font-size-20);
     color: var(--tertiary-background);
     z-index: 5;
-    min-width: 20px;
+    min-width: 1.25rem;
 `;
 
 export const Label = styled.label`
     font-size: ${pxToRem(12)};
     color: var(--secondary-text);
-    margin-bottom: ${pxToRem(6)};
+    margin-bottom: ${pxToRem(10)};
     line-height: 1;
 `;
 
 export const Element = styled.label`
     display: flex;
     position: relative;
-    flex-direction: row;
     align-items: center;
     justify-content: center;
+    height: 2.5rem;
     gap: ${pxToRem(10)};
-    min-width: 200px;
+    min-width: 12.5rem;
 `;

@@ -3,7 +3,7 @@ import { css } from "styled-components";
 
 export const buttonStyle = css`
     /* TODO: Add the rest of sizes when they are known */
-    /* --button-padding-sm:  */
+    --button-padding-sm: ${pxToRem(5)} 1rem;
     --button-padding-md: ${pxToRem(12)} ${pxToRem(30)};
     /* --button-padding-lg:  */
 

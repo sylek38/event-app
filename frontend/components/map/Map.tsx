@@ -12,6 +12,7 @@ import "leaflet/dist/leaflet.css";
 import { MapTypes, MapWithZoomType, MarkerProps } from "./mapTypes";
 
 import * as S from "./Map.style";
+import { OnClickMarker } from "./onClickMarker/OnClickMarker";
 
 const CONFIG_MAP = {
     default_zoom: 13,
@@ -21,7 +22,7 @@ const CONFIG_MAP = {
 
 interface Props {
     center?: LatLngTuple;
-    marker?: MarkerProps[];
+    marker?: MarkerProps | null;
     zoom?: number;
 }
 
@@ -32,9 +33,9 @@ const Map = ({
 }: Props) => {
     const [map, setMap] = useState<MapWithZoomType | null>();
     const [type] = useState<MapTypes>(MapTypes.OPENSTREET);
-
+    console.log(marker, "MAP COORDINATES");
     return (
-        <S.Wrapper data-type={type} className="leaflet_map_type">
+        <S.Wrapper className="leaflet_map_type">
             <MapContainer
                 center={center}
                 zoom={zoom}
@@ -44,22 +45,26 @@ const Map = ({
                 <LayersControl>
                     <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                 </LayersControl>
-                <Marker
-                    position={[CONFIG_MAP.lat, CONFIG_MAP.lng]}
-                    icon={
-                        new Icon({
-                            iconUrl: "/marker-icon.png",
-                            iconSize: [25, 41],
-                            iconAnchor: [12, 41],
-                        })
-                    }
-                >
-                    <Popup>test</Popup>
-                </Marker>
+
+                {marker ? (
+                    <Marker
+                        position={[marker.latitude, marker.longitude]}
+                        icon={
+                            new Icon({
+                                iconUrl: "/marker-icon.png",
+                                iconSize: [25, 41],
+                                iconAnchor: [12, 41],
+                            })
+                        }
+                    >
+                        <Popup>test</Popup>
+                    </Marker>
+                ) : (
+                    <OnClickMarker />
+                )}
             </MapContainer>
         </S.Wrapper>
     );
 };
 
-// TIP: used it as default export because map didn't work without that...
 export default Map;

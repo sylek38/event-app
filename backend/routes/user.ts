@@ -1,64 +1,204 @@
-import { Request, Response } from "express";
+import { Request, response, Response } from "express";
+import { uploadImage } from "../middleware/upload/images";
+import User from "../models/User";
 import { verifyToken } from "./verify/verifyToken";
+import { unlink } from "fs/promises";
 
 const router = require("express").Router();
-const User = require("../models/User");
-const Post = require("../models/Post");
 const bcrypt = require("bcrypt");
 
-//Aktualizowanie danych konta
-router.put("/:id", verifyToken, async (req: Request, res: Response) => {
-	if (req.body.userId === req.params.id) {
-		if (req.body.password) {
-			const salt = await bcrypt.genSalt(10);
-			req.body.password = await bcrypt.hash(req.body.password, salt);
+interface RequestWithParams extends Request {
+	params: {
+		id: string;
+	};
+}
+
+interface GeneralUpdateRequest extends RequestWithParams {
+	file: Express.Multer.File;
+	body: {
+		name?: string;
+		surname?: string;
+		email?: string;
+		bio?: string;
+	};
+}
+
+interface UpdateData {
+	name?: string;
+	surname?: string;
+	email?: string;
+	bio?: string;
+}
+// Update user (General)
+router.put(
+	"/general/:id",
+	verifyToken,
+	uploadImage,
+	async (req: GeneralUpdateRequest, res: Response) => {
+		const { id: userIdFromParams } = req.params;
+
+		const foundUser = User.findOne({ _id: userIdFromParams });
+
+		if (!foundUser) {
+			return res.status(400).json({ error: "User not found" });
 		}
+		const updates: Partial<UpdateData> = {};
+		const fields: (keyof UpdateData)[] = [
+			"name",
+			"surname",
+			"email",
+			"bio",
+		];
+
+		fields.forEach(async field => {
+			if (req.body[field]) {
+				updates[field] = req.body[field];
+			}
+		});
+
+		const updateData = req.file
+			? {
+					...updates,
+					avatarFilename: req.file.filename,
+			  }
+			: updates;
+
+		const updatedUser = await User.findOneAndUpdate(
+			{ _id: userIdFromParams },
+			updateData
+		);
+
+		if (!updatedUser) {
+			return res.status(404).json({ error: "Could not update the data" });
+		}
+		const responseData = req.file
+			? {
+					...updates,
+					avatarUrl: `http://${req.get("host")}/public/images/${
+						req.file.filename
+					}`,
+			  }
+			: updates;
+
+		return res.status(200).send(responseData);
+	}
+);
+
+// Update user (password)
+
+interface PasswordUpdateRequest extends RequestWithParams {
+	body: {
+		new_password: string;
+		old_password: string;
+	};
+}
+
+router.put(
+	"/password/:id",
+	verifyToken,
+	async (req: PasswordUpdateRequest, res: Response) => {
+		const { old_password, new_password } = req.body;
+		const { id } = req.params;
+
+		const foundUser = await User.findOne({ _id: id });
+
+		if (!foundUser) {
+			return res.status(400).json({ error: "User not found" });
+		}
+
+		if (old_password !== new_password) {
+			return res.status(403).json({ error: "Passwords do not match" });
+		}
+
+		if (foundUser.password === new_password) {
+			return res.status(403).json({
+				error: "Your new password must be different from your current password",
+			});
+		}
+
+		const salt = await bcrypt.genSalt(10);
+		const hashedPass = await bcrypt.hash(new_password, salt);
+
 		try {
-			const updatedUser = await User.findByIdAndUpdate(
-				req.params.id,
-				{
-					$set: req.body,
-				},
+			await User.findOneAndUpdate(
+				{ _id: id },
+				{ password: hashedPass },
 				{ new: true }
 			);
-			res.status(200).json(updatedUser);
-		} catch (error) {
-			res.status(500).json(error);
+
+			return res
+				.status(200)
+				.json({ message: "Password has been changed" });
+		} catch (err) {
+			return res.status(500).json({
+				error: "Something went wrong while updating the password",
+			});
 		}
-	} else {
-		res.status(401).json("Możesz edytować jedynie swoje konto!");
 	}
-});
+);
 
 //Usuwanie konta
-router.delete("/:id", verifyToken, async (req: Request, res: Response) => {
-	if (req.body.userId === req.params.id) {
-		try {
-			const user = await User.findById(req.params.id);
-			try {
-				await Post.deleteMany({ email: user.email });
-				await User.findByIdAndDelete(req.params.id);
-				res.status(200).json("Użytkownik został usunięty!");
-			} catch (error) {
-				res.status(500).json(error);
-			}
-		} catch (error) {
-			res.status(404).json("Użytkownik nie został znaleziony!");
+router.delete(
+	"/delete/:id",
+	verifyToken,
+	async (req: RequestWithParams, res: Response) => {
+		const { id } = req.params;
+		const foundUser = await User.findOne({ _id: id });
+
+		if (!foundUser) {
+			return res.status(404).json({ error: "User does not exist" });
 		}
-	} else {
-		res.status(401).json("Możesz usunąć jedynie swoje konto!");
+
+		const deletedUser = await User.findOneAndDelete({ _id: id });
+
+		if (!deletedUser) {
+			return res.status(500).json({
+				error: "Something went wrong while deleting the user",
+			});
+		}
+
+		if (foundUser?.avatarFilename) {
+			await unlink(`public/images/${foundUser.avatarFilename}`);
+		}
+		return res.status(200).json({ message: "User successfully deleted" });
 	}
-});
+);
 
 // Get user
-router.get("/:id", async (req: Request, res: Response) => {
-	try {
-		const user = await User.findById(req.params.id);
-		const { password, ...others } = user._doc;
-		res.status(200).json(others);
-	} catch (error) {
-		res.status(500).json(error);
+router.get("/:id", async (req: RequestWithParams, res: Response) => {
+	const { id } = req.params;
+	const foundUser = await User.findOne({ _id: id });
+
+	if (!foundUser) {
+		return res.status(404).json({ error: "User not found" });
 	}
+
+	const responseData = {
+		name: foundUser.name,
+		surname: foundUser.surname,
+		bio: foundUser.bio,
+		avatarUrl: `http://${req.get("host")}/public/images/${
+			foundUser.avatarFilename
+		}`,
+	};
+
+	return res.status(200).json(responseData);
+});
+
+// Get users
+router.get("/", async (req: Request, res: Response) => {
+	const foundUsers = await User.find();
+
+	const responseData = foundUsers.map(user => ({
+		name: user.name,
+		surname: user.surname,
+		bio: user.bio,
+		avatarUrl: `http://${req.get("host")}/public/images/${
+			user.avatarFilename
+		}`,
+	}));
+
+	return res.json(responseData);
 });
 
 module.exports = router;

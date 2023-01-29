@@ -9,8 +9,5 @@ export const Title = styled.div`
     text-transform: uppercase;
     font-weight: 600;
     font-size: ${pxToRem(14)};
-
-    > img {
-        margin-left: ${pxToRem(10)};
-    }
+    gap: ${pxToRem(10)};
 `;

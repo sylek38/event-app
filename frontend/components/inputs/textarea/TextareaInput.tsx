@@ -77,9 +77,11 @@ export function TextareaInput<T>({
 
     return (
         <S.Container fullWidth={fullWidth}>
-            <S.Label>
-                {!hideLabel && <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>}
-            </S.Label>
+            {!hideLabel && (
+                <S.Label>
+                    <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>
+                </S.Label>
+            )}
             <S.TextareaInput
                 rows={rows}
                 cols={cols}

@@ -11,21 +11,22 @@ import User, { UserType } from "../models/User";
 const router = require("express").Router();
 const bcrypt = require("bcrypt");
 
-interface RegisterRequest extends Request {
-	name: string;
-	surname: string;
-	email: string;
-	password: string;
-	rememberMe?: boolean;
+interface RequestWithFile extends Request {
+	file: Express.Multer.File;
 }
 
-interface LoginRequest extends Request {
-	email: string;
-	password: string;
+interface RegisterRequest extends Request {
+	body: {
+		name: string;
+		surname: string;
+		email: string;
+		password: string;
+		bio?: string;
+	};
 }
 
 router.post("/register", async (req: RegisterRequest, res: Response) => {
-	const { name, surname, email, password, bio, profilePic } = req.body;
+	const { name, surname, email, password, bio } = req.body;
 
 	// TODO: Uncomment for final version
 	// if (!password.test(passwordRegex)) {
@@ -51,7 +52,6 @@ router.post("/register", async (req: RegisterRequest, res: Response) => {
 			email,
 			password: hashedPass,
 			bio,
-			profilePic,
 		});
 
 		const user = await newUser.save();
@@ -62,19 +62,27 @@ router.post("/register", async (req: RegisterRequest, res: Response) => {
 	}
 });
 
+interface LoginRequest extends Request {
+	body: {
+		email: string;
+		password: string;
+		rememberMe?: boolean;
+	};
+}
+
 router.post("/login", async (req: LoginRequest, res: Response) => {
 	const { email, password, rememberMe } = req.body;
 	const user = await User.findOne({ email });
 
 	if (!user) {
 		// it will be "Wrong credentials" but for testing these are specified
-		return res.status(400).json("Wrong email");
+		return res.status(400).json({ error: "Wrong email" });
 	}
 
 	const validated = await bcrypt.compare(password, user.password);
 
 	if (!validated) {
-		return res.status(400).json("Wrong password");
+		return res.status(400).json({ error: "Wrong password" });
 	}
 
 	try {
@@ -150,7 +158,7 @@ router.post("/refresh", verifyToken, async (req: Request, res: Response) => {
 	const user = await User.findOne({ _id: userId });
 
 	if (!user) {
-		res.status(403).json({ error: "userId is invalid" });
+		res.status(403).json({ error: "User not found" });
 	}
 
 	try {
@@ -187,13 +195,16 @@ router.get("/who_am_i", verifyToken, async (req: Request, res: Response) => {
 		res.status(403).json({ error: `userId is invalid.` });
 	}
 	try {
-		const { _id, name, surname, email, profilePic, bio } = user as UserType;
+		const { _id, name, surname, email, avatarFilename, bio } =
+			user as UserType;
 		res.status(200).json({
 			id: _id,
 			name,
 			surname,
 			email,
-			profilePic,
+			avatarUrl: `http://${req.get(
+				"host"
+			)}/public/images/${avatarFilename}`,
 			bio,
 		});
 	} catch (err) {

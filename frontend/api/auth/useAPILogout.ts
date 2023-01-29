@@ -19,11 +19,16 @@ export const useAPISignOut = ({ csrf }: Args) => {
             });
 
             Cookies.remove("csrf");
+            Cookies.remove("token");
+            Cookies.remove("refreshToken");
             window.location.href = "/";
 
             return data.json();
         } catch (err) {
             console.log(err);
+            Cookies.remove("csrf");
+            Cookies.remove("token");
+            Cookies.remove("refreshToken");
             window.location.href = "/";
             throw err;
         }

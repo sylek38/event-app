@@ -1,11 +1,11 @@
 import { pxToRem } from "./../../../utils/pxToRem";
 import styled from "styled-components";
 
-export const Post = styled.a<{ width: number }>`
+export const Post = styled.a`
     background-color: var(--secondary-background);
     border-radius: ${pxToRem(24)};
     box-shadow: 0 0 1.5em var(--box-shadow--black);
-    max-width: ${({ width }) => (width ? pxToRem(320) : pxToRem(width))};
+    max-width: ${pxToRem(320)};
     width: 100%;
     transition: 0.15s;
 
@@ -16,14 +16,17 @@ export const Post = styled.a<{ width: number }>`
 
 export const BackgroundContainer = styled.div`
     position: relative;
-    border-bottom: ${pxToRem(3)} solid var(--color-white);
+    border-bottom: 3px solid var(--color-white);
     height: ${pxToRem(200)};
+    width: 100%;
 
-    > img {
+    > img,
+    svg {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: ${pxToRem(24)} ${pxToRem(24)} 0 0;
+        background-color: var(--color-white);
     }
 `;
 
@@ -39,9 +42,13 @@ export const Date = styled.div`
     align-items: center;
     background-color: var(--color-white);
     border-radius: 1rem;
+    font-size: ${pxToRem(14)};
+    box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.25);
 
-    > span:nth-child(2) {
-        font-weight: 600;
+    > span {
+        &:nth-child(2) {
+            font-weight: 600;
+        }
     }
 `;
 
@@ -53,10 +60,15 @@ export const Avatar = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 50%;
+    width: ${pxToRem(60)};
+    height: ${pxToRem(60)};
+    background-color: var(--color-white);
 
-    > img {
-        width: ${pxToRem(60)};
-        height: ${pxToRem(60)};
+    img,
+    svg {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         border-radius: 50%;
         border: 3px solid var(--color-white);
@@ -65,7 +77,7 @@ export const Avatar = styled.div`
 
 export const Content = styled.div`
     position: relative;
-    padding: ${pxToRem(34)} ${pxToRem(20)} ${pxToRem(30)} ${pxToRem(20)};
+    padding: ${pxToRem(34)} ${pxToRem(20)} ${pxToRem(20)} ${pxToRem(20)};
 
     > span:nth-of-type(1) {
         display: block;
@@ -79,8 +91,7 @@ export const Content = styled.div`
 
 export const Title = styled.span`
     display: block;
-    height: 3rem;
-    margin-top: ${pxToRem(10)};
+    margin: ${pxToRem(10)} 0 ${pxToRem(20)};
 
     font-size: 1rem;
     font-weight: bold;

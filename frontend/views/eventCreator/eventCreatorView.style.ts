@@ -6,17 +6,18 @@ export const Form = styled.form`
     flex-direction: column;
     align-items: center;
     width: 100%;
-
-    button {
-        margin-top: ${pxToRem(30)};
-    }
 `;
 
 export const Content = styled.div`
     width: 60%;
+    position: relative;
 
     & > div {
         margin-top: 30px;
+    }
+
+    > button {
+        margin-top: ${pxToRem(30)};
     }
 `;
 
@@ -25,4 +26,16 @@ export const NewLine = styled.p`
     margin: 1rem 0;
     align-self: left;
     font-weight: bold;
+`;
+
+export const MapContainer = styled.div`
+    position: relative;
+    padding: 0;
+    flex: 1;
+    height: 400px;
+    width: 100%;
+
+    .leaflet-container {
+        width: 100%;
+    }
 `;

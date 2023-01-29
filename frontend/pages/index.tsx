@@ -9,14 +9,14 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
 
     try {
         const auth = await fetchAPIAuth({ csrf });
-        if (auth) {
-            return {
-                redirect: {
-                    destination: "/events",
-                    permanent: false,
-                },
-            };
-        }
+        // if (auth) {
+        //     return {
+        //         redirect: {
+        //             destination: "/events",
+        //             permanent: false,
+        //         },
+        //     };
+        // }
     } catch (err) {
         delete req.cookies["csrf"];
         console.log(err);

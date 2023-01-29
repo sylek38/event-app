@@ -21,6 +21,8 @@ import * as S from "./Slider.style";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPerson } from "@fortawesome/free-solid-svg-icons";
 
+const KEY_PREFIX = "slider";
+
 interface Props<T> {
     id: Path<NonNullable<T>>;
     register: UseFormRegister<NonNullable<T>>;
@@ -49,7 +51,7 @@ export function Slider<T>({
     const { t } = useTranslation("inputs");
     const inputRef = useRef<HTMLInputElement>(null);
 
-    const [value, setValue] = useState(2);
+    const [value, setValue] = useState(min ?? 1);
     const [step, setStep] = useState(0);
 
     const handleChange = (e: any) => {
@@ -79,9 +81,11 @@ export function Slider<T>({
 
     return (
         <S.Container fullWidth={fullWidth}>
-            <S.Label>
-                {!hideLabel && <span>{t(`slider_label_${id}`)}</span>}
-            </S.Label>
+            {!hideLabel && (
+                <S.Label>
+                    <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>
+                </S.Label>
+            )}
             <S.Element>
                 <S.Counter>{min}</S.Counter>
                 <S.Content>
@@ -118,7 +122,7 @@ export function Slider<T>({
 
                     <S.Bubble style={stepTransform}>{value}</S.Bubble>
                 </S.Content>
-                <S.Counter>{max}+</S.Counter>
+                <S.Counter>{max}</S.Counter>
             </S.Element>
         </S.Container>
     );

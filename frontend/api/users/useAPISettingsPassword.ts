@@ -1,52 +1,46 @@
 import { BACKEND_URL } from "../../config";
 import { useMutation } from "@tanstack/react-query";
-import { useRouter } from "next/router";
 import { FetchErrorsType, FetchUrl } from "../types/Fetch";
 
 interface ResponseType {
     errors?: string[];
-    data?: unknown;
 }
 
-export interface APISettingsMutationVariables {
+interface Args {
+    csrf: string;
+}
+
+export interface APISettingsMutationVariables extends Args {
     userId: string;
     old_password: string;
     new_password: string;
-    repeat_password: string;
 }
 
 export const useAPISettingsPassword = () => {
-    const { push } = useRouter();
-
-    const oldValues = {
-        userId: "63b325e386f12b8784f47c93", //Na razie na sucho Id i pozostałe dane
-        password: "Ab1CdE",
-    };
-
-    return useMutation<
+    const { mutateAsync } = useMutation<
         ResponseType,
         FetchErrorsType,
         APISettingsMutationVariables
-    >(async ({ old_password, new_password, repeat_password }) => {
-        const updatedUser = { ...oldValues, new_password };
-
+    >(async ({ old_password, new_password, userId, csrf }) => {
         try {
             const data = await fetch(
-                `${BACKEND_URL}${FetchUrl.USERS}/${oldValues.userId}`,
+                `${BACKEND_URL}${FetchUrl.USERS}/password/${userId}`,
                 {
                     method: "PUT",
-                    body: JSON.stringify({ ...updatedUser }),
+                    body: JSON.stringify({ old_password, new_password }),
+                    credentials: "include",
                     headers: {
                         "Content-Type": "application/json",
+                        Authorization: `Bearer ${csrf}`,
                     },
                 }
             );
-            if (data) new_password;
-            return data.json();
+            if (data) {
+                return data.json();
+            }
         } catch (err) {
-            console.log(err);
-            console.log("put");
             throw err;
         }
     });
+    return { mutateAsync };
 };

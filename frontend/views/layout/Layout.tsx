@@ -30,8 +30,6 @@ export const Layout = ({
         csrf,
     });
 
-    console.log(data, "Context data");
-
     return (
         <UserContext.Provider value={{ session: data, csrf }}>
             <Header />

@@ -22,6 +22,7 @@
     "delete": "Usuń konto",
     "avatar_change": "Zmień zdjęcie",
     "info": "Info",
+    "map_info": "Dodaj lokację do mapy",
     "tabs": {
         "event_manager_tabs": "Zakładki menadżera zdarzeń",
         "invites": "Zaproszenia",
@@ -30,5 +31,27 @@
         "general": "Ogólne",
         "password": "Zmień hasło"
     },
-    "lang": "pl-PL"
+    "lang": "pl-PL",
+    "categories": {
+        "party": "Impreza",
+        "board_games": "Planszówki",
+        "bike": "Rower",
+        "concert": "Koncert",
+        "winter_swimming": "Morsowanie",
+        "culture": "Kultura",
+        "networking": "Networking",
+        "travel": "Podróże",
+        "jogging": "Jogging",
+        "outdoor": "Po prostu wyjście",
+        "games": "Gry",
+        "festival": "Festiwal",
+        "other": "Inne",
+        "education": "Edukacja",
+        "art": "Sztuka",
+        "scary": "Straszne"
+    },
+    "results_not_found": {
+        "title": "Ups!",
+        "desc": "Nie posiadamy takich wydarzeń..."
+    }
 }

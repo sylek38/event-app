@@ -9,27 +9,31 @@ interface ResponseType {
     data?: unknown;
 }
 
-export interface APISettingsMutationVariables {
+interface Args {
+    csrf: string;
+}
+
+export interface APISettingsMutationVariables extends Args {
     userId: string;
 }
 
 export const useAPIDeleteAccount = () => {
     const { push } = useRouter();
 
-    const { mutate: mutateAsyncDel } = useMutation<
+    const { mutateAsync } = useMutation<
         ResponseType,
         FetchErrorsType,
         APISettingsMutationVariables
-    >(async ({ userId }) => {
-        const user = { userId: userId };
+    >(async ({ userId, csrf }) => {
         try {
             const data = await fetch(
-                `${BACKEND_URL}${FetchUrl.USERS}/${user.userId}/`,
+                `${BACKEND_URL}${FetchUrl.USERS}/delete/${userId}/`,
                 {
                     method: "DELETE",
-                    body: JSON.stringify({ ...user }),
+                    credentials: "include",
                     headers: {
                         "Content-Type": "application/json",
+                        Authorization: `Bearer ${csrf}`,
                     },
                 }
             );
@@ -42,5 +46,5 @@ export const useAPIDeleteAccount = () => {
             throw err;
         }
     });
-    return { mutateAsyncDel };
+    return { mutateAsync };
 };

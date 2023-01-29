@@ -1,22 +1,45 @@
+import { LocationType } from "../../types/posts.type";
+
 interface PostItem {
     id: string;
+    user: {
+        id: string;
+        name: string;
+        surname: string;
+    };
     title: string;
-    description: string;
+    desc: string;
     category: string;
-    img: string;
+    photo: string;
     authorName: string;
     avatar: string;
-    place: string;
     date: string;
-    peopleCount: string;
+    peopleLimit: string;
+    location: LocationType;
 }
+
+// id: string;
+// user: {
+//     id: string;
+//     name: string;
+//     surname: string;
+// };
+// title: string;
+// desc: string;
+// category: string;
+// peopleLimit: number;
+// photo: string;
+// location: LocationType;
+// // map: string;
+// // avatar: string;
+// width?: number;
+// date: number
 
 export const postItemsMock: PostItem[] = [
     {
         id: "1",
         title: "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel ds asd asd sa dsa  sa das dsa sa das sa as",
-        description:
-            "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga xVeniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x",
+        desc: "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga xVeniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x",
         category: "Party",
         authorName: "Christine Trivett",
         img: "https://cdn.cmc-gallery.pl/static/files/gallery/541/090d434854e917828ad11e48812db01d.jpg",
@@ -29,7 +52,7 @@ export const postItemsMock: PostItem[] = [
     {
         id: "2",
         title: "Veniam voluptatem rerum similique facilis",
-        description: "Veniam voluptatem rerum similique facilis ",
+        desc: "Veniam voluptatem rerum similique facilis ",
         category: "Vine Party",
         authorName: "Neal Balistreri",
         img: "/images/events/vine-party-event.jpg",
@@ -43,8 +66,7 @@ export const postItemsMock: PostItem[] = [
     {
         id: "3",
         title: "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga sad sad as das ",
-        description:
-            "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x sda",
+        desc: "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x sda",
         category: "Weekend getaway ",
         authorName: "Troy Males",
         img: "/images/events/mountains-event.jpg",
@@ -58,8 +80,7 @@ export const postItemsMock: PostItem[] = [
     {
         id: "4",
         title: "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x",
-        description:
-            "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x",
+        desc: "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x",
         category: "Billard",
         authorName: "Samson Clarke",
         img: "/images/events/billard-event.jpg",
@@ -73,8 +94,7 @@ export const postItemsMock: PostItem[] = [
     {
         id: "5",
         title: "Veniam voluptatem rerum similique facilis voluptatem vel fuga ",
-        description:
-            "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...",
+        desc: "Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...Veniam voluptatem rerum similique facilis voluptatem vel fuga consectetur vel fuga x...",
         category: "Card Games Night",
         authorName: "Alison Norman",
         img: "/images/events/card-games-event.jpg",

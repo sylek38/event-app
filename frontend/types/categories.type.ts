@@ -1,0 +1,17 @@
+export type CategoriesType =
+    | "party"
+    | "jogging"
+    | "board_games"
+    | "outdoor"
+    | "bike"
+    | "games"
+    | "concert"
+    | "festival"
+    | "winter_swimming"
+    | "other"
+    | "culture"
+    | "education"
+    | "networking"
+    | "art"
+    | "travel"
+    | "scary";

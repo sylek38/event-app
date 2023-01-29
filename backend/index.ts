@@ -1,10 +1,12 @@
 import { verifyToken } from "./routes/verify/verifyToken";
-import dotenv from "dotenv";
+// import dotenv from "dotenv";
+import * as dotenv from "dotenv";
 import express from "express";
 const authRoute = require("./routes/auth");
 const userRoute = require("./routes/user");
 const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/category");
+
 const cors = require("cors");
 import mongoose from "mongoose";
 import cookieParser from "cookie-parser";
@@ -26,15 +28,20 @@ const corsOptions = {
 
 app.use(cors(corsOptions));
 
-app.use(cors());
+// app.use(cors());
 
 const port = process.env.PORT;
 const domain = process.env.DOMAIN;
 
+app.use("/public", express.static("public"));
+
 mongoose
 	.connect(process.env.MONGO_URL ?? "")
 	.then(() => console.log("conntected to mongoDB"))
-	.catch((err: any) => console.log(err));
+	.catch((err: any) => {
+		console.log(err);
+		process.exit(1);
+	});
 
 app.use((req, res, next) => {
 	res.header("Access-Control-Allow-Origin", [
@@ -60,8 +67,8 @@ app.get("/", (req, res) => {
 app.use("/backend/auth", authRoute);
 app.use("/backend/users", userRoute);
 app.use("/backend/posts", postRoute);
-app.use("/backend/category", categoryRoute);
-app.use(verifyToken);
+app.use("/backend/categories", categoryRoute);
+// app.use(verifyToken);
 
 app.listen(port, () => {
 	console.log(`[server]: Server is running at ${domain}:${port}`);

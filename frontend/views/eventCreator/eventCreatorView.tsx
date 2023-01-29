@@ -1,155 +1,209 @@
 import useTranslation from "next-translate/useTranslation";
 import { Routes } from "../../routes/Routes";
-import * as S from "./eventCreatorView.style";
+import * as S from "./EventCreatorView.style";
 
 import { TextInput } from "../../components/inputs/text/TextInput";
-import { Select } from "../../components/option/SelectField";
 import { TextareaInput } from "../../components/inputs/textarea/TextareaInput";
 import { Slider } from "../../components/inputs/slider/Slider";
 import { FileInput } from "../../components/inputs/file/FileInput";
-// import { DatePicker } from "../../components/inputs/datePicker/DatePicker";
 import { DateInput } from "../../components/inputs/date/DateInput";
-
-import { Layout } from "../../views/layout/Layout";
 
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Button } from "../../components/button/Button";
-import { useState } from "react";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { SelectInput } from "../../components/inputs/option/SelectInput";
+import { useAPICategories } from "../../api/categories/useAPICategories";
+import { useAuth } from "../../context/UserContext";
+import dynamic from "next/dynamic";
+import { useAPIForwardGeocoding } from "../../api/geolocation/useAPIForwardGeocoding";
+import { MarkerProps } from "../../components/map/mapTypes";
 import { useAPIEventCreator } from "../../api/events/useAPIEventCreator";
 
+const Map = dynamic(() => import("../../components/map/Map"), {
+    ssr: false,
+});
+
 interface FormTypes {
-    name: string;
-    surname: string;
     title: string;
     desc: string;
     category: string;
-    peopleLimit: number;
-    photo: string;
-    map: string;
-    search_bar: string;
-    email: string;
     date: Date;
+    peopleLimit: number;
+    image: string;
+
+    city: string;
+    street: string;
+    map: string;
 }
 
 export const EventCreatorView = () => {
-    const { t: t1 } = useTranslation("global");
-    const { t: t2 } = useTranslation("eventManager");
-
-    const { isError, isLoading, mutateAsync } = useAPIEventCreator();
-
-    const listOfCat = [
-        "Sportowo",
-        "Karaoke",
-        "Impreza domowa",
-        "Klub",
-        "Urodziny",
-        "Góry",
-        "Randka",
-        "Pub",
-        "Wycieczka",
-    ];
+    const { t } = useTranslation("global");
+    const { csrf } = useAuth();
+    const { data: categories, isLoading, isError } = useAPICategories({ csrf });
+    const [mapMarker, setMapMarker] = useState<MarkerProps | null>(null);
 
     const {
         register,
         control,
         formState: { errors },
         handleSubmit,
+        setValue,
+        watch,
     } = useForm<FormTypes>({
         defaultValues: {
-            name: "test",
-            surname: "test",
             title: "",
             desc: "",
             category: "",
-            peopleLimit: 2,
-            photo: "",
+            peopleLimit: 1,
+            image: "",
             map: "",
-            email: "test@test.pl",
             date: undefined,
         },
     });
 
-    const onSubmit: SubmitHandler<FormTypes> = async (data) => {
-        await mutateAsync(data);
-    };
-    return (
-        <Layout
-            small
-            header={{
-                title: t2("creator.heading"),
-            }}
-        >
-            <S.Form onSubmit={handleSubmit(onSubmit)}>
-                <FileInput id="photo" register={register} control={control} />
-                <S.NewLine>{t1("info")}</S.NewLine>
-                <S.Content>
-                    <TextInput
-                        id="title"
-                        register={register}
-                        control={control}
-                        isError={!!errors.title}
-                        required
-                        placeholder
-                        dark
-                    />
-                    <Select
-                        id="category"
-                        register={register}
-                        control={control}
-                        values={listOfCat}
-                        isError={!!errors.category}
-                        required
-                        fullWidth
-                        dark
-                    ></Select>
-                    <TextareaInput
-                        id="desc"
-                        placeholder
-                        register={register}
-                        control={control}
-                        isError={!!errors.desc}
-                        // fullWidth
-                        rows={4}
-                        cols={50}
-                        dark
-                    />
-                    <DateInput
-                        id="date"
-                        isError={!!errors.date}
-                        register={register}
-                        control={control}
-                        required
-                    ></DateInput>
-                    <Slider
-                        id="peopleLimit"
-                        register={register}
-                        control={control}
-                        fullWidth
-                        min={2}
-                        max={99}
-                    ></Slider>
-                </S.Content>
-                <S.NewLine>{t1("map")}</S.NewLine>
-                <S.Content>
-                    <TextInput
-                        id="map"
-                        register={register}
-                        control={control}
-                        isError={!!errors.map}
-                        required
-                        placeholder
-                        dark
-                    />
-                    <Button variant="gradient" type="submit" fullWidth>
-                        {t1("confirm")}
-                    </Button>
-                </S.Content>
-            </S.Form>
-            {isError && <div>isError</div>}
+    const locationFromWatch = watch("map");
 
-            {isLoading && <div>isLoading</div>}
-        </Layout>
+    const {
+        data: mapData,
+        isError: mapError,
+        isLoading: mapLoading,
+        refetch,
+    } = useAPIForwardGeocoding({
+        location: locationFromWatch,
+    });
+
+    const {
+        mutateAsync,
+        isLoading: isLoadingAddPost,
+        isError: isErrorAddPost,
+    } = useAPIEventCreator();
+
+    const handleGeolocation = () => {
+        if (locationFromWatch) {
+            refetch();
+        }
+    };
+
+    const onSubmit: SubmitHandler<FormTypes> = async (data) => {
+        await mutateAsync({ csrf, ...data, map: mapMarker });
+        console.log(data, "SUBMIT event");
+    };
+
+    useEffect(() => {
+        if (mapData?.data) {
+            const newCoordinates = {
+                latitude: mapData?.data[0].latitude,
+                longitude: mapData?.data[0].longitude,
+            };
+
+            setMapMarker(newCoordinates);
+        }
+    }, [mapData]);
+
+    return (
+        <S.Form onSubmit={handleSubmit(onSubmit)}>
+            <FileInput id="image" register={register} control={control} />
+            <S.NewLine>{t("info")}</S.NewLine>
+            <S.Content>
+                <TextInput
+                    id="title"
+                    register={register}
+                    control={control}
+                    isError={!!errors.title}
+                    required
+                    placeholder
+                    dark
+                />
+                <SelectInput
+                    id="category"
+                    register={register}
+                    control={control}
+                    setValue={setValue}
+                    items={
+                        categories?.results.map((category: string) => ({
+                            text: t(`categories.${category}`),
+                            id: category,
+                        })) ?? []
+                    }
+                    loading={isLoading}
+                    titleItem={watch("category") ?? []}
+                    isError={!!errors.category}
+                    required
+                    fullWidth
+                    dark
+                />
+                <TextareaInput
+                    id="desc"
+                    placeholder
+                    register={register}
+                    control={control}
+                    isError={!!errors.desc}
+                    rows={4}
+                    cols={50}
+                    dark
+                />
+                <DateInput
+                    id="date"
+                    isError={!!errors.date}
+                    register={register}
+                    control={control}
+                    required
+                    dark
+                />
+                <Slider
+                    id="peopleLimit"
+                    register={register}
+                    control={control}
+                    fullWidth
+                    min={2}
+                    max={99}
+                />
+
+                <TextInput
+                    id="city"
+                    register={register}
+                    control={control}
+                    isError={!!errors.city}
+                    required
+                    dark
+                />
+
+                <TextInput
+                    id="street"
+                    register={register}
+                    control={control}
+                    isError={!!errors.street}
+                    dark
+                />
+            </S.Content>
+            <S.NewLine>{t("map")}</S.NewLine>
+            <S.Content>
+                <TextInput
+                    id="map"
+                    register={register}
+                    control={control}
+                    isError={!!errors.map}
+                    placeholder
+                    dark
+                />
+
+                <Button fullWidth variant="gray" onClick={handleGeolocation}>
+                    {t("map_info")}
+                </Button>
+
+                <S.MapContainer>
+                    <Map marker={mapMarker ?? null} />
+                </S.MapContainer>
+
+                <Button variant="gradient" type="submit" fullWidth>
+                    {t("confirm")}
+                </Button>
+            </S.Content>
+        </S.Form>
+        // {isError && <div>isError</div>}
+
+        // {isLoading && <div>isLoading</div>}
+        // </Layout>
     );
 };

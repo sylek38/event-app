@@ -87,5 +87,3 @@ export const GenerateDescription = ({
         </S.Error>
     );
 };
-
-// {t(`text_error_${id}`)}
