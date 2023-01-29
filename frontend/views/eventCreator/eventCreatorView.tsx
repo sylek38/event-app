@@ -121,7 +121,7 @@ export const EventCreatorView = () => {
                     control={control}
                     setValue={setValue}
                     items={
-                        categories?.map((category: string) => ({
+                        categories?.results.map((category: string) => ({
                             text: t(`categories.${category}`),
                             id: category,
                         })) ?? []

@@ -49,5 +49,9 @@
         "education": "Education",
         "art": "Art",
         "scary": "Scary"
+    },
+    "results_not_found": {
+        "title": "Oops!",
+        "desc": "We don't have such events..."
     }
 }

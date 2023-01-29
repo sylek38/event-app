@@ -21,7 +21,7 @@ export interface Params extends Args {
     category: string;
     date: Date;
     peopleLimit: number;
-    image: string;
+    image: File;
 
     city: string;
     street: string;
@@ -55,7 +55,7 @@ export const useAPIEventCreator = () => {
                 category,
                 peopleLimit,
                 date,
-                image: image ?? "",
+                image: image ?? null,
                 location: {
                     city,
                     street: street ?? "",

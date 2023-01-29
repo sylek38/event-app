@@ -9,12 +9,10 @@ interface Args {
 }
 
 interface WallSearchParams extends Args {
-    category: string;
-    city: string;
-    date: string;
-    time: string;
-    peopleLimit: string;
-    page: string;
+    category?: string;
+    city?: string;
+    date?: string;
+    page?: string;
     signal?: AbortSignal;
 }
 
@@ -22,9 +20,7 @@ export const fetchAPIPosts = async ({
     category,
     city,
     date,
-    time,
-    peopleLimit,
-    page,
+    page = "1",
     csrf,
     signal,
 }: WallSearchParams) => {
@@ -36,7 +32,7 @@ export const fetchAPIPosts = async ({
         //     query: { page, category, city, date, peopleLimit },
         // });
         const data = await fetch(
-            `${BACKEND_URL}${FetchUrl.POSTS}?category=${category}&city=${city}&date=${date}&peopleLimit=${peopleLimit}&page=${page}`,
+            `${BACKEND_URL}${FetchUrl.POSTS}/infinite?category=${category}&city=${city}&date=${date}&page=${page}`,
             {
                 credentials: "include",
                 headers: {
@@ -64,18 +60,16 @@ export const fetchAPIPosts = async ({
 
 export const useAPIPosts = ({ csrf }: Args) => {
     const { query } = useRouter();
-    const { category, city, date, time, peopleLimit } = query;
+    const { category, city, date, time } = query;
 
     return useInfiniteQuery<PostsResponse>(
         // ...useInfiniteQuery<Promise<any>>(
-        ["posts.infinite", [category, city, date, time, peopleLimit]],
+        ["posts.infinite", [category, city, date]],
         async ({ pageParam, signal }) =>
             fetchAPIPosts({
                 category: (category as string) ?? "",
                 city: (city as string) ?? "",
                 date: (date as string) ?? "",
-                time: (time as string) ?? "",
-                peopleLimit: (peopleLimit as string) ?? "",
                 page: pageParam,
                 csrf,
                 signal,

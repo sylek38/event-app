@@ -21,6 +21,7 @@ interface Props<T> {
     textError?: boolean;
     required?: boolean;
     dark?: boolean;
+    withoutDesc?: boolean;
 }
 
 export function DateInput<T>({
@@ -34,6 +35,7 @@ export function DateInput<T>({
     textError,
     required,
     dark,
+    withoutDesc,
 }: Props<T>) {
     const { t } = useTranslation("inputs");
 
@@ -50,7 +52,7 @@ export function DateInput<T>({
     maxDate.setHours(today.getHours() + 1);
 
     return (
-        <S.Container>
+        <S.Container withoutDesc={withoutDesc}>
             {!hideLabel && (
                 <S.Label>
                     <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>
@@ -58,7 +60,7 @@ export function DateInput<T>({
             )}
 
             <S.DateInput
-                type="datetime-local"
+                type="date"
                 isError={isError}
                 dark={dark}
                 className="datepicker"
@@ -67,13 +69,15 @@ export function DateInput<T>({
                 ref={ref}
                 {...rest}
             />
-            <GenerateDescription
-                id={id}
-                keyPrefix={KEY_PREFIX}
-                customErrorPrefix={customErrorPrefix}
-                textError={textError}
-                error={isError}
-            />
+            {!withoutDesc && (
+                <GenerateDescription
+                    id={id}
+                    keyPrefix={KEY_PREFIX}
+                    customErrorPrefix={customErrorPrefix}
+                    textError={textError}
+                    error={isError}
+                />
+            )}
         </S.Container>
     );
 }

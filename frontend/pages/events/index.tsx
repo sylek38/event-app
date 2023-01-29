@@ -52,18 +52,19 @@ const Events = ({ csrf, wallFiltersSSR }: Props) => {
     } = useAPIPosts({ csrf });
 
     console.log(data, "WALL CONTEXT DATA");
+    // const postData = useMemo(() => {
+    //     return current = data?.pages.map((item) => item.results).flat() ?? [];
 
-    const postData = useMemo(() => {
-        const current = data?.pages.map((item) => item.results).flat() ?? [];
+    //     return [...new Map(current.map((item) => [item?.id, item])).values()];
+    // }, [data]);
 
-        return [...new Map(current.map((item) => [item?.id, item])).values()];
-    }, [data]);
+    // postData.map(item => item.
 
     return (
         <WallContext.Provider
             value={{
                 wallFiltersSSR,
-                posts: postData,
+                posts: data,
                 isError: isError || isCategoriesError,
                 isLoading: isLoading || isCategoriesLoading,
                 isFetchingNextPage,
@@ -84,6 +85,12 @@ export const getServerSideProps: GetServerSideProps = async ({
 }) => {
     const queryClient = new QueryClient();
     const csrf = req.cookies["csrf"] ?? "";
+    const searchParams = {
+        page: query.page as string | undefined,
+        city: query.city as string | undefined,
+        category: query.category as string | undefined,
+        date: query.category as string | undefined,
+    };
 
     await queryClient.prefetchQuery(
         ["authorization"],
@@ -97,26 +104,26 @@ export const getServerSideProps: GetServerSideProps = async ({
 
     await queryClient.prefetchQuery(["posts.infinite"], async () =>
         fetchAPIPosts({
-            page: (query.page as string) ?? 1,
-            city: (query.city as string) ?? "",
-            category: (query.category as string) ?? "",
-            date: (query.date as string) ?? "",
-            time: (query.time as string) ?? "",
-            peopleLimit: (query.peopleLimit as string) ?? "",
+            ...searchParams,
             csrf,
         })
     );
+
+    // page: (query.page as string) ?? "1",
+    // city: (query.city as string) ?? "",
+    // category: (query.category as string) ?? "",
+    // date: (query.date as string) ?? "",
+    // time: (query.time as string) ?? "",
+    // peopleLimit: (query.peopleLimit as string) ?? "",
 
     return {
         props: {
             dehydratedState: dehydrate(queryClient),
             csrf,
             wallFiltersSSR: {
-                city: query.city ?? "",
-                category: query.category ?? "",
-                date: query.date ?? "",
-                time: query.time ?? "",
-                peopleLimit: query.peopleLimit ?? "",
+                city: (query.city as string | undefined) ?? null,
+                category: (query.category as string | undefined) ?? null,
+                date: (query.date as string | undefined) ?? null,
             },
         },
     };

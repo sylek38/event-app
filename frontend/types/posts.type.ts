@@ -9,11 +9,10 @@ export interface UserPostType {
 export interface LocationType {
     city: string;
     street: string;
-    // TODO: Uncomment later
-    // map: {
-    //     lat: string;
-    //     long: string;
-    // }
+    map: {
+        latitude: string;
+        longitude: string;
+    };
 }
 
 export interface PostsType {
@@ -24,6 +23,7 @@ export interface PostsType {
     category: string;
     peopleLimit: number;
     imageUrl: string;
+    avatarUrl: string;
     location: LocationType;
     date: string;
 }
@@ -32,6 +32,4 @@ export interface WallFiltersType {
     city: string;
     category: string;
     date: string;
-    time: string;
-    peopleLimit: string;
 }

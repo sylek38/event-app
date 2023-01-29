@@ -1,9 +1,10 @@
 import { format } from "date-fns";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
-import { useEffect } from "react";
+import { FormEvent, SyntheticEvent, useEffect, useRef } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useAPICategories } from "../../../api/categories/useAPICategories";
+import { Button } from "../../../components/button/Button";
 import { Filters } from "../../../components/filters/Filters";
 import { DateInput } from "../../../components/inputs/date/DateInput";
 import { SelectInput } from "../../../components/inputs/option/SelectInput";
@@ -13,11 +14,10 @@ import { useAuth } from "../../../context/UserContext";
 import { useWallContext } from "../../../context/WallContext";
 import * as S from "./PostFilters.style";
 
-interface FormTypes {
+export interface FormTypes {
     city?: string;
     category?: string;
     date?: string;
-    peopleLimit?: number;
 }
 
 export const PostFilters = () => {
@@ -26,6 +26,8 @@ export const PostFilters = () => {
     const { csrf } = useAuth();
     const { data: categories, isLoading, isError } = useAPICategories({ csrf });
     const { wallFiltersSSR } = useWallContext();
+    const formRef = useRef<HTMLFormElement>(null);
+
     const {
         register,
         control,
@@ -34,25 +36,22 @@ export const PostFilters = () => {
         watch,
         setValue,
         trigger,
+        reset,
     } = useForm<FormTypes>({
         defaultValues: {
             city: wallFiltersSSR?.city ?? "",
             category: wallFiltersSSR?.category ?? "",
             date: wallFiltersSSR?.date
-                ? `${wallFiltersSSR.date}T${wallFiltersSSR.time}`
-                : undefined,
-            peopleLimit: wallFiltersSSR?.peopleLimit
-                ? +wallFiltersSSR.peopleLimit
-                : undefined,
+                ? `${wallFiltersSSR.date}`
+                : new Date().toISOString().substring(0, 10),
         },
-        mode: "onTouched",
+        mode: "onChange",
     });
 
     const onSubmit: SubmitHandler<FormTypes> = async ({
         city,
         category,
         date,
-        peopleLimit,
     }) => {
         console.log("POST FILTERS SUBMIT");
         let currentQuery = { ...query };
@@ -84,19 +83,10 @@ export const PostFilters = () => {
             delete currentQuery.time;
         }
 
-        if (peopleLimit) {
-            currentQuery = {
-                ...currentQuery,
-                peopleLimit: peopleLimit.toString(),
-            };
-        } else {
-            delete currentQuery.peopleLimit;
-        }
-
         push(
             {
                 pathname,
-                query: { ...currentQuery, page: 1 },
+                query: { ...currentQuery },
             },
             undefined,
             { shallow: true }
@@ -104,8 +94,8 @@ export const PostFilters = () => {
     };
 
     return (
-        <Filters>
-            <S.Form onSubmit={handleSubmit(onSubmit)}>
+        <Filters reset={reset}>
+            <S.Form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                 <TextInput
                     id="city"
                     register={register}
@@ -113,6 +103,7 @@ export const PostFilters = () => {
                     isError={!!errors.city}
                     hideLabel
                     placeholder
+                    withoutDesc
                 />
 
                 <SelectInput
@@ -120,7 +111,7 @@ export const PostFilters = () => {
                     register={register}
                     control={control}
                     items={
-                        categories?.map((category: string) => ({
+                        categories?.results?.map((category: string) => ({
                             text: t(`categories.${category}`),
                             id: category,
                         })) ?? []
@@ -129,6 +120,7 @@ export const PostFilters = () => {
                     titleItem={watch("category") ?? ""}
                     isError={!!errors.category}
                     hideLabel
+                    withoutDesc
                 />
 
                 <DateInput
@@ -138,15 +130,9 @@ export const PostFilters = () => {
                     control={control}
                     required
                     hideLabel
+                    withoutDesc
                 />
-                <Slider
-                    id="peopleLimit"
-                    register={register}
-                    control={control}
-                    min={1}
-                    max={99}
-                    hideLabel
-                />
+                <Button type="submit">Search</Button>
             </S.Form>
         </Filters>
     );

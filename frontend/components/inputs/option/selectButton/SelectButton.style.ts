@@ -4,7 +4,6 @@ import styled, { css } from "styled-components";
 export const Wrapper = styled.button<{ dark?: boolean; isError?: boolean }>`
     display: block;
     width: 100%;
-    min-width: 12rem;
     border-radius: var(--radius);
     border: 1px solid var(--text-input-border);
     height: 2.5rem;

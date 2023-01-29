@@ -18,12 +18,15 @@ export const BackgroundContainer = styled.div`
     position: relative;
     border-bottom: 3px solid var(--color-white);
     height: ${pxToRem(200)};
+    width: 100%;
 
-    > img {
+    > img,
+    svg {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: ${pxToRem(24)} ${pxToRem(24)} 0 0;
+        background-color: var(--color-white);
     }
 `;
 
@@ -39,9 +42,13 @@ export const Date = styled.div`
     align-items: center;
     background-color: var(--color-white);
     border-radius: 1rem;
+    font-size: ${pxToRem(14)};
+    box-shadow: 6px 6px 30px rgba(0, 0, 0, 0.25);
 
-    > span:nth-child(2) {
-        font-weight: 600;
+    > span {
+        &:nth-child(2) {
+            font-weight: 600;
+        }
     }
 `;
 
@@ -53,10 +60,15 @@ export const Avatar = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 50%;
+    width: ${pxToRem(60)};
+    height: ${pxToRem(60)};
+    background-color: var(--color-white);
 
-    > img {
-        width: ${pxToRem(60)};
-        height: ${pxToRem(60)};
+    img,
+    svg {
+        width: 100%;
+        height: 100%;
         object-fit: cover;
         border-radius: 50%;
         border: 3px solid var(--color-white);

@@ -52,6 +52,7 @@ interface Props<T> {
     loading?: boolean;
     items: SelectItemProps[];
     dark?: boolean;
+    withoutDesc?: boolean;
 }
 
 export function SelectInput<T>({
@@ -68,6 +69,7 @@ export function SelectInput<T>({
     isError,
     disabled,
     titleItem,
+    withoutDesc,
 }: Props<T>) {
     const { t } = useTranslation("inputs");
     const ref = useRef<HTMLButtonElement>(null);
@@ -108,7 +110,7 @@ export function SelectInput<T>({
 
     return (
         <FloatingNode id={nodeId}>
-            <S.Container fullWidth={fullWidth}>
+            <S.Container fullWidth={fullWidth} withoutDesc={withoutDesc}>
                 {!hideLabel && (
                     <S.Label>
                         <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>
@@ -153,6 +155,14 @@ export function SelectInput<T>({
                     </S.Option>
                 ))}
             </S.Select> */}
+
+                {!withoutDesc && (
+                    <GenerateDescription
+                        id={id}
+                        keyPrefix={KEY_PREFIX}
+                        error={isError}
+                    />
+                )}
                 <GenerateDescription
                     id={id}
                     keyPrefix={KEY_PREFIX}

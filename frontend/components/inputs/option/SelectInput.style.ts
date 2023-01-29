@@ -4,16 +4,16 @@ import styled, { css } from "styled-components";
 export const Container = styled.div<{
     fullWidth?: boolean;
     open?: boolean;
+    withoutDesc?: boolean;
 }>`
     display: flex;
     flex-direction: column;
-    min-width: 12.5rem;
     width: 100%;
-    height: ${pxToRem(72)};
+    height: ${({ withoutDesc }) => (withoutDesc ? "2.5rem" : `${pxToRem(72)}`)};
+
     position: relative;
     color: var(--secondary-text);
     border-radius: 1.25rem;
-    /* background-color: var(--secondary-background); */
     z-index: 1;
 
     ${({ fullWidth }) =>

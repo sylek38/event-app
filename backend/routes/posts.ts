@@ -304,23 +304,23 @@ interface PostsQuery extends Request {
 		city: string;
 		category: string;
 		date: string;
-		peopleLimit: string;
 	};
 }
 
 // ZACZYNAMY OD PAGE 1, NIE 0
 
 router.get("/infinite", async (req: PostsQuery, res: Response) => {
-	const { city, category, date, peopleLimit } = req.query;
+	const { city, category, date } = req.query;
 	const { page } = req.query || 1;
 
 	let processedCategory = category || "all";
 	const processedCity = city || "all";
+	// const processedDate = date ? date.slice(0, 10) : "2022-12-01";
+	// console.log(processedDate, "processed date");
+	// const processedPeopleLimit = peopleLimit ? +peopleLimit : 99;
 	const processedDate = date || 0;
-	const processedPeopleLimit = +peopleLimit || 99;
 	const nextPage = +page + 1;
 	const prevPage = +page - 1;
-	console.log(category, "CATEGORY");
 	// try {
 	// array z wszystkimi kategoriami lub z jedną
 	const categoriesToFind =
@@ -344,12 +344,15 @@ router.get("/infinite", async (req: PostsQuery, res: Response) => {
 	// // lte = less than or equal to
 	// // gte = greater than or equal to
 
-	const filteredPosts = await Post.find({
+	const filter = {
 		category: { $in: categoriesToFind },
 		"location.city": { $in: cityToFind },
-		peopleLimit: { $lte: +processedPeopleLimit },
-		date: { $gte: +processedDate },
-	})
+		// date: { $gte: processedDate },
+	};
+
+	const filteredPosts = await Post.find(filter);
+
+	const filteredPaginatedPosts = await Post.find(filter)
 		.sort({ date: "desc" })
 		.skip((+page - 1) * LIMIT)
 		.limit(LIMIT);
@@ -372,8 +375,9 @@ router.get("/infinite", async (req: PostsQuery, res: Response) => {
 	const totalPages = Math.ceil(filteredPosts.length / LIMIT);
 	const hasNextPage = nextPage <= totalPages;
 	const hasPrevPage = prevPage >= 1;
+	console.log(totalPages, hasNextPage, hasPrevPage, "PAGES");
 
-	const dataResponse = filteredPosts.map(post => ({
+	const dataResponse = filteredPaginatedPosts.map(post => ({
 		id: post._id,
 		user: {
 			id: post.user.userId,
@@ -384,17 +388,16 @@ router.get("/infinite", async (req: PostsQuery, res: Response) => {
 		desc: post.desc,
 		category: post.category,
 		peopleLimit: post.peopleLimit,
-		imageUrl: `http://${req.get("host")}/public/images/${
-			post.imageFilename
-		}`,
+		imageUrl: post.imageFilename
+			? `http://${req.get("host")}/public/images/${post.imageFilename}`
+			: "",
 		location: {
 			city: post.location.city,
 			street: post.location.street,
-			// TODO: Uncomment when map api is ready
-			// map: {
-			// 	lat: post.location.lat,
-			// 	long: post.location.long,
-			// }
+			map: {
+				lat: post.location.map.latitude,
+				long: post.location.map.longidute,
+			},
 		},
 		date: post.date,
 	}));
@@ -404,8 +407,6 @@ router.get("/infinite", async (req: PostsQuery, res: Response) => {
 		next: hasNextPage,
 		previous: hasPrevPage,
 	};
-
-	console.log(response, "RESPONSE");
 
 	return res.status(200).json(response);
 	// } catch (error) {

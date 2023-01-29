@@ -3,7 +3,8 @@ import { pxToRem } from "../../utils/pxToRem";
 
 const gradientStyle = css`
     color: var(--color-white);
-    border: ${pxToRem(3)} solid transparent;
+    /* border: ${pxToRem(3)} solid transparent; */
+    border: none;
     border-radius: ${pxToRem(25)};
 `;
 
@@ -13,6 +14,7 @@ const generateStyle = (
     fullWidth: boolean
 ) => css`
     /* TODO: figure out how to make transition for background */
+    transition: 0.25s;
 
     ${variant === "gradientHover" &&
     css`
@@ -30,6 +32,10 @@ const generateStyle = (
     css`
         background: linear-gradient(45deg, #16ada8, #24eca4) padding-box;
         ${gradientStyle}
+
+        &:hover {
+            filter: drop-shadow(0 0 3px #24eca4);
+        }
     `}
     
     ${variant === "glowing" &&

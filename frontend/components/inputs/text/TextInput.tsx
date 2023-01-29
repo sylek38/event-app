@@ -33,6 +33,7 @@ interface Props<T> {
     dark?: boolean;
     customErrorPrefix?: string;
     textError?: boolean;
+    withoutDesc?: boolean;
 }
 
 export function TextInput<T>({
@@ -53,6 +54,7 @@ export function TextInput<T>({
     dark,
     customErrorPrefix,
     textError,
+    withoutDesc,
 }: Props<T>) {
     const { t } = useTranslation("inputs");
 
@@ -72,7 +74,7 @@ export function TextInput<T>({
     const length = valueFromWatch ? `${valueFromWatch}`.length : 0;
 
     return (
-        <S.Container>
+        <S.Container withoutDesc={withoutDesc}>
             {!hideLabel && (
                 <S.Label>
                     <span>{t(`${KEY_PREFIX}.${id}_label`)}</span>
@@ -90,16 +92,17 @@ export function TextInput<T>({
                 ref={ref}
                 {...rest}
             />
-
-            <GenerateDescription
-                id={id}
-                keyPrefix={KEY_PREFIX}
-                customErrorPrefix={customErrorPrefix}
-                textError={textError}
-                length={length}
-                maxLength={maxLength}
-                error={isError}
-            />
+            {!withoutDesc && (
+                <GenerateDescription
+                    id={id}
+                    keyPrefix={KEY_PREFIX}
+                    customErrorPrefix={customErrorPrefix}
+                    textError={textError}
+                    length={length}
+                    maxLength={maxLength}
+                    error={isError}
+                />
+            )}
         </S.Container>
     );
 }

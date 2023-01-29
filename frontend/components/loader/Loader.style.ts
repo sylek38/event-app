@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Ellipsis = styled.div`
+    padding: 2rem 0;
     display: inline-block;
     position: relative;
     width: 80px;
@@ -12,7 +13,7 @@ export const Ellipsis = styled.div`
         width: 13px;
         height: 13px;
         border-radius: 50%;
-        background: var(--color-white);
+        background: var(--color-gray);
         animation-timing-function: cubic-bezier(0, 1, 1, 0);
     }
 

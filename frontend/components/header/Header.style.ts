@@ -18,8 +18,7 @@ export const Header = styled.header`
         justify-content: space-between;
 
         /* This is just temporary: */
-
-        > div:nth-child(2) {
+        > svg {
             height: 50px;
             width: 50px;
             background-color: var(--secondary-background);

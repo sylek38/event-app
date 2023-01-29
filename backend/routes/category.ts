@@ -27,7 +27,7 @@ router.get("/", async (req: Request, res: Response) => {
 	try {
 		const categories = await Category.find();
 		const categoryNames = categories.map(category => category.name);
-		res.status(200).json(categoryNames);
+		res.status(200).json({ results: categoryNames });
 	} catch (error) {
 		res.status(500).json({
 			error: "Something went wrong while getting categories",

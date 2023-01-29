@@ -9,8 +9,8 @@ export const CategoryTag = styled.div`
     padding: ${pxToRem(6)} 1rem;
     font-size: ${pxToRem(12)};
     font-weight: 600;
-    background-color: var(--color-white);
-    color: var(--color-black);
+    background-color: var(--primary-green-color--light);
+    color: var(--primary-background);
     border-radius: ${pxToRem(12)};
 
     > svg {

@@ -1,12 +1,12 @@
-import { pxToRem } from "../../../utils/pxToRem";
+import { pxToRem } from "./../../../utils/pxToRem";
 import styled, { css } from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div<{ withoutDesc?: boolean }>`
     display: flex;
     flex-direction: column;
-    min-width: 12.5rem;
+    /* min-width: 12.5rem; */
     width: 100%;
-    height: ${pxToRem(72)};
+    height: ${({ withoutDesc }) => (withoutDesc ? "2.5rem" : `${pxToRem(72)}`)};
 `;
 
 export const Label = styled.label`
@@ -24,7 +24,7 @@ export const TextInput = styled.input<{
     all: unset;
     padding: ${pxToRem(10)} ${pxToRem(20)};
     font-size: ${pxToRem(14)};
-    color: var(--color-white);
+    color: var(--secondary-text);
     background-color: ${({ dark }) =>
         dark ? "var(--primary-background)" : "var(--secondary-background)"};
     border-radius: ${pxToRem(50)};

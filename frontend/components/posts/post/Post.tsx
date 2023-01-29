@@ -13,7 +13,12 @@ import Link from "next/link";
 import { Routes } from "../../../routes/Routes";
 import { LocationType } from "../../../types/posts.type";
 import { forwardRef } from "react";
-import { format } from "date-fns";
+import { format, parse, parseISO } from "date-fns";
+import Image from "next/image";
+import { DefaultPostBackground } from "../../../assets/defaultPostBackground";
+import { DefaultAvatar } from "../../../assets/DefaultAvatar";
+import { useRouter } from "next/router";
+import { enUS, pl } from "date-fns/locale";
 
 interface Props {
     id: string;
@@ -26,12 +31,11 @@ interface Props {
     desc: string;
     category: string;
     peopleLimit: number;
-    photo: string;
     location: LocationType;
-    // map: string;
-    // avatar: string;
+    imageUrl: string;
+    avatarUrl: string;
     width?: number;
-    date: number;
+    date: string;
 }
 
 export const Post = forwardRef<HTMLAnchorElement, Props>(
@@ -43,16 +47,21 @@ export const Post = forwardRef<HTMLAnchorElement, Props>(
             desc,
             category,
             peopleLimit,
-            photo,
             location,
+            imageUrl,
+            avatarUrl,
             width,
             date,
         },
         ref
     ) => {
         const { t } = useTranslation("global");
-        const dateFormat = new Date(date);
-        // const processedDate = format(dateFormat, "dd-MM-yyyy");
+        const { locale } = useRouter();
+        const parsedISODate = parseISO(date);
+        const processedDate = format(parsedISODate, "MM/dd/yyyy", {
+            locale: locale === "pl" ? pl : enUS,
+        });
+        console.log(processedDate, "processed Date");
         return (
             <Link
                 ref={ref}
@@ -64,7 +73,15 @@ export const Post = forwardRef<HTMLAnchorElement, Props>(
             >
                 <S.Post>
                     <S.BackgroundContainer>
-                        <img src={photo} alt="" />
+                        {imageUrl ? (
+                            <Image
+                                src={imageUrl}
+                                alt={`background photo of ${title}`}
+                            />
+                        ) : (
+                            <DefaultPostBackground />
+                        )}
+
                         <S.Date>
                             <span> {new Date(date).getDate()}</span>
                             <span>
@@ -75,9 +92,13 @@ export const Post = forwardRef<HTMLAnchorElement, Props>(
                         </S.Date>
                     </S.BackgroundContainer>
                     <S.Content>
-                        {/* TODO: Avatar component with various sizes */}
-                        {/* W celach eksperymentalnych avatar ma na razie zdjęcie z wybranego tła */}
-                        <S.Avatar>{<img src={photo} />}</S.Avatar>
+                        <S.Avatar>
+                            {avatarUrl ? (
+                                <Image src={avatarUrl} width={60} height={60} />
+                            ) : (
+                                <DefaultAvatar />
+                            )}
+                        </S.Avatar>
                         <span>
                             {user?.name} {user?.surname}
                         </span>
@@ -92,7 +113,7 @@ export const Post = forwardRef<HTMLAnchorElement, Props>(
                             </S.DetailsItem>
                             <S.DetailsItem>
                                 <FontAwesomeIcon icon={faCalendarDays} />
-                                {/* <span>{processedDate}</span> */}
+                                <span>{processedDate}</span>
                             </S.DetailsItem>
                             <S.DetailsItem>
                                 <FontAwesomeIcon icon={faUser} />
