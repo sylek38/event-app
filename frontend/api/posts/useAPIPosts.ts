@@ -20,7 +20,7 @@ export const fetchAPIPosts = async ({
     category,
     city,
     date,
-    page = "1",
+    page,
     csrf,
     signal,
 }: WallSearchParams) => {
@@ -60,27 +60,29 @@ export const fetchAPIPosts = async ({
 
 export const useAPIPosts = ({ csrf }: Args) => {
     const { query } = useRouter();
-    const { category, city, date, time } = query;
+    const { category, city, date } = query;
 
-    return useInfiniteQuery<PostsResponse>(
-        // ...useInfiniteQuery<Promise<any>>(
-        ["posts.infinite", [category, city, date]],
-        async ({ pageParam, signal }) =>
-            fetchAPIPosts({
-                category: (category as string) ?? "",
-                city: (city as string) ?? "",
-                date: (date as string) ?? "",
-                page: pageParam,
-                csrf,
-                signal,
-            }),
+    return {
+        ...useInfiniteQuery<PostsResponse>(
+            // ...useInfiniteQuery<Promise<any>>(
+            ["posts.infinite", [category, city, date]],
+            async ({ pageParam = 1, signal }) =>
+                fetchAPIPosts({
+                    category: (category as string) ?? "",
+                    city: (city as string) ?? "",
+                    date: (date as string) ?? "",
+                    page: pageParam,
+                    csrf,
+                    signal,
+                }),
 
-        {
-            getNextPageParam: (lastPage, page) => {
-                if (lastPage.next) {
-                    return page.length + 1;
-                }
-            },
-        }
-    );
+            {
+                getNextPageParam: (lastPage, page) => {
+                    if (lastPage.next) {
+                        return page.length + 1;
+                    }
+                },
+            }
+        ),
+    };
 };

@@ -7,10 +7,10 @@ export const DefaultPostBackground = () => (
     >
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#FCFDFF"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -163,10 +163,10 @@ C 1669.57 962.03 1672.81 957.13 1671.00 950.00 C 1669.19 942.87 1676.73 938.02 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#122F36"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -179,10 +179,10 @@ C 1148.16 161.21 1152.59 156.01 1154.00 149.00 C 1155.41 141.99 1153.42 131.79 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F4A391"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -198,10 +198,10 @@ C 1130.34 171.91 1135.20 170.46 1138.00 173.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#173A5D"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -224,10 +224,10 @@ C 732.79 267.13 735.45 244.95 723.25 231.75 C 711.05 218.56 699.08 205.86 699.33
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F2A291"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -243,10 +243,10 @@ C 668.89 191.08 672.77 190.89 675.00 193.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#FDF8F7"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -257,10 +257,10 @@ C 1125.22 176.30 1135.95 178.52 1138.00 173.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#EE7D64"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -273,10 +273,10 @@ C 1116.07 173.05 1115.57 175.05 1116.00 176.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F7A391"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -289,10 +289,10 @@ C 1117.50 180.07 1115.03 185.74 1116.00 190.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#FEF9F7"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -303,10 +303,10 @@ C 665.10 195.22 672.28 196.59 675.00 193.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F47359"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -326,10 +326,10 @@ C 1110.13 187.31 1095.40 192.58 1090.00 194.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#DD523B"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -342,10 +342,10 @@ C 1082.21 196.05 1079.52 200.20 1076.93 207.93 C 1074.33 215.65 1074.50 223.65 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#DC523C"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -358,10 +358,10 @@ C 1156.91 243.97 1152.41 243.61 1149.00 245.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F2785E"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -374,10 +374,10 @@ C 663.00 200.00 663.00 200.50 663.00 201.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F4A392"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -391,10 +391,10 @@ C 663.00 204.89 662.76 208.37 662.00 212.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#9BBFF9"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -419,10 +419,10 @@ C 657.93 210.63 653.04 210.52 649.00 212.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#496D99"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -434,10 +434,10 @@ C 675.00 211.00 675.00 211.50 675.00 212.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#6F9ACF"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -450,10 +450,10 @@ C 648.82 212.07 645.17 213.67 646.00 213.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#000000"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -475,10 +475,10 @@ C 1182.27 270.45 1179.70 279.47 1175.32 277.66 C 1170.95 275.86 1173.64 267.52 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F4A593"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -491,10 +491,10 @@ C 631.11 258.38 630.01 268.17 627.99 273.99 C 625.98 279.81 628.71 291.48 625.00
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F5A593"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -513,10 +513,10 @@ C 691.44 256.79 691.77 258.16 692.00 260.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F6A391"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -533,10 +533,10 @@ C 1079.02 270.34 1074.94 288.70 1086.00 300.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#203E61"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -548,10 +548,10 @@ C 691.63 275.78 693.38 276.29 695.00 276.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#EBEBEB"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -561,10 +561,10 @@ C 1173.64 267.52 1170.95 275.86 1175.32 277.66 C 1179.70 279.47 1182.27 270.45 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F3F7FC"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -578,10 +578,10 @@ C 688.79 282.12 690.80 290.29 686.00 294.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#256655"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -597,10 +597,10 @@ C 635.69 293.47 630.27 294.49 625.00 296.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#327F6B"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -617,10 +617,10 @@ C 681.65 297.37 670.01 300.40 665.22 302.22 C 660.43 304.05 646.88 310.24 643.00
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#E97259"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -632,10 +632,10 @@ C 1123.44 295.57 1112.89 297.48 1110.00 298.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F5CB7E"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -650,10 +650,10 @@ C 1067.73 304.69 1077.97 332.91 1080.00 344.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F5CB7E"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -671,10 +671,10 @@ C 1195.49 301.21 1194.46 301.79 1193.00 302.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#E09740"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -688,10 +688,10 @@ C 1102.91 304.10 1106.41 313.72 1109.07 319.93 C 1111.73 326.13 1112.99 337.94 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#51BFA6"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -734,10 +734,10 @@ C 831.53 332.62 792.47 340.47 754.00 339.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#184656"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -775,10 +775,10 @@ C 920.01 370.48 915.32 403.14 918.00 429.00 C 920.68 454.86 909.61 485.03 926.00
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#256655"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -794,10 +794,10 @@ C 1505.38 389.91 1490.25 405.36 1477.25 420.25 C 1464.25 435.14 1447.57 445.33 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F2A391"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -810,10 +810,10 @@ C 531.86 414.03 530.19 428.11 527.00 432.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F4A18E"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -826,10 +826,10 @@ C 1119.51 426.32 1108.81 427.14 1106.00 427.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#15395C"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -841,10 +841,10 @@ C 540.06 430.25 531.40 430.74 527.00 432.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F4A290"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -857,10 +857,10 @@ C 1168.87 431.38 1168.74 432.85 1168.00 435.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#D7513B"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -871,10 +871,10 @@ C 1103.17 435.38 1094.02 443.96 1101.32 447.68 C 1108.62 451.40 1114.40 448.60 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F3A391"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -887,10 +887,10 @@ C 588.40 433.99 581.87 435.26 578.00 434.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#D7513B"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -902,10 +902,10 @@ C 1173.52 448.52 1186.07 447.52 1194.00 449.00 C 1201.93 450.48 1219.13 448.14 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#153A5D"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -916,10 +916,10 @@ C 590.01 453.39 580.92 454.88 577.00 457.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#256655"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -933,10 +933,10 @@ C 1568.72 462.01 1565.51 467.97 1562.77 473.77 C 1560.03 479.57 1556.59 485.15 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#96D8CA"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -977,10 +977,10 @@ C 375.20 704.06 389.47 707.41 394.00 714.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F4F8FC"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1001,10 +1001,10 @@ C 864.53 778.58 827.51 783.59 800.00 783.00 C 772.49 782.41 740.99 795.78 722.00
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#3D8F7D"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1047,10 +1047,10 @@ C 347.13 842.57 340.44 835.32 333.25 828.75 C 326.06 822.19 320.04 814.80 312.75
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#327F6B"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1066,10 +1066,10 @@ C 1407.03 564.22 1402.25 576.70 1395.77 591.77 C 1389.29 606.84 1385.77 624.69 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#3C8F7D"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1086,10 +1086,10 @@ C 1414.08 550.67 1415.57 566.75 1416.00 572.00 C 1416.43 577.25 1415.84 589.21 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#94B3AE"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1100,10 +1100,10 @@ C 1583.79 579.52 1584.51 593.73 1584.00 607.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F3F8FC"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1116,10 +1116,10 @@ C 411.22 666.01 415.31 661.48 417.23 657.23 C 419.15 652.98 423.81 650.97 426.30
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F5F8FD"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1130,10 +1130,10 @@ C 728.53 673.79 694.24 640.56 655.00 647.00 C 615.77 653.45 596.59 697.03 614.00
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F5F8FD"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1146,10 +1146,10 @@ C 442.03 711.67 441.95 709.33 442.00 707.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F47258"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1189,10 +1189,10 @@ C 720.45 703.24 707.08 696.35 698.70 690.31 C 690.31 684.26 671.49 681.79 661.07
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#9CC7BF"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1203,10 +1203,10 @@ C 1446.11 718.22 1446.00 729.01 1446.00 739.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#EDF4F8"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1218,10 +1218,10 @@ C 404.27 715.59 398.71 714.01 395.00 715.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#ECF4F8"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1233,10 +1233,10 @@ C 440.25 739.21 436.82 741.02 433.00 742.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#3D8F7D"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1254,10 +1254,10 @@ C 423.67 778.65 430.81 816.26 444.00 852.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F4F7FC"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1275,10 +1275,10 @@ C 1370.96 743.49 1369.93 744.28 1369.00 745.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F5F7FC"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1290,10 +1290,10 @@ C 608.02 796.32 579.55 795.41 553.00 796.00 C 526.45 796.59 491.34 800.00 464.00
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#3D8F7D"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1308,10 +1308,10 @@ C 1628.19 785.36 1612.40 787.87 1606.68 789.68 C 1600.96 791.49 1593.13 795.06 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F4F8FD"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1323,10 +1323,10 @@ C 1203.63 790.00 1176.92 818.74 1190.70 845.31 C 1204.47 871.87 1200.38 899.55 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#337F6B"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1339,10 +1339,10 @@ C 1226.99 792.17 1227.38 802.39 1225.33 806.33 C 1223.28 810.27 1223.62 822.01 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#3C8F7D"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1355,10 +1355,10 @@ C 1258.99 792.19 1259.22 802.41 1258.00 807.00 C 1256.78 811.59 1258.63 822.17 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F3F7FC"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1371,10 +1371,10 @@ C 1294.10 795.52 1291.00 801.99 1290.00 807.00 C 1289.00 812.01 1287.82 821.31 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#266755"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1389,10 +1389,10 @@ C 1322.49 795.18 1321.41 803.06 1323.02 807.98 C 1324.64 812.89 1323.88 820.86 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#337F6B"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1405,10 +1405,10 @@ C 1617.05 800.44 1604.15 806.84 1595.75 815.75 C 1587.34 824.65 1576.66 832.13 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#87ABA4"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1419,10 +1419,10 @@ C 1345.49 803.28 1345.48 809.65 1346.00 815.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#58C1A8"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1450,10 +1450,10 @@ C 196.60 873.60 188.36 875.78 182.07 876.07 C 175.79 876.37 173.34 882.92 168.00
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F7CC7E"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1512,10 +1512,10 @@ C 1092.52 827.24 1081.82 830.16 1077.00 829.00 C 1072.19 827.84 1063.92 827.73 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#15385C"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1541,10 +1541,10 @@ C 416.63 833.13 395.21 848.92 387.92 867.92 C 380.64 886.93 366.85 895.93 351.25
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#17395D"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1557,10 +1557,10 @@ C 933.56 839.60 929.43 852.39 922.25 858.25 C 915.06 864.11 912.63 876.30 917.25
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F4A391"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1576,10 +1576,10 @@ C 427.77 878.97 431.48 880.47 434.00 880.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F5A391"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1600,10 +1600,10 @@ C 954.51 883.07 957.51 881.75 960.00 880.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#183A5D"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1620,10 +1620,10 @@ C 1414.10 867.77 1406.81 868.53 1402.00 872.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F6A490"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1641,10 +1641,10 @@ C 983.25 897.88 991.64 906.55 985.00 914.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#FDF9F8"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1655,10 +1655,10 @@ C 428.01 883.33 434.03 884.46 434.00 880.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#FDF6F4"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1669,10 +1669,10 @@ C 956.55 888.92 961.06 883.72 960.00 880.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F2F7FC"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1685,10 +1685,10 @@ C 205.94 887.35 198.66 889.17 195.00 894.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F1F5F9"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1702,10 +1702,10 @@ C 1394.04 887.39 1389.06 892.23 1388.00 897.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#EE755C"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1718,10 +1718,10 @@ C 417.17 886.43 417.06 887.51 417.00 888.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F5A391"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1744,10 +1744,10 @@ C 1414.59 912.67 1416.06 907.71 1420.00 908.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F5A391"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1761,10 +1761,10 @@ C 416.28 894.08 412.50 900.23 412.00 906.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#FD8C64"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1776,10 +1776,10 @@ C 944.59 901.26 954.63 898.63 958.00 902.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#2C6957"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1792,10 +1792,10 @@ C 1397.60 907.02 1390.23 915.35 1387.00 924.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#ECF4F8"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1807,10 +1807,10 @@ C 234.29 904.51 233.10 906.86 232.00 909.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F5CB7E"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1827,10 +1827,10 @@ C 387.21 965.56 388.02 964.08 389.00 964.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#3D8C7B"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1842,10 +1842,10 @@ C 447.65 909.15 444.71 913.47 445.00 916.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#FDFAF9"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1856,10 +1856,10 @@ C 1413.63 918.13 1421.66 912.89 1420.00 908.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#365388"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1875,10 +1875,10 @@ C 1483.66 910.16 1474.52 906.34 1466.00 909.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#EE735B"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1895,10 +1895,10 @@ C 1462.80 910.00 1453.32 914.43 1452.00 918.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#878485"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1911,10 +1911,10 @@ C 959.03 910.12 958.50 910.87 958.00 911.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F1775C"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1926,10 +1926,10 @@ C 1433.93 914.29 1430.17 920.10 1426.00 922.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#355388"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1949,10 +1949,10 @@ C 951.43 911.00 944.45 910.95 938.00 912.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#466EB5"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1967,10 +1967,10 @@ C 960.67 914.09 958.96 928.73 964.08 935.92 C 969.19 943.12 973.89 951.05 980.75
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F2F6FA"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -1983,10 +1983,10 @@ C 1403.35 924.28 1390.31 933.76 1386.00 945.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F47359"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2004,10 +2004,10 @@ C 1471.84 972.76 1470.00 971.74 1468.00 971.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#173A5D"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2020,10 +2020,10 @@ C 913.63 929.98 913.65 945.41 917.68 954.32 C 921.71 963.23 922.00 975.13 930.00
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#3A8976"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2040,10 +2040,10 @@ C 1424.44 922.71 1420.75 923.27 1419.00 923.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F6A390"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2065,10 +2065,10 @@ C 450.38 927.26 448.70 930.16 448.00 932.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#365388"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2083,10 +2083,10 @@ C 1421.10 945.90 1414.62 953.39 1410.00 962.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#439281"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2097,10 +2097,10 @@ C 1674.39 959.49 1679.42 976.53 1687.97 973.97 C 1696.53 971.41 1682.42 956.05 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#419180"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2123,10 +2123,10 @@ C 1607.01 1029.92 1606.88 1017.43 1593.02 1010.98 C 1579.17 1004.52 1568.60 1020
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F6CB7E"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2141,10 +2141,10 @@ C 442.20 956.94 435.47 964.89 427.75 968.75 C 420.03 972.61 412.66 982.15 404.00
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F7A391"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2156,10 +2156,10 @@ C 1016.66 958.96 1006.17 965.60 1002.00 968.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F1F5F9"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2172,10 +2172,10 @@ C 1406.68 964.19 1398.45 964.10 1395.75 967.75 C 1393.05 971.39 1385.74 972.02 1
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F7A391"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2197,10 +2197,10 @@ C 1447.48 964.43 1445.03 966.06 1444.00 968.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#58BDA4"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2215,10 +2215,10 @@ C 1430.67 982.34 1428.94 980.91 1427.00 980.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F7A392"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2231,10 +2231,10 @@ C 1404.87 977.29 1392.79 983.65 1384.00 987.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#EDA191"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2246,10 +2246,10 @@ C 932.87 980.44 932.27 980.99 931.00 981.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F6CB7E"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2270,10 +2270,10 @@ C 924.03 999.28 895.27 999.07 882.00 993.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#52BFA6"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2290,10 +2290,10 @@ C 1383.17 1047.90 1382.40 1045.81 1381.00 1051.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F5F8FD"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2304,10 +2304,10 @@ C 804.20 995.12 789.40 992.50 780.25 999.25 C 771.09 1005.99 765.71 1009.44 759.
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#466EB6"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2329,10 +2329,10 @@ C 1553.10 1020.84 1544.23 1027.20 1535.08 1030.08 C 1525.92 1032.95 1517.44 1041
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#466EB5"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2352,10 +2352,10 @@ C 394.57 1032.85 387.14 1040.21 386.00 1054.00 C 384.86 1067.78 386.00 1083.98 3
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#355389"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2374,10 +2374,10 @@ C 449.65 1021.63 446.73 1022.75 446.00 1023.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F4F8FD"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2390,10 +2390,10 @@ C 1498.88 1039.69 1489.04 1049.67 1485.98 1058.98 C 1482.91 1068.28 1476.94 1080
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#419280"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2413,10 +2413,10 @@ C 1745.72 1059.07 1754.68 1046.42 1745.07 1042.93 C 1735.47 1039.44 1742.10 1057
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#14385C"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2431,10 +2431,10 @@ C 1010.81 1047.79 1000.17 1048.46 995.01 1050.01 C 989.84 1051.56 978.41 1052.42
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#194656"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2448,10 +2448,10 @@ C 944.04 1057.69 941.66 1068.21 943.00 1078.00 C 944.34 1087.79 942.71 1098.22 9
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#96D7C9"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2464,10 +2464,10 @@ C 1587.94 1050.58 1577.46 1058.86 1566.00 1063.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#95D7C9"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2482,10 +2482,10 @@ C 1598.58 1051.53 1595.84 1068.36 1590.77 1076.77 C 1585.71 1085.18 1580.30 1096
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#97D8CA"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2518,10 +2518,10 @@ C 273.75 1142.10 270.59 1144.43 269.00 1148.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#355489"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2543,10 +2543,10 @@ C 1559.54 1086.32 1551.87 1102.77 1548.78 1118.78 C 1545.69 1134.78 1534.24 1151
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#93D5C7"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2557,10 +2557,10 @@ C 1564.00 1099.44 1563.00 1113.23 1563.00 1127.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F5F8FD"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2574,10 +2574,10 @@ C 923.98 1251.53 925.99 1234.33 926.00 1218.00 C 926.01 1201.67 928.59 1184.84 9
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#3D8D7E"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2589,10 +2589,10 @@ C 446.90 1110.38 445.54 1123.20 444.00 1135.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#95D7C9"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2610,10 +2610,10 @@ C 1689.84 1116.37 1701.98 1113.39 1708.23 1125.77 C 1714.48 1138.15 1697.66 1139
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#95D7C9"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2625,10 +2625,10 @@ C 1684.53 1104.59 1676.43 1107.16 1672.02 1108.02 C 1667.62 1108.89 1659.75 1115
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#95D7C9"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2648,10 +2648,10 @@ C 1445.76 1163.46 1449.99 1157.24 1453.70 1150.70 C 1457.40 1144.15 1460.78 1136
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#94D5C8"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2663,10 +2663,10 @@ C 415.71 1129.33 409.48 1143.15 404.78 1155.78 C 400.08 1168.41 395.08 1181.52 3
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#CBCB90"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2678,10 +2678,10 @@ C 1376.65 1137.66 1376.00 1142.59 1376.00 1147.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#95D6C8"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2694,10 +2694,10 @@ C 440.72 1160.20 440.06 1185.71 437.00 1211.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F4CA7D"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2713,10 +2713,10 @@ C 978.48 1155.11 968.90 1175.58 966.98 1194.98 C 965.05 1214.37 956.66 1233.26 9
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#52BFA6"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2729,10 +2729,10 @@ C 260.10 1167.91 282.14 1183.55 297.25 1192.75 C 312.37 1201.94 332.97 1211.32 3
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#90D2C6"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2744,10 +2744,10 @@ C 1535.88 1182.79 1532.59 1199.52 1531.00 1215.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#3F917F"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2769,10 +2769,10 @@ C 1603.30 1233.23 1605.28 1225.90 1606.00 1220.00 C 1606.72 1214.10 1602.13 1204
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#459382"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2784,10 +2784,10 @@ C 1732.45 1194.42 1735.22 1190.71 1736.67 1187.67 C 1738.12 1184.63 1735.78 1177
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#409181"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2800,10 +2800,10 @@ C 1539.55 1196.32 1533.49 1206.44 1531.00 1215.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#51BEA5"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2822,10 +2822,10 @@ C 384.37 1207.83 378.45 1224.09 371.00 1236.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#94D6C8"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2841,10 +2841,10 @@ C 1541.40 1200.92 1535.73 1208.46 1534.93 1215.93 C 1534.13 1223.39 1529.50 1231
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#8FBEB6"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2857,10 +2857,10 @@ C 1719.68 1197.31 1710.07 1200.12 1708.00 1201.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#92D4C5"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2872,10 +2872,10 @@ C 1693.72 1207.06 1697.98 1208.69 1702.00 1211.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#95D7C9"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2890,10 +2890,10 @@ C 1648.94 1227.07 1661.97 1226.17 1663.67 1239.33 C 1665.37 1252.49 1649.56 1249
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#51BEA5"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2908,10 +2908,10 @@ C 435.89 1220.22 433.03 1232.82 433.00 1242.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#4B9888"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2923,10 +2923,10 @@ C 351.63 1217.97 356.86 1221.33 358.00 1223.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#55BFA7"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2939,10 +2939,10 @@ C 347.62 1228.14 332.26 1227.29 327.93 1239.93 C 323.60 1252.57 335.03 1262.42 3
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F4A391"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2955,10 +2955,10 @@ C 357.85 1243.01 352.09 1247.82 348.00 1256.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F3A391"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2971,10 +2971,10 @@ C 431.94 1242.81 423.59 1243.08 422.00 1243.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#41927F"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -2987,10 +2987,10 @@ C 1550.91 1252.29 1541.37 1262.59 1538.00 1266.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#97D3C2"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3003,10 +3003,10 @@ C 1551.33 1253.44 1549.30 1259.89 1546.00 1263.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F6A592"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3021,10 +3021,10 @@ C 1556.74 1254.04 1555.47 1258.62 1552.00 1261.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F6A28F"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3037,10 +3037,10 @@ C 938.66 1256.58 937.24 1259.21 936.00 1263.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#EE9F8E"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3053,10 +3053,10 @@ C 996.56 1255.97 998.58 1257.22 998.00 1261.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#C5959B"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3068,10 +3068,10 @@ C 1510.00 1253.00 1509.93 1253.51 1510.00 1254.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F6A491"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3084,10 +3084,10 @@ C 1510.43 1256.86 1509.48 1260.30 1507.00 1262.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F3CA80"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3102,10 +3102,10 @@ C 1519.29 1266.14 1512.31 1262.16 1507.00 1262.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F2755B"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3120,10 +3120,10 @@ C 346.54 1258.92 345.93 1261.65 346.00 1265.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F17459"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3136,10 +3136,10 @@ C 420.23 1263.64 416.36 1270.60 421.00 1273.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#DC523B"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3153,10 +3153,10 @@ C 997.49 1264.36 995.11 1267.05 995.00 1271.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#F4CA7E"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3171,10 +3171,10 @@ C 1550.23 1262.21 1547.91 1262.30 1546.00 1263.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#DC513B"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3189,10 +3189,10 @@ C 954.67 1261.95 949.40 1264.65 946.07 1263.93 C 942.75 1263.20 938.86 1259.96 9
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#E4ECF0"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3204,10 +3204,10 @@ C 362.80 1270.24 360.21 1272.91 360.00 1273.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#EEEDEC"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3220,10 +3220,10 @@ C 982.33 1271.30 982.49 1272.77 983.00 1273.00 Z"
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#184555"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3251,10 +3251,10 @@ C 339.44 1273.00 329.52 1273.01 320.00 1273.00 C 310.48 1272.99 301.49 1273.04 2
         </g>
         <g
             fill="None"
-            fill-opacity="0.0"
+            fillOpacity="0.0"
             stroke="#79939C"
-            stroke-opacity="1.00"
-            stroke-width="0.3"
+            strokeOpacity="1.00"
+            strokeWidth="0.3"
         >
             <path
                 d="
@@ -3263,7 +3263,7 @@ C 1776.07 1285.89 1761.69 1280.24 1750.00 1282.00 C 1738.31 1283.76 1725.01 1281
 C 146.74 1287.80 164.31 1280.99 177.00 1283.00 C 189.69 1285.01 204.73 1282.10 218.00 1283.00 C 231.27 1283.90 245.43 1282.60 259.00 1283.00 C 272.57 1283.40 287.31 1282.82 301.00 1283.00 C 314.69 1283.18 328.28 1282.92 342.00 1283.00 C 355.72 1283.08 369.23 1282.96 383.00 1283.00 C 396.77 1283.04 411.22 1282.98 425.00 1283.00 C 438.78 1283.02 452.24 1282.99 466.00 1283.00 C 479.76 1283.01 493.21 1283.00 507.00 1283.00 C 520.79 1283.00 535.21 1283.00 549.00 1283.00 C 562.79 1283.00 576.24 1283.00 590.00 1283.00 C 603.76 1283.00 617.21 1283.00 631.00 1283.00 C 644.79 1283.00 659.21 1283.00 673.00 1283.00 C 686.79 1283.00 700.24 1283.00 714.00 1283.00 C 727.76 1283.00 741.21 1283.00 755.00 1283.00 C 768.79 1283.00 783.21 1283.00 797.00 1283.00 C 810.79 1283.00 824.24 1283.00 838.00 1283.00 C 851.76 1283.00 865.21 1283.00 879.00 1283.00 C 892.79 1283.00 907.21 1283.00 921.00 1283.00 C 934.79 1283.00 948.24 1283.00 962.00 1283.00 C 975.76 1283.00 989.21 1283.00 1003.00 1283.00 C 1016.79 1283.00 1031.21 1283.00 1045.00 1283.00 C 1058.79 1283.00 1072.24 1283.00 1086.00 1283.00 C 1099.76 1283.00 1113.21 1283.00 1127.00 1283.00 C 1140.79 1283.00 1155.21 1283.00 1169.00 1283.00 C 1182.79 1283.00 1196.24 1283.00 1210.00 1283.00 C 1223.76 1283.00 1237.21 1283.00 1251.00 1283.00 C 1264.79 1283.00 1279.21 1283.00 1293.00 1283.00 C 1306.79 1283.00 1320.24 1283.00 1334.00 1283.00 C 1347.76 1283.00 1361.21 1283.00 1375.00 1283.00 C 1388.79 1283.00 1403.21 1283.00 1417.00 1283.00 C 1430.79 1283.00 1444.24 1283.01 1458.00 1283.00 C 1471.76 1282.99 1485.22 1283.02 1499.00 1283.00 C 1512.78 1282.98 1527.23 1283.04 1541.00 1283.00 C 1554.77 1282.96 1568.29 1283.08 1582.00 1283.00 C 1595.71 1282.92 1609.32 1283.18 1623.00 1283.00 C 1636.68 1282.82 1651.44 1283.38 1665.00 1283.00 C 1678.56 1282.62 1692.77 1283.87 1706.00 1283.00 C 1719.23 1282.13 1734.40 1284.93 1747.00 1283.00 C 1759.60 1281.07 1776.34 1287.75 1787.00 1282.00 Z"
             />
         </g>
-        <g fill="#FCFDFF" fill-opacity="1.00" stroke="None">
+        <g fill="#FCFDFF" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 0.00 1363.00 
@@ -3413,7 +3413,7 @@ C 1682.42 956.05 1696.53 971.41 1687.97 973.97 C 1679.42 976.53 1674.39 959.49 1
 C 1669.57 962.03 1672.81 957.13 1671.00 950.00 C 1669.19 942.87 1676.73 938.02 1679.92 945.08 C 1683.11 952.14 1678.10 955.58 1675.00 961.00 Z"
             />
         </g>
-        <g fill="#122F36" fill-opacity="1.00" stroke="None">
+        <g fill="#122F36" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1116.00 176.00 
@@ -3423,7 +3423,7 @@ C 1104.34 157.95 1114.16 152.86 1120.00 153.00 C 1125.84 153.14 1126.49 143.88 1
 C 1148.16 161.21 1152.59 156.01 1154.00 149.00 C 1155.41 141.99 1153.42 131.79 1146.22 129.78 C 1139.03 127.77 1133.40 122.56 1126.00 124.00 C 1118.61 125.45 1113.81 128.15 1108.93 133.93 C 1104.04 139.70 1108.64 151.69 1107.22 158.78 C 1105.80 165.87 1114.09 170.83 1116.00 176.00 Z"
             />
         </g>
-        <g fill="#F4A391" fill-opacity="1.00" stroke="None">
+        <g fill="#F4A391" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1116.00 172.00 
@@ -3436,7 +3436,7 @@ C 1135.95 178.52 1125.22 176.30 1127.00 170.00
 C 1130.34 171.91 1135.20 170.46 1138.00 173.00 Z"
             />
         </g>
-        <g fill="#173A5D" fill-opacity="1.00" stroke="None">
+        <g fill="#173A5D" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 646.00 213.00 
@@ -3456,7 +3456,7 @@ C 711.12 254.42 709.88 259.88 710.78 262.22 C 711.68 264.57 711.52 269.39 712.00
 C 732.79 267.13 735.45 244.95 723.25 231.75 C 711.05 218.56 699.08 205.86 699.33 187.67 C 699.58 169.48 681.64 151.05 664.25 163.25 C 646.85 175.45 651.70 196.13 646.00 213.00 Z"
             />
         </g>
-        <g fill="#F2A291" fill-opacity="1.00" stroke="None">
+        <g fill="#F2A291" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 663.00 200.00 
@@ -3469,7 +3469,7 @@ C 672.28 196.59 665.10 195.22 666.00 190.00
 C 668.89 191.08 672.77 190.89 675.00 193.00 Z"
             />
         </g>
-        <g fill="#FDF8F7" fill-opacity="1.00" stroke="None">
+        <g fill="#FDF8F7" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1138.00 173.00 
@@ -3477,7 +3477,7 @@ C 1135.20 170.46 1130.34 171.91 1127.00 170.00
 C 1125.22 176.30 1135.95 178.52 1138.00 173.00 Z"
             />
         </g>
-        <g fill="#EE7D64" fill-opacity="1.00" stroke="None">
+        <g fill="#EE7D64" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1116.00 176.00 
@@ -3487,7 +3487,7 @@ C 1127.11 184.83 1118.44 176.87 1116.00 172.00
 C 1116.07 173.05 1115.57 175.05 1116.00 176.00 Z"
             />
         </g>
-        <g fill="#F7A391" fill-opacity="1.00" stroke="None">
+        <g fill="#F7A391" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1116.00 190.00 
@@ -3497,7 +3497,7 @@ C 1128.27 186.55 1118.11 180.61 1116.00 176.00
 C 1117.50 180.07 1115.03 185.74 1116.00 190.00 Z"
             />
         </g>
-        <g fill="#FEF9F7" fill-opacity="1.00" stroke="None">
+        <g fill="#FEF9F7" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 675.00 193.00 
@@ -3505,7 +3505,7 @@ C 672.77 190.89 668.89 191.08 666.00 190.00
 C 665.10 195.22 672.28 196.59 675.00 193.00 Z"
             />
         </g>
-        <g fill="#F47359" fill-opacity="1.00" stroke="None">
+        <g fill="#F47359" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1090.00 194.00 
@@ -3522,7 +3522,7 @@ C 1134.18 194.40 1134.39 212.06 1128.25 205.75 C 1122.11 199.45 1117.74 197.61 1
 C 1110.13 187.31 1095.40 192.58 1090.00 194.00 Z"
             />
         </g>
-        <g fill="#DD523B" fill-opacity="1.00" stroke="None">
+        <g fill="#DD523B" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1076.00 256.00 
@@ -3532,7 +3532,7 @@ C 1100.39 248.94 1101.82 237.66 1100.98 231.02 C 1100.13 224.38 1099.52 215.34 1
 C 1082.21 196.05 1079.52 200.20 1076.93 207.93 C 1074.33 215.65 1074.50 223.65 1074.00 232.00 C 1073.50 240.35 1074.71 249.87 1076.00 256.00 Z"
             />
         </g>
-        <g fill="#DC523C" fill-opacity="1.00" stroke="None">
+        <g fill="#DC523C" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1149.00 245.00 
@@ -3542,7 +3542,7 @@ C 1161.71 210.33 1160.77 227.30 1161.00 244.00
 C 1156.91 243.97 1152.41 243.61 1149.00 245.00 Z"
             />
         </g>
-        <g fill="#F2785E" fill-opacity="1.00" stroke="None">
+        <g fill="#F2785E" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 663.00 201.00 
@@ -3552,7 +3552,7 @@ C 675.86 201.93 665.80 200.41 663.00 200.00
 C 663.00 200.00 663.00 200.50 663.00 201.00 Z"
             />
         </g>
-        <g fill="#F4A392" fill-opacity="1.00" stroke="None">
+        <g fill="#F4A392" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 662.00 212.00 
@@ -3563,7 +3563,7 @@ C 672.16 206.90 665.73 203.39 663.00 201.00
 C 663.00 204.89 662.76 208.37 662.00 212.00 Z"
             />
         </g>
-        <g fill="#9BBFF9" fill-opacity="1.00" stroke="None">
+        <g fill="#9BBFF9" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 649.00 212.00 
@@ -3585,7 +3585,7 @@ C 675.00 219.13 674.78 235.79 664.01 235.99 C 653.24 236.19 660.87 217.36 662.00
 C 657.93 210.63 653.04 210.52 649.00 212.00 Z"
             />
         </g>
-        <g fill="#496D99" fill-opacity="1.00" stroke="None">
+        <g fill="#496D99" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 675.00 212.00 
@@ -3594,7 +3594,7 @@ C 685.02 211.62 679.76 210.57 675.00 211.00
 C 675.00 211.00 675.00 211.50 675.00 212.00 Z"
             />
         </g>
-        <g fill="#6F9ACF" fill-opacity="1.00" stroke="None">
+        <g fill="#6F9ACF" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 646.00 213.00 
@@ -3604,7 +3604,7 @@ C 637.00 246.05 637.38 234.95 640.07 229.07 C 642.77 223.20 642.97 215.26 649.00
 C 648.82 212.07 645.17 213.67 646.00 213.00 Z"
             />
         </g>
-        <g fill="#000000" fill-opacity="1.00" stroke="None">
+        <g fill="#000000" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1132.00 281.00 
@@ -3623,7 +3623,7 @@ M 1178.00 269.00
 C 1182.27 270.45 1179.70 279.47 1175.32 277.66 C 1170.95 275.86 1173.64 267.52 1178.00 269.00 Z"
             />
         </g>
-        <g fill="#F4A593" fill-opacity="1.00" stroke="None">
+        <g fill="#F4A593" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 625.00 296.00 
@@ -3633,7 +3633,7 @@ C 635.41 252.79 632.21 253.12 631.00 252.00
 C 631.11 258.38 630.01 268.17 627.99 273.99 C 625.98 279.81 628.71 291.48 625.00 296.00 Z"
             />
         </g>
-        <g fill="#F5A593" fill-opacity="1.00" stroke="None">
+        <g fill="#F5A593" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 692.00 260.00 
@@ -3649,7 +3649,7 @@ C 702.90 253.38 697.39 255.82 691.00 255.00
 C 691.44 256.79 691.77 258.16 692.00 260.00 Z"
             />
         </g>
-        <g fill="#F6A391" fill-opacity="1.00" stroke="None">
+        <g fill="#F6A391" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1086.00 300.00 
@@ -3663,7 +3663,7 @@ C 1089.11 257.38 1079.34 257.76 1076.00 256.00
 C 1079.02 270.34 1074.94 288.70 1086.00 300.00 Z"
             />
         </g>
-        <g fill="#203E61" fill-opacity="1.00" stroke="None">
+        <g fill="#203E61" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 695.00 276.00 
@@ -3672,14 +3672,14 @@ C 689.71 264.42 691.95 271.09 690.00 276.00
 C 691.63 275.78 693.38 276.29 695.00 276.00 Z"
             />
         </g>
-        <g fill="#EBEBEB" fill-opacity="1.00" stroke="None">
+        <g fill="#EBEBEB" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1178.00 269.00 
 C 1173.64 267.52 1170.95 275.86 1175.32 277.66 C 1179.70 279.47 1182.27 270.45 1178.00 269.00 Z"
             />
         </g>
-        <g fill="#F3F7FC" fill-opacity="1.00" stroke="None">
+        <g fill="#F3F7FC" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 686.00 294.00 
@@ -3690,7 +3690,7 @@ C 693.33 277.00 691.67 277.00 690.00 277.00
 C 688.79 282.12 690.80 290.29 686.00 294.00 Z"
             />
         </g>
-        <g fill="#256655" fill-opacity="1.00" stroke="None">
+        <g fill="#256655" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 625.00 296.00 
@@ -3703,7 +3703,7 @@ C 643.30 301.48 641.63 296.42 641.00 292.00
 C 635.69 293.47 630.27 294.49 625.00 296.00 Z"
             />
         </g>
-        <g fill="#327F6B" fill-opacity="1.00" stroke="None">
+        <g fill="#327F6B" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 643.00 306.00 
@@ -3717,7 +3717,7 @@ C 688.73 337.62 689.84 333.66 693.01 328.01 C 696.17 322.36 693.41 314.61 692.99
 C 681.65 297.37 670.01 300.40 665.22 302.22 C 660.43 304.05 646.88 310.24 643.00 306.00 Z"
             />
         </g>
-        <g fill="#E97259" fill-opacity="1.00" stroke="None">
+        <g fill="#E97259" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1110.00 298.00 
@@ -3726,7 +3726,7 @@ C 1125.32 296.82 1125.43 295.01 1126.00 294.00
 C 1123.44 295.57 1112.89 297.48 1110.00 298.00 Z"
             />
         </g>
-        <g fill="#F5CB7E" fill-opacity="1.00" stroke="None">
+        <g fill="#F5CB7E" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1080.00 344.00 
@@ -3738,7 +3738,7 @@ C 1093.10 302.00 1088.38 302.92 1086.00 301.00
 C 1067.73 304.69 1077.97 332.91 1080.00 344.00 Z"
             />
         </g>
-        <g fill="#F5CB7E" fill-opacity="1.00" stroke="None">
+        <g fill="#F5CB7E" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1193.00 302.00 
@@ -3753,7 +3753,7 @@ C 1220.18 328.87 1223.64 297.24 1197.00 301.00
 C 1195.49 301.21 1194.46 301.79 1193.00 302.00 Z"
             />
         </g>
-        <g fill="#E09740" fill-opacity="1.00" stroke="None">
+        <g fill="#E09740" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1114.00 345.00 
@@ -3764,7 +3764,7 @@ C 1177.16 304.24 1159.97 301.13 1144.00 302.00 C 1128.03 302.87 1111.98 302.00 1
 C 1102.91 304.10 1106.41 313.72 1109.07 319.93 C 1111.73 326.13 1112.99 337.94 1114.00 345.00 Z"
             />
         </g>
-        <g fill="#51BFA6" fill-opacity="1.00" stroke="None">
+        <g fill="#51BFA6" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 754.00 339.00 
@@ -3804,7 +3804,7 @@ C 906.39 509.97 883.25 500.00 878.93 478.07 C 874.60 456.15 875.80 429.33 874.00
 C 831.53 332.62 792.47 340.47 754.00 339.00 Z"
             />
         </g>
-        <g fill="#184656" fill-opacity="1.00" stroke="None">
+        <g fill="#184656" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 926.00 506.00 
@@ -3839,7 +3839,7 @@ C 1026.00 344.00 972.00 344.00 918.00 344.00
 C 920.01 370.48 915.32 403.14 918.00 429.00 C 920.68 454.86 909.61 485.03 926.00 506.00 Z"
             />
         </g>
-        <g fill="#256655" fill-opacity="1.00" stroke="None">
+        <g fill="#256655" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1364.00 554.00 
@@ -3852,7 +3852,7 @@ C 1466.64 562.18 1468.84 519.66 1475.07 481.07 C 1481.31 442.49 1518.19 412.56 1
 C 1505.38 389.91 1490.25 405.36 1477.25 420.25 C 1464.25 435.14 1447.57 445.33 1434.25 459.25 C 1420.92 473.16 1405.80 487.69 1395.25 503.25 C 1384.71 518.81 1367.81 535.59 1364.00 554.00 Z"
             />
         </g>
-        <g fill="#F2A391" fill-opacity="1.00" stroke="None">
+        <g fill="#F2A391" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 527.00 432.00 
@@ -3862,7 +3862,7 @@ C 542.92 411.56 534.33 411.25 531.00 409.00
 C 531.86 414.03 530.19 428.11 527.00 432.00 Z"
             />
         </g>
-        <g fill="#F4A18E" fill-opacity="1.00" stroke="None">
+        <g fill="#F4A18E" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1106.00 427.00 
@@ -3872,7 +3872,7 @@ C 1124.37 429.94 1121.88 427.16 1122.00 425.00
 C 1119.51 426.32 1108.81 427.14 1106.00 427.00 Z"
             />
         </g>
-        <g fill="#15395C" fill-opacity="1.00" stroke="None">
+        <g fill="#15395C" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 527.00 432.00 
@@ -3881,7 +3881,7 @@ C 551.09 435.72 543.85 430.94 543.00 426.00
 C 540.06 430.25 531.40 430.74 527.00 432.00 Z"
             />
         </g>
-        <g fill="#F4A290" fill-opacity="1.00" stroke="None">
+        <g fill="#F4A290" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1168.00 435.00 
@@ -3891,7 +3891,7 @@ C 1179.89 430.06 1174.17 428.21 1169.00 429.00
 C 1168.87 431.38 1168.74 432.85 1168.00 435.00 Z"
             />
         </g>
-        <g fill="#D7513B" fill-opacity="1.00" stroke="None">
+        <g fill="#D7513B" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1125.00 432.00 
@@ -3899,7 +3899,7 @@ C 1118.81 435.60 1110.48 437.94 1105.00 432.00
 C 1103.17 435.38 1094.02 443.96 1101.32 447.68 C 1108.62 451.40 1114.40 448.60 1121.77 447.77 C 1129.14 446.94 1126.47 436.77 1125.00 432.00 Z"
             />
         </g>
-        <g fill="#F3A391" fill-opacity="1.00" stroke="None">
+        <g fill="#F3A391" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 578.00 434.00 
@@ -3909,7 +3909,7 @@ C 590.63 443.41 593.03 437.69 592.00 433.00
 C 588.40 433.99 581.87 435.26 578.00 434.00 Z"
             />
         </g>
-        <g fill="#D7513B" fill-opacity="1.00" stroke="None">
+        <g fill="#D7513B" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1189.00 436.00 
@@ -3918,7 +3918,7 @@ C 1164.57 438.11 1166.65 443.94 1165.00 448.00
 C 1173.52 448.52 1186.07 447.52 1194.00 449.00 C 1201.93 450.48 1219.13 448.14 1211.70 443.30 C 1204.26 438.47 1197.06 435.51 1189.00 436.00 Z"
             />
         </g>
-        <g fill="#153A5D" fill-opacity="1.00" stroke="None">
+        <g fill="#153A5D" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 577.00 457.00 
@@ -3926,7 +3926,7 @@ C 569.01 461.31 568.14 466.79 562.75 474.75 C 557.37 482.72 568.15 481.89 575.77
 C 590.01 453.39 580.92 454.88 577.00 457.00 Z"
             />
         </g>
-        <g fill="#256655" fill-opacity="1.00" stroke="None">
+        <g fill="#256655" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1420.00 868.00 
@@ -3937,7 +3937,7 @@ C 1586.81 529.13 1587.52 489.33 1571.00 456.00
 C 1568.72 462.01 1565.51 467.97 1562.77 473.77 C 1560.03 479.57 1556.59 485.15 1553.92 490.92 C 1551.26 496.70 1548.42 501.84 1545.31 507.31 C 1542.19 512.77 1539.22 518.56 1535.77 523.77 C 1532.32 528.98 1529.35 533.65 1525.75 538.75 C 1522.16 543.85 1518.17 548.49 1514.92 553.92 C 1511.68 559.36 1508.56 564.94 1505.77 570.77 C 1502.98 576.61 1500.24 581.71 1497.93 587.93 C 1495.61 594.15 1493.09 600.75 1491.32 607.32 C 1489.55 613.90 1487.51 620.15 1485.98 626.98 C 1484.44 633.81 1482.59 641.00 1480.99 647.99 C 1479.40 654.98 1478.58 662.92 1476.98 669.98 C 1475.37 677.03 1474.20 683.79 1472.99 690.99 C 1471.78 698.20 1470.93 706.70 1469.93 713.93 C 1468.93 721.16 1467.92 728.16 1465.99 734.99 C 1464.06 741.82 1462.50 748.71 1460.32 755.32 C 1458.14 761.93 1456.24 768.51 1453.93 774.93 C 1451.61 781.34 1450.33 787.64 1447.93 793.93 C 1445.53 800.21 1444.42 807.88 1441.98 813.98 C 1439.53 820.07 1439.74 828.81 1437.32 834.32 C 1434.90 839.83 1432.65 847.79 1428.92 851.92 C 1425.18 856.05 1424.44 865.81 1420.00 868.00 Z"
             />
         </g>
-        <g fill="#96D8CA" fill-opacity="1.00" stroke="None">
+        <g fill="#96D8CA" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 394.00 714.00 
@@ -3975,7 +3975,7 @@ C 400.99 697.51 388.06 689.44 376.00 693.00
 C 375.20 704.06 389.47 707.41 394.00 714.00 Z"
             />
         </g>
-        <g fill="#F4F8FC" fill-opacity="1.00" stroke="None">
+        <g fill="#F4F8FC" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 722.00 771.00 
@@ -3993,7 +3993,7 @@ C 1026.08 525.37 1030.01 555.67 1020.31 576.31 C 1010.60 596.94 985.76 613.89 96
 C 864.53 778.58 827.51 783.59 800.00 783.00 C 772.49 782.41 740.99 795.78 722.00 771.00 Z"
             />
         </g>
-        <g fill="#3D8F7D" fill-opacity="1.00" stroke="None">
+        <g fill="#3D8F7D" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 274.00 926.00 
@@ -4033,7 +4033,7 @@ C 304.03 768.53 326.59 810.59 355.00 848.00
 C 347.13 842.57 340.44 835.32 333.25 828.75 C 326.06 822.19 320.04 814.80 312.75 808.25 C 305.47 801.70 299.61 794.09 292.75 787.25 C 285.89 780.40 279.44 773.21 272.75 766.25 C 266.07 759.28 259.95 752.80 253.25 745.75 C 246.54 738.71 239.86 732.29 232.75 725.25 C 225.65 718.21 219.89 711.32 211.23 705.77 C 202.57 700.22 193.51 694.03 182.01 694.01 C 170.51 693.99 163.87 706.12 163.78 716.78 C 163.68 727.43 165.21 740.03 169.02 749.98 C 172.84 759.92 176.25 769.70 181.23 778.77 C 186.21 787.84 191.36 795.72 197.25 803.75 C 203.13 811.79 209.17 819.03 215.75 826.25 C 222.33 833.47 228.42 841.02 235.25 847.75 C 242.08 854.48 248.41 861.40 255.25 867.75 C 262.08 874.11 268.80 882.60 275.92 888.08 C 283.03 893.56 290.37 903.11 296.25 908.75 C 302.13 914.39 315.05 929.33 305.22 933.22 C 295.39 937.11 282.85 929.23 274.00 926.00 Z"
             />
         </g>
-        <g fill="#327F6B" fill-opacity="1.00" stroke="None">
+        <g fill="#327F6B" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1369.00 745.00 
@@ -4046,7 +4046,7 @@ C 1416.88 550.97 1415.83 550.41 1415.00 550.00
 C 1407.03 564.22 1402.25 576.70 1395.77 591.77 C 1389.29 606.84 1385.77 624.69 1386.00 642.00 C 1386.23 659.31 1387.55 683.27 1382.99 698.99 C 1378.43 714.72 1379.03 732.29 1369.00 745.00 Z"
             />
         </g>
-        <g fill="#3C8F7D" fill-opacity="1.00" stroke="None">
+        <g fill="#3C8F7D" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1390.00 861.00 
@@ -4060,7 +4060,7 @@ C 1436.47 586.55 1432.71 577.24 1428.75 571.25 C 1424.80 565.25 1421.99 556.68 1
 C 1414.08 550.67 1415.57 566.75 1416.00 572.00 C 1416.43 577.25 1415.84 589.21 1416.00 596.00 C 1416.16 602.79 1416.00 612.47 1416.00 620.00 C 1416.00 627.53 1416.14 637.22 1416.00 645.00 C 1415.86 652.78 1416.39 661.23 1416.00 669.00 C 1415.61 676.77 1416.90 685.39 1416.00 693.00 C 1415.10 700.61 1415.41 708.34 1415.00 716.00 C 1414.59 723.66 1414.54 732.46 1413.93 739.93 C 1413.31 747.39 1412.64 754.61 1411.78 761.78 C 1410.92 768.95 1408.80 774.90 1407.93 781.93 C 1407.05 788.95 1405.04 795.98 1403.78 802.78 C 1402.52 809.58 1401.00 816.09 1399.78 822.78 C 1398.56 829.47 1395.77 835.29 1394.99 841.99 C 1394.21 848.69 1391.45 854.88 1390.00 861.00 Z"
             />
         </g>
-        <g fill="#94B3AE" fill-opacity="1.00" stroke="None">
+        <g fill="#94B3AE" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1584.00 607.00 
@@ -4068,7 +4068,7 @@ C 1585.77 594.64 1585.00 580.18 1585.00 567.00
 C 1583.79 579.52 1584.51 593.73 1584.00 607.00 Z"
             />
         </g>
-        <g fill="#F3F8FC" fill-opacity="1.00" stroke="None">
+        <g fill="#F3F8FC" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 439.00 641.00 
@@ -4078,7 +4078,7 @@ C 409.83 643.55 407.06 658.58 411.00 671.00
 C 411.22 666.01 415.31 661.48 417.23 657.23 C 419.15 652.98 423.81 650.97 426.30 647.30 C 428.80 643.63 437.16 644.24 439.00 641.00 Z"
             />
         </g>
-        <g fill="#F5F8FD" fill-opacity="1.00" stroke="None">
+        <g fill="#F5F8FD" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 614.00 730.00 
@@ -4086,7 +4086,7 @@ C 613.04 718.89 623.44 708.68 630.25 700.25 C 637.06 691.82 650.65 686.36 661.07
 C 728.53 673.79 694.24 640.56 655.00 647.00 C 615.77 653.45 596.59 697.03 614.00 730.00 Z"
             />
         </g>
-        <g fill="#F5F8FD" fill-opacity="1.00" stroke="None">
+        <g fill="#F5F8FD" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 442.00 707.00 
@@ -4096,7 +4096,7 @@ C 410.23 688.73 412.32 701.03 413.01 708.99 C 413.70 716.95 414.71 730.36 421.25
 C 442.03 711.67 441.95 709.33 442.00 707.00 Z"
             />
         </g>
-        <g fill="#F47258" fill-opacity="1.00" stroke="None">
+        <g fill="#F47258" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 614.00 730.00 
@@ -4133,7 +4133,7 @@ C 707.16 751.63 718.72 734.21 722.00 714.00
 C 720.45 703.24 707.08 696.35 698.70 690.31 C 690.31 684.26 671.49 681.79 661.07 684.07 C 650.65 686.36 637.06 691.82 630.25 700.25 C 623.44 708.68 613.04 718.89 614.00 730.00 Z"
             />
         </g>
-        <g fill="#9CC7BF" fill-opacity="1.00" stroke="None">
+        <g fill="#9CC7BF" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1446.00 739.00 
@@ -4141,7 +4141,7 @@ C 1446.89 729.78 1447.00 718.99 1447.00 709.00
 C 1446.11 718.22 1446.00 729.01 1446.00 739.00 Z"
             />
         </g>
-        <g fill="#EDF4F8" fill-opacity="1.00" stroke="None">
+        <g fill="#EDF4F8" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 395.00 715.00 
@@ -4150,7 +4150,7 @@ C 411.21 719.72 407.82 717.14 409.00 715.00
 C 404.27 715.59 398.71 714.01 395.00 715.00 Z"
             />
         </g>
-        <g fill="#ECF4F8" fill-opacity="1.00" stroke="None">
+        <g fill="#ECF4F8" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 433.00 742.00 
@@ -4159,7 +4159,7 @@ C 444.75 751.44 444.63 744.69 444.00 738.00
 C 440.25 739.21 436.82 741.02 433.00 742.00 Z"
             />
         </g>
-        <g fill="#3D8F7D" fill-opacity="1.00" stroke="None">
+        <g fill="#3D8F7D" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 444.00 852.00 
@@ -4174,7 +4174,7 @@ C 427.81 744.71 422.01 742.11 417.00 741.00
 C 423.67 778.65 430.81 816.26 444.00 852.00 Z"
             />
         </g>
-        <g fill="#F4F7FC" fill-opacity="1.00" stroke="None">
+        <g fill="#F4F7FC" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1369.00 745.00 
@@ -4189,7 +4189,7 @@ C 1380.37 826.80 1385.22 810.37 1378.93 794.07 C 1372.63 777.78 1369.32 760.71 1
 C 1370.96 743.49 1369.93 744.28 1369.00 745.00 Z"
             />
         </g>
-        <g fill="#F5F7FC" fill-opacity="1.00" stroke="None">
+        <g fill="#F5F7FC" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 464.00 800.00 
@@ -4198,7 +4198,7 @@ C 482.12 828.00 491.95 828.02 501.00 828.00 C 510.05 827.98 519.12 828.06 528.00
 C 608.02 796.32 579.55 795.41 553.00 796.00 C 526.45 796.59 491.34 800.00 464.00 800.00 Z"
             />
         </g>
-        <g fill="#3D8F7D" fill-opacity="1.00" stroke="None">
+        <g fill="#3D8F7D" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1440.00 903.00 
@@ -4210,7 +4210,7 @@ C 1500.34 921.91 1512.41 906.56 1520.75 898.75 C 1529.10 890.94 1536.91 878.56 1
 C 1628.19 785.36 1612.40 787.87 1606.68 789.68 C 1600.96 791.49 1593.13 795.06 1588.08 799.08 C 1583.03 803.10 1577.27 806.75 1572.75 811.75 C 1568.23 816.75 1562.64 820.05 1558.25 825.25 C 1553.86 830.45 1548.59 834.29 1543.75 838.75 C 1538.91 843.22 1534.53 848.16 1529.75 852.75 C 1524.98 857.35 1520.53 862.07 1515.75 866.75 C 1510.97 871.43 1505.73 874.93 1501.25 880.25 C 1496.76 885.57 1490.24 888.87 1484.07 891.07 C 1477.90 893.28 1465.65 893.43 1460.00 895.00 C 1454.36 896.57 1442.44 897.19 1440.00 903.00 Z"
             />
         </g>
-        <g fill="#F4F8FD" fill-opacity="1.00" stroke="None">
+        <g fill="#F4F8FD" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1106.00 923.00 
@@ -4219,7 +4219,7 @@ C 1225.76 841.35 1226.38 829.99 1225.00 826.00 C 1223.62 822.01 1223.28 810.27 1
 C 1203.63 790.00 1176.92 818.74 1190.70 845.31 C 1204.47 871.87 1200.38 899.55 1180.23 919.23 C 1160.08 938.91 1127.29 938.83 1106.00 923.00 Z"
             />
         </g>
-        <g fill="#337F6B" fill-opacity="1.00" stroke="None">
+        <g fill="#337F6B" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1230.00 843.00 
@@ -4229,7 +4229,7 @@ C 1253.00 790.00 1242.00 790.00 1231.00 790.00
 C 1226.99 792.17 1227.38 802.39 1225.33 806.33 C 1223.28 810.27 1223.62 822.01 1225.00 826.00 C 1226.38 829.99 1225.76 841.35 1230.00 843.00 Z"
             />
         </g>
-        <g fill="#3C8F7D" fill-opacity="1.00" stroke="None">
+        <g fill="#3C8F7D" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1273.00 838.00 
@@ -4239,7 +4239,7 @@ C 1284.00 790.00 1274.00 790.00 1264.00 790.00
 C 1258.99 792.19 1259.22 802.41 1258.00 807.00 C 1256.78 811.59 1258.63 822.17 1262.75 825.25 C 1266.86 828.34 1268.07 836.18 1273.00 838.00 Z"
             />
         </g>
-        <g fill="#F3F7FC" fill-opacity="1.00" stroke="None">
+        <g fill="#F3F7FC" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1298.00 839.00 
@@ -4249,7 +4249,7 @@ C 1312.00 790.00 1303.00 790.00 1294.00 790.00
 C 1294.10 795.52 1291.00 801.99 1290.00 807.00 C 1289.00 812.01 1287.82 821.31 1290.70 825.31 C 1293.57 829.30 1293.75 836.80 1298.00 839.00 Z"
             />
         </g>
-        <g fill="#266755" fill-opacity="1.00" stroke="None">
+        <g fill="#266755" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1330.00 841.00 
@@ -4261,7 +4261,7 @@ C 1337.67 790.00 1329.33 790.00 1321.00 790.00
 C 1322.49 795.18 1321.41 803.06 1323.02 807.98 C 1324.64 812.89 1323.88 820.86 1326.07 824.93 C 1328.27 828.99 1326.83 838.71 1330.00 841.00 Z"
             />
         </g>
-        <g fill="#337F6B" fill-opacity="1.00" stroke="None">
+        <g fill="#337F6B" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1488.00 918.00 
@@ -4271,7 +4271,7 @@ C 1516.02 949.78 1524.11 941.22 1529.25 939.25 C 1534.39 937.29 1539.74 931.18 1
 C 1617.05 800.44 1604.15 806.84 1595.75 815.75 C 1587.34 824.65 1576.66 832.13 1568.25 841.25 C 1559.83 850.37 1551.60 859.95 1544.25 869.25 C 1536.91 878.56 1529.10 890.94 1520.75 898.75 C 1512.41 906.56 1500.34 921.91 1488.00 918.00 Z"
             />
         </g>
-        <g fill="#87ABA4" fill-opacity="1.00" stroke="None">
+        <g fill="#87ABA4" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1346.00 815.00 
@@ -4279,7 +4279,7 @@ C 1346.00 809.33 1346.00 803.67 1346.00 798.00
 C 1345.49 803.28 1345.48 809.65 1346.00 815.00 Z"
             />
         </g>
-        <g fill="#58C1A8" fill-opacity="1.00" stroke="None">
+        <g fill="#58C1A8" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 168.00 884.00 
@@ -4304,7 +4304,7 @@ C 147.74 860.87 153.76 864.75 160.93 867.07 C 168.09 869.40 179.78 870.97 186.92
 C 196.60 873.60 188.36 875.78 182.07 876.07 C 175.79 876.37 173.34 882.92 168.00 884.00 Z"
             />
         </g>
-        <g fill="#F7CC7E" fill-opacity="1.00" stroke="None">
+        <g fill="#F7CC7E" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 944.00 846.00 
@@ -4360,7 +4360,7 @@ C 1091.73 912.39 1087.23 900.07 1083.00 883.00 C 1078.77 865.93 1093.92 847.84 1
 C 1092.52 827.24 1081.82 830.16 1077.00 829.00 C 1072.19 827.84 1063.92 827.73 1058.00 828.00 C 1052.08 828.27 1045.40 826.16 1039.00 827.00 C 1032.60 827.84 1025.40 825.46 1019.00 826.00 C 1012.60 826.54 1006.29 824.30 1000.00 825.00 C 993.71 825.70 986.84 823.81 981.00 824.00 C 975.17 824.19 965.80 823.69 961.00 823.00 C 956.20 822.31 944.24 821.12 944.00 826.00 C 943.76 830.88 942.29 841.37 944.00 846.00 Z"
             />
         </g>
-        <g fill="#15385C" fill-opacity="1.00" stroke="None">
+        <g fill="#15385C" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 405.00 987.00 
@@ -4383,7 +4383,7 @@ C 442.58 849.89 438.28 846.39 436.00 845.00
 C 416.63 833.13 395.21 848.92 387.92 867.92 C 380.64 886.93 366.85 895.93 351.25 909.25 C 335.65 922.57 338.93 951.55 350.75 967.25 C 362.58 982.95 384.97 994.86 405.00 987.00 Z"
             />
         </g>
-        <g fill="#17395D" fill-opacity="1.00" stroke="None">
+        <g fill="#17395D" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 939.00 901.00 
@@ -4393,7 +4393,7 @@ C 950.63 853.33 947.73 848.28 944.00 846.00
 C 933.56 839.60 929.43 852.39 922.25 858.25 C 915.06 864.11 912.63 876.30 917.25 884.75 C 921.86 893.21 937.40 891.94 939.00 901.00 Z"
             />
         </g>
-        <g fill="#F4A391" fill-opacity="1.00" stroke="None">
+        <g fill="#F4A391" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 417.00 886.00 
@@ -4406,7 +4406,7 @@ C 434.03 884.46 428.01 883.33 426.00 881.00
 C 427.77 878.97 431.48 880.47 434.00 880.00 Z"
             />
         </g>
-        <g fill="#F5A391" fill-opacity="1.00" stroke="None">
+        <g fill="#F5A391" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 939.00 901.00 
@@ -4424,7 +4424,7 @@ C 961.06 883.72 956.55 888.92 953.00 886.00
 C 954.51 883.07 957.51 881.75 960.00 880.00 Z"
             />
         </g>
-        <g fill="#183A5D" fill-opacity="1.00" stroke="None">
+        <g fill="#183A5D" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1402.00 872.00 
@@ -4438,7 +4438,7 @@ C 1429.14 868.78 1424.49 868.17 1420.00 868.00
 C 1414.10 867.77 1406.81 868.53 1402.00 872.00 Z"
             />
         </g>
-        <g fill="#F6A490" fill-opacity="1.00" stroke="None">
+        <g fill="#F6A490" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 985.00 914.00 
@@ -4453,7 +4453,7 @@ C 988.13 893.27 989.77 887.65 985.00 889.00
 C 983.25 897.88 991.64 906.55 985.00 914.00 Z"
             />
         </g>
-        <g fill="#FDF9F8" fill-opacity="1.00" stroke="None">
+        <g fill="#FDF9F8" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 434.00 880.00 
@@ -4461,7 +4461,7 @@ C 431.48 880.47 427.77 878.97 426.00 881.00
 C 428.01 883.33 434.03 884.46 434.00 880.00 Z"
             />
         </g>
-        <g fill="#FDF6F4" fill-opacity="1.00" stroke="None">
+        <g fill="#FDF6F4" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 960.00 880.00 
@@ -4469,7 +4469,7 @@ C 957.51 881.75 954.51 883.07 953.00 886.00
 C 956.55 888.92 961.06 883.72 960.00 880.00 Z"
             />
         </g>
-        <g fill="#F2F7FC" fill-opacity="1.00" stroke="None">
+        <g fill="#F2F7FC" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 195.00 894.00 
@@ -4479,7 +4479,7 @@ C 222.03 891.87 215.22 885.33 208.00 881.00
 C 205.94 887.35 198.66 889.17 195.00 894.00 Z"
             />
         </g>
-        <g fill="#F1F5F9" fill-opacity="1.00" stroke="None">
+        <g fill="#F1F5F9" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1388.00 897.00 
@@ -4490,7 +4490,7 @@ C 1396.25 887.89 1396.04 886.45 1396.00 883.00
 C 1394.04 887.39 1389.06 892.23 1388.00 897.00 Z"
             />
         </g>
-        <g fill="#EE755C" fill-opacity="1.00" stroke="None">
+        <g fill="#EE755C" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 417.00 888.00 
@@ -4500,7 +4500,7 @@ C 426.79 892.00 420.84 890.08 417.00 886.00
 C 417.17 886.43 417.06 887.51 417.00 888.00 Z"
             />
         </g>
-        <g fill="#F5A391" fill-opacity="1.00" stroke="None">
+        <g fill="#F5A391" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1400.00 888.00 
@@ -4520,7 +4520,7 @@ C 1421.66 912.89 1413.63 918.13 1411.00 913.00
 C 1414.59 912.67 1416.06 907.71 1420.00 908.00 Z"
             />
         </g>
-        <g fill="#F5A391" fill-opacity="1.00" stroke="None">
+        <g fill="#F5A391" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 412.00 906.00 
@@ -4531,7 +4531,7 @@ C 424.41 897.70 419.74 892.78 417.00 888.00
 C 416.28 894.08 412.50 900.23 412.00 906.00 Z"
             />
         </g>
-        <g fill="#FD8C64" fill-opacity="1.00" stroke="None">
+        <g fill="#FD8C64" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 958.00 902.00 
@@ -4540,7 +4540,7 @@ C 953.84 898.30 946.10 896.11 941.00 897.00
 C 944.59 901.26 954.63 898.63 958.00 902.00 Z"
             />
         </g>
-        <g fill="#2C6957" fill-opacity="1.00" stroke="None">
+        <g fill="#2C6957" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1387.00 924.00 
@@ -4550,7 +4550,7 @@ C 1405.22 908.86 1403.34 903.68 1402.00 899.00
 C 1397.60 907.02 1390.23 915.35 1387.00 924.00 Z"
             />
         </g>
-        <g fill="#ECF4F8" fill-opacity="1.00" stroke="None">
+        <g fill="#ECF4F8" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 232.00 909.00 
@@ -4559,7 +4559,7 @@ C 251.66 914.33 242.95 909.28 236.00 903.00
 C 234.29 904.51 233.10 906.86 232.00 909.00 Z"
             />
         </g>
-        <g fill="#F5CB7E" fill-opacity="1.00" stroke="None">
+        <g fill="#F5CB7E" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 389.00 964.00 
@@ -4573,7 +4573,7 @@ C 400.11 905.30 381.80 908.51 380.00 923.00 C 378.20 937.49 384.58 951.23 386.00
 C 387.21 965.56 388.02 964.08 389.00 964.00 Z"
             />
         </g>
-        <g fill="#3D8C7B" fill-opacity="1.00" stroke="None">
+        <g fill="#3D8C7B" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 445.00 916.00 
@@ -4582,7 +4582,7 @@ C 448.00 915.67 448.00 911.33 448.00 907.00
 C 447.65 909.15 444.71 913.47 445.00 916.00 Z"
             />
         </g>
-        <g fill="#FDFAF9" fill-opacity="1.00" stroke="None">
+        <g fill="#FDFAF9" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1420.00 908.00 
@@ -4590,7 +4590,7 @@ C 1416.06 907.71 1414.59 912.67 1411.00 913.00
 C 1413.63 918.13 1421.66 912.89 1420.00 908.00 Z"
             />
         </g>
-        <g fill="#365388" fill-opacity="1.00" stroke="None">
+        <g fill="#365388" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1466.00 909.00 
@@ -4603,7 +4603,7 @@ C 1488.74 920.24 1488.33 918.59 1488.00 918.00
 C 1483.66 910.16 1474.52 906.34 1466.00 909.00 Z"
             />
         </g>
-        <g fill="#EE735B" fill-opacity="1.00" stroke="None">
+        <g fill="#EE735B" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1452.00 918.00 
@@ -4617,7 +4617,7 @@ C 1446.72 952.41 1448.68 938.84 1452.22 931.22 C 1455.77 923.61 1458.29 913.16 1
 C 1462.80 910.00 1453.32 914.43 1452.00 918.00 Z"
             />
         </g>
-        <g fill="#878485" fill-opacity="1.00" stroke="None">
+        <g fill="#878485" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 958.00 911.00 
@@ -4627,7 +4627,7 @@ C 970.05 910.36 964.71 909.42 960.00 910.00
 C 959.03 910.12 958.50 910.87 958.00 911.00 Z"
             />
         </g>
-        <g fill="#F1775C" fill-opacity="1.00" stroke="None">
+        <g fill="#F1775C" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1426.00 922.00 
@@ -4636,7 +4636,7 @@ C 1432.12 921.48 1437.83 915.43 1435.00 910.00
 C 1433.93 914.29 1430.17 920.10 1426.00 922.00 Z"
             />
         </g>
-        <g fill="#355388" fill-opacity="1.00" stroke="None">
+        <g fill="#355388" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 938.00 912.00 
@@ -4653,7 +4653,7 @@ C 966.67 911.00 962.33 911.00 958.00 911.00
 C 951.43 911.00 944.45 910.95 938.00 912.00 Z"
             />
         </g>
-        <g fill="#466EB5" fill-opacity="1.00" stroke="None">
+        <g fill="#466EB5" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1002.00 968.00 
@@ -4665,7 +4665,7 @@ C 973.00 911.00 972.00 911.00 971.00 911.00
 C 960.67 914.09 958.96 928.73 964.08 935.92 C 969.19 943.12 973.89 951.05 980.75 956.25 C 987.61 961.44 993.83 972.69 1002.00 968.00 Z"
             />
         </g>
-        <g fill="#F2F6FA" fill-opacity="1.00" stroke="None">
+        <g fill="#F2F6FA" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1386.00 945.00 
@@ -4675,7 +4675,7 @@ C 1415.21 922.41 1410.03 916.02 1408.00 913.00
 C 1403.35 924.28 1390.31 933.76 1386.00 945.00 Z"
             />
         </g>
-        <g fill="#F47359" fill-opacity="1.00" stroke="None">
+        <g fill="#F47359" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1468.00 971.00 
@@ -4690,7 +4690,7 @@ C 1491.13 939.34 1480.98 956.52 1474.00 973.00
 C 1471.84 972.76 1470.00 971.74 1468.00 971.00 Z"
             />
         </g>
-        <g fill="#173A5D" fill-opacity="1.00" stroke="None">
+        <g fill="#173A5D" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 930.00 981.00 
@@ -4700,7 +4700,7 @@ C 930.25 971.52 925.66 962.11 923.93 953.07 C 922.19 944.04 916.76 930.71 920.00
 C 913.63 929.98 913.65 945.41 917.68 954.32 C 921.71 963.23 922.00 975.13 930.00 981.00 Z"
             />
         </g>
-        <g fill="#3A8976" fill-opacity="1.00" stroke="None">
+        <g fill="#3A8976" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1419.00 923.00 
@@ -4714,7 +4714,7 @@ C 1430.01 926.01 1425.89 923.82 1426.00 922.00
 C 1424.44 922.71 1420.75 923.27 1419.00 923.00 Z"
             />
         </g>
-        <g fill="#F6A390" fill-opacity="1.00" stroke="None">
+        <g fill="#F6A390" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 448.00 932.00 
@@ -4733,7 +4733,7 @@ C 450.15 932.57 453.88 928.55 452.00 926.00
 C 450.38 927.26 448.70 930.16 448.00 932.00 Z"
             />
         </g>
-        <g fill="#365388" fill-opacity="1.00" stroke="None">
+        <g fill="#365388" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1410.00 962.00 
@@ -4745,7 +4745,7 @@ C 1437.90 960.91 1426.79 945.97 1428.00 939.00
 C 1421.10 945.90 1414.62 953.39 1410.00 962.00 Z"
             />
         </g>
-        <g fill="#439281" fill-opacity="1.00" stroke="None">
+        <g fill="#439281" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1675.00 961.00 
@@ -4753,7 +4753,7 @@ C 1678.10 955.58 1683.11 952.14 1679.92 945.08 C 1676.73 938.02 1669.19 942.87 1
 C 1674.39 959.49 1679.42 976.53 1687.97 973.97 C 1696.53 971.41 1682.42 956.05 1675.00 961.00 Z"
             />
         </g>
-        <g fill="#419180" fill-opacity="1.00" stroke="None">
+        <g fill="#419180" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1601.00 1051.00 
@@ -4773,7 +4773,7 @@ C 1625.04 995.39 1628.45 987.04 1616.22 979.78 C 1604.00 972.51 1600.44 988.31 1
 C 1607.01 1029.92 1606.88 1017.43 1593.02 1010.98 C 1579.17 1004.52 1568.60 1020.48 1579.25 1027.75 C 1589.91 1035.01 1602.24 1036.85 1601.00 1051.00 Z"
             />
         </g>
-        <g fill="#F6CB7E" fill-opacity="1.00" stroke="None">
+        <g fill="#F6CB7E" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 404.00 983.00 
@@ -4785,7 +4785,7 @@ C 449.43 1013.78 449.78 1005.15 450.00 998.00 C 450.22 990.85 448.83 981.73 450.
 C 442.20 956.94 435.47 964.89 427.75 968.75 C 420.03 972.61 412.66 982.15 404.00 983.00 Z"
             />
         </g>
-        <g fill="#F7A391" fill-opacity="1.00" stroke="None">
+        <g fill="#F7A391" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1002.00 968.00 
@@ -4794,7 +4794,7 @@ C 1010.53 983.46 1017.44 978.98 1022.77 978.77 C 1028.10 978.56 1028.48 969.69 1
 C 1016.66 958.96 1006.17 965.60 1002.00 968.00 Z"
             />
         </g>
-        <g fill="#F1F5F9" fill-opacity="1.00" stroke="None">
+        <g fill="#F1F5F9" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1384.00 976.00 
@@ -4804,7 +4804,7 @@ C 1409.60 966.64 1408.76 964.31 1410.00 962.00
 C 1406.68 964.19 1398.45 964.10 1395.75 967.75 C 1393.05 971.39 1385.74 972.02 1384.00 976.00 Z"
             />
         </g>
-        <g fill="#F7A391" fill-opacity="1.00" stroke="None">
+        <g fill="#F7A391" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1444.00 968.00 
@@ -4823,7 +4823,7 @@ C 1461.58 968.63 1453.63 966.19 1448.00 962.00
 C 1447.48 964.43 1445.03 966.06 1444.00 968.00 Z"
             />
         </g>
-        <g fill="#58BDA4" fill-opacity="1.00" stroke="None">
+        <g fill="#58BDA4" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1427.00 980.00 
@@ -4835,7 +4835,7 @@ C 1440.22 971.83 1435.01 976.31 1433.00 982.00
 C 1430.67 982.34 1428.94 980.91 1427.00 980.00 Z"
             />
         </g>
-        <g fill="#F7A392" fill-opacity="1.00" stroke="None">
+        <g fill="#F7A392" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1384.00 987.00 
@@ -4845,7 +4845,7 @@ C 1421.88 977.61 1411.77 973.59 1409.00 968.00
 C 1404.87 977.29 1392.79 983.65 1384.00 987.00 Z"
             />
         </g>
-        <g fill="#EDA191" fill-opacity="1.00" stroke="None">
+        <g fill="#EDA191" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 931.00 981.00 
@@ -4854,7 +4854,7 @@ C 936.13 986.51 935.47 983.32 934.00 980.00
 C 932.87 980.44 932.27 980.99 931.00 981.00 Z"
             />
         </g>
-        <g fill="#F6CB7E" fill-opacity="1.00" stroke="None">
+        <g fill="#F6CB7E" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 882.00 993.00 
@@ -4872,7 +4872,7 @@ C 931.00 981.00 930.32 981.24 930.00 981.00
 C 924.03 999.28 895.27 999.07 882.00 993.00 Z"
             />
         </g>
-        <g fill="#52BFA6" fill-opacity="1.00" stroke="None">
+        <g fill="#52BFA6" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1381.00 1051.00 
@@ -4886,7 +4886,7 @@ C 1453.57 996.62 1442.90 1001.98 1432.70 1007.70 C 1422.49 1013.41 1412.86 1019.
 C 1383.17 1047.90 1382.40 1045.81 1381.00 1051.00 Z"
             />
         </g>
-        <g fill="#F5F8FD" fill-opacity="1.00" stroke="None">
+        <g fill="#F5F8FD" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 840.00 1099.00 
@@ -4894,7 +4894,7 @@ C 788.22 1095.48 773.06 1020.62 815.00 993.00
 C 804.20 995.12 789.40 992.50 780.25 999.25 C 771.09 1005.99 765.71 1009.44 759.75 1018.75 C 753.80 1028.07 750.16 1037.75 750.00 1049.00 C 749.84 1060.25 752.74 1071.33 758.25 1080.75 C 763.75 1090.18 769.82 1094.20 778.75 1100.25 C 787.69 1106.30 798.86 1108.04 809.99 1108.99 C 821.12 1109.94 830.41 1101.38 840.00 1099.00 Z"
             />
         </g>
-        <g fill="#466EB6" fill-opacity="1.00" stroke="None">
+        <g fill="#466EB6" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1508.00 1043.00 
@@ -4913,7 +4913,7 @@ C 1568.51 1047.67 1574.09 1030.62 1562.00 1017.00
 C 1553.10 1020.84 1544.23 1027.20 1535.08 1030.08 C 1525.92 1032.95 1517.44 1041.77 1508.00 1043.00 Z"
             />
         </g>
-        <g fill="#466EB5" fill-opacity="1.00" stroke="None">
+        <g fill="#466EB5" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 386.00 1098.00 
@@ -4930,7 +4930,7 @@ C 438.77 1025.45 428.35 1022.84 421.01 1023.99 C 413.67 1025.14 405.72 1018.40 3
 C 394.57 1032.85 387.14 1040.21 386.00 1054.00 C 384.86 1067.78 386.00 1083.98 386.00 1098.00 Z"
             />
         </g>
-        <g fill="#355389" fill-opacity="1.00" stroke="None">
+        <g fill="#355389" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 446.00 1023.00 
@@ -4946,7 +4946,7 @@ C 448.00 1085.66 450.83 1074.13 452.00 1061.00 C 453.17 1047.87 451.00 1033.64 4
 C 449.65 1021.63 446.73 1022.75 446.00 1023.00 Z"
             />
         </g>
-        <g fill="#F4F8FD" fill-opacity="1.00" stroke="None">
+        <g fill="#F4F8FD" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1491.00 1120.00 
@@ -4956,7 +4956,7 @@ C 1505.05 1043.38 1500.44 1033.35 1498.00 1030.00
 C 1498.88 1039.69 1489.04 1049.67 1485.98 1058.98 C 1482.91 1068.28 1476.94 1080.93 1479.22 1091.78 C 1481.50 1102.63 1492.32 1108.61 1491.00 1120.00 Z"
             />
         </g>
-        <g fill="#419280" fill-opacity="1.00" stroke="None">
+        <g fill="#419280" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1689.00 1103.00 
@@ -4973,7 +4973,7 @@ C 1716.86 1083.11 1723.43 1079.21 1727.77 1074.77 C 1732.11 1070.33 1740.04 1065
 C 1745.72 1059.07 1754.68 1046.42 1745.07 1042.93 C 1735.47 1039.44 1742.10 1057.59 1738.75 1062.75 C 1735.40 1067.92 1726.88 1071.72 1722.25 1076.25 C 1717.61 1080.77 1710.65 1085.12 1705.75 1089.75 C 1700.85 1094.38 1694.02 1098.88 1689.00 1103.00 Z"
             />
         </g>
-        <g fill="#14385C" fill-opacity="1.00" stroke="None">
+        <g fill="#14385C" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 950.00 1050.00 
@@ -4985,7 +4985,7 @@ C 1018.67 1218.78 1024.13 1181.97 1021.98 1147.02 C 1019.82 1112.08 1015.37 1077
 C 1010.81 1047.79 1000.17 1048.46 995.01 1050.01 C 989.84 1051.56 978.41 1052.42 972.00 1052.00 C 965.59 1051.58 956.65 1050.78 950.00 1050.00 Z"
             />
         </g>
-        <g fill="#194656" fill-opacity="1.00" stroke="None">
+        <g fill="#194656" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 938.00 1252.00 
@@ -4996,7 +4996,7 @@ C 947.95 1049.76 943.76 1049.23 942.00 1048.00
 C 944.04 1057.69 941.66 1068.21 943.00 1078.00 C 944.34 1087.79 942.71 1098.22 944.00 1108.00 C 945.29 1117.78 943.41 1129.14 944.00 1139.00 C 944.59 1148.86 943.40 1159.22 942.78 1168.78 C 942.16 1178.33 941.11 1188.24 940.78 1197.78 C 940.45 1207.32 938.85 1216.81 938.00 1226.00 C 937.15 1235.19 937.06 1245.49 938.00 1252.00 Z"
             />
         </g>
-        <g fill="#96D7C9" fill-opacity="1.00" stroke="None">
+        <g fill="#96D7C9" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1566.00 1063.00 
@@ -5006,7 +5006,7 @@ C 1581.34 1084.64 1588.18 1078.12 1590.23 1071.23 C 1592.28 1064.34 1600.38 1058
 C 1587.94 1050.58 1577.46 1058.86 1566.00 1063.00 Z"
             />
         </g>
-        <g fill="#95D7C9" fill-opacity="1.00" stroke="None">
+        <g fill="#95D7C9" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1563.00 1135.00 
@@ -5018,7 +5018,7 @@ C 1614.79 1131.78 1622.30 1112.67 1625.00 1098.00 C 1627.70 1083.33 1628.41 1055
 C 1598.58 1051.53 1595.84 1068.36 1590.77 1076.77 C 1585.71 1085.18 1580.30 1096.38 1576.77 1105.77 C 1573.24 1115.16 1565.11 1125.46 1563.00 1135.00 Z"
             />
         </g>
-        <g fill="#97D8CA" fill-opacity="1.00" stroke="None">
+        <g fill="#97D8CA" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 269.00 1148.00 
@@ -5048,7 +5048,7 @@ C 268.58 1138.07 272.58 1137.40 276.00 1139.00
 C 273.75 1142.10 270.59 1144.43 269.00 1148.00 Z"
             />
         </g>
-        <g fill="#355489" fill-opacity="1.00" stroke="None">
+        <g fill="#355489" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1537.00 1168.00 
@@ -5067,7 +5067,7 @@ C 1564.00 1081.05 1563.61 1075.93 1564.00 1071.00
 C 1559.54 1086.32 1551.87 1102.77 1548.78 1118.78 C 1545.69 1134.78 1534.24 1151.69 1537.00 1168.00 Z"
             />
         </g>
-        <g fill="#93D5C7" fill-opacity="1.00" stroke="None">
+        <g fill="#93D5C7" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1563.00 1127.00 
@@ -5075,7 +5075,7 @@ C 1564.22 1122.06 1568.56 1117.46 1570.08 1112.08 C 1571.59 1106.69 1576.01 1102
 C 1564.00 1099.44 1563.00 1113.23 1563.00 1127.00 Z"
             />
         </g>
-        <g fill="#F5F8FD" fill-opacity="1.00" stroke="None">
+        <g fill="#F5F8FD" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 864.00 1098.00 
@@ -5086,7 +5086,7 @@ C 931.10 1269.49 927.94 1267.29 924.00 1268.00
 C 923.98 1251.53 925.99 1234.33 926.00 1218.00 C 926.01 1201.67 928.59 1184.84 929.00 1169.00 C 929.41 1153.16 931.90 1135.14 928.98 1120.03 C 926.05 1104.91 916.59 1100.43 904.22 1092.78 C 891.86 1085.12 875.71 1095.01 864.00 1098.00 Z"
             />
         </g>
-        <g fill="#3D8D7E" fill-opacity="1.00" stroke="None">
+        <g fill="#3D8D7E" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 444.00 1135.00 
@@ -5095,7 +5095,7 @@ C 448.00 1125.00 448.00 1112.00 448.00 1099.00
 C 446.90 1110.38 445.54 1123.20 444.00 1135.00 Z"
             />
         </g>
-        <g fill="#95D7C9" fill-opacity="1.00" stroke="None">
+        <g fill="#95D7C9" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1570.00 1231.00 
@@ -5110,7 +5110,7 @@ C 1690.25 1106.14 1683.77 1110.68 1679.00 1117.00
 C 1689.84 1116.37 1701.98 1113.39 1708.23 1125.77 C 1714.48 1138.15 1697.66 1139.38 1690.70 1130.30 C 1683.73 1121.22 1670.54 1123.20 1664.23 1130.23 C 1657.92 1137.26 1650.09 1141.93 1644.25 1149.25 C 1638.40 1156.57 1630.21 1161.46 1624.75 1168.75 C 1619.30 1176.04 1611.22 1181.70 1605.92 1188.92 C 1600.61 1196.14 1592.35 1202.37 1587.75 1209.75 C 1583.15 1217.14 1572.41 1223.06 1570.00 1231.00 Z"
             />
         </g>
-        <g fill="#95D7C9" fill-opacity="1.00" stroke="None">
+        <g fill="#95D7C9" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1656.00 1114.00 
@@ -5119,7 +5119,7 @@ C 1667.37 1125.05 1677.25 1112.65 1689.00 1103.00
 C 1684.53 1104.59 1676.43 1107.16 1672.02 1108.02 C 1667.62 1108.89 1659.75 1115.12 1656.00 1114.00 Z"
             />
         </g>
-        <g fill="#95D7C9" fill-opacity="1.00" stroke="None">
+        <g fill="#95D7C9" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1377.00 1143.00 
@@ -5136,7 +5136,7 @@ C 1485.57 1129.16 1474.60 1137.26 1466.75 1145.75 C 1458.91 1154.25 1449.86 1162
 C 1445.76 1163.46 1449.99 1157.24 1453.70 1150.70 C 1457.40 1144.15 1460.78 1136.10 1463.22 1129.22 C 1465.66 1122.35 1468.92 1110.60 1460.69 1106.31 C 1452.46 1102.02 1441.53 1106.03 1434.07 1108.07 C 1426.62 1110.12 1418.98 1114.08 1412.70 1117.70 C 1406.42 1121.31 1398.83 1125.24 1394.08 1130.08 C 1389.33 1134.92 1379.74 1137.13 1377.00 1143.00 Z"
             />
         </g>
-        <g fill="#94D5C8" fill-opacity="1.00" stroke="None">
+        <g fill="#94D5C8" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 390.00 1194.00 
@@ -5145,7 +5145,7 @@ C 415.47 1190.12 412.38 1173.74 416.00 1160.00 C 419.62 1146.27 419.44 1132.76 4
 C 415.71 1129.33 409.48 1143.15 404.78 1155.78 C 400.08 1168.41 395.08 1181.52 390.00 1194.00 Z"
             />
         </g>
-        <g fill="#CBCB90" fill-opacity="1.00" stroke="None">
+        <g fill="#CBCB90" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1376.00 1147.00 
@@ -5154,7 +5154,7 @@ C 1377.17 1140.02 1377.00 1136.98 1377.00 1134.00
 C 1376.65 1137.66 1376.00 1142.59 1376.00 1147.00 Z"
             />
         </g>
-        <g fill="#95D6C8" fill-opacity="1.00" stroke="None">
+        <g fill="#95D6C8" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 437.00 1211.00 
@@ -5164,7 +5164,7 @@ C 447.61 1137.06 444.38 1136.03 444.00 1135.00
 C 440.72 1160.20 440.06 1185.71 437.00 1211.00 Z"
             />
         </g>
-        <g fill="#F4CA7D" fill-opacity="1.00" stroke="None">
+        <g fill="#F4CA7D" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 954.00 1252.00 
@@ -5177,7 +5177,7 @@ C 992.27 1233.31 991.30 1212.81 989.00 1193.00 C 986.70 1173.19 983.90 1154.91 9
 C 978.48 1155.11 968.90 1175.58 966.98 1194.98 C 965.05 1214.37 956.66 1233.26 954.00 1252.00 Z"
             />
         </g>
-        <g fill="#52BFA6" fill-opacity="1.00" stroke="None">
+        <g fill="#52BFA6" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 350.00 1217.00 
@@ -5187,7 +5187,7 @@ C 358.40 1182.38 351.60 1178.96 345.22 1176.78 C 338.85 1174.59 332.91 1171.44 3
 C 260.10 1167.91 282.14 1183.55 297.25 1192.75 C 312.37 1201.94 332.97 1211.32 350.00 1217.00 Z"
             />
         </g>
-        <g fill="#90D2C6" fill-opacity="1.00" stroke="None">
+        <g fill="#90D2C6" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1531.00 1215.00 
@@ -5196,7 +5196,7 @@ C 1538.79 1180.63 1538.07 1174.35 1537.00 1168.00
 C 1535.88 1182.79 1532.59 1199.52 1531.00 1215.00 Z"
             />
         </g>
-        <g fill="#3F917F" fill-opacity="1.00" stroke="None">
+        <g fill="#3F917F" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1570.00 1252.00 
@@ -5215,7 +5215,7 @@ C 1648.72 1209.54 1658.08 1203.31 1650.92 1191.08 C 1643.76 1178.85 1633.68 1192
 C 1603.30 1233.23 1605.28 1225.90 1606.00 1220.00 C 1606.72 1214.10 1602.13 1204.05 1595.08 1206.08 C 1588.04 1208.12 1591.98 1220.82 1593.00 1225.00 C 1594.02 1229.18 1592.33 1243.20 1587.07 1244.07 C 1581.81 1244.95 1574.63 1252.89 1570.00 1252.00 Z"
             />
         </g>
-        <g fill="#459382" fill-opacity="1.00" stroke="None">
+        <g fill="#459382" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1722.00 1198.00 
@@ -5224,7 +5224,7 @@ C 1730.32 1197.97 1733.70 1214.54 1740.90 1210.90 C 1748.10 1207.26 1735.56 1194
 C 1732.45 1194.42 1735.22 1190.71 1736.67 1187.67 C 1738.12 1184.63 1735.78 1177.43 1732.23 1178.23 C 1728.69 1179.04 1726.97 1185.31 1727.78 1188.78 C 1728.59 1192.25 1722.58 1195.72 1722.00 1198.00 Z"
             />
         </g>
-        <g fill="#409181" fill-opacity="1.00" stroke="None">
+        <g fill="#409181" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1531.00 1215.00 
@@ -5234,7 +5234,7 @@ C 1541.58 1191.80 1540.35 1188.86 1540.00 1187.00
 C 1539.55 1196.32 1533.49 1206.44 1531.00 1215.00 Z"
             />
         </g>
-        <g fill="#51BEA5" fill-opacity="1.00" stroke="None">
+        <g fill="#51BEA5" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 371.00 1236.00 
@@ -5250,7 +5250,7 @@ C 412.41 1202.64 405.98 1201.33 403.02 1198.98 C 400.07 1196.62 391.52 1197.48 3
 C 384.37 1207.83 378.45 1224.09 371.00 1236.00 Z"
             />
         </g>
-        <g fill="#94D6C8" fill-opacity="1.00" stroke="None">
+        <g fill="#94D6C8" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1528.00 1238.00 
@@ -5263,7 +5263,7 @@ C 1548.31 1240.33 1549.80 1229.24 1546.99 1221.01 C 1544.18 1212.77 1543.62 1202
 C 1541.40 1200.92 1535.73 1208.46 1534.93 1215.93 C 1534.13 1223.39 1529.50 1231.00 1528.00 1238.00 Z"
             />
         </g>
-        <g fill="#8FBEB6" fill-opacity="1.00" stroke="None">
+        <g fill="#8FBEB6" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1708.00 1201.00 
@@ -5273,7 +5273,7 @@ C 1722.72 1199.83 1722.45 1198.13 1722.00 1198.00
 C 1719.68 1197.31 1710.07 1200.12 1708.00 1201.00 Z"
             />
         </g>
-        <g fill="#92D4C5" fill-opacity="1.00" stroke="None">
+        <g fill="#92D4C5" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1702.00 1211.00 
@@ -5282,7 +5282,7 @@ C 1699.56 1203.71 1693.54 1204.33 1689.00 1207.00
 C 1693.72 1207.06 1697.98 1208.69 1702.00 1211.00 Z"
             />
         </g>
-        <g fill="#95D7C9" fill-opacity="1.00" stroke="None">
+        <g fill="#95D7C9" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1570.00 1255.00 
@@ -5294,7 +5294,7 @@ C 1686.82 1196.47 1658.15 1218.29 1641.00 1223.00
 C 1648.94 1227.07 1661.97 1226.17 1663.67 1239.33 C 1665.37 1252.49 1649.56 1249.23 1647.31 1236.70 C 1645.05 1224.16 1631.56 1226.07 1623.68 1230.68 C 1615.80 1235.29 1605.35 1238.43 1597.08 1243.08 C 1588.80 1247.72 1578.71 1251.43 1570.00 1255.00 Z"
             />
         </g>
-        <g fill="#51BEA5" fill-opacity="1.00" stroke="None">
+        <g fill="#51BEA5" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 433.00 1242.00 
@@ -5306,7 +5306,7 @@ C 475.73 1226.35 464.77 1224.98 459.07 1220.93 C 453.38 1216.87 439.23 1217.18 4
 C 435.89 1220.22 433.03 1232.82 433.00 1242.00 Z"
             />
         </g>
-        <g fill="#4B9888" fill-opacity="1.00" stroke="None">
+        <g fill="#4B9888" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 358.00 1223.00 
@@ -5315,7 +5315,7 @@ C 358.53 1218.57 351.36 1217.45 350.00 1217.00
 C 351.63 1217.97 356.86 1221.33 358.00 1223.00 Z"
             />
         </g>
-        <g fill="#55BFA7" fill-opacity="1.00" stroke="None">
+        <g fill="#55BFA7" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 346.00 1265.00 
@@ -5325,7 +5325,7 @@ C 358.03 1230.87 357.66 1227.84 358.00 1225.00
 C 347.62 1228.14 332.26 1227.29 327.93 1239.93 C 323.60 1252.57 335.03 1262.42 346.00 1265.00 Z"
             />
         </g>
-        <g fill="#F4A391" fill-opacity="1.00" stroke="None">
+        <g fill="#F4A391" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 348.00 1256.00 
@@ -5335,7 +5335,7 @@ C 369.55 1236.28 359.08 1234.05 358.00 1233.00
 C 357.85 1243.01 352.09 1247.82 348.00 1256.00 Z"
             />
         </g>
-        <g fill="#F3A391" fill-opacity="1.00" stroke="None">
+        <g fill="#F3A391" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 422.00 1243.00 
@@ -5345,7 +5345,7 @@ C 434.84 1258.11 432.98 1248.52 433.00 1242.00
 C 431.94 1242.81 423.59 1243.08 422.00 1243.00 Z"
             />
         </g>
-        <g fill="#41927F" fill-opacity="1.00" stroke="None">
+        <g fill="#41927F" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1538.00 1266.00 
@@ -5355,7 +5355,7 @@ C 1553.41 1250.04 1552.66 1249.37 1552.00 1248.00
 C 1550.91 1252.29 1541.37 1262.59 1538.00 1266.00 Z"
             />
         </g>
-        <g fill="#97D3C2" fill-opacity="1.00" stroke="None">
+        <g fill="#97D3C2" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1546.00 1263.00 
@@ -5365,7 +5365,7 @@ C 1556.00 1250.00 1555.50 1249.99 1555.00 1250.00
 C 1551.33 1253.44 1549.30 1259.89 1546.00 1263.00 Z"
             />
         </g>
-        <g fill="#F6A592" fill-opacity="1.00" stroke="None">
+        <g fill="#F6A592" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1552.00 1261.00 
@@ -5377,7 +5377,7 @@ C 1566.78 1248.57 1559.58 1250.00 1556.00 1250.00
 C 1556.74 1254.04 1555.47 1258.62 1552.00 1261.00 Z"
             />
         </g>
-        <g fill="#F6A28F" fill-opacity="1.00" stroke="None">
+        <g fill="#F6A28F" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 936.00 1263.00 
@@ -5387,7 +5387,7 @@ C 952.02 1253.06 940.09 1252.90 938.00 1252.00
 C 938.66 1256.58 937.24 1259.21 936.00 1263.00 Z"
             />
         </g>
-        <g fill="#EE9F8E" fill-opacity="1.00" stroke="None">
+        <g fill="#EE9F8E" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 998.00 1261.00 
@@ -5397,7 +5397,7 @@ C 1012.41 1254.84 997.59 1255.24 996.00 1253.00
 C 996.56 1255.97 998.58 1257.22 998.00 1261.00 Z"
             />
         </g>
-        <g fill="#C5959B" fill-opacity="1.00" stroke="None">
+        <g fill="#C5959B" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1510.00 1254.00 
@@ -5406,7 +5406,7 @@ C 1522.09 1251.86 1513.93 1252.64 1510.00 1253.00
 C 1510.00 1253.00 1509.93 1253.51 1510.00 1254.00 Z"
             />
         </g>
-        <g fill="#F6A491" fill-opacity="1.00" stroke="None">
+        <g fill="#F6A491" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1507.00 1262.00 
@@ -5416,7 +5416,7 @@ C 1520.03 1253.66 1514.96 1254.45 1510.00 1254.00
 C 1510.43 1256.86 1509.48 1260.30 1507.00 1262.00 Z"
             />
         </g>
-        <g fill="#F3CA80" fill-opacity="1.00" stroke="None">
+        <g fill="#F3CA80" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1507.00 1262.00 
@@ -5428,7 +5428,7 @@ C 1525.00 1256.67 1525.00 1259.33 1525.00 1262.00
 C 1519.29 1266.14 1512.31 1262.16 1507.00 1262.00 Z"
             />
         </g>
-        <g fill="#F2755B" fill-opacity="1.00" stroke="None">
+        <g fill="#F2755B" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 346.00 1265.00 
@@ -5440,7 +5440,7 @@ C 360.19 1266.79 352.06 1258.71 348.00 1256.00
 C 346.54 1258.92 345.93 1261.65 346.00 1265.00 Z"
             />
         </g>
-        <g fill="#F17459" fill-opacity="1.00" stroke="None">
+        <g fill="#F17459" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 421.00 1273.00 
@@ -5450,7 +5450,7 @@ C 438.15 1261.84 432.86 1263.11 430.01 1262.99 C 427.15 1262.87 422.89 1260.16 4
 C 420.23 1263.64 416.36 1270.60 421.00 1273.00 Z"
             />
         </g>
-        <g fill="#DC523B" fill-opacity="1.00" stroke="None">
+        <g fill="#DC523B" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 995.00 1271.00 
@@ -5461,7 +5461,7 @@ C 1015.55 1261.92 1011.33 1263.39 1008.01 1263.99 C 1004.69 1264.60 1000.87 1259
 C 997.49 1264.36 995.11 1267.05 995.00 1271.00 Z"
             />
         </g>
-        <g fill="#F4CA7E" fill-opacity="1.00" stroke="None">
+        <g fill="#F4CA7E" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1546.00 1263.00 
@@ -5473,7 +5473,7 @@ C 1568.15 1259.73 1563.98 1264.37 1561.07 1263.93 C 1558.16 1263.49 1554.44 1261
 C 1550.23 1262.21 1547.91 1262.30 1546.00 1263.00 Z"
             />
         </g>
-        <g fill="#DC513B" fill-opacity="1.00" stroke="None">
+        <g fill="#DC513B" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 936.00 1263.00 
@@ -5485,7 +5485,7 @@ C 977.23 1266.65 964.27 1262.09 958.00 1262.00
 C 954.67 1261.95 949.40 1264.65 946.07 1263.93 C 942.75 1263.20 938.86 1259.96 936.00 1263.00 Z"
             />
         </g>
-        <g fill="#E4ECF0" fill-opacity="1.00" stroke="None">
+        <g fill="#E4ECF0" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 360.00 1273.00 
@@ -5494,7 +5494,7 @@ C 371.62 1272.66 365.67 1269.39 363.00 1270.00
 C 362.80 1270.24 360.21 1272.91 360.00 1273.00 Z"
             />
         </g>
-        <g fill="#EEEDEC" fill-opacity="1.00" stroke="None">
+        <g fill="#EEEDEC" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 983.00 1273.00 
@@ -5504,7 +5504,7 @@ C 991.52 1269.45 985.77 1271.77 982.00 1271.00
 C 982.33 1271.30 982.49 1272.77 983.00 1273.00 Z"
             />
         </g>
-        <g fill="#184555" fill-opacity="1.00" stroke="None">
+        <g fill="#184555" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 136.00 1282.00 
@@ -5529,7 +5529,7 @@ C 356.33 1273.00 352.67 1273.00 349.00 1273.00
 C 339.44 1273.00 329.52 1273.01 320.00 1273.00 C 310.48 1272.99 301.49 1273.04 292.00 1273.00 C 282.51 1272.96 272.44 1273.09 263.00 1273.00 C 253.56 1272.91 244.35 1273.21 235.00 1273.00 C 225.65 1272.79 215.16 1273.45 206.00 1273.00 C 196.84 1272.55 186.72 1274.04 178.00 1273.00 C 169.28 1271.96 156.81 1275.23 149.00 1273.00 C 141.19 1270.77 125.92 1276.56 136.00 1282.00 Z"
             />
         </g>
-        <g fill="#79939C" fill-opacity="1.00" stroke="None">
+        <g fill="#79939C" fillOpacity="1.00" stroke="None">
             <path
                 d="
 M 1787.00 1282.00 

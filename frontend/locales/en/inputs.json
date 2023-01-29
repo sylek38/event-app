@@ -20,7 +20,8 @@
         "map_placeholder": "Just don't give a location on Mars:)",
 
         "city_label": "City",
-        "street_label": "Street"
+        "street_label": "Street",
+        "city_placeholder": "Choose city"
     },
 
     "text_searchbar": {

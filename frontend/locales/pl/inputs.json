@@ -20,7 +20,9 @@
         "post_map_placeholder": "Tylko nie podawaj lokalizacji na Marsie :)",
 
         "city_label": "Miasto",
-        "street_label": "Ulica"
+        "street_label": "Ulica",
+        "city_placeholder": "Wybierz miasto"
+
     },
     "text_searchbar": {
         "select_city_placeholder": "Search..."

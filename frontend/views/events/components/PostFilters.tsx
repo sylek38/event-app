@@ -53,7 +53,6 @@ export const PostFilters = () => {
         category,
         date,
     }) => {
-        console.log("POST FILTERS SUBMIT");
         let currentQuery = { ...query };
         if (city) {
             currentQuery = {
@@ -76,11 +75,9 @@ export const PostFilters = () => {
             currentQuery = {
                 ...currentQuery,
                 date: format(time, "yyyy-MM-dd"),
-                time: format(time, "HH:mm"),
             };
         } else {
             delete currentQuery.date;
-            delete currentQuery.time;
         }
 
         push(

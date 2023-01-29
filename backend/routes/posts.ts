@@ -375,7 +375,13 @@ router.get("/infinite", async (req: PostsQuery, res: Response) => {
 	const totalPages = Math.ceil(filteredPosts.length / LIMIT);
 	const hasNextPage = nextPage <= totalPages;
 	const hasPrevPage = prevPage >= 1;
-	console.log(totalPages, hasNextPage, hasPrevPage, "PAGES");
+	console.log(
+		filteredPosts.length,
+		totalPages,
+		hasNextPage,
+		hasPrevPage,
+		"PAGES"
+	);
 
 	const dataResponse = filteredPaginatedPosts.map(post => ({
 		id: post._id,
@@ -406,6 +412,7 @@ router.get("/infinite", async (req: PostsQuery, res: Response) => {
 		results: dataResponse,
 		next: hasNextPage,
 		previous: hasPrevPage,
+		count: filteredPosts.length,
 	};
 
 	return res.status(200).json(response);

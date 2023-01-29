@@ -68,25 +68,25 @@ const global = css`
 
     /* ===== Scrollbar CSS ===== */
     /* Firefox */
-    * {
+    /* * {
         scrollbar-width: auto;
         scrollbar-color: var(--primary-green-color) var(--secondary-background);
-    }
+    } */
 
     /* Chrome, Edge, and Safari */
-    *::-webkit-scrollbar {
+    /* *::-webkit-scrollbar {
         width: ${pxToRem(8)};
     }
 
     *::-webkit-scrollbar-track {
         background: var(--secondary-background);
-    }
-
+    } */
+    /* 
     *::-webkit-scrollbar-thumb {
         background-color: var(--primary-green-color);
         border-radius: ${pxToRem(16)};
         border: none;
-    }
+    } */
 `;
 
 export default createGlobalStyle`${global}`;

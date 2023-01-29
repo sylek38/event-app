@@ -15,7 +15,7 @@ import { LocationType } from "../../../types/posts.type";
 import { forwardRef } from "react";
 import { format, parse, parseISO } from "date-fns";
 import Image from "next/image";
-import { DefaultPostBackground } from "../../../assets/defaultPostBackground";
+import { DefaultPostBackground } from "../../../assets/DefaultPostBackground";
 import { DefaultAvatar } from "../../../assets/DefaultAvatar";
 import { useRouter } from "next/router";
 import { enUS, pl } from "date-fns/locale";
@@ -61,7 +61,8 @@ export const Post = forwardRef<HTMLAnchorElement, Props>(
         const processedDate = format(parsedISODate, "MM/dd/yyyy", {
             locale: locale === "pl" ? pl : enUS,
         });
-        console.log(processedDate, "processed Date");
+
+        console.log(ref, "child ref");
         return (
             <Link
                 ref={ref}
