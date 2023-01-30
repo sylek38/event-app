@@ -301,7 +301,7 @@ router.get("/post/:id", async (req: GetPostParamsType, res: Response) => {
 	}
 
 	const responseData = {
-		id: foundPost?.id,
+		id: foundPost._id,
 		user: {
 			name: foundPost?.user.name,
 			surname: foundPost?.user.surname,
