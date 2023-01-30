@@ -26,6 +26,7 @@ interface Props {
         id: string;
         name: string;
         surname: string;
+        avatarUrl: string;
     };
     title: string;
     desc: string;
@@ -33,7 +34,6 @@ interface Props {
     peopleLimit: number;
     location: LocationType;
     imageUrl: string;
-    avatarUrl: string;
     width?: number;
     date: string;
 }
@@ -49,7 +49,6 @@ export const Post = forwardRef<HTMLAnchorElement, Props>(
             peopleLimit,
             location,
             imageUrl,
-            avatarUrl,
             width,
             date,
         },
@@ -94,8 +93,12 @@ export const Post = forwardRef<HTMLAnchorElement, Props>(
                     </S.BackgroundContainer>
                     <S.Content>
                         <S.Avatar>
-                            {avatarUrl ? (
-                                <Image src={avatarUrl} width={60} height={60} />
+                            {user?.avatarUrl ? (
+                                <Image
+                                    src={user.avatarUrl}
+                                    width={60}
+                                    height={60}
+                                />
                             ) : (
                                 <DefaultAvatar />
                             )}

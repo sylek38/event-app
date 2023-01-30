@@ -20,7 +20,7 @@ export const vars = css`
     --secondary-text: #999;
 
     --primary-color: #1cd8d2;
-    --primary-green-color: #19bba7;
+    --primary-green-color: #17bcbf;
     --primary-green-color--light: #a5e2e0;
     --primary-gradient: linear-gradient(to left, #16ada8, #24eca4);
 

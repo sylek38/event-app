@@ -1,21 +1,17 @@
 import {
     dehydrate,
     QueryClient,
-    useInfiniteQuery,
-    UseInfiniteQueryResult,
+ 
 } from "@tanstack/react-query";
 import { GetServerSideProps } from "next";
 import { useRouter } from "next/router";
-import { useMemo } from "react";
 import { fetchAPIAuth } from "../../api/auth/useAPIAuth";
 import {
     fetchAPICategories,
     useAPICategories,
 } from "../../api/categories/useAPICategories";
-import { fetchAPIPosts } from "../../api/posts/useAPIPosts";
-import { WallContext } from "../../context/WallContext";
-import { PostsType, WallFiltersType } from "../../types/posts.type";
-import { PostsResponse } from "../../types/responses/postsResponse.type";
+
+import { WallFiltersType } from "../../types/posts.type";
 import { EventsView } from "../../views/events/EventsView";
 import { Layout } from "../../views/layout/Layout";
 
@@ -30,18 +26,7 @@ const Events = ({ csrf }: Props) => {
         category: query.category as string | undefined,
         date: query.category as string | undefined,
     };
-    // JAK COŚ SIĘ ROZJEBIE TO WRÓĆ TU BO TO PEWKO TUTAJ :D
-    // const {
-    //     data,
-    //     isError,
-    //     isLoading,
-    //     isFetchingNextPage,
-    //     hasNextPage,
-    //     fetchNextPage,
-    // } = useAPIPosts({ csrf }) as unknown as UseInfiniteQueryResult<
-    //     PostsResponse,
-    //     unknown
-    // >;
+  
     const {
         data: categoriesData,
         isLoading: isCategoriesLoading,

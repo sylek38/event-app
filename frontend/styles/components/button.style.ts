@@ -14,4 +14,5 @@ export const buttonStyle = css`
         linear-gradient(45deg, #16ada8, #24eca4) border-box;
     --button-bg-danger: var(--error-color);
     --button-bg-gray: var(--tertiary-background);
+    --button-bg-blue: var(--primary-green-color);
 `;
