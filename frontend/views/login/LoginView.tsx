@@ -15,6 +15,7 @@ import { DEFAULT_EMAIL, DEFAULT_PASS } from "../../config";
 
 import Link from "next/link";
 import { Routes } from "../../routes/Routes";
+import { Loader } from "../../components/loader/Loader";
 
 interface FormTypes {
     email: string;
@@ -87,12 +88,8 @@ export const LoginView = () => {
                     <Button variant="gradient" type="submit" fullWidth>
                         {t("sign_in_title")}
                     </Button>
-                    <S.GoogleButton type="submit">
-                        <S.GoogleIcon>
-                            <FontAwesomeIcon icon={faGoogle}></FontAwesomeIcon>
-                        </S.GoogleIcon>
-                        {t("sign_in_google")}
-                    </S.GoogleButton>
+                    {isLoading && <Loader />}
+                    {isError && <div>isError</div>}
                     <S.Footer>
                         <S.FooterSpan>{t("no_account")}</S.FooterSpan>
                         <Link href={Routes.REGISTER}>
@@ -100,11 +97,6 @@ export const LoginView = () => {
                         </Link>
                     </S.Footer>
                 </S.Form>
-
-                {/* just to show, it won't be here and like that: */}
-                {isError && <div>isError</div>}
-
-                {isLoading && <div>isLoading</div>}
             </S.RightSide>
         </S.Container>
     );

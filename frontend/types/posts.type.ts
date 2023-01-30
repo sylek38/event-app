@@ -1,9 +1,8 @@
-import { PaginationType } from "./pagination.type";
-
 export interface UserPostType {
     id: string;
     name: string;
     surname: string;
+    avatarUrl: string;
 }
 
 export interface LocationType {
@@ -23,7 +22,7 @@ export interface PostsType {
     category: string;
     peopleLimit: number;
     imageUrl: string;
-    avatarUrl: string;
+    // avatarUrl: string;
     location: LocationType;
     date: string;
 }

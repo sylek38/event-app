@@ -27,8 +27,10 @@ interface Props {
 }
 
 const Map = ({
-    center = [CONFIG_MAP.lat, CONFIG_MAP.lng],
     marker,
+    center = marker
+        ? [marker.latitude, marker.longitude]
+        : [CONFIG_MAP.lat, CONFIG_MAP.lng],
     zoom = CONFIG_MAP.default_zoom,
 }: Props) => {
     const [map, setMap] = useState<MapWithZoomType | null>();

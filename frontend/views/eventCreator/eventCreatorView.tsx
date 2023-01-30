@@ -1,6 +1,6 @@
 import useTranslation from "next-translate/useTranslation";
 import { Routes } from "../../routes/Routes";
-import * as S from "./EventCreatorView.style";
+import * as S from "./eventCreatorView.style";
 
 import { TextInput } from "../../components/inputs/text/TextInput";
 import { TextareaInput } from "../../components/inputs/textarea/TextareaInput";

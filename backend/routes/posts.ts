@@ -1,7 +1,6 @@
 import User from "../models/User";
 
 import { Response, Request } from "express";
-// import { upload } from "../middleware/upload/upload";
 import Category from "../models/Category";
 const bcrypt = require("bcrypt");
 
@@ -63,11 +62,6 @@ router.post(
 		}
 
 		const data = {
-			user: {
-				id: userId,
-				name: foundUser.name,
-				surname: foundUser.surname,
-			},
 			title,
 			desc,
 			category,
@@ -76,27 +70,49 @@ router.post(
 			date,
 		};
 
+		const userData = {
+			id: userId,
+			name: foundUser.name,
+			surname: foundUser.surname,
+			avatarFilename: foundUser.avatarFilename,
+		};
+
 		const allData = req.file
 			? {
 					...data,
+					user: userData,
 					imageFilename: req.file.filename,
 			  }
 			: {
 					...data,
+					user: userData,
 			  };
 
 		const newPost = new Post(allData);
 		await newPost.save();
 
+		const userResponse = {
+			id: userId,
+			name: foundUser.name,
+			surname: foundUser.surname,
+			avatarUrl: foundUser.avatarFilename
+				? `http://${req.get("host")}/public/images/${
+						foundUser.avatarFilename
+				  }`
+				: "",
+		};
+
 		const responseData = req.file
 			? {
 					...data,
+					user: userResponse,
 					image: `http://${req.get("host")}/public/images/${
 						req.file.filename
 					}`,
 			  }
 			: {
 					...data,
+					user: userResponse,
 			  };
 
 		try {
@@ -270,32 +286,60 @@ router.delete(
 // --------------- GET POST
 
 interface GetPostParamsType extends Request {
-	id: string;
+	params: { id: string };
 }
 
-router.get(
-	"/post/:id",
-	verifyToken,
-	async (req: GetPostParamsType, res: Response) => {
-		const { id } = req.body;
+router.get("/post/:id", async (req: GetPostParamsType, res: Response) => {
+	const { id } = req.params;
 
-		const foundPost = await Post.findOne({ _id: id });
+	const foundPost = await Post.findOne({ _id: id });
 
-		if (!foundPost) {
-			res.status(404).json({
-				error: "Post does not exist",
-			});
-		}
-
-		try {
-			res.status(200).json(foundPost);
-		} catch (err) {
-			res.status(500).json({
-				error: `Something went wrong while getting the post`,
-			});
-		}
+	if (!foundPost) {
+		return res.status(404).json({
+			error: "Post does not exist",
+		});
 	}
-);
+
+	const responseData = {
+		id: foundPost._id,
+		user: {
+			name: foundPost?.user.name,
+			surname: foundPost?.user.surname,
+			id: foundPost?.user.userId,
+			avatarUrl: foundPost?.user.avatarFilename
+				? `http://${req.get("host")}/public/images/${
+						foundPost.user.avatarFilename
+				  }`
+				: "",
+		},
+		title: foundPost?.title,
+		desc: foundPost?.desc,
+		category: foundPost?.category,
+		peopleLimit: foundPost?.peopleLimit,
+		imageUrl: foundPost?.imageFilename
+			? `http://${req.get("host")}/public/images/${
+					foundPost.imageFilename
+			  }`
+			: "",
+		location: {
+			city: foundPost?.location.city,
+			street: foundPost?.location.street,
+			map: {
+				latitude: foundPost?.location.map.latitude,
+				longitude: foundPost?.location.map.longitude,
+			},
+		},
+		date: foundPost?.date,
+	};
+
+	try {
+		return res.status(200).json({ results: responseData });
+	} catch (err) {
+		return res.status(500).json({
+			error: `Something went wrong while getting the post`,
+		});
+	}
+});
 
 // ----------------- GET POSTS
 interface PostsQuery extends Request {
@@ -389,6 +433,11 @@ router.get("/infinite", async (req: PostsQuery, res: Response) => {
 			id: post.user.userId,
 			name: post.user.name,
 			surname: post.user.surname,
+			avatarUrl: post.user
+				? `http://${req.get("host")}/public/images/${
+						post.user.avatarFilename
+				  }`
+				: "",
 		},
 		title: post.title,
 		desc: post.desc,
@@ -402,7 +451,7 @@ router.get("/infinite", async (req: PostsQuery, res: Response) => {
 			street: post.location.street,
 			map: {
 				lat: post.location.map.latitude,
-				long: post.location.map.longidute,
+				long: post.location.map.longitude,
 			},
 		},
 		date: post.date,

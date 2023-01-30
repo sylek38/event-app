@@ -2,7 +2,7 @@ import { pxToRem } from "./../../../utils/pxToRem";
 import styled, { css } from "styled-components";
 
 export const Post = styled.div<{ width: number; $padding?: number }>`
-    width: 90%;
+    /* width: 90%; */
     max-width: ${pxToRem(750)};
     margin: auto;
     background-color: var(--secondary-background);
@@ -25,11 +25,13 @@ export const BackgroundContainer = styled.div`
     border-bottom: ${pxToRem(3)} solid var(--color-white);
     height: ${pxToRem(250)};
 
-    > img {
+    > img,
+    svg {
         width: 100%;
         height: 100%;
         object-fit: cover;
         border-radius: ${pxToRem(24)} ${pxToRem(24)} 0 0;
+        background-color: var(--color-white);
     }
 `;
 
@@ -42,7 +44,8 @@ export const UserInfo = styled.div`
     flex-direction: column;
     align-items: center;
 
-    > img {
+    > img,
+    svg {
         width: ${pxToRem(80)};
         height: ${pxToRem(80)};
         object-fit: cover;
@@ -66,7 +69,7 @@ export const Title = styled.span`
     height: 3rem;
     margin-top: ${pxToRem(10)};
     margin-bottom: ${pxToRem(20)};
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: bold;
     color: var(--color-white);
 
@@ -78,21 +81,16 @@ export const Title = styled.span`
     overflow: hidden;
 `;
 
-export const DescriptionSection = styled.div`
-    display: flex;
-    flex-direction: column;
-`;
-
 export const Section = styled.div`
     margin-top: ${pxToRem(60)};
 
-    > p {
-        color: var(--color-white);
-
-        & + p {
-            margin-top: 1rem;
-        }
+    > p + p {
+        margin-top: 1rem;
     }
+`;
+
+export const Description = styled.p`
+    color: var(--color-light-gray);
 `;
 
 export const DetailsItem = styled.div`
@@ -109,6 +107,13 @@ export const DetailsSection = styled.div`
         > div {
             flex: 1;
             min-width: 280px;
+
+            > div:nth-of-type(2) {
+                span:nth-of-type(2) {
+                    margin-top: 0.25rem;
+                    color: var(--color-light-gray);
+                }
+            }
         }
 
         & + div {
@@ -171,19 +176,17 @@ export const MapWrapper = styled.div`
 `;
 
 export const Buttons = styled.div`
-    position: absolute;
-    bottom: ${pxToRem(25)};
-    left: 50%;
-    /* 75px - left navbar padding */
-    transform: translate(calc(-50% + ${pxToRem(75)}), -50%);
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 3rem;
-    z-index: 100;
-    position: fixed;
+    flex-wrap: wrap;
+    gap: 1rem;
 
     > button {
+        width: 100%;
+        max-width: ${pxToRem(120)};
+    }
+
+    @media screen and (max-width: 1024px) {
+        justify-content: center;
     }
 `;
 
@@ -193,4 +196,22 @@ export const Heading = styled.span`
     font-size: ${pxToRem(20)};
     font-weight: 600;
     color: white;
+`;
+
+export const LoaderContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 2rem 0;
+
+    > div {
+        /* margin: auto; */
+    }
+`;
+
+export const Category = styled.div`
+    > div {
+        font-size: 1rem;
+        margin: 2rem 0 1.5rem;
+    }
 `;

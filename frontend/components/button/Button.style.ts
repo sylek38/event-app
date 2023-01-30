@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { pxToRem } from "../../utils/pxToRem";
 
 const gradientStyle = css`
-    color: var(--color-white);
+    /* color: var(--color-white); */
     /* border: ${pxToRem(3)} solid transparent; */
     border: none;
     border-radius: ${pxToRem(25)};
@@ -37,34 +37,15 @@ const generateStyle = (
             filter: drop-shadow(0 0 3px #24eca4);
         }
     `}
+
+    ${variant === "blue" &&
+    css`
+        /* background: #16ada8 */
+        &:hover {
+            filter: drop-shadow(0 0 3px #16ada8);
+        }
+    `}
     
-    ${variant === "glowing" &&
-    css`
-        background: linear-gradient(#232323, #232323) padding-box,
-            linear-gradient(45deg, #24eca4, #24eca4) border-box;
-        ${gradientStyle}
-
-        box-shadow: 0 0 35px var(--primary-green-color);
-
-        &:hover {
-            background: linear-gradient(#333, #333) padding-box,
-                linear-gradient(45deg, #24eca4, #24eca4) border-box;
-        }
-    `}
-
-    ${variant === "glowingBlue" &&
-    css`
-        background: linear-gradient(#232323, #232323) padding-box,
-            linear-gradient(45deg, #1cd8d2, #1cd8d2) border-box;
-        ${gradientStyle}
-
-        box-shadow: 0 0 35px var(--primary-color);
-
-        &:hover {
-            background: linear-gradient(#333, #333) padding-box,
-                linear-gradient(45deg, #1cd8d2, #1cd8d2) border-box;
-        }
-    `}
 
     ${variant === "danger" &&
     css`
@@ -86,6 +67,8 @@ const generateStyle = (
     color: var(--color-white);
     font-size: ${pxToRem(14)};
     font-weight: 600;
+    border: none;
+    border-radius: ${pxToRem(25)};
 `;
 
 export const Anchor = styled.a<{

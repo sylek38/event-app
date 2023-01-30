@@ -5,6 +5,10 @@ export interface PostsResponse extends PaginationType {
     results: PostsType[];
 }
 
+export interface SinglePostResponse {
+    results: PostsType;
+}
+
 // response z backendu
 // const response = {
 //     id: _id,

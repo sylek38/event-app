@@ -11,7 +11,7 @@ export type LocationType = {
 	//
 	map: {
 		latitude: string;
-		longidute: string;
+		longitude: string;
 	};
 };
 
@@ -20,6 +20,7 @@ export interface PostType extends Document {
 		userId: string;
 		name: string;
 		surname: string;
+		avatarFilename: string;
 	};
 	title: string;
 	desc: string;
@@ -36,7 +37,7 @@ const PostSchema = new mongoose.Schema({
 		id: {
 			type: String,
 			required: true,
-			unique: true,
+			// unique: true,
 		},
 		name: {
 			type: String,
@@ -45,6 +46,10 @@ const PostSchema = new mongoose.Schema({
 		surname: {
 			type: String,
 			required: true,
+		},
+		avatarFilename: {
+			type: String,
+			required: false,
 		},
 	},
 	title: {
