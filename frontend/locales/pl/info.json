@@ -74,5 +74,12 @@
                 "li_5": "Wszelkie pytania, uwagi lub skargi dotyczące korzystania z Serwisu prosimy kierować na adres email Administratora podany na stronie internetowej Serwisu."
             }
         }
+    },
+    "error404": {
+        "four": "4",
+        "zero": "0",
+        "error": "error",
+        "page_not_found": "Ta strona nie istnieje",
+        "home": "Powrót"
     }
 }

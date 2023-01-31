@@ -74,5 +74,12 @@
                 "li_5": "Any questions, comments, or complaints regarding the use of the Service should be directed to the Administrator's email address provided on the Service's website."
             }
         }
+    },
+    "error404": {
+        "four": "4",
+        "zero": "0",
+        "error": "error",
+        "page_not_found": "page not found",
+        "home": "Home"
     }
 }
