@@ -19,6 +19,7 @@ import { DefaultPostBackground } from "../../../assets/DefaultPostBackground";
 import { DefaultAvatar } from "../../../assets/DefaultAvatar";
 import { useRouter } from "next/router";
 import { enUS, pl } from "date-fns/locale";
+import { Avatar } from "../../avatar/Avatar";
 
 interface Props {
     id: string;
@@ -93,15 +94,7 @@ export const Post = forwardRef<HTMLAnchorElement, Props>(
                     </S.BackgroundContainer>
                     <S.Content>
                         <S.Avatar>
-                            {user?.avatarUrl ? (
-                                <Image
-                                    src={user.avatarUrl}
-                                    width={60}
-                                    height={60}
-                                />
-                            ) : (
-                                <DefaultAvatar />
-                            )}
+                            <Avatar size={60} src={user?.avatarUrl} border />
                         </S.Avatar>
                         <span>
                             {user?.name} {user?.surname}

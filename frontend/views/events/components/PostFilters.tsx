@@ -35,7 +35,6 @@ export const PostFilters = () => {
         handleSubmit,
         watch,
         setValue,
-        trigger,
         reset,
     } = useForm<FormTypes>({
         defaultValues: {
@@ -90,8 +89,16 @@ export const PostFilters = () => {
         );
     };
 
+    const resetValues = () => {
+        reset({
+            city: "",
+            category: "",
+            date: new Date().toISOString().substring(0, 10),
+        });
+    };
+
     return (
-        <Filters reset={reset}>
+        <Filters resetFiltersFunction={resetValues}>
             <S.Form ref={formRef} onSubmit={handleSubmit(onSubmit)}>
                 <TextInput
                     id="city"

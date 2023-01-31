@@ -19,7 +19,7 @@
     "i_have_read": "I have read and I accept",
     "terms_and_conditions": "the terms and conditions",
     "filters": "Filters",
-    "delete": "Delete account",
+    "delete_account": "Delete account",
     "avatar_change": "Change picture",
     "info": "Info",
     "map_info": "Add location to the map",
@@ -53,5 +53,9 @@
     "results_not_found": {
         "title": "Oops!",
         "desc": "We don't have such events..."
-    }
+    },
+    "clear": "Clear",
+    "delete": "Delete",
+    "accept": "Accept",
+    "see_event": "See the event"
 }

@@ -1,4 +1,4 @@
-export interface UserPostType {
+export interface UserType {
     id: string;
     name: string;
     surname: string;
@@ -16,13 +16,12 @@ export interface LocationType {
 
 export interface PostsType {
     id: string;
-    user: UserPostType;
+    user: UserType;
     title: string;
     desc: string;
     category: string;
     peopleLimit: number;
     imageUrl: string;
-    // avatarUrl: string;
     location: LocationType;
     date: string;
 }

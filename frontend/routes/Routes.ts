@@ -1,7 +1,7 @@
 import { Url } from "url";
 
 interface RouteUrl extends Partial<Url> {
-    pahtname: Routes;
+    pathname: Routes;
 }
 
 // for Routes enum and href object (href object example: Post.tsx)

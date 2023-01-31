@@ -27,7 +27,7 @@ import * as S from "./Tooltip.style";
 interface Props {
     children: ReactElement;
     placement: Placement;
-    shiftValue?: "sidebar";
+    shiftValue?: "sidebar" | "none";
     text: string;
 }
 
@@ -125,7 +125,7 @@ export const Tooltip = ({
                                 top: y ?? 0,
                                 left: x ?? 0,
                             }}
-                            animate={{ x: 50 }}
+                            animate={{ x: shiftValue === "sidebar" ? 50 : 0 }}
                             {...getFloatingProps()}
                         >
                             <div

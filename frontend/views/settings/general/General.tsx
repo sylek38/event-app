@@ -135,7 +135,7 @@ export const General = () => {
             </S.Form>
 
             <S.DeleteBtn onClick={() => setOpen(true)}>
-                {t("delete")}
+                {t("delete_account")}
             </S.DeleteBtn>
 
             {open && (
