@@ -19,7 +19,7 @@
     "i_have_read": "Przeczytałem i akceptuję",
     "terms_and_conditions": "regulamin strony",
     "filters": "Filtry",
-    "delete": "Usuń konto",
+    "delete_account": "Usuń konto",
     "avatar_change": "Zmień zdjęcie",
     "info": "Info",
     "map_info": "Dodaj lokację do mapy",
@@ -53,5 +53,9 @@
     "results_not_found": {
         "title": "Ups!",
         "desc": "Nie posiadamy takich wydarzeń..."
-    }
+    },
+    "clear": "Wyczyść",
+    "delete": "Usuń",
+    "accept": "Zaakceptuj",
+    "see_event": "Zobacz wydarzenie"
 }

@@ -16,15 +16,6 @@ export const Header = styled.header`
         width: 100%;
         display: flex;
         justify-content: space-between;
-
-        /* This is just temporary: */
-        > svg {
-            height: 50px;
-            width: 50px;
-            background-color: var(--secondary-background);
-            border-radius: 50%;
-            margin-left: 1rem;
-        }
     }
 
     @media screen and (max-width: 619px) {

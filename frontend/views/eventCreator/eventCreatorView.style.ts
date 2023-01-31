@@ -19,6 +19,10 @@ export const Content = styled.div`
     > button {
         margin-top: ${pxToRem(30)};
     }
+
+    @media screen and (max-width: 619px) {
+        width: 100%;
+    }
 `;
 
 export const NewLine = styled.p`

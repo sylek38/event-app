@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import { FetchUrl } from "../../api/types/Fetch";
 import { postItemsMock } from "../../components/posts/postItemsMock";
 import { BACKEND_URL } from "../../config";
-import { UserPostType } from "../../types/posts.type";
+import { UserType } from "../../types/posts.type";
 import { SinglePost } from "./components/SinglePost";
 
 interface PostData {
     id: string;
-    user: UserPostType;
+    user: UserType;
     title: string;
     desc: string;
     category: string;

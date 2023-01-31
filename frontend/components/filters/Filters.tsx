@@ -11,29 +11,25 @@ import { Button } from "../button/Button";
 import * as S from "./Filters.style";
 
 interface Props {
-    children: ReactNode;
-    reset: UseFormReset<FormTypes>;
+    children?: ReactNode;
+    resetFiltersFunction?: () => void;
 }
 
-export const Filters = ({ children, reset }: Props) => {
+export const Filters = ({ children, resetFiltersFunction }: Props) => {
     const { t } = useTranslation("global");
-
-    const resetValues = () => {
-        reset({
-            city: "",
-            category: "",
-            date: new Date().toISOString().substring(0, 10),
-        });
-    };
 
     return (
         <>
-            <S.Title>
+            <S.Container>
                 {t("filters")} <img src="/icons/filterIcon.svg" />
-                <Button variant="gray" size="sm" onClick={resetValues}>
-                    Clear
+                <Button
+                    variant="gray"
+                    size="sm"
+                    onClick={() => resetFiltersFunction?.()}
+                >
+                    {t("clear")}
                 </Button>
-            </S.Title>
+            </S.Container>
             {children}
         </>
     );

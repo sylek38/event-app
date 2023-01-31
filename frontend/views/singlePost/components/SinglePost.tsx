@@ -12,12 +12,13 @@ import { CategoryTag } from "../../../components/categoryTag/CategoryTag";
 import dynamic from "next/dynamic";
 import { Button } from "../../../components/button/Button";
 import useTranslation from "next-translate/useTranslation";
-import { LocationType, UserPostType } from "../../../types/posts.type";
+import { LocationType, UserType } from "../../../types/posts.type";
 import Image from "next/image";
 import { DefaultPostBackground } from "../../../assets/DefaultPostBackground";
 import { DefaultAvatar } from "../../../assets/DefaultAvatar";
 import { MarkerProps } from "../../../components/map/mapTypes";
 import { Loader } from "../../../components/loader/Loader";
+import { Avatar } from "../../../components/avatar/Avatar";
 
 const Map = dynamic(() => import("../../../components/map/Map"), {
     ssr: false,
@@ -25,7 +26,7 @@ const Map = dynamic(() => import("../../../components/map/Map"), {
 
 interface Props {
     id: string;
-    user: UserPostType;
+    user: UserType;
     title: string;
     desc: string;
     category: string;
@@ -81,15 +82,7 @@ export const SinglePost = ({
                 </S.BackgroundContainer>
                 <S.Content>
                     <S.UserInfo>
-                        {user?.avatarUrl ? (
-                            <Image
-                                src={user.avatarUrl}
-                                width={60}
-                                height={60}
-                            />
-                        ) : (
-                            <DefaultAvatar />
-                        )}
+                        <Avatar size={80} src={user?.avatarUrl} />
                         <span>
                             {user?.name} {user?.surname}
                         </span>
