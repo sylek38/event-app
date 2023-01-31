@@ -27,10 +27,14 @@ export const Container = styled.div<{
     background-color: var(--secondary-background);
     padding: ${({ withoutTopPadding }) =>
         withoutTopPadding
-            ? `0 ${pxToRem(30)} ${pxToRem(30)}  ${pxToRem(30)}`
+            ? `0 ${pxToRem(30)} ${pxToRem(30)} ${pxToRem(30)}`
             : `${pxToRem(30)}`};
     border-radius: ${pxToRem(25)};
     color: var(--color-white);
+
+    @media screen and (max-width: 619px) {
+        padding: 1rem;
+    }
 
     ${({ withoutBackground }) =>
         withoutBackground &&

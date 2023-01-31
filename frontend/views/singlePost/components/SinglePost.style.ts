@@ -2,7 +2,6 @@ import { pxToRem } from "./../../../utils/pxToRem";
 import styled, { css } from "styled-components";
 
 export const Post = styled.div<{ width: number; $padding?: number }>`
-    /* width: 90%; */
     max-width: ${pxToRem(750)};
     margin: auto;
     background-color: var(--secondary-background);
@@ -12,12 +11,12 @@ export const Post = styled.div<{ width: number; $padding?: number }>`
     + div {
         margin-top: 3rem;
     }
-
+    /* 
     ${({ $padding }) =>
         $padding &&
         css`
             padding: ${$padding};
-        `}
+        `} */
 `;
 
 export const BackgroundContainer = styled.div`
@@ -25,8 +24,7 @@ export const BackgroundContainer = styled.div`
     border-bottom: ${pxToRem(3)} solid var(--color-white);
     height: ${pxToRem(250)};
 
-    > img,
-    svg {
+    > svg {
         width: 100%;
         height: 100%;
         object-fit: cover;
@@ -44,16 +42,6 @@ export const UserInfo = styled.div`
     flex-direction: column;
     align-items: center;
 
-    > img,
-    svg {
-        width: ${pxToRem(80)};
-        height: ${pxToRem(80)};
-        object-fit: cover;
-        margin-bottom: 0.25rem;
-        border-radius: 50%;
-        border: 3px solid var(--color-white);
-    }
-
     > span {
         color: var(--color-white);
     }
@@ -62,6 +50,10 @@ export const UserInfo = styled.div`
 export const Content = styled.div`
     position: relative;
     padding: ${pxToRem(66)} ${pxToRem(48)} ${pxToRem(30)} ${pxToRem(48)};
+
+    @media screen and (max-width: 619px) {
+        padding: 2rem 1rem 1rem;
+    }
 `;
 
 export const Title = styled.span`
