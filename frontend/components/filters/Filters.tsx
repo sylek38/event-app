@@ -22,13 +22,15 @@ export const Filters = ({ children, resetFiltersFunction }: Props) => {
         <>
             <S.Container>
                 {t("filters")} <img src="/icons/filterIcon.svg" />
-                <Button
-                    variant="gray"
-                    size="sm"
-                    onClick={() => resetFiltersFunction?.()}
-                >
-                    {t("clear")}
-                </Button>
+                {resetFiltersFunction && (
+                    <Button
+                        variant="gray"
+                        size="sm"
+                        onClick={() => resetFiltersFunction?.()}
+                    >
+                        {t("clear")}
+                    </Button>
+                )}
             </S.Container>
             {children}
         </>

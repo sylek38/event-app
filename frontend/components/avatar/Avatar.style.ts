@@ -7,6 +7,7 @@ export const Container = styled.div<{ border?: boolean }>`
         object-fit: cover;
         border-radius: 50%;
         background-color: var(--tertiary-background);
+        cursor: pointer;
 
         ${({ border }) =>
             border &&

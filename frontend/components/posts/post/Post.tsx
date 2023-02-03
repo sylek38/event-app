@@ -105,7 +105,8 @@ export const Post = forwardRef<HTMLAnchorElement, Props>(
                             <S.DetailsItem>
                                 <FontAwesomeIcon icon={faLocationDot} />
                                 <span>
-                                    {location?.city}, {location?.street}
+                                    {location?.city}
+                                    {location?.street && `, ${location.street}`}
                                 </span>
                             </S.DetailsItem>
                             <S.DetailsItem>

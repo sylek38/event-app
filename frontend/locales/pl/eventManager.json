@@ -3,7 +3,15 @@
         "heading": "Menadżer wydarzeń - Zaproszenia"
     },
     "events": {
-        "heading": "Menadżer wydarzeń - Wydarzenia"
+        "heading": "Menadżer wydarzeń - Wydarzenia",
+        "created": "Stworzone",
+        "participating": "Biorę udział",
+        "more": "więcej",
+        "no_participants": "Brak uczestników",
+        "manage_participants": "Zarządzaj uczestnikami",
+        "see_event": "Zobacz wydarzenie"
+
+
     },
     "history": {
         "heading": "Menadżer wydarzeń - Historia"

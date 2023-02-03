@@ -101,6 +101,9 @@ const PostSchema = new mongoose.Schema({
 		{ type: Schema.Types.ObjectId, ref: "User", default: [] },
 	],
 	participants: [{ type: Schema.Types.ObjectId, ref: "User", default: [] }],
+	pending_participants: [
+		{ type: Schema.Types.ObjectId, ref: "User", default: [] },
+	],
 	archived: {
 		type: Boolean,
 		default: false,

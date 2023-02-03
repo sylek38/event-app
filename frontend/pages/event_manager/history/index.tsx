@@ -19,6 +19,7 @@ const EventManagerHistory = ({ csrf }: Props) => {
                 title: t("history.heading"),
                 description: t("heading_desc"),
             }}
+            small
         >
             <EventManagerView activeTab="history" />
         </Layout>

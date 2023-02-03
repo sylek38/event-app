@@ -19,9 +19,9 @@ export const EyeIcon = () => (
                 y2="7.5"
                 gradientUnits="userSpaceOnUse"
             >
-                <stop stop-color="#16ADA8" />
-                <stop offset="0.9999" stop-color="#24ECA4" />
-                <stop offset="1" stop-color="#24ECA4" />
+                <stop stopColor="#16ADA8" />
+                <stop offset="0.9999" stopColor="#24ECA4" />
+                <stop offset="1" stopColor="#24ECA4" />
             </linearGradient>
         </defs>
     </svg>

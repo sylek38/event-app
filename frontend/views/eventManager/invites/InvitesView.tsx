@@ -71,7 +71,7 @@ export const InvitesView = () => {
             {mockItems && mockItems.length > 0 ? (
                 <S.RequestsList>
                     {mockItems.map((request) => (
-                        <S.Item>
+                        <S.Item key={request.id}>
                             <S.User>
                                 <Avatar
                                     size={40}

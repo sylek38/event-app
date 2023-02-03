@@ -3,7 +3,13 @@
         "heading": "Event Manager - Invites"
     },
     "events": {
-        "heading": "Event Manager - Events"
+        "heading": "Event Manager - Events",
+        "created": "Created",
+        "participating": "Participating",
+        "more": "more",
+        "no_participants": "No participants",
+        "manage_participants": "Manage Participants",
+        "see_event": "See The Event"
     },
     "history": {
         "heading": "Event Manager - History"

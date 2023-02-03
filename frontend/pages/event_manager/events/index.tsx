@@ -19,6 +19,7 @@ const EventManagerEvents = ({ csrf }: Props) => {
                 title: t("events.heading"),
                 description: t("heading_desc"),
             }}
+            small
         >
             <EventManagerView activeTab="events" />
         </Layout>

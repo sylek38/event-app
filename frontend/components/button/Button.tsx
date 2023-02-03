@@ -6,7 +6,7 @@ interface AllProps {
     children: ReactNode | ReactNode[];
     href?: Routes;
     type?: "button" | "submit";
-    variant?: "gradientHover" | "blue" | "gradient" | "danger" | "gray";
+    variant?: "blue" | "gradient" | "danger" | "gray";
 
     size?: "sm" | "md" | "lg";
     fullWidth?: boolean;

@@ -1,37 +1,14 @@
 import styled, { css } from "styled-components";
 import { pxToRem } from "../../utils/pxToRem";
 
-const gradientStyle = css`
-    /* color: var(--color-white); */
-    /* border: ${pxToRem(3)} solid transparent; */
-    border: none;
-    border-radius: ${pxToRem(25)};
-`;
-
 const generateStyle = (
     size: string,
     variant: string,
     fullWidth: boolean
 ) => css`
-    /* TODO: figure out how to make transition for background */
-    transition: 0.25s;
-
-    ${variant === "gradientHover" &&
-    css`
-        background: linear-gradient(#232323, #232323) padding-box,
-            linear-gradient(45deg, #16ada8, #24eca4) border-box;
-        ${gradientStyle}
-
-        &:hover {
-            background: linear-gradient(45deg, #16ada8, #24eca4) padding-box,
-                linear-gradient(45deg, #16ada8, #24eca4) border-box;
-        }
-    `}
-
     ${variant === "gradient" &&
     css`
         background: linear-gradient(45deg, #16ada8, #24eca4) padding-box;
-        ${gradientStyle}
 
         &:hover {
             filter: drop-shadow(0 0 3px #24eca4);
@@ -47,28 +24,23 @@ const generateStyle = (
     `}
     
 
-    ${variant === "danger" &&
-    css`
-        background-color: var(--error-color);
-        border: none;
-        border-radius: ${pxToRem(25)};
-    `}
-
-    ${variant === "gray" &&
-    css`
-        background-color: var(--tertiary-background);
-        border: none;
-        border-radius: ${pxToRem(25)};
-    `}
-
     width: ${fullWidth ? "100%" : "initial"};
     padding: var(--button-padding-${size});
     background-color: var(--button-bg-${variant});
     color: var(--color-white);
-    font-size: ${pxToRem(14)};
+    font-size: var(--button-size-${size});
     font-weight: 600;
     border: none;
     border-radius: ${pxToRem(25)};
+    transition: 0.25s;
+
+    ${variant !== "gradient" &&
+    variant !== "blue" &&
+    css`
+        &:hover {
+            filter: brightness(1.25);
+        }
+    `}
 `;
 
 export const Anchor = styled.a<{

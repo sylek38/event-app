@@ -51,23 +51,7 @@ export const User = styled.div`
         font-size: ${pxToRem(14)};
         line-height: 1.2rem;
         overflow-wrap: break-word;
-        /* word-break: break-all; */
     }
-
-    /* display: block;
-    margin: ${pxToRem(10)} 0 ${pxToRem(20)};
-
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--color-white);
-
-    line-height: 1.5rem;
-    max-height: 3rem;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
-    overflow: hidden;
-    text-overflow: ellipsis; */
 `;
 
 export const ButtonsSection = styled.div`
@@ -87,9 +71,4 @@ export const ButtonsSection = styled.div`
             }
         }
     }
-
-    /* @media screen and (max-width: 799px) {
-        flex-direction: column;
-        gap: 0.5rem;
-    } */
 `;
