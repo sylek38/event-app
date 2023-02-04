@@ -10,6 +10,7 @@
         "/settings/general": ["settings"],
         "/settings/password": ["settings"],
         "/info": ["info"],
-        "/info/terms": ["info"]
+        "/info/terms": ["info"],
+        "/404": ["info"]
     }
 }

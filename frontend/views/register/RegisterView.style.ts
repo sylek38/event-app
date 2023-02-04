@@ -174,7 +174,7 @@ export const MiddleHref = styled.a`
 
 export const Button = styled.button`
     all: unset;
-    width: 90%;
+    width: 20%;
     padding: ${pxToRem(10)} ${pxToRem(15)} ${pxToRem(10)} ${pxToRem(15)};
     margin-top: ${pxToRem(15)};
     border-radius: ${pxToRem(50)};
