@@ -21,7 +21,10 @@
 
         "city_label": "Miasto",
         "street_label": "Ulica",
-        "city_placeholder": "Wybierz miasto"
+        "city_placeholder": "Wybierz miasto",
+
+        "user_label": "Imię i nazwisko użytkownika"
+
 
     },
     "text_searchbar": {

@@ -56,9 +56,13 @@ const participatingEventsMock: TempParticipatingEventsResponse = {
 interface Props {
     // eventCardVariant: EventCardVariant;
     filterTypeVariant: FilterType;
+    historyCard?: boolean;
 }
 
-export const ParticipatingEventsList = ({ filterTypeVariant }: Props) => {
+export const ParticipatingEventsList = ({
+    filterTypeVariant,
+    historyCard,
+}: Props) => {
     const ref = useRef<HTMLDivElement>(null);
 
     return (
@@ -79,6 +83,7 @@ export const ParticipatingEventsList = ({ filterTypeVariant }: Props) => {
                                 return (
                                     <ParticipatingEventItem
                                         key={event?.id}
+                                        historyCard={historyCard}
                                         {...event}
                                     />
                                 );
@@ -87,6 +92,7 @@ export const ParticipatingEventsList = ({ filterTypeVariant }: Props) => {
                             return (
                                 <ParticipatingEventItem
                                     key={event.id}
+                                    historyCard={historyCard}
                                     {...event}
                                 />
                             );

@@ -22,7 +22,7 @@ import {
     useState,
 } from "react";
 
-import style from "./OverflowMenu.module.scss";
+import * as S from "./OverflowMenu.style";
 
 import { mergeRefs } from "../../functions/mergeRefs";
 
@@ -98,8 +98,7 @@ export const OverflowMenu = ({
 
             <AnimatePresence>
                 {open && (
-                    <motion.div
-                        className={style.wrapper}
+                    <S.Wrapper
                         data-testid={`overflow-menu_${id}`}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -114,9 +113,8 @@ export const OverflowMenu = ({
                         }}
                         {...getFloatingProps()}
                     >
-                        <div
+                        <S.MenuArrow
                             ref={refArrow}
-                            className="overflow-menu-arrow"
                             style={{
                                 position: strategy,
                                 top:
@@ -146,7 +144,7 @@ export const OverflowMenu = ({
                             }}
                         />
                         {content}
-                    </motion.div>
+                    </S.Wrapper>
                 )}
             </AnimatePresence>
         </>

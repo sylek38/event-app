@@ -21,7 +21,9 @@
 
         "city_label": "City",
         "street_label": "Street",
-        "city_placeholder": "Choose city"
+        "city_placeholder": "Choose city",
+
+        "user_label": "Full user name"
     },
 
     "text_searchbar": {

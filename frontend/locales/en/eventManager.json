@@ -9,7 +9,11 @@
         "more": "more",
         "no_participants": "No participants",
         "manage_participants": "Manage Participants",
-        "see_event": "See The Event"
+        "see_event": "See The Event",
+        "participants": "Participants",
+        "invite_to_event": "Invite To Event",
+        "invite": "Invite",
+        "join_requests": "Join Requests"
     },
     "history": {
         "heading": "Event Manager - History"

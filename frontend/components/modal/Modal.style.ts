@@ -33,7 +33,7 @@ export const Wrapper = styled(motion.div)<{ size: string }>`
     left: ${pxToRem(82)};
     top: ${pxToRem(100)};
     max-width: ${({ size }) => (size === "sm" ? "600px" : "1200px")};
-    background-color: var(--container-background);
+    background-color: var(--secondary-background);
     border-radius: ${pxToRem(25)};
     padding: ${pxToRem(30)};
     margin: 0 auto;

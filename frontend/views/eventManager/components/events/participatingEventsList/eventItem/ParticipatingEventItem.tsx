@@ -1,5 +1,6 @@
 import {
     faCalendarDays,
+    faEllipsis,
     faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -8,6 +9,11 @@ import { useRouter } from "next/router";
 import { forwardRef } from "react";
 import { Avatar } from "../../../../../../components/avatar/Avatar";
 import { Button } from "../../../../../../components/button/Button";
+import {
+    OverflowMenuItem,
+    OverflowMenuItemProps,
+} from "../../../../../../components/overflowMenu/item/OverflowMenuItem";
+import { OverflowMenu } from "../../../../../../components/overflowMenu/OverflowMenu";
 import { Routes } from "../../../../../../routes/Routes";
 import { UserType } from "../../../../../../types/posts.type";
 import * as S from "../../Common.style";
@@ -32,11 +38,28 @@ export const ParticipatingEventItem = forwardRef<HTMLDivElement, Props>(
         const { push } = useRouter();
         const processedParticipants = participants.slice(0, 3);
 
+        const overflowMenuItems: OverflowMenuItemProps[] = [
+            {
+                id: "option_exit_event",
+                text: "exit",
+                onClick: () => console.log("exit"),
+            },
+        ];
+
         return (
-            <S.Card>
+            <S.Card ref={ref}>
                 <S.Header>
                     <span>{title} sad as dsad as as</span>
-                    dots
+                    <OverflowMenu
+                        id="event_options"
+                        content={overflowMenuItems.map(({ id, ...props }) => (
+                            <OverflowMenuItem id={id} key={id} {...props} />
+                        ))}
+                    >
+                        <S.OverflowMenuButton>
+                            <FontAwesomeIcon icon={faEllipsis} />
+                        </S.OverflowMenuButton>
+                    </OverflowMenu>
                 </S.Header>
                 <S.Users>
                     {participants && participants.length > 0 ? (
@@ -72,7 +95,7 @@ export const ParticipatingEventItem = forwardRef<HTMLDivElement, Props>(
                                                 variant="gray"
                                             >{` + ${
                                                 participants.length - 3
-                                            } ${t("more")} `}</Button>
+                                            } ${t("events.more")} `}</Button>
                                         )}
                                     </div>
                                 </S.UsersList>

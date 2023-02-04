@@ -87,9 +87,13 @@ const createdEventsMock: TempCreatedEventsResponse = {
 interface Props {
     // eventCardVariant: EventCardVariant;
     filterTypeVariant: FilterType;
+    historyCard?: boolean;
 }
 
-export const CreatedEventsList = ({ filterTypeVariant }: Props) => {
+export const CreatedEventsList = ({
+    filterTypeVariant,
+    historyCard,
+}: Props) => {
     const ref = useRef<HTMLDivElement>(null);
 
     return (
@@ -110,13 +114,18 @@ export const CreatedEventsList = ({ filterTypeVariant }: Props) => {
                                 return (
                                     <CreatedEventItem
                                         key={event?.id}
+                                        historyCard={historyCard}
                                         {...event}
                                     />
                                 );
                             }
 
                             return (
-                                <CreatedEventItem key={event.id} {...event} />
+                                <CreatedEventItem
+                                    key={event.id}
+                                    historyCard={historyCard}
+                                    {...event}
+                                />
                             );
                         }}
                     </ViewportList>
