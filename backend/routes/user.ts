@@ -1,7 +1,7 @@
 import { Request, response, Response } from "express";
 import { uploadImage } from "../middleware/upload/images";
 import User from "../models/User";
-import { verifyToken } from "./verify/verifyToken";
+import { verifyToken } from "../middleware/verifyToken/verifyToken";
 import { unlink } from "fs/promises";
 
 const router = require("express").Router();

@@ -24,7 +24,7 @@ export const PostFilters = () => {
     const { t } = useTranslation("global");
     const { query, pathname, replace, push } = useRouter();
     const { csrf } = useAuth();
-    const { data: categories, isLoading, isError } = useAPICategories({ csrf });
+    const { data: categories } = useAPICategories({ csrf });
     const { wallFiltersSSR } = useWallContext();
     const formRef = useRef<HTMLFormElement>(null);
 

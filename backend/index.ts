@@ -1,4 +1,4 @@
-import { verifyToken } from "./routes/verify/verifyToken";
+import { verifyToken } from "./middleware/verifyToken/verifyToken";
 // import dotenv from "dotenv";
 import * as dotenv from "dotenv";
 import express from "express";
@@ -6,6 +6,7 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/user");
 const postRoute = require("./routes/posts");
 const categoryRoute = require("./routes/category");
+const eventsRoute = require("./routes/events");
 
 const cors = require("cors");
 import mongoose from "mongoose";
@@ -68,6 +69,7 @@ app.use("/backend/auth", authRoute);
 app.use("/backend/users", userRoute);
 app.use("/backend/posts", postRoute);
 app.use("/backend/categories", categoryRoute);
+app.use("/backend/events", eventsRoute);
 // app.use(verifyToken);
 
 app.listen(port, () => {

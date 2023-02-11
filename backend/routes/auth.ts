@@ -2,7 +2,7 @@ import {
 	generateToken,
 	RequestWithCookies,
 	verifyToken,
-} from "./verify/verifyToken";
+} from "../middleware/verifyToken/verifyToken";
 import jwt, { JwtPayload } from "jsonwebtoken";
 
 import { Request, Response } from "express";
@@ -14,7 +14,12 @@ const bcrypt = require("bcrypt");
 interface RequestWithFile extends Request {
 	file: Express.Multer.File;
 }
-
+// TODO: Uncomment for final version
+// if (!password.test(passwordRegex)) {
+// 	return res
+// 		.status(400)
+// 		.json({ error: "Password does not meet the requirements" });
+// }
 interface RegisterRequest extends Request {
 	body: {
 		name: string;
@@ -27,13 +32,6 @@ interface RegisterRequest extends Request {
 
 router.post("/register", async (req: RegisterRequest, res: Response) => {
 	const { name, surname, email, password, bio } = req.body;
-
-	// TODO: Uncomment for final version
-	// if (!password.test(passwordRegex)) {
-	// 	return res
-	// 		.status(400)
-	// 		.json({ error: "Password does not meet the requirements" });
-	// }
 
 	const isEmailTaken = await User.findOne({ email });
 
@@ -56,9 +54,9 @@ router.post("/register", async (req: RegisterRequest, res: Response) => {
 
 		const user = await newUser.save();
 
-		res.status(200).json(user);
+		return res.status(200).json(user);
 	} catch (error) {
-		res.status(500).json(error);
+		return res.status(500).json(error);
 	}
 });
 

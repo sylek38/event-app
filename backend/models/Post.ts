@@ -1,3 +1,4 @@
+import { ObjectId } from "mongodb";
 import mongoose, { Document, Schema } from "mongoose";
 
 // IMAGES
@@ -17,7 +18,7 @@ export type LocationType = {
 
 export interface PostType extends Document {
 	user: {
-		userId: string;
+		id: string;
 		name: string;
 		surname: string;
 		avatarFilename: string;
@@ -26,10 +27,16 @@ export interface PostType extends Document {
 	desc: string;
 	category: string;
 	peopleLimit: number;
-	photo: string;
+	// photo: string;
 	location: LocationType;
 	date: number;
 	imageFilename: string;
+	// requesty do usera
+	pendingRequestsTo: ObjectId[];
+	// requesty od usera
+	pendingRequestsFrom: ObjectId[];
+	participants: ObjectId[];
+	archived: boolean;
 }
 
 const PostSchema = new mongoose.Schema({
@@ -97,13 +104,9 @@ const PostSchema = new mongoose.Schema({
 		type: Date,
 		required: true,
 	},
-	pendingRequests: [
-		{ type: Schema.Types.ObjectId, ref: "User", default: [] },
-	],
-	participants: [{ type: Schema.Types.ObjectId, ref: "User", default: [] }],
-	pending_participants: [
-		{ type: Schema.Types.ObjectId, ref: "User", default: [] },
-	],
+	pendingRequestsFrom: [{ type: ObjectId, ref: "User", default: [] }],
+	pendingRequestsTo: [{ type: ObjectId, ref: "User", default: [] }],
+	participants: [{ type: ObjectId, ref: "User", default: [] }],
 	archived: {
 		type: Boolean,
 		default: false,
