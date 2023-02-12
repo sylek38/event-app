@@ -37,10 +37,7 @@ export const Layout = ({
             <Loader />
         </StatusWrapper>;
 
-    if (
-        !csrf ||
-        data?.errors?.find((el: string) => el === "authentication_failed")
-    ) {
+    if (!csrf || data?.errors?.find((el) => el === "authentication_failed")) {
         return (
             <StatusWrapper>
                 <ErrorView errorCode="401" />
