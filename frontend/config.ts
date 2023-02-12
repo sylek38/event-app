@@ -3,6 +3,7 @@ export const DEFAULT_EMAIL = "default@gmail.com";
 export const DEFAULT_PASS = "default1";
 export const AUTH_COOKIE = "token";
 export const AUTH_REFRESH_COOKIE = "refreshToken";
+export const CONFIG_TITLE = "Eventik";
 
 // PAGINATION DEFAULTS
 
