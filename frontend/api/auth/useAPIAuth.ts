@@ -18,7 +18,9 @@ export const fetchAPIAuth = async ({ csrf }: Args) => {
 
         return data.json();
     } catch (err) {
-        throw err;
+        if (typeof err === "string") {
+            throw JSON.parse(err);
+        }
     }
 };
 
