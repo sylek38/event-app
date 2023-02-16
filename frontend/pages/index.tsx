@@ -31,7 +31,6 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
         }
     } catch (err) {
         delete req.cookies["csrf"];
-        console.log(err);
     }
 
     return { props: {} };
