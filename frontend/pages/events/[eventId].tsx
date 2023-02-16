@@ -16,15 +16,30 @@ interface Props {
 }
 
 const Event = ({ csrf, id }: Props) => {
-    // const { query } = useRouter();
+    const { query } = useRouter();
     // const { id } = query;
     const { data, isLoading, isError } = useAPISinglePost({
         id: (id as string) ?? "",
     });
+
+    const post = data?.results;
+
+    if (!data || isError) {
+        return <div>isError</div>;
+    }
+
     return (
         <Layout csrf={csrf} withoutBackground small>
             <SinglePost
-                {...data?.results}
+                id={post!.id}
+                user={post!.user}
+                title={post!.title}
+                desc={post!.desc}
+                category={post!.category}
+                peopleLimit={post!.peopleLimit}
+                imageUrl={post!.imageUrl}
+                location={post!.location}
+                date={post!.date}
                 isLoading={isLoading}
                 isError={isError}
             />
@@ -46,7 +61,7 @@ export const getServerSideProps: GetServerSideProps = async ({
 
     await queryClient.prefetchQuery(
         ["single.post"],
-        async () => await fetchAPISinglePost({ id: query.id as string })
+        async () => await fetchAPISinglePost({ id: query.eventId as string })
     );
 
     return {

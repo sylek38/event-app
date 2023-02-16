@@ -1,8 +1,11 @@
 import { ReactNode } from "react";
 import { useAPIAuth } from "../../api/auth/useAPIAuth";
 import { Header } from "../../components/header/Header";
+import { Loader } from "../../components/loader/Loader";
 import Navbar from "../../components/navbar/Navbar";
 import { UserContext } from "../../context/UserContext";
+import { ErrorView } from "../status/ErrorView";
+import { StatusWrapper } from "../status/statusWrapper/StatusWrapper";
 import * as S from "./Layout.style";
 
 interface Props {
@@ -25,10 +28,30 @@ export const Layout = ({
     csrf,
     withoutTopPadding,
 }: Props) => {
-    // TODO: loading / error states
     const { data, isError, isFetching, isLoading } = useAPIAuth({
         csrf,
     });
+
+    if (isLoading && isFetching)
+        <StatusWrapper>
+            <Loader />
+        </StatusWrapper>;
+
+    // if (!csrf || data?.errors?.find((el) => el === "authentication_failed")) {
+    //     return (
+    //         <StatusWrapper>
+    //             <ErrorView errorCode="401" />
+    //         </StatusWrapper>
+    //     );
+    // }
+
+    if (isError) {
+        return (
+            <StatusWrapper>
+                <ErrorView errorCode="500" />
+            </StatusWrapper>
+        );
+    }
 
     return (
         <UserContext.Provider value={{ session: data, csrf }}>

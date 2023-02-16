@@ -1,29 +1,20 @@
 import * as S from "./Posts.style";
-// import { Post } from "./post/Post";
 import ViewportList from "react-viewport-list";
-import { useCallback, useEffect, useMemo, useRef } from "react";
-import { useLastItemRef } from "../../hooks/useLastItemRef";
+import { useCallback, useMemo, useRef } from "react";
 import { Loader } from "../loader/Loader";
-import { useWallContext } from "../../context/WallContext";
 import { Post } from "./post/Post";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
 import { useAPIPosts } from "../../api/posts/useAPIPosts";
 import { useAuth } from "../../context/UserContext";
+import { StatusWrapper } from "../../views/status/statusWrapper/StatusWrapper";
+import { ErrorView } from "../../views/status/ErrorView";
 
 export const Posts = () => {
     const { t } = useTranslation("global");
     const ref = useRef<HTMLDivElement>(null);
 
     const { query, push, pathname } = useRouter();
-    // const {
-    //     posts,
-    //     isError,
-    //     isLoading,
-    //     fetchNextPage,
-    //     isFetchingNextPage,
-    //     hasNextPage,
-    // } = useWallContext();
     const { csrf } = useAuth();
 
     const {
@@ -54,7 +45,7 @@ export const Posts = () => {
 
             if (hasNextPage) console.log("has next page...");
 
-            // if (intObserver.current) intObserver.current.disconnect();
+            if (intObserver.current) intObserver.current.disconnect();
 
             intObserver.current = new IntersectionObserver((items) => {
                 console.log(items[0].isIntersecting, "is intersectin");
@@ -69,7 +60,12 @@ export const Posts = () => {
         [isFetchingNextPage, fetchNextPage, hasNextPage]
     );
 
-    if (!isLoading && isError) return <>problem z pobraniem postów. mock</>;
+    if (!isLoading && isError)
+        return (
+            <StatusWrapper>
+                <ErrorView errorCode="500" />
+            </StatusWrapper>
+        );
 
     if (!isLoading && currentPosts.length === 0) {
         return (
@@ -112,7 +108,7 @@ export const Posts = () => {
                     }}
                 </ViewportList>
             ) : (
-                <div>Pusta tablica</div>
+                <div>{t("events_empty")}</div>
             )}
             {isFetchingNextPage && <Loader />}
         </S.Posts>
