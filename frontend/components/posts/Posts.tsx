@@ -1,10 +1,7 @@
 import * as S from "./Posts.style";
-// import { Post } from "./post/Post";
 import ViewportList from "react-viewport-list";
-import { useCallback, useEffect, useMemo, useRef } from "react";
-import { useLastItemRef } from "../../hooks/useLastItemRef";
+import { useCallback, useMemo, useRef } from "react";
 import { Loader } from "../loader/Loader";
-import { useWallContext } from "../../context/WallContext";
 import { Post } from "./post/Post";
 import useTranslation from "next-translate/useTranslation";
 import { useRouter } from "next/router";
@@ -18,14 +15,6 @@ export const Posts = () => {
     const ref = useRef<HTMLDivElement>(null);
 
     const { query, push, pathname } = useRouter();
-    // const {
-    //     posts,
-    //     isError,
-    //     isLoading,
-    //     fetchNextPage,
-    //     isFetchingNextPage,
-    //     hasNextPage,
-    // } = useWallContext();
     const { csrf } = useAuth();
 
     const {
@@ -35,7 +24,12 @@ export const Posts = () => {
         fetchNextPage,
         isFetchingNextPage,
         hasNextPage,
-    } = useAPIPosts();
+    } = useAPIPosts({ csrf });
+
+    // const currentPosts =
+    //     posts && posts.pages.length > 0
+    //         ? posts.pages.map((item) => item.results).flat()
+    //         : [];
 
     const currentPosts = useMemo(() => {
         const current = data?.pages.map((item) => item.results).flat() ?? [];
@@ -44,6 +38,7 @@ export const Posts = () => {
     }, [data]);
 
     const intObserver = useRef<IntersectionObserver>();
+    console.log(ref, "ref");
     const lastItemRef = useCallback(
         (item: HTMLAnchorElement) => {
             if (isFetchingNextPage) return;
@@ -90,6 +85,7 @@ export const Posts = () => {
         );
 
     return (
+        // <div ref={ref}>
         <S.Posts ref={ref}>
             {currentPosts.length > 0 ? (
                 <ViewportList
