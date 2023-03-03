@@ -34,7 +34,7 @@ export function Radio<T>({
         <S.Wrapper
             type="radio"
             id={id}
-            value={value}
+            value={value.replace("_", " ")}
             data-testid={`radio_${id}_${value}`}
             disabled={disabled}
             $error={error}

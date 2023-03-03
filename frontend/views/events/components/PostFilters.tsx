@@ -22,7 +22,7 @@ export interface FormTypes {
 
 export const PostFilters = () => {
     const { t } = useTranslation("global");
-    const { query, pathname, replace, push } = useRouter();
+    const { query, pathname, push } = useRouter();
     const { csrf } = useAuth();
     const { data: categories, isLoading, isError } = useAPICategories({ csrf });
     const { wallFiltersSSR } = useWallContext();
