@@ -6,7 +6,7 @@ const bcrypt = require("bcrypt");
 
 const router = require("express").Router();
 import Post, { LocationType, PostType } from "../models/Post";
-import { verifyToken } from "./verify/verifyToken";
+import { verifyToken } from "../middleware/verifyToken/verifyToken";
 import { uploadImage } from "../middleware/upload/images";
 import { unlink } from "fs/promises";
 
@@ -169,7 +169,7 @@ router.put(
 			res.status(404).json({ error: "Post does not exist" });
 		}
 
-		if (foundPost?.user.userId !== userId) {
+		if (foundPost?.user.id !== userId) {
 			res.status(401).json({ error: "You can only edit your posts" });
 		}
 
@@ -262,7 +262,7 @@ router.delete(
 			return res.status(404).json({ error: "Post does not exist" });
 		}
 
-		if (foundPost?.user.userId != userId) {
+		if (foundPost?.user.id != userId) {
 			return res
 				.status(401)
 				.json({ error: "You can only edit your posts" });
@@ -305,7 +305,7 @@ router.get("/post/:id", async (req: GetPostParamsType, res: Response) => {
 		user: {
 			name: foundPost?.user.name,
 			surname: foundPost?.user.surname,
-			id: foundPost?.user.userId,
+			id: foundPost?.user.id,
 			avatarUrl: foundPost?.user.avatarFilename
 				? `http://${req.get("host")}/public/images/${
 						foundPost.user.avatarFilename
@@ -430,7 +430,7 @@ router.get("/infinite", async (req: PostsQuery, res: Response) => {
 	const dataResponse = filteredPaginatedPosts.map(post => ({
 		id: post._id,
 		user: {
-			id: post.user.userId,
+			id: post.user.id,
 			name: post.user.name,
 			surname: post.user.surname,
 			avatarUrl: post.user

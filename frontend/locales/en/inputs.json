@@ -23,7 +23,7 @@
         "street_label": "Street",
         "city_placeholder": "Choose city",
 
-        "user_label": "Full user name"
+        "user_label": "User ID"
     },
 
     "text_searchbar": {
