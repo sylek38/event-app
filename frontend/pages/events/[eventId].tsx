@@ -17,6 +17,7 @@ interface Props {
 
 const Event = ({ csrf }: Props) => {
     const { query } = useRouter();
+
     const { data, isLoading, isError } = useAPISinglePost({
         id: (query.eventId as string) ?? "",
     });

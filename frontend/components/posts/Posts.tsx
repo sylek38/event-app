@@ -47,6 +47,13 @@ export const Posts = () => {
 
     if (!isLoading && isError) return <>problem z pobraniem postów</>;
 
+    //     if (!isLoading && isError)
+    //         return (
+    //             <StatusWrapper>
+    //                 <ErrorView errorCode="500" />
+    //             </StatusWrapper>
+    //         );
+
     if (!isLoading && currentPosts.length === 0) {
         return (
             <S.NotFound>
@@ -83,7 +90,7 @@ export const Posts = () => {
                     }}
                 </ViewportList>
             ) : (
-                <div>Pusta tablica</div>
+                <div>{t("events_empty")}</div>
             )}
             {isFetchingNextPage && <Loader />}
         </S.Posts>

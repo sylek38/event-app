@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import { BACKEND_URL } from "../../config";
-import { SessionType } from "../../context/UserContext";
+import { SessionResponse } from "../../context/UserContext";
 import { FetchUrl } from "../types/Fetch";
 interface Args {
     csrf: string;
@@ -18,12 +18,14 @@ export const fetchAPIAuth = async ({ csrf }: Args) => {
 
         return data.json();
     } catch (err) {
-        throw err;
+        if (typeof err === "string") {
+            throw JSON.parse(err);
+        }
     }
 };
 
 export const useAPIAuth = ({ csrf }: Args) =>
-    useQuery<SessionType>(
+    useQuery<SessionResponse>(
         ["authorization"],
         async () =>
             await fetchAPIAuth({
