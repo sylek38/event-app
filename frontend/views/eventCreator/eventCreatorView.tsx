@@ -149,6 +149,7 @@ export const EventCreatorView = () => {
                     register={register}
                     control={control}
                     required
+                    fullTime
                     dark
                 />
 

@@ -22,6 +22,7 @@ interface Props<T> {
     required?: boolean;
     dark?: boolean;
     withoutDesc?: boolean;
+    fullTime?: boolean;
 }
 
 export function DateInput<T>({
@@ -36,11 +37,12 @@ export function DateInput<T>({
     required,
     dark,
     withoutDesc,
+    fullTime,
 }: Props<T>) {
     const { t } = useTranslation("inputs");
 
     const { ref, ...rest } = register(id, {
-        // valueAsDate: true,
+        valueAsDate: true,
         required,
     });
 
@@ -60,7 +62,7 @@ export function DateInput<T>({
             )}
 
             <S.DateInput
-                type="date"
+                type={fullTime ? "datetime-local" : "date"}
                 isError={isError}
                 dark={dark}
                 className="datepicker"
@@ -69,6 +71,7 @@ export function DateInput<T>({
                 ref={ref}
                 {...rest}
             />
+
             {!withoutDesc && (
                 <GenerateDescription
                     id={id}

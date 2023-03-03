@@ -5,5 +5,7 @@ interface Props {
 }
 
 export const CategoryTag = ({ name }: Props) => {
-    return <S.CategoryTag>{name}</S.CategoryTag>;
+    return (
+        <S.CategoryTag>{name.replace("_", " ").toUpperCase()}</S.CategoryTag>
+    );
 };
