@@ -1,7 +1,9 @@
 import { createContext, useContext } from "react";
+import { ResponseWithError } from "../types/responses/errorsResponse.type";
 
 // We do not store sensitive data like password in context
-export interface SessionType {
+
+export interface SessionResponse extends ResponseWithError {
     email: string;
     name: string;
     surname: string;
@@ -11,7 +13,7 @@ export interface SessionType {
 }
 
 interface Props {
-    session?: SessionType;
+    session?: SessionResponse;
     csrf: string;
 }
 

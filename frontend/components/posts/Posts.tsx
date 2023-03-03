@@ -9,7 +9,6 @@ import { useAuth } from "../../context/UserContext";
 
 export const Posts = () => {
     const { t } = useTranslation("global");
-    const ref = useRef<HTMLDivElement>(null);
 
     const { csrf } = useAuth();
 
@@ -29,10 +28,11 @@ export const Posts = () => {
     }, [data]);
 
     const intObserver = useRef<IntersectionObserver>();
-    console.log(ref, "ref");
     const lastItemRef = useCallback(
         (item: HTMLAnchorElement) => {
             if (isFetchingNextPage) return;
+
+            if (intObserver.current) intObserver.current.disconnect();
 
             intObserver.current = new IntersectionObserver((items) => {
                 if (items[0].isIntersecting && hasNextPage) {
@@ -46,6 +46,13 @@ export const Posts = () => {
     );
 
     if (!isLoading && isError) return <>problem z pobraniem postów</>;
+
+    //     if (!isLoading && isError)
+    //         return (
+    //             <StatusWrapper>
+    //                 <ErrorView errorCode="500" />
+    //             </StatusWrapper>
+    //         );
 
     if (!isLoading && currentPosts.length === 0) {
         return (
@@ -65,15 +72,11 @@ export const Posts = () => {
         );
 
     return (
-        <S.Posts ref={ref}>
+        <S.Posts>
             {currentPosts.length > 0 ? (
-                <ViewportList
-                    items={currentPosts}
-                    viewportRef={ref}
-                    scrollThreshold={0.5}
-                >
+                <ViewportList items={currentPosts}>
                     {(post, index) => {
-                        if (index + 1 === currentPosts?.length) {
+                        if (index === currentPosts?.length - 1) {
                             return (
                                 <Post
                                     ref={lastItemRef}
@@ -87,7 +90,7 @@ export const Posts = () => {
                     }}
                 </ViewportList>
             ) : (
-                <div>Pusta tablica</div>
+                <div>{t("events_empty")}</div>
             )}
             {isFetchingNextPage && <Loader />}
         </S.Posts>

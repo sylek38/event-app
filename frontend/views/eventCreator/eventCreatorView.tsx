@@ -30,7 +30,7 @@ interface FormTypes {
     category: string;
     date: Date;
     peopleLimit: number;
-    image: string;
+    image: File;
 
     city: string;
     street: string;
@@ -56,7 +56,7 @@ export const EventCreatorView = () => {
             desc: "",
             category: "",
             peopleLimit: 1,
-            image: "",
+            image: undefined,
             map: "",
             date: undefined,
         },
@@ -150,14 +150,6 @@ export const EventCreatorView = () => {
                     control={control}
                     required
                     dark
-                />
-                <Slider
-                    id="peopleLimit"
-                    register={register}
-                    control={control}
-                    fullWidth
-                    min={2}
-                    max={99}
                 />
 
                 <TextInput

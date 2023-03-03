@@ -9,6 +9,7 @@ export const Posts = styled.div`
     flex-wrap: wrap;
     gap: ${pxToRem(75)} ${pxToRem(25)};
     padding-top: 3rem;
+    overflow: auto;
 `;
 
 export const NotFound = styled.div`

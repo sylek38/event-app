@@ -62,65 +62,55 @@ export const Post = forwardRef<HTMLAnchorElement, Props>(
             locale: locale === "pl" ? pl : enUS,
         });
 
-        console.log(ref, "child ref");
         return (
-            <Link
-                ref={ref}
-                href={{
-                    pathname: Routes.EVENT,
-                    query: { id },
-                }}
-                passHref
-            >
-                <S.Post>
-                    <S.BackgroundContainer>
-                        {imageUrl ? (
-                            <Image
-                                src={imageUrl}
-                                alt={`background photo of ${title}`}
-                            />
-                        ) : (
-                            <DefaultPostBackground />
-                        )}
+            <S.Post ref={ref} href={`/events/${id}`}>
+                <S.BackgroundContainer>
+                    {imageUrl ? (
+                        <Image
+                            src={imageUrl}
+                            alt={`background photo of ${title}`}
+                        />
+                    ) : (
+                        <DefaultPostBackground />
+                    )}
 
-                        <S.Date>
-                            <span> {new Date(date).getDate()}</span>
-                            <span>
-                                {new Date(date).toLocaleString(t("lang"), {
-                                    month: "short",
-                                })}
-                            </span>
-                        </S.Date>
-                    </S.BackgroundContainer>
-                    <S.Content>
-                        <S.Avatar>
-                            <Avatar size={60} src={user?.avatarUrl} border />
-                        </S.Avatar>
+                    <S.Date>
+                        <span> {new Date(date).getDate()}</span>
                         <span>
-                            {user?.name} {user?.surname}
+                            {new Date(date).toLocaleString(t("lang"), {
+                                month: "short",
+                            })}
                         </span>
-                        <CategoryTag name={category} />
-                        <S.Title>{title}</S.Title>
-                        <S.Details>
-                            <S.DetailsItem>
-                                <FontAwesomeIcon icon={faLocationDot} />
-                                <span>
-                                    {location?.city}
-                                    {location?.street && `, ${location.street}`}
-                                </span>
-                            </S.DetailsItem>
-                            <S.DetailsItem>
-                                <FontAwesomeIcon icon={faCalendarDays} />
-                                <span>{processedDate}</span>
-                            </S.DetailsItem>
-                            <S.DetailsItem>
-                                <FontAwesomeIcon icon={faUser} />
-                                <span>{peopleLimit}</span>
-                            </S.DetailsItem>
-                        </S.Details>
-                    </S.Content>
-                </S.Post>
-            </Link>
+                    </S.Date>
+                </S.BackgroundContainer>
+                <S.Content>
+                    <S.Avatar>
+                        {user?.avatarUrl ? (
+                            <Avatar size={60} src={user?.avatarUrl} border />
+                        ) : (
+                            <DefaultAvatar size={60} />
+                        )}
+                    </S.Avatar>
+                    <span>
+                        {user?.name} {user?.surname}
+                    </span>
+                    <CategoryTag name={category} />
+                    <S.Title>{title}</S.Title>
+                    <S.Details>
+                        <S.DetailsItem>
+                            <FontAwesomeIcon icon={faLocationDot} />
+                            <span>
+                                {location?.city}
+                                {location?.street && `, ${location.street}`}
+                            </span>
+                        </S.DetailsItem>
+                        <S.DetailsItem>
+                            <FontAwesomeIcon icon={faCalendarDays} />
+                            <span>{processedDate}</span>
+                        </S.DetailsItem>
+                    </S.Details>
+                </S.Content>
+            </S.Post>
         );
     }
 );
